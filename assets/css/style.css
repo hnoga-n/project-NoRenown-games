@@ -10,10 +10,12 @@ body {
     background: linear-gradient(to top, #360033, #0b8793); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-
+a {
+    text-decoration: none;
+}
 
 .main-content {
-    padding: 20px 20px 0;
+    padding: 20px 20px 100px;
     display: flex;  
     justify-content: center;
 }
