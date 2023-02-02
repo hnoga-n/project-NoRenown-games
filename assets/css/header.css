@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-body{
-    margin: unset;
-    background: linear-gradient(to top, #360033, #0b8793); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
 /* HEADER */
 .header {
     padding: 0 30px;
@@ -12,12 +8,13 @@ body{
     align-items: center;
     justify-content: space-between;
     transition: background .4s;
+    z-index: 1;
 }
 .sticky {
     position: fixed;
     top:0;
     left: 0;
-    width: 1628px;
+    width: 100%;
     background-color: #101010;
 }
 .header .logo {
@@ -32,7 +29,7 @@ body{
     font-size: 20px;
     position:absolute;
     top:10px;
-    left: 70px;
+    left: 80px;
 }
 .header .logo .text2 {
     font-size: 45px;
@@ -54,12 +51,12 @@ body{
         left:10px
     }
     to {
-      left:70px;
+      left:80px;
     }
 }
 @keyframes slider2 {
     from{
-        left:90px;
+        left:120px;
     }
     to {
       left:50px;
@@ -74,6 +71,21 @@ body{
     left: 650px;
     display: flex;
     transition: .4s;
+}
+.header .container a {
+    text-decoration: unset;
+}
+.header .container a:link {
+    color: unset;
+}
+.header .container a:hover{
+    color: unset;
+}
+.header .container a:active {
+    color: unset;
+}
+.header .container a:visited {
+    color: unset;
 }
 .header.sticky .container {
     position: unset;
