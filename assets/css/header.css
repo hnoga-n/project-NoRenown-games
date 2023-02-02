@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 body{
     margin: unset;
-    background: linear-gradient(to top, #360033, #0b8793); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #360033;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #360033, #0b8793);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #360033, #0b8793); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 /* HEADER */
 .header {
@@ -11,13 +13,14 @@ body{
     height: 80px;
     align-items: center;
     justify-content: space-between;
+    z-index: 9999;
     transition: background .4s;
 }
 .sticky {
     position: fixed;
     top:0;
     left: 0;
-    width: 1628px;
+    width: 100%;
     background-color: #101010;
 }
 .header .logo {

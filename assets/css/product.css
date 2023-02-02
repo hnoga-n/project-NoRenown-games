@@ -30,7 +30,6 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 10px 20px;
-    color: black;
 }
 
 .products-trending .headline a {
@@ -41,7 +40,7 @@
 }
 
 .products-trending .headline a:hover {
-    background: #50034c;
+    background: #FF1E1E;
     color: white;
 }
 
@@ -86,6 +85,8 @@
     min-height: 26px;
     align-items: center;
 }
+
+
 
 .product-information .text-name {
     text-overflow: ellipsis;

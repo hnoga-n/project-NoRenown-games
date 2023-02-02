@@ -16,7 +16,8 @@
 .footer-link {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgb(81, 77, 77);
     margin-bottom: auto;
 }
 
@@ -28,18 +29,74 @@
 .footer-lists li a {
     color: white;
     text-decoration: none;
+    transition: .1s ;
+}
+
+.footer-lists li a:hover {
+    color: #FF1E1E;
+}
+
+.footer-social {
+    display: flex;
+    width: calc(330px - 30px);
+    flex-direction: column;
+    
+}
+
+.footer-social-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: auto;
+}
+
+.footer-social-icons a i {
+    font-size: 35px;
+}
+
+.footer-social-apps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .footer-social-apps a {
     display: flex;
+
 }
+
+.fa-twitter {
+    color: rgb(15, 177, 241);
+}
+
+.fa-instagram {
+    border-radius: 8px;
+    padding: 1px 3px 0;
+    color: white;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+}
+
+.fa-youtube {
+    color: rgb(215, 28, 28);
+}
+
+.fa-facebook {
+    color: rgb(22, 22, 234);
+}
+
 
 .footer-social-apps img{
     border: 2px solid rgb(154, 149, 149);
-    width: 150px;
+    width: 135px;
     border-radius: 10px;
+    padding: 10px;
+}
+
+.footer-social-apps img:hover{
+    border-color: #FF1E1E;
 }
 
 .footer-information {
-    
+    text-align: right;
 }
