@@ -1,10 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-body{
-    margin: unset;
-    background: #360033;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #360033, #0b8793);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #360033, #0b8793); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
 /* HEADER */
 .header {
     padding: 0 30px;
@@ -13,8 +7,8 @@ body{
     height: 80px;
     align-items: center;
     justify-content: space-between;
-    z-index: 9999;
     transition: background .4s;
+    z-index: 1;
 }
 .sticky {
     position: fixed;
@@ -35,7 +29,7 @@ body{
     font-size: 20px;
     position:absolute;
     top:10px;
-    left: 70px;
+    left: 80px;
 }
 .header .logo .text2 {
     font-size: 45px;
@@ -57,12 +51,12 @@ body{
         left:10px
     }
     to {
-      left:70px;
+      left:80px;
     }
 }
 @keyframes slider2 {
     from{
-        left:90px;
+        left:120px;
     }
     to {
       left:50px;
@@ -221,4 +215,3 @@ body{
     background-color: white;
     color:#FF1E1E;
 }
-
