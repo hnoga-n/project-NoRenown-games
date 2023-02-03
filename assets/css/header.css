@@ -72,6 +72,21 @@
     display: flex;
     transition: .4s;
 }
+.header .container a {
+    text-decoration: unset;
+}
+.header .container a:link {
+    color: unset;
+}
+.header .container a:hover{
+    color: unset;
+}
+.header .container a:active {
+    color: unset;
+}
+.header .container a:visited {
+    color: unset;
+}
 .header.sticky .container {
     position: unset;
     width: 450px;
