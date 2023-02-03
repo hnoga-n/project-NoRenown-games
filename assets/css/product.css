@@ -3,16 +3,16 @@
     background: white;
     background: linear-gradient(
         to right bottom,
-        rgba(255, 255, 255, 0.4),
-        rgba(255, 255, 255, 0.2)
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
     );
-    backdrop-filter: blur(1rem);
+    backdrop-filter: blur(.5rem);
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
 }
 
 .products-trending {
