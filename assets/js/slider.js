@@ -24,15 +24,15 @@ function auto_slide_showdown(count_slide){
       break;
     case 2: 
       radio2.checked = true
-      first_slide.style.marginLeft = '-20%'
+      first_slide.style.marginLeft = '-20.4%'
       break;
     case 3: 
       radio3.checked = true
-      first_slide.style.marginLeft = '-40%'
+      first_slide.style.marginLeft = '-40.5%'
       break;
     case 4: 
       radio4.checked = true
-      first_slide.style.marginLeft = '-60%'
+      first_slide.style.marginLeft = '-60.8%'
       break;
   }
 }
@@ -45,17 +45,17 @@ function auto_slide_showdown(count_slide){
     console.log('checked');
   })
   radio2.addEventListener('click',function(){
-    first_slide.style.marginLeft = '-20%'
+    first_slide.style.marginLeft = '-20.4%'
     count = 2
     console.log('checked');
   })
   radio3.addEventListener('click',function(){
-    first_slide.style.marginLeft = '-40%'
+    first_slide.style.marginLeft = '-40.5%'
     count = 3
     console.log('checked');
   })
   radio4.addEventListener('click',function(){
-    first_slide.style.marginLeft = '-60%'
+    first_slide.style.marginLeft = '-60.8%'
     count = 4
     console.log('checked');
   })
