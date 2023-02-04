@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 /* HEADER */
 .header {
+    position:absolute;
     padding: 0 30px;
     display: flex;
     background:rgba(0,0,0,0);
@@ -8,7 +9,6 @@
     align-items: center;
     justify-content: space-between;
     transition: background .4s;
-    z-index: 1;
 }
 .sticky {
     position: fixed;
