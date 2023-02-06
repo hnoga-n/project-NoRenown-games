@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 /* HEADER */
 .header {
-    position:absolute;
+    position:fixed;
+    top:0;
     padding: 0 30px;
     display: flex;
     background:rgba(0,0,0,0);
@@ -9,6 +10,8 @@
     align-items: center;
     justify-content: space-between;
     transition: background .4s;
+    z-index: 1000;
+    width: 100%;
 }
 .sticky {
     position: fixed;
@@ -68,10 +71,12 @@
     height: 90px;
     position: absolute;
     top: 50px;
-    left: 650px;
+    left: 580px;
     display: flex;
     transition: .4s;
+    
 }
+
 .header .container a {
     text-decoration: unset;
 }
@@ -116,6 +121,7 @@
     transition: .5s;
     cursor: pointer;
 }
+
 .header.sticky .container .menu div{
     width: 25%;
     color: white;
