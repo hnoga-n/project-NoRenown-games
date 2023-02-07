@@ -1,3 +1,7 @@
+body {
+  background: -webkit-linear-gradient(to right, #360033, #0b8793);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #360033, #0b8793); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 .form-outside-container{
   box-sizing: content-box;
   margin-top: 100px;
@@ -81,9 +85,9 @@
 }
 .form-outside-container  .form-container .form input{
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   grid-column: 2/3;
-  padding:0 50px;
+  padding:10px;
   margin: 5px 0;
   background-color: rgba(140, 97, 218, 0.703) ;
   border-radius: 5px;
@@ -92,10 +96,19 @@
 }
 
 .form-outside-container  .form-container .form #message{
-  text-align: center;
+  text-align: left;
+  resize: none;
+  padding: 10px;
+  margin: 5px 0;
+  color: white;
+  font-size: 18px;
+  background-color: rgba(140, 97, 218, 0.703) ;
+  border-radius: 5px;
+  border: 2px solid white;
+  border-collapse: separate;
 }
 
-.form-outside-container  .form-container .form input::placeholder{
+.form-outside-container  .form-container .form input::placeholder , .form-outside-container  .form-container .form #message::placeholder{
   color: rgba(255, 255, 255, 0.329)
   
 }
