@@ -1,0 +1,40 @@
+@media screen and (max-width: 1000px) {
+  .footer .content {
+    padding: 20px;
+    text-align: center;
+  }
+  .footer-logo {
+    display: none;
+  }
+  .footer-link {
+    border-bottom: 0;
+    flex-direction: column;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .footer-lists li {
+    margin-bottom: 10px;
+  }
+
+  .footer-social {
+    align-self: unset;
+    margin: 0 auto;
+  }
+
+  .footer-information {
+    display: none;
+  }
+
+  .footer-social-apps {
+    margin: 15px 0;
+  }
+
+  .footer-social-icons {
+    margin: 15px 0;
+  }
+
+
+
+
+}
