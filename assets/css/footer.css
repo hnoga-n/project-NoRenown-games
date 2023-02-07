@@ -19,6 +19,22 @@
     padding-bottom: 40px;
     border-bottom: 1px solid rgb(81, 77, 77);
     margin-bottom: auto;
+    text-align: center;
+}
+
+.footer-logo a {
+    color: #FF1E1E;
+    font-size: 20px;
+}
+
+.footer-logo .logo .text1 {
+    font-size: 20px;
+    text-align: center;
+}
+.footer-logo .logo .text2 {
+    font-size: 45px;
+    text-align: center;
+    line-height: 25px;
 }
 
 .footer-lists li {
@@ -40,7 +56,7 @@
     display: flex;
     width: calc(330px - 30px);
     flex-direction: column;
-    
+    align-self: stretch;
 }
 
 .footer-social-icons {

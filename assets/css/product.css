@@ -77,6 +77,7 @@
 
 .products-list .item img:hover {
     scale: 1.05;
+    filter: brightness(30%);
 }
 
 .products-list .item .product-information {
@@ -101,3 +102,6 @@
     margin-left: auto;
     font-size: 22px;
 }
+
+
+
