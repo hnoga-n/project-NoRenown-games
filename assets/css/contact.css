@@ -9,7 +9,41 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 53px;
 }
+.form-outside-container .deco-icon{
+  position: absolute;
+  top: 100px;
+  left: 70px;
+  width: 100px;
+  height: 100px;
+}
+.form-outside-container .deco-icon i{
+  color: white;
+  font-size: 20px;
+}
+.form-outside-container .deco-icon #moon{
+  font-size: 50px;
+}
+.form-outside-container .deco-icon #star-1{
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  animation: star_animation 2s infinite ease;
+}
+.form-outside-container .deco-icon #star-2{
+  position: absolute;
+  top: 100px;
+  left: 0px;
+}
+
+.form-outside-container .deco-icon #star-3{
+  position: absolute;
+  top: 150px;
+  left: 100px;
+  animation: star_animation 3s infinite ease-in-out;
+}
+
 
 .form-outside-container .form-container {
   background:url(../img/contact-img.jpg);
@@ -74,7 +108,7 @@ body {
   color: rgba(89, 196, 91, 0.703);
   transform: rotate(30deg);
   font-size: 35px;
-  animation: headphone_animation 3s infinite ease;
+  animation: headphone_animation 2s infinite ease;
 }
 
 .form-outside-container  .form-container .form label{
@@ -119,6 +153,7 @@ body {
   justify-self: right;
   background:rgba(123, 61, 239, 0.703)  ;
   transition: .5s;
+  color: rgb(93, 247, 116);
 }
 .form-outside-container  .form-container .form button:hover{
   background:rgba(158, 111, 245, 0.703)  ;
@@ -146,5 +181,20 @@ body {
   }
   100%{
     transform: rotate(30deg);
+  }
+}
+
+
+@keyframes star_animation{
+  0%{
+  }
+  50%{
+    transform: rotate(180deg);
+    font-size: 20px;
+    color: yellow;
+  }
+  100%{
+    transform: rotate(360deg);
+    font-size: 20px;
   }
 }
