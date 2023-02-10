@@ -1,3 +1,3 @@
-# project-NoRenowned-games
+# project-NoRenown-games
 
 ## WELCOME TO PROJECT ' NoRenowned '
