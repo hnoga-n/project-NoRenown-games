@@ -28,6 +28,7 @@
     font-family: 'Righteous', cursive;
     justify-content:center;
     text-align: center;
+    height: 100%;
 }
 .header .logo .text1 {
     text-align: center;
@@ -45,7 +46,6 @@
     top: 20px;
     left: 50px;
     text-shadow: 1.5px 1.5px white;
-    pointer-events: none;
 }
 .header .logo:hover .text1 {
     animation: slider1 1s;
@@ -60,6 +60,7 @@
 @keyframes slider1 {
     from{
         left:10px
+        
     }
     to {
       left:80px;

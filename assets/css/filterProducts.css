@@ -42,22 +42,24 @@
     -webkit-backdrop-filter: blur(60px) saturate(100%);
     background-color: hsla(0,0%,100%,.1);
     z-index: 10;
-    display: none;
     opacity: 0;
+    pointer-events: none;
 }
 
 .showDropdownCategory{
-    display: block;
     opacity: 1;
-    animation: dropdownRotate .6s ease-in;
+    pointer-events: visible;
+    animation: dropdownRotate .4s ease;
 }
 
 @keyframes dropdownRotate {
     from {
-        transform: rotateX(180deg);
+        opacity: 0;
+        transform: translateY(-50px);
     }
     to {
-        transform: rotateX(0deg);
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -72,9 +74,6 @@
     background-color: #FF1E1E;
 }
 
-.dropdown-category .category-list {
-    
-}
 
 .products-filter-selections .selection i {
     position: absolute;
