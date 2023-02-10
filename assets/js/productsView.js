@@ -23,7 +23,7 @@ let dropdownCategories = document.querySelectorAll(".dropdown-category");
 //     });
 
 // });
-
+let user;
 selectionIcons.forEach((selectionIcon,index) => {
     let item = dropdownCategories[index];
     // console.log(selectionIcon);
@@ -47,7 +47,7 @@ selectionIcons.forEach((selectionIcon,index) => {
     //     dropdownCategories.forEach(dropdownCategory=>{
     //         dropdownCategory.classList.remove('showDropdownCategory');
     //     })
-    // });Z
+    // });Zhjnhunuhnhn
     
 });
 
