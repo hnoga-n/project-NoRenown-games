@@ -22,7 +22,7 @@
     background-color: #101010;
 }
 .header .logo,
-.footer-logo {
+.footer-logo .logo {
     width: 200px;
     color: #FF1E1E;
     font-family: 'Righteous', cursive;
