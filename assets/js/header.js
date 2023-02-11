@@ -41,8 +41,8 @@ window.onscroll = function() {
         header.classList.remove("sticky"); 
     }
     
-    console.log(window.pageYOffset)
-    console.log(document.getElementById("myHeader").offsetTop);console.log("-------------")
+    // console.log(window.pageYOffset)
+    // console.log(document.getElementById("myHeader").offsetTop);console.log("-------------")
 };
 
 
