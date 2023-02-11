@@ -6,10 +6,10 @@
 }
 
 .footer .content {
-    padding: 30px;
+    padding: 30px 15px;
     display: flex;
     flex-direction: column;
-    width: 1400px;
+    width: 1200px;
     color: white;
 }
 
@@ -67,6 +67,11 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: auto;
+    transition: .8s ease;
+}
+
+.footer-social-icons a:hover {
+    scale: 1.2;
 }
 
 .footer-social-icons a i {
