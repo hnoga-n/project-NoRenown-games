@@ -38,3 +38,10 @@ ul {
     text-decoration: none;
     border-radius: 15px;
 }
+
+
+@media screen and (max-width: 750px) {
+    .main-content {
+        padding: 100px 10px;
+    }
+ }
