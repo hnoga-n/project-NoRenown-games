@@ -103,10 +103,8 @@
     font-size: 22px;
 }
 
-@media screen and (max-width: 700px) and (hover: hover) {
-    .main-content {
-        padding: 100px 10px;
-    }
+@media screen and (max-width: 750px) {
+    
 
     .products-list .item {
         width: calc(50% - 10px);
