@@ -2,68 +2,40 @@ let selections = document.querySelectorAll(".selection");
 let selectionIcons = document.querySelectorAll(".selection i");
 let dropdownCategories = document.querySelectorAll(".dropdown-category");
 
-// selections.forEach((selection, index) => {
-//   let dropdownCategory = dropdownCategories[index];
-//   selection.onclick = function () {
-//     document
-//       .querySelector(".dropdown-category.showDropdownCategory")
-//       .classList.remove("showDropdownCategory");
-//     dropdownCategory.classList.add("showDropdownCategory");
-//   };
-// });
-
-// selectionIcons.forEach((selectionIcon,index) => {
-//     console.log(index);
-//     selectionIcon.addEventListener("click",()=> {
-
-//             document.querySelector('.dropdown-category.showDropdownCategory').classList.remove('showDropdownCategory');
-
-//             document.querySelector('.dropdown-category').classList.add('showDropdownCategory');
-
-//     });
-
-// });
-
 selectionIcons.forEach((selectionIcon,index) => {
     let item = dropdownCategories[index];
-    // console.log(selectionIcon);
 
-    selectionIcon.onclick = function () {
-        selectionIcon.parentElement.querySelector('.dropdown-category.showDropdownCategory').classList.remove('showDropdownCategory');
+    selectionIcon.onclick = () => {
         item.classList.add('showDropdownCategory');
-
+        selectionIcon.parentElement.querySelector("input").focus();
+    }
+    
+    selectionIcon.parentElement.querySelector("input").onclick = () => {
+        item.classList.toggle('showDropdownCategory');
     }
 
-    // selectionIcon.addEventListener("click",()=> {
-        // dropdownCategories.forEach(dropdownCategory=>{
+    selectionIcon.parentElement.querySelector("input").onblur = () => {
+        //chỗ này for sẽ check mục lục xem có tên loại mục đó không
+        // if có thì lúc blur không bị mất chữ 
+        // else nhấn chữ lung tung blur thì mất chữ
+        let flagItem = 0;
 
-        //     dropdownCategory.classList.remove('showDropdownCategory');
-        //     document.querySelector(".dropdown-category.showDropdownCategory").classList.remove('showDropdownCategory');
-        // })
-        // console.log()
+        item.querySelectorAll("li").forEach(itemLi => {
+
+            if (selectionIcon.parentElement.querySelector("input").value.toLowerCase() === itemLi.innerText.toLowerCase()) {
+                item.classList.toggle('showDropdownCategory');
+                flagItem = 1;
+            }
+
+        });
+
+        if(flagItem == 0) {
+            item.classList.remove('showDropdownCategory');
+            selectionIcon.parentElement.querySelector("input").value = '';
+        }
         
-    // });
-    // selectionIcon.addEventListener("blur",()=> {
-    //     dropdownCategories.forEach(dropdownCategory=>{
-    //         dropdownCategory.classList.remove('showDropdownCategory');
-    //     })
-    // });Z
+    }
     
+
 });
 
-selections.forEach((selection,index) => {
-    console.log(selection);
-    selection.addEventListener("blur",()=> {
-        console.log("hello");
-        // console.log( document.querySelector('.dropdown-category.showDropdownCategory'));
-        // document.querySelector('.dropdown-category.showDropdownCategory').classList.remove('showDropdownCategory');
-    });
-})
-
-
-// document.addEventListener("click", ()=> {
-//     dropdownCategories.forEach(dropdownCategory=>{
-
-//         dropdownCategory.classList.remove('showDropdownCategory');
-//     })
-// });
