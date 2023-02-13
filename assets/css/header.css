@@ -248,6 +248,71 @@
     color:#FF1E1E;
 }
 
+.header .header-right .user {
+    display: block;
+}
+.header .header-right .user-logged {
+    display: none;
+}
+
+.header .header-right .user-logged button {
+    background-color: #101010;
+    transition: .1s all ease-in-out;
+}
+.header .header-right .user-logged button:hover {
+    border: 3px solid #FF1E1E;
+    background-color: #101010;
+}
+.header .header-right .user-logged button i {
+    color: white;
+    font-size: 20px;
+}
+
+.header .header-right .user-logged .user-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.3);
+    height: 100vh;
+    width: 100%;
+    padding: unset;
+}
+.header .header-right .user-logged .user-menu .panel {
+    display: flex;
+    flex-direction: column;
+    background: rgba(10, 10, 10, 0.7);
+    border-radius: 20px;
+    margin: 80px 80%;
+    height: auto;
+    width: 250px;
+    padding: 20px;
+}
+.header .header-right .user-logged .user-menu .panel hr {
+    border: 1px solid rgb(71, 71, 71) ; 
+}
+.header .header-right .user-logged .user-menu .panel div:first-child {
+    text-align: center;
+    font-size: 20px;
+    cursor: unset;
+}
+.header .header-right .user-logged .user-menu .panel div {
+    font-family: 'Righteous', cursive;
+    margin: 10px 0 5px;
+    width: 100%;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: background .2s;
+    cursor: pointer;
+}
+.header .header-right .user-logged .user-menu .panel div:first-child:hover {
+    background-color: unset;
+}
+.header .header-right .user-logged .user-menu .panel div:hover {
+    background-color:#FF1E1E;
+}
+
 @media only screen and (max-width:360px)   {
    .header {
         padding: unset;
