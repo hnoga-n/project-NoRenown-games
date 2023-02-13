@@ -1,6 +1,7 @@
 let selections = document.querySelectorAll(".selection");
 let selectionIcons = document.querySelectorAll(".selection i");
 let dropdownCategories = document.querySelectorAll(".dropdown-category");
+
 let paginations = document.querySelectorAll(".pagination a");
 
 $(document).ready(function(){
@@ -26,7 +27,7 @@ selectionIcons.forEach((selectionIcon,index) => {
     selectionIcon.parentElement.querySelector("input").onblur = () => {
         //chỗ này for sẽ check mục lục xem có tên loại mục đó không
         // if có thì lúc blur không bị mất chữ 
-        // else nhấn chữ lung tung blur thif mất chữ
+        // else nhấn chữ lung tung blur thì mất chữ
         let flagItem = 0;
 
         item.querySelectorAll("li").forEach(itemLi => {
