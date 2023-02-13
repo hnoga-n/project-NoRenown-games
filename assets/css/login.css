@@ -101,6 +101,13 @@ input {
 	width: 768px;
 	max-width: 100%;
 	min-height: 480px;
+	animation-name: down;
+	animation-duration: 1s;
+}
+@keyframes down {
+	from{top: -50%}
+	to {top:0}
+
 }
 .back {
 	position: absolute;

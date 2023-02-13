@@ -17,6 +17,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
+    <link 
+      href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+      rel="stylesheet"  type='text/css'>
   </head>
   <body>
     <!-- header -->
@@ -60,6 +63,35 @@
               <i class="fa-solid fa-user"></i>
             </button>
           </a>
+        </div>
+        <div class="user-logged">
+          <button onclick="document.getElementById('panel-el').style.display = 'block'">
+            <i class="fa-solid fa-user-secret"></i>
+          </button>
+          <div class="user-menu" id="panel-el">
+            <div class="panel" >
+              <div>
+                <span>Mach Hao Tuan</span>
+              </div>
+              <hr>
+              <div>
+                <i class="fa-solid fa-user"></i>
+                &nbsp;
+                Account
+              </div>
+              <div>
+                <i class="fa-solid fa-money-bill"></i>
+                &nbsp;
+                My orders
+              </div>
+              <hr>
+              <div>
+                <i class="fa-solid fa-right-from-bracket"></i>
+                &nbsp;
+                Sign out
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
