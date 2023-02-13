@@ -250,7 +250,7 @@
     color:#FF1E1E;
 }
 
-@media only screen and (max-width:360px)   {
+@media only screen and (max-width:1250px)   {
    .header {
         padding: unset;
         position: -webkit-sticky; /* Safari */

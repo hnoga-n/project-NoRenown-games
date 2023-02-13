@@ -1,7 +1,15 @@
 let selections = document.querySelectorAll(".selection");
 let selectionIcons = document.querySelectorAll(".selection i");
 let dropdownCategories = document.querySelectorAll(".dropdown-category");
-// let dropdownCategoriesLi = document.querySelectorAll(".dropdown-category li");
+let paginations = document.querySelectorAll(".pagination a");
+
+$(document).ready(function(){
+    $(paginations).click(function(){
+            $(".pagination a.active").removeClass("active");
+            $(this).addClass("active")  
+    
+    });
+});
 
 selectionIcons.forEach((selectionIcon,index) => {
     let item = dropdownCategories[index];
@@ -40,3 +48,11 @@ selectionIcons.forEach((selectionIcon,index) => {
 
 });
 
+// paginations.forEach(pagination => {
+//     pagination.onclick = () => {
+//         // console.log(this);
+//         document.querySelector(".pagination a.active").classList.remove("active");
+//         pagination.classList.add("active")
+
+//     }
+// });
