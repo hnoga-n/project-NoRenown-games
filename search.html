@@ -4,16 +4,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search Results</title>
-    <link rel="stylesheet" href="/assets/css/product.css" />
+    <script
+    src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+    crossorigin="anonymous"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
+    <link rel="icon" href="./assets/img/logo.png" />
+    <link rel="stylesheet" href="/assets/css/product.css" />
     <link rel="stylesheet" href="./assets/css/header.css" />
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/footer.css" />
-    <link rel="stylesheet" href="/assets/css/responsive/mobile.css" />
-    <link rel="stylesheet" href="./assets/css/responsive/tabletAndMobile.css" />
     <link rel="stylesheet" href="/assets/css/filterProducts.css" />
   </head>
   <body>
@@ -27,17 +30,17 @@
       </a>
       <div class="container">
         <div class="menu">
-          <a href="">
+          <a href="./index.html">
             <div>Home</div>
           </a>
-          <a href="">
+          <a href="./search.html">
             <div>Games</div>
           </a>
-          <a href="">
+          <a href="./contact.html">
             <div>Contact</div>
           </a>
           <a href="">
-            <div>Others</div>
+            <div>About</div>
           </a>
         </div>
         <div class="search">
@@ -65,7 +68,7 @@
           <div class="products-filter">
             <div class="products-filter-selections">
               <div class="selection">
-                <input class="glass-card" type="text" placeholder="Genres.." />
+                <input class="glass-card" type="search" placeholder="Genres.." />
                 <i class="fa-sharp fa-solid fa-caret-down"></i>
                 <div class="dropdown-category">
                   <ul class="category-list">
@@ -76,7 +79,7 @@
                 </div>
               </div>
               <div class="selection">
-                <input class="glass-card" type="text" placeholder="Sort by" />
+                <input class="glass-card" type="search" placeholder="Sort by :" />
                 <i class="fa-sharp fa-solid fa-caret-down"></i>
                 <div class="dropdown-category">
                   <ul class="category-list">
@@ -97,9 +100,9 @@
               <i class="fa-solid fa-rotate-right"></i>
             </div>
           </div>
-          <div class="products-list">
+          <div class="products-list-filter">
             <div class="item">
-              <a href="">
+              <a href="./productDetails.html">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="/assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -115,7 +118,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="">
+              <a href="./productDetails.html">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="/assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -131,7 +134,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="">
+              <a href="./productDetails.html">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="/assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -147,7 +150,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="">
+              <a href="./productDetails.html">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="/assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -163,7 +166,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="">
+              <a href="./productDetails.html">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="/assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -179,7 +182,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="">
+              <a href="./productDetails.html">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="/assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -195,7 +198,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="">
+              <a href="./productDetails.html">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="/assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -211,7 +214,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="">
+              <a href="./productDetails.html">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="/assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -227,7 +230,55 @@
               </div>
             </div>
             <div class="item">
-              <a href="">
+              <a href="./productDetails.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <img src="/assets/img/sky3.jpg" alt="" />
+                <div class="discount">
+                  <span>-<label>20</label>%</span>
+                </div>
+              </a>
+              <div class="product-information">
+                <div class="text-name">Elden ring</div>
+                <div class="price">
+                  <label class="price-number">20.00</label>
+                  <label class="price-dollar">$</label>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <a href="./productDetails.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <img src="/assets/img/sky3.jpg" alt="" />
+                <div class="discount">
+                  <span>-<label>20</label>%</span>
+                </div>
+              </a>
+              <div class="product-information">
+                <div class="text-name">Elden ring</div>
+                <div class="price">
+                  <label class="price-number">20.00</label>
+                  <label class="price-dollar">$</label>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <a href="./productDetails.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <img src="/assets/img/sky3.jpg" alt="" />
+                <div class="discount">
+                  <span>-<label>20</label>%</span>
+                </div>
+              </a>
+              <div class="product-information">
+                <div class="text-name">Elden ring</div>
+                <div class="price">
+                  <label class="price-number">20.00</label>
+                  <label class="price-dollar">$</label>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <a href="./productDetails.html">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="/assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -243,6 +294,14 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="pagination">
+          <a href="#">&laquo;</a>
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">&raquo;</a>
         </div>
       </div>
     </div>
@@ -275,16 +334,16 @@
           </ul>
           <div class="footer-social">
             <div class="footer-social-icons">
-              <a href="">
+              <a href="./productDetails.html">
                 <i class="fa-brands fa-twitter"></i>
               </a>
-              <a href="">
+              <a href="./productDetails.html">
                 <i class="fa-brands fa-instagram"></i>
               </a>
-              <a href="">
+              <a href="./productDetails.html">
                 <i class="fa-brands fa-youtube"></i>
               </a>
-              <a href="">
+              <a href="./productDetails.html">
                 <i class="fa-brands fa-facebook"></i>
               </a>
             </div>
@@ -309,12 +368,13 @@
         </div>
       </div>
     </div>
+
   </body>
+  <script src="./assets/js/productsView.js"></script>
   <script
     src="https://kit.fontawesome.com/f26ba754df.js"
     crossorigin="anonymous"
   ></script>
   <script src="./assets/js/header.js"></script>
-  <script src="./assets/js/productsView.js"></script>
 
 </html>

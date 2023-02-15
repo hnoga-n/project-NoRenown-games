@@ -40,9 +40,11 @@ window.onscroll = function() {
      else {
         header.classList.remove("sticky"); 
     }
-    
-    console.log(window.pageYOffset)
-    console.log(document.getElementById("myHeader").offsetTop);console.log("-------------")
 };
 
-
+window.onclick = function(event) {
+    const panel = document.getElementById("panel-el")
+    if (event.target == panel) {
+        panel.style.display = "none";
+    }
+}
