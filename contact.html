@@ -1,5 +1,7 @@
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,15 +17,16 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
+
 <body>
   <div class="header" id="myHeader">
     <a href="index.html">
       <div class="logo">
-        <span class="text1">NoRENOWN</span> 
+        <span class="text1">NoRENOWN</span>
         <br>
         <span class="text2">GAMING</span>
       </div>
-    </a>       
+    </a>
     <div class="container">
       <div class="blur-layer"></div>
       <div class="menu">
@@ -77,26 +80,25 @@
     </div>
 
     <div class="form-container">
-      <form class="form" action="">
+      <form class="form" action="test.php" method="post">
         <div class="title">
           <i id="console-icon" class="fa-solid fa-gamepad"></i>
           <span>C&nbsp;&nbsp;&nbsp;&nbsp;NTACT US</span>
           <i id="headphone-icon" class="fa-solid fa-headset"></i>
         </div>
-          <label for="name">Name </label>
-          <input type="text" name="name" id="name" placeholder="Nguyen Hoang">
-          <label for="mail">Email </label>
-          <input type="email" name="mail" id="mail" placeholder="hackiemsi@gmail.com">
-          <label for="phone">Phone </label>
-          <input type="tel" name="phone" id="phone" placeholder="0961243102">
-          <label for="message">Your feedback </label>
-          <!-- <input type="text" name="name" id="message" placeholder="I love this website !!!!"> -->
-          <textarea name="name" id="message" cols="30" rows="10" placeholder="I love this website !!!!"></textarea>
-          <button type="submit" name="submit" id="submit">
-            <span>Submit</span>
-            <i class="fa-solid fa-scroll"></i>
-            
-          </button>
+        <label for="name">Name </label>
+        <input type="text" name="name" id="name" placeholder="Nguyen Hoang" required>
+        <label for="mail">Email </label>
+        <input type="email" name="mail" id="mail" placeholder="hackiemsi@gmail.com" required>
+        <label for="phone">Phone </label>
+        <input type="tel" name="phone" id="phone" placeholder="0961243102" required>
+        <label for="message">Your feedback </label>
+        <!-- <input type="text" name="name" id="message" placeholder="I love this website !!!!"> -->
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="I love this website !!!!" required></textarea>
+        <button type="submit" name="submit" id="submit">
+          <span>Submit</span>
+          <i class="fa-solid fa-scroll"></i>
+        </button>
       </form>
       <img class="deco-img" src="./assets/img/pacman-ghost-logo-4E0E79293D-seeklogo.com.png" alt="">
     </div>
@@ -109,11 +111,11 @@
         <div class="footer-logo">
           <a href="index.html">
             <div class="logo">
-              <span class="text1">NoRENOWN</span> 
+              <span class="text1">NoRENOWN</span>
               <br>
               <span class="text2">GAMING</span>
             </div>
-          </a>    
+          </a>
         </div>
         <ul class="footer-lists">
           <li>
@@ -123,7 +125,7 @@
             <a href="#">Privacy policy</a>
           </li>
           <li>
-            <a href="#">Contact us</a>
+            <a href="contact.html">Contact us</a>
           </li>
           <li>
             <a href="#">FAQ</a>
@@ -160,7 +162,8 @@
     </div>
   </div>
 </body>
-  <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script> 
-  <script src="./assets/js/header.js"></script>
-  <script src="./assets/js/slider.js"></script>
+<script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>
+<script src="./assets/js/header.js"></script>
+<script src="./assets/js/slider.js"></script>
+
 </html>
