@@ -14,9 +14,8 @@
   color: white;
 }
 
-
-.product-app img ,
-.product-app video{
+.product-app img,
+.product-app video {
   width: 100%;
   height: 100%;
   border-radius: 20px;
@@ -24,24 +23,22 @@
 }
 
 .seperator {
- width: 100%;
- height: 35px;
+  width: 100%;
+  height: 35px;
 }
 
 .header-content,
 .visuals-gameplay,
-.about-game {
+.infomation {
   display: flex;
   height: 300px;
 }
 
 .header-content {
-
 }
 
 .header-content > div {
   border-radius: 20px;
-
 }
 
 .header-content .video-game {
@@ -75,9 +72,16 @@
 .header-content .panel .price {
   display: flex;
   justify-content: center;
+  align-items: end;
   font-size: 35px;
   font-weight: 600;
 }
+
+.header-content .panel .price small {
+  margin-right: 15px;
+  opacity: .8;
+}
+
 
 .header-content .panel button {
   padding: 20px;
@@ -90,33 +94,27 @@
   color: white;
   cursor: pointer;
   background: #ff1e1e;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   position: relative;
 }
 
 .header-content .panel button i {
-    position: absolute;
-    margin-left: 10px;
+  position: absolute;
+  margin-left: 10px;
 }
 
 .header-content .panel button:hover {
-    background: #e1981a;
-    
+  background: #e1981a;
 }
-
-
 
 .middle-content {
   width: 100%;
 }
 
-
-
 .visuals-gameplay {
   margin-left: -15px;
   margin-right: -15px;
 }
-
 
 .visuals-gameplay .main-img {
   margin: 15px;
@@ -128,7 +126,6 @@
   flex-wrap: wrap;
   flex: 0 0 50%;
   height: 270px;
-
 }
 
 .visuals-gameplay .sub-img-item {
@@ -137,6 +134,31 @@
   flex: 0 0 calc(50% - 30px);
 }
 
+.infomation {
+  font-size: 17px;
+}
+
+.infomation > div {
+  flex: 0 0 50%;
+}
+
+.infomation h2 {
+  margin-bottom: 10px;
+}
+
+.infomation .configuration {
+  padding-left: 15px;
+}
+
+.infomation .configuration ul li {
+  display: flex;
+  /* justify-content: space-between; */
+  margin-bottom: 5px;
+}
+
+.infomation .configuration ul li span:first-child {
+  margin-right: auto;
+}
 
 @media screen and (max-width: 1000px) {
   .product-app {
@@ -149,7 +171,6 @@
   }
   .header-content > div {
     border-radius: 10px;
-  
   }
 
   .header-content .video-game {
@@ -165,13 +186,19 @@
   }
 
   .visuals-gameplay .main-img {
-    margin: 10px;
+    margin: 5px;
   }
 
   .visuals-gameplay .sub-img-item {
-    height: calc(50% - 10px);
-    margin: 10px;
-    flex: 0 0 calc(50% - 20px);
+    height: calc(50% - 5px);
+    margin: 5px;
+    flex: 0 0 calc(50% - 10px);
+  }
 
+  .infomation {
+    flex-direction: column;
+  }
+  .infomation .configuration {
+    padding-left: 0;
   }
 }
