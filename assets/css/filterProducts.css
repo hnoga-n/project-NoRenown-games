@@ -121,8 +121,7 @@
 }
 
 :is(.products-filter-selections .selection, .products-filter-price) input:hover,
-:is(.products-filter-selections .selection, .products-filter-price)
-  input:focus {
+:is(.products-filter-selections .selection, .products-filter-price) input:focus {
   border-color: #ff1e1e;
 }
 
@@ -170,7 +169,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.products-list .item:hover .discount {
+:is(.products-list-filter,.products-list) .item:hover .discount {
   right: -10px;
   top: -5px;
 }
@@ -188,11 +187,11 @@
   transition: all 0.1s ease-in-out;
 }
 
-.products-list .item a:hover > i {
+:is(.products-list-filter,.products-list) .item a:hover > i {
   opacity: 1;
 }
 
-.products-list .item a:active > i {
+:is(.products-list-filter,.products-list) .item a:active > i {
   color: #ff1e1e;
 }
 
@@ -202,23 +201,27 @@
   bottom: 40px;
 }
 
-.pagination a {
+.pagination input {
   font-size: 18px;
   color: white;
   float: left;
   padding: 8px 16px;
   margin: 0 10px;
+  background:unset;
+  border: unset;
+  border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s;
+  cursor: pointer;
 }
 
-.pagination a.active {
+.pagination input.active {
   background-color: #ff1e1e;
   color: white;
   border-radius: 5px;
 }
 
-.pagination a:hover:not(.active) {
+.pagination input:hover:not(.active) {
   background-color: #ddd;
   border-radius: 5px;
 }
@@ -236,12 +239,25 @@
 }
 
 @media screen and (max-width: 750px) {
+  .products-list-filter .item {
+    width: calc(50% - 10px);
+    margin: 5px;
+  }
+
+  .products-list-filter .item img:hover {
+    scale: 1;
+    box-shadow: 0 10px 15px 2px rgba(231, 76, 60, .5);
+  }
   .products-filter {
     margin-left: 0;
     margin-right: 0;
   }
   .item .discount {
     font-size: 14px;
+  }
+
+  .pagination {
+    bottom: 10px;
   }
 
   .pagination a {
