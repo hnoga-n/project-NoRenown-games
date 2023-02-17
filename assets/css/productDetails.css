@@ -82,8 +82,12 @@
   opacity: .8;
 }
 
+.header-content .panel a{
+  color: white;
+}
 
-.header-content .panel button {
+.header-content .panel .addToCartBtn {
+  
   padding: 20px;
   width: 100%;
   font-size: 20px;
@@ -91,19 +95,20 @@
   border-radius: 10px;
   outline: none;
   border: none;
-  color: white;
+
   cursor: pointer;
   background: #ff1e1e;
   transition: all 0.2s ease;
   position: relative;
 }
 
-.header-content .panel button i {
+
+.header-content .panel .addToCartBtn i {
   position: absolute;
   margin-left: 10px;
 }
 
-.header-content .panel button:hover {
+.header-content .panel .addToCartBtn:hover {
   background: #e1981a;
 }
 
