@@ -2,11 +2,11 @@ let selections = document.querySelectorAll(".selection");
 let selectionIcons = document.querySelectorAll(".selection i");
 let dropdownCategories = document.querySelectorAll(".dropdown-category");
 
-let paginations = document.querySelectorAll(".pagination a");
+let paginations = document.querySelectorAll(".pagination input");
 
 $(document).ready(function(){
     $(paginations).click(function(){
-            $(".pagination a.active").removeClass("active");
+            $(".pagination input.active").removeClass("active");
             $(this).addClass("active")  
     
     });
