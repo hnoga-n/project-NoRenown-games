@@ -9,56 +9,18 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
     <link rel="icon" href="./assets/img/logo.png" />
-    <link rel="stylesheet" href="/assets/css/product.css" />
+    <link rel="stylesheet" href="./assets/css/product.css" />
     <link rel="stylesheet" href="./assets/css/header.css" />
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/footer.css" />
-    <link rel="stylesheet" href="/assets/css/filterProducts.css" />
-    <link rel="stylesheet" href="/assets/css/productDetails.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <link rel="stylesheet" href="./assets/css/filterProducts.css" />
+    <link rel="stylesheet" href="./assets/css/productDetails.css" />
 
   </head>
   <body>
-    <div class="header" id="myHeader">
-      <a href="index.html">
-        <div class="logo">
-          <span class="text1">NoRENOWN</span>
-          <br />
-          <span class="text2">GAMING</span>
-        </div>
-      </a>
-      <div class="container">
-        <div class="menu">
-          <a href="./index.html">
-            <div>Home</div>
-          </a>
-          <a href="./search.html">
-            <div>Games</div>
-          </a>
-          <a href="./contact.html">
-            <div>Contact</div>
-          </a>
-          <a href="">
-            <div>About</div>
-          </a>
-        </div>
-        <div class="search">
-          <input type="text" class="search-inp" id="header-search" />
-        </div>
-        <div class="close" id="close">&times;</div>
-      </div>
-      <div class="header-right">
-        <div class="cart">
-          <button>
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
-        <div class="user">
-          <button>
-            <i class="fa-solid fa-user"></i>
-          </button>
-        </div>
-      </div>
-    </div>
+    <?php
+      include 'header.php';
+    ?>
 
     <div class="parallax">
       <img src="./assets/img/sky3.jpg">
@@ -147,68 +109,9 @@
       </div>
     </div>
     
-    <div class="footer">
-      <div class="content">
-        <div class="footer-link">
-          <div class="footer-logo">
-            <a href="index.html">
-              <div class="logo">
-                <span class="text1">NoRENOWN</span>
-                <br />
-                <span class="text2">GAMING</span>
-              </div>
-            </a>
-          </div>
-          <ul class="footer-lists">
-            <li>
-              <a href="#">Terms of Use</a>
-            </li>
-            <li>
-              <a href="#">Privacy policy</a>
-            </li>
-            <li>
-              <a href="#">Contact us</a>
-            </li>
-            <li>
-              <a href="#">FAQ</a>
-            </li>
-          </ul>
-          <div class="footer-social">
-            <div class="footer-social-icons">
-              <a href="">
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-              <a href="">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="">
-                <i class="fa-brands fa-youtube"></i>
-              </a>
-              <a href="">
-                <i class="fa-brands fa-facebook"></i>
-              </a>
-            </div>
-            <div class="footer-social-apps">
-              <a href="https://www.apple.com/vn/app-store/" target="_blank">
-                <img
-                  src="https://s3.gaming-cdn.com/themes/igv2/modules/footer/images/apple.svg"
-                  alt=""
-                />
-              </a>
-              <a href="https://play.google.com/store/games" target="_blank">
-                <img
-                  src="https://s2.gaming-cdn.com/themes/igv2/modules/footer/images/android.svg"
-                  alt=""
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-information">
-          Copyright © 2023 NoRenown Gaming - All rights reserved
-        </div>
-      </div>
-    </div>
+    <?php
+      include 'footer.php';
+    ?>
   </body>
   <script
     src="https://kit.fontawesome.com/f26ba754df.js"
