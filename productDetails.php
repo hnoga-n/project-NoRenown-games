@@ -31,7 +31,6 @@
         <div class="header-content">
           <div class="video-game">
             <video controls muted src=""></video>
-            <!-- <img src="./assets/img/sky3.jpg" alt="" srcset=""> -->
           </div>
           <div class="panel">
             <div class="name">
@@ -42,12 +41,14 @@
                 <div class="price-number">20.00</div>
                 <div class="price-dollar">$</div>
             </div>
-              <div>
-                <button type="submit">
+            <div>
+              <a href="" >
+                  <div class="addToCartBtn">
                   Add to cart
                   <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-              </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
         <div class="seperator"></div>

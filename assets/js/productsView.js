@@ -49,11 +49,27 @@ selectionIcons.forEach((selectionIcon,index) => {
 
 });
 
-// paginations.forEach(pagination => {
-//     pagination.onclick = () => {
-//         // console.log(this);
-//         document.querySelector(".pagination a.active").classList.remove("active");
-//         pagination.classList.add("active")
+const menuNavbar = document.querySelector(".menu");
+menuNavbar_games = menuNavbar.querySelector("#games");
 
-//     }
-// });
+// menuNavbar_games.onclick = () => {
+//     console.log("hi");
+// }
+
+
+menuNavbar_games.onclick = () => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET","test.php",true);
+    xhr.onload = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            let data = xhr.response;
+            
+        }    
+    }
+    xhr.send();
+}
+
+
+
+
+
