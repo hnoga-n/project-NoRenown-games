@@ -38,6 +38,7 @@
               <h2>Hogwarts Legacy</h2>
             </div>
             <div class="price">
+                <small><s>40.00$</s></small>
                 <div class="price-number">20.00</div>
                 <div class="price-dollar">$</div>
             </div>
@@ -72,13 +73,37 @@
             </div>
           </div>
           <div class="seperator"></div>
-          <h2>About this game</h2>
-          <div class="about-game">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta in quod illo totam ut libero adipisci quibusdam natus voluptate, quas id sequi nesciunt mollitia eveniet quos expedita doloremque veniam quasi.</p>
+          <div class="infomation">
+            <div class="about-game">
+              <h2>About this game</h2>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta in quod illo totam ut libero adipisci quibusdam natus voluptate, quas id sequi nesciunt mollitia eveniet quos expedita doloremque veniam quasi.</p>
+            </div>
+            <div class="configuration">
+              <h2>Configurations</h2>
+              <ul id="configuration-list">
+                <li id="os">
+                  <span>OS :</span>
+                  <span>Windows 10 64-bit 1909</span>
+                </li>
+                <li id="processor">
+                  <span>Processor:</span>
+                  <span>Intel Core i3-4160, 3.6 GHz or AMD equivalent</span>
+                </li>
+                <li id="graphics">
+                  <span>Graphics:</span>
+                  <span>NVIDIA GTX 950 or AMD Radeon RX 470</span>
+                </li>
+                <li id="storage">
+                  <span>Storage:</span>
+                  <span>75 GB available space</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
+        <div class="seperator"></div>
         <div class="footer-content">
-          Reviews
+          <h2>Reviews</h2>
         </div>
       </div>
     </div>

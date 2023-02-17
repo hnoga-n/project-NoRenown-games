@@ -64,7 +64,7 @@
           </div>
           <div class="products-list-filter">
             <div class="item">
-              <a href="./productDetails.html">
+              <a href="./productDetails.php">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="./assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -80,7 +80,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="./productDetails.html">
+              <a href="./productDetails.php">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="./assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -96,7 +96,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="./productDetails.html">
+              <a href="./productDetails.php">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="./assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -112,7 +112,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="./productDetails.html">
+              <a href="./productDetails.php">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="./assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -128,7 +128,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="./productDetails.html">
+              <a href="./productDetails.php">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="./assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -144,7 +144,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="./productDetails.html">
+              <a href="./productDetails.php">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="./assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -160,7 +160,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="./productDetails.html">
+              <a href="./productDetails.php">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="./assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -176,7 +176,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="./productDetails.html">
+              <a href="./productDetails.php">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="./assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -192,7 +192,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="./productDetails.html">
+              <a href="./productDetails.php">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="./assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -208,7 +208,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="./productDetails.html">
+              <a href="./productDetails.php">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="./assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -224,7 +224,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="./productDetails.html">
+              <a href="./productDetails.php">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="./assets/img/sky3.jpg" alt="" />
                 <div class="discount">
@@ -240,7 +240,7 @@
               </div>
             </div>
             <div class="item">
-              <a href="./productDetails.html">
+              <a href="./productDetails.php">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="./assets/img/sky3.jpg" alt="" />
                 <div class="discount">
