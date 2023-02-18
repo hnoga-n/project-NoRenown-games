@@ -62,8 +62,8 @@
               <i class="fa-solid fa-rotate-right"></i>
             </div>
           </div>
-          <div class="products-list-filter">
-            <div class="item">
+          <div class="products-list-filter" id="showproduct">
+            <!-- <div class="item">
               <a href="./productDetails.php">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <img src="./assets/img/sky3.jpg" alt="" />
@@ -254,16 +254,11 @@
                   <label class="price-dollar">$</label>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
-        <div class="pagination">
-          <input type="button" value="&laquo;">
-          <input type="button" value="1" class="active">
-          <input type="button" value="2">
-          <input type="button" value="3">
-          <input type="button" value="4">
-          <input type="button" value="&raquo;">
+        <div class="pagination" id="showPagination">
+          
         </div>
       </div>
     </div>
@@ -279,5 +274,6 @@
     crossorigin="anonymous"
   ></script>
   <script src="./assets/js/header.js"></script>
+  <script src="./assets/js/panigation.js"></script>
 
 </html>
