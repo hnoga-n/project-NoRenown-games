@@ -2,11 +2,11 @@ let selections = document.querySelectorAll(".selection");
 let selectionIcons = document.querySelectorAll(".selection i");
 let dropdownCategories = document.querySelectorAll(".dropdown-category");
 
-let paginations = document.querySelectorAll(".pagination a");
+let paginations = document.querySelectorAll(".pagination input ");
 
 $(document).ready(function(){
     $(paginations).click(function(){
-            $(".pagination a.active").removeClass("active");
+            $(".pagination input.active").removeClass("active");
             $(this).addClass("active")  
     
     });
@@ -49,11 +49,27 @@ selectionIcons.forEach((selectionIcon,index) => {
 
 });
 
-// paginations.forEach(pagination => {
-//     pagination.onclick = () => {
-//         // console.log(this);
-//         document.querySelector(".pagination a.active").classList.remove("active");
-//         pagination.classList.add("active")
+const menuNavbar = document.querySelector(".menu");
+menuNavbar_games = menuNavbar.querySelector("#games");
 
-//     }
-// });
+// menuNavbar_games.onclick = () => {
+//     console.log("hi");
+// }
+
+
+menuNavbar_games.onclick = () => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET","test.php",true);
+    xhr.onload = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            let data = xhr.response;
+            
+        }    
+    }
+    xhr.send();
+}
+
+
+
+
+

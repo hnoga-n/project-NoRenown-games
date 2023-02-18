@@ -114,6 +114,7 @@
     display: flex;
     justify-content: center;
     background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
     border-radius: 15px;
     transition: .4s;
 }
@@ -240,17 +241,16 @@
     font-size: 18px;
     color: white;
     background-color: #FF1E1E;
-    transition: background 0.5s;
+    transition: background 0.2s;
     cursor: pointer;
 }
 .header .header-right div button:hover {
-    background-color: white;
-    color:#FF1E1E;
+    background-color: #e1981a;
 }
 
 
 .header .header-right .user {
-    display: block;
+    display:block;
 }
 .header .header-right .user-logged {
     display: none;
@@ -282,15 +282,18 @@
 .header .header-right .user-logged .user-menu .panel {
     display: flex;
     flex-direction: column;
-    background: rgba(10, 10, 10, 0.7);
+    background: rgba(0, 0, 100, 0.1);
     border-radius: 20px;
     margin: 80px 80%;
     height: auto;
     width: 250px;
     padding: 20px;
+    backdrop-filter: blur(60px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .header .header-right .user-logged .user-menu .panel hr {
-    border: 1px solid rgb(71, 71, 71) ; 
+    border: 1px solid white ; 
+    backdrop-filter: blur(60px);
 }
 .header .header-right .user-logged .user-menu .panel div:first-child {
     text-align: center;
@@ -312,6 +315,10 @@
 }
 .header .header-right .user-logged .user-menu .panel div:hover {
     background-color:#FF1E1E;
+}
+
+.header .header-right .user-logged .user-menu .panel div a {
+    all: unset;
 }
 
 @media only screen and (max-width:360px)   {

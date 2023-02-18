@@ -201,23 +201,27 @@
   bottom: 40px;
 }
 
-.pagination a {
+.pagination input {
   font-size: 18px;
   color: white;
   float: left;
   padding: 8px 16px;
   margin: 0 10px;
+  background:unset;
+  border: unset;
+  border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s;
+  cursor: pointer;
 }
 
-.pagination a.active {
+.pagination input.active {
   background-color: #ff1e1e;
   color: white;
   border-radius: 5px;
 }
 
-.pagination a:hover:not(.active) {
+.pagination input:hover:not(.active) {
   background-color: #ddd;
   border-radius: 5px;
 }
