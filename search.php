@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="./assets/css/footer.css" />
   <link rel="stylesheet" href="./assets/css/filterProducts.css" />
+
 </head>
 
 <body>
@@ -59,7 +60,7 @@
           </div>
         </div>
         <div class="products-list-filter">
-          <div class="item">
+          <!-- <div class="item">
             <a href="./productDetails.php">
               <i class="fa-solid fa-cart-shopping"></i>
               <img src="./assets/img/sky3.jpg" alt="" />
@@ -250,7 +251,7 @@
                 <label class="price-dollar">$</label>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="pagination">
@@ -272,6 +273,8 @@
 <script src="./assets/js/productsView.js"></script>
 <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>
 <script src="./assets/js/header.js"></script>
+<script src="./assets/js/search.js"></script>
+
 
 </html>
 
