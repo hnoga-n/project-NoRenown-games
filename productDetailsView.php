@@ -23,10 +23,10 @@
 
 <body>
   <?php
-      include "testConnDB.php";
+      include "connect.php";
       // $id = mysqli_real_escape_string($conn,$_GET['user_id']);
       $id = $_GET['user_id'];
-      $sql = mysqli_query($conn,"SELECT * FROM users where id = {$id}");
+      $sql = mysqli_query($conn,"SELECT * FROM product where id = {$id}");
 
       $row = mysqli_fetch_assoc($sql);
   ?>
