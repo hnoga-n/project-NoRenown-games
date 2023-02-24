@@ -6,6 +6,3 @@
 <script src="./assets/js/result3.js"></script>
 
 </html>
-<?php
-
-?>
