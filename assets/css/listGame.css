@@ -1,0 +1,292 @@
+.main {
+    width: 90%;
+    height: 100%;
+    margin-left: 120px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Righteous', cursive;
+}
+.main .title {
+    height: 10%;
+    color: white;
+    font-size: 30px;
+    padding: 5px;
+}
+.main .nav-bar {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.main .nav-bar .search {
+    width: 25%;
+    padding: 10px;
+}
+.main .nav-bar .search input ,.main .nav-bar .selection input{
+    height: 40px;
+    width: 300px;
+    border: 3px solid #3d3d3d;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(16,16,16,.4);
+    color: white;
+    font-size: 15px;
+    font-family: 'Righteous', cursive;
+    transition: .2s;
+}
+.main .nav-bar .selection input {
+    padding: 10px 30px 10px 10px;
+}
+.main .nav-bar .search input:focus,.main .nav-bar .search input:hover,.main .nav-bar .selection input:hover {
+    border: 3px solid #FF1E1E;
+}
+ 
+.main .nav-bar .selection {
+    width: 25%;
+    padding: 10px;
+}
+.main .nav-bar .selection input:focus ~ .dropdown-category {
+    scale: 1;
+    opacity: 1;
+}
+.main .nav-bar .selection i {
+    position: relative;
+    top: -30px;
+    left: 275px;
+    color: white;
+    pointer-events: visible;
+}
+.main .nav-bar .selection .dropdown-category {
+    scale: 0;
+    opacity: 0;
+    position: relative;
+    top: 10px;
+    width: 300px;
+    height: 200px;
+    padding: 15px 10px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    overflow-y: auto;
+    backdrop-filter: blur(60px) saturate(100%);
+    -webkit-backdrop-filter: blur(60px) saturate(100%);
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    animation: dropdownRotate 0.4s ease;
+}
+@keyframes dropdownRotate {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+.category-list li {
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+} 
+.category-list li:hover {
+    background-color: #ff1e1e;
+}
+.dropdown-category::-webkit-scrollbar-track {
+    padding: 2px 0;
+    backdrop-filter: blur(60px) saturate(100%);
+    -webkit-backdrop-filter: blur(60px) saturate(100%);
+    background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.dropdown-category::-webkit-scrollbar {
+  width: 10px;
+}
+
+.dropdown-category::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 30, 30, 0.5);
+}
+
+.main .nav-bar .button {
+    width: 10%;
+}
+.main .nav-bar .button button {
+    font-family: 'Righteous', cursive;
+    height: 35px;
+    width: 120px;
+    border-radius: 7px;
+    font-size: 18px;
+    background-color: #FF1E1E;
+    color: white;
+    border: unset;
+    padding: 5px;
+    transition: .4s;
+    cursor: pointer;
+}
+.main .nav-bar .button button:hover {
+    background-color: #e1981a;
+}
+.main .listgames{
+    height: 70%;    
+}
+.main .listgames table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.main .listgames table thead {
+    background-color: #FF1E1E;
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-size: 16px;
+    
+}
+th:first-child {
+    border-top-left-radius: 15px;
+}
+th:last-child {
+    border-top-right-radius: 15px;
+}
+.main .listgames table thead tr {
+    border-radius: 10px;
+}
+.main .listgames table thead th {
+    height: 100%;
+    padding: 10px;
+}
+.main .listgames table tbody {
+    width: 100%;
+}
+.main .listgames table tbody tr {
+    text-align: center;
+    width: 100%;
+}
+.main .listgames table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+.main .listgames table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+.main .listgames table tbody tr td {
+    padding:5px;
+}
+.main .listgames table tbody tr td img {
+    height: 100px;
+    width: 200px;
+}
+.main .listgames table tbody tr td button {
+    height: 30px;
+    width: 70px;
+    font-family: 'Righteous', cursive;
+    color: white;
+    border-radius: 7px;
+    border: unset;
+    font-size: 16px;
+    cursor: pointer;
+}
+.main .listgames table tbody tr td button:first-child {
+    background-color: #2e89ff;
+}
+.main .listgames table tbody tr td button:last-child {
+    background-color: #000000;
+}
+
+
+/* CSS TOGGLE CHECKBOX */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #FF1E1E;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #FF1E1E;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* ======================== */
+
+.pagination {
+    height: 10%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+  
+.pagination input {
+  font-size: 18px;
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  margin: 0 10px;
+  background:unset;
+  border: unset;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.pagination input.active {
+  background-color: #ff1e1e;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination input:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
