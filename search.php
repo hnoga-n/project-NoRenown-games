@@ -27,34 +27,31 @@
         <div class="products-filter">
           <div class="products-filter-selections">
             <div class="selection">
-              <input class="glass-card" type="search" placeholder="Genres.." />
+              <input class="glass-card" id="genres" type="text" placeholder="Genres.." onkeyup="searchGenres(this.value)" />
               <i class="fa-sharp fa-solid fa-caret-down"></i>
               <div class="dropdown-category">
                 <ul class="category-list">
-                  <li>Fighting</li>
-                  <li>Action</li>
-                  <li>Adventure</li>
+                  <!-- <li>Fighting</li>
+                  <li>Action</li> -->
                 </ul>
               </div>
             </div>
             <div class="selection">
-              <input class="glass-card" type="search" placeholder="Sort by :" />
+              <input class="glass-card" id="sortby" type="text" value='ASC' placeholder="Sort by :" />
               <i class="fa-sharp fa-solid fa-caret-down"></i>
               <div class="dropdown-category">
                 <ul class="category-list">
-                  <li>Bestsellers</li>
-                  <li>Trending</li>
-                  <li>Price: Low to high</li>
-                  <li>Price: High to low</li>
+                  <li onclick="setSort('ASC')" id="asc" value="asc">Price: Ascend</li>
+                  <li onclick="setSort('DESC')" id="desc" value="desc">Price: Descend</li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="products-filter-price">
             <label>Between</label>
-            <input class="glass-card" type="text" min="0" value="0" />
+            <input class="glass-card" id="price-from" type="number" min="0" value="0" data-default="0" onchange="search(searchValue.value,1,genreInp.value,priceFrom.value,priceTo.value)" />
             <label>and</label>
-            <input class="glass-card" type="text" value="1000000" />
+            <input class="glass-card" id="price-to" type="number" value="1000000" data-default="100" onchange="search(searchValue.value,1,genreInp.value,priceFrom.value,priceTo.value)" />
             <label>$</label>
             <i class="fa-solid fa-rotate-right"></i>
           </div>
@@ -270,7 +267,7 @@
 <script src="./assets/js/header.js"></script>
 <script src="./assets/js/search.js"></script>
 
-<script src="./assets/js/panigation.js"></script>
+
 
 </html>
 
