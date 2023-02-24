@@ -1,12 +1,14 @@
-<html lang="en">
-  <?php
-    include 'connect.php';
-    $id = $_GET['id'];
-    $sql = mysqli_query($conn, "SELECT * FROM game_detail where gdt_id = {$id}");
-    $sql1 = mysqli_query($conn, "SELECT * FROM games where gid = {$id}");
-    $row = mysqli_fetch_assoc($sql);
-    $row2 = mysqli_fetch_assoc($sql1);
+<?php
+  include 'connect.php';
+  $id = $_GET['id'];
+  $sql = mysqli_query($conn, "SELECT * FROM game_detail where gdt_id = {$id}");
+  $sql1 = mysqli_query($conn, "SELECT * FROM games where gid = {$id}");
+  $row = mysqli_fetch_assoc($sql);
+  $row2 = mysqli_fetch_assoc($sql1);
+  $result = round((float)$row2['gprice'] - (float)$row2['gprice'] * (int)$row2['gdiscount'] * 0.01,2);
   ?>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -50,7 +52,7 @@
           </div>
           <div class="price">
             <small><s><?php echo $row2['gprice'] ?>$</s></small>
-            <div class="price-number">20.00</div>
+            <div class="price-number"><?php echo $result ?></div>
             <div class="price-dollar">$</div>
           </div>
           <div>
