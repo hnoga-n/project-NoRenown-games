@@ -1,4 +1,4 @@
-[{ 
+games = [{ 
 	"page": "1",
 	"id": "1",
  	"name": "PC",
@@ -325,21 +325,21 @@
 	"id": "48",
  	"name": "Resident Evil Village - Winters’ Expansion",
  	"price": "18.89€",
- 	"discount": "-32%"
+ 	"discount": "32%"
 },
 { 
 	"page": "5",
 	"id": "49",
  	"name": "Persona 3 Portable",
  	"price": "20.49€",
- 	"discount": "-28%"
+ 	"discount": "28%"
 },
 { 
 	"page": "4",
 	"id": "47",
- 	"name": "Dead by Daylight - Forged in Fog Chapter",
+ 	"name": "Dead by Daylight  Forged in Fog Chapter",
  	"price": "71.49€",
- 	"discount": "-37%"
+ 	"discount": "37%"
 },
 { 
 	"page": "5",
@@ -410,5 +410,37 @@
  	"name": "Dome Keeper Deluxe Edition",
  	"price": "26.99€",
  	"discount": "-53%"
+}]
+
+let os =["Windows 8 or higher","Windows 10 64-bit","Windows 10 64-bit (latest Service Pack)"]
+let processor = ["Intel i5 7500 (3.4GHz) OR AMD 5 1600(3.2GHz)","Intel i7-9700K (3.70GHz) OR AMD Ryzen 5 3600 (4.2GHz)","Intel i5-2500 / AMD FX-6350","Intel Core i5-6500, Ryzen 3 1200","Ryzen 5 2600x, Core i5 8600","Intel Core i3 3250 3.5 GHz or Intel Pentium G4560 3.5 GHz / AMD FX-4350 4.2 GHz"]
+let graphics =["GeForce GTX 1660 OR AMD Rx 590","NVIDIA GeForce GTX 770 (2GB) / AMD Radeon R9 270X (2GB)","GTX 1050, RX 560","AMD RX 5700, GTX 1070","NVIDIA GeForce GTX 660 2GB or GTX 1050 2GB / AMD Radeon HD 7850 2GB"]
+let storage =["40 GB available space","16 GB available space","20 GB available space","50 GB available space","105 GB available space"]
+let str = '';
+
+for(let i=1; i<112;i++){
+	let rand1 = Math.floor((Math.random()*2));
+	let rand2 = Math.floor((Math.random()*4));
+	let rand3 = Math.floor((Math.random()*3));
+	let rand4 = Math.floor((Math.random()*3));
+	let obj = {
+		"gid": i,
+		"about": "?",
+		"os": os[rand1],
+		"process": processor[rand2],
+		"graph": graphics[rand3],
+		"storage": storage[rand4]
+	}
+	/* let data = JSON.stringify(obj);
+	let xml = new XMLHttpRequest();
+	xml.onload = function(){
+		console.log(this.responseText);
+	}
+	xml.open("GET","testphp.php?x=" + data );
+	xml.send(); */
+	
+	str += `INSERT INTO game_detail (gdt_detail,about,cfg_os,cfg_processor,cfg_graphics,cfg_storage) 
+	VALUES (${i},?,${os[rand1]},${processor[rand2]},${graphics[rand3]},${storage[rand4]} <br>`;
+
 }
-]
+document.querySelector(".test").innerHTML = str;
