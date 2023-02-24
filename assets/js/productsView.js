@@ -1,7 +1,6 @@
 let selections = document.querySelectorAll(".selection");
 let selectionIcons = document.querySelectorAll(".selection i");
 let dropdownCategories = document.querySelectorAll(".dropdown-category");
-
 let paginations = document.querySelectorAll(".pagination input ");
 
 $(document).ready(function(){
@@ -24,7 +23,7 @@ selectionIcons.forEach((selectionIcon,index) => {
         item.classList.toggle('showDropdownCategory');
     }
 
-    selectionIcon.parentElement.querySelector("input").onblur = () => {
+    /* selectionIcon.parentElement.querySelector("input").onblur = () => {
         //chỗ này for sẽ check mục lục xem có tên loại mục đó không
         // if có thì lúc blur không bị mất chữ 
         // else nhấn chữ lung tung blur thì mất chữ
@@ -44,16 +43,34 @@ selectionIcons.forEach((selectionIcon,index) => {
             selectionIcon.parentElement.querySelector("input").value = '';
         }
         
-    }
+    } */
     
 
 });
 
-// paginations.forEach(pagination => {
-//     pagination.onclick = () => {
-//         // console.log(this);
-//         document.querySelector(".pagination a.active").classList.remove("active");
-//         pagination.classList.add("active")
+const menuNavbar = document.querySelector(".menu");
+menuNavbar_games = menuNavbar.querySelector("#games");
 
-//     }
-// });
+// menuNavbar_games.onclick = () => {
+//     console.log("hi");
+// }
+
+
+menuNavbar_games.onclick = () => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET","test.php",true);
+    xhr.onload = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            let data = xhr.response;
+            
+        }    
+    }
+    xhr.send();
+}
+
+
+
+
+
+
+
