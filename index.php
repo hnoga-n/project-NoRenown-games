@@ -261,5 +261,7 @@
 <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>
 <script src="./assets/js/header.js"></script>
 <script src="./assets/js/slider.js"></script>
+<script src="./assets/js/search.js"></script>
+<script src="./assets/js/result.js"></script>
 
 </html>

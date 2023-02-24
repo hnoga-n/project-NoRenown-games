@@ -48,40 +48,28 @@
           </div>
           <div class="b-input">
             <div>
+              <input type="text" required="required">
               <span>Name</span>
-              <br>
-              <br>
-              <input type="text">
             </div>
             <div>
+              <input type="text" required="required">
               <span>Phone</span>
-              <br>
-              <br>
-              <input type="text">
             </div>
-            <div>
+            <div>              
+              <input type="text" required="required">
               <span>Email</span>
-              <br>
-              <br>
-              <input type="text">
             </div>
-            <div>
+            <div>             
+              <input type="text" required="required">
               <span>Address</span>
-              <br>
-              <br>
-              <input type="text">
             </div>
             <div>
+              <input type="text" required="required">
               <span>User name</span>
-              <br>
-              <br>
-              <input type="text">
             </div>
-            <div>
+            <div>              
+              <input type="text" required="required">             
               <span>Password</span>
-              <br>
-              <br>
-              <input type="text">
             </div>
           </div>
           <div class="b-button">

@@ -1,7 +1,6 @@
 let selections = document.querySelectorAll(".selection");
 let selectionIcons = document.querySelectorAll(".selection i");
 let dropdownCategories = document.querySelectorAll(".dropdown-category");
-
 let paginations = document.querySelectorAll(".pagination input ");
 
 $(document).ready(function(){
@@ -68,6 +67,8 @@ menuNavbar_games.onclick = () => {
     }
     xhr.send();
 }
+
+
 
 
 
