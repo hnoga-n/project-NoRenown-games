@@ -1,16 +1,11 @@
 <html>
 
 <body>
-  <div class="test"></div>
+  <div class="test"> haha </div>
 </body>
-<script>
-  let xmlreq = new XMLHttpRequest();
-
-  xmlreq.onreadystatechange = function() {
-    document.querySelector(".test").innerHTML = this.responseText
-  }
-  xmlreq.open("GET", "testphp.php", true);
-  xmlreq.send();
-</script>
+<script src="./assets/js/result3.js"></script>
 
 </html>
+<?php
+
+?>

@@ -1,7 +1,7 @@
 <?php
     include 'connect.php';
     $sql = "SELECT * 
-    FROM product";
+    FROM contact";
     $result = $conn->query($sql);
     $count = 0;
     if ($result->num_rows > 0) {
@@ -13,4 +13,3 @@
     $count/=12;
     echo ceil($count);
     $conn->close();
-?>

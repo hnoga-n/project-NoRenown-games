@@ -1,7 +1,6 @@
 let selections = document.querySelectorAll(".selection");
 let selectionIcons = document.querySelectorAll(".selection i");
 let dropdownCategories = document.querySelectorAll(".dropdown-category");
-
 let paginations = document.querySelectorAll(".pagination input ");
 
 $(document).ready(function(){
@@ -24,7 +23,7 @@ selectionIcons.forEach((selectionIcon,index) => {
         item.classList.toggle('showDropdownCategory');
     }
 
-    selectionIcon.parentElement.querySelector("input").onblur = () => {
+    /* selectionIcon.parentElement.querySelector("input").onblur = () => {
         //chỗ này for sẽ check mục lục xem có tên loại mục đó không
         // if có thì lúc blur không bị mất chữ 
         // else nhấn chữ lung tung blur thì mất chữ
@@ -44,7 +43,7 @@ selectionIcons.forEach((selectionIcon,index) => {
             selectionIcon.parentElement.querySelector("input").value = '';
         }
         
-    }
+    } */
     
 
 });
@@ -68,6 +67,8 @@ menuNavbar_games.onclick = () => {
     }
     xhr.send();
 }
+
+
 
 
 
