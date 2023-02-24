@@ -250,10 +250,10 @@
 
 
 .header .header-right .user {
-    display:block;
+    display: none;
 }
 .header .header-right .user-logged {
-    display: none;
+    display: block;
 }
 
 .header .header-right .user-logged button {
@@ -266,7 +266,7 @@
 }
 .header .header-right .user-logged button i {
     color: white;
-    font-size: 20px;
+    font-size: 23px;
 }
 
 .header .header-right .user-logged .user-menu {
@@ -321,7 +321,7 @@
     all: unset;
 }
 
-@media only screen and (max-width:360px)   {
+@media only screen and (max-width:500px)   {
    .header {
         padding: unset;
         position: -webkit-sticky; /* Safari */
@@ -423,5 +423,9 @@
         right: 7px;
         top: -90%;
         z-index: 1;
+    }
+
+    .header .header-right .user-logged .user-menu .panel {
+        margin:70px 48%;
     }
 }
