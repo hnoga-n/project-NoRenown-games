@@ -7,7 +7,7 @@ xmlhttp.onload = function() {
     len = this.responseText
     showPagination(len)
 }
-xmlhttp.open("GET","getProductquality.php")
+xmlhttp.open("GET","getProductquantity.php")
 xmlhttp.send()
 function show(str) {
     i = str

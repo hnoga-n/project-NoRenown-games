@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./assets/css/product.css" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/slider.css" />
+    <link rel="stylesheet" href="./assets/css/employee.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
 
     <link

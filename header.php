@@ -53,7 +53,7 @@
               <a href="userProfile.php">
                 <i class="fa-solid fa-user"></i>
                 &nbsp;
-                Account
+                Profile
               </a>
             </div>
             <div>
