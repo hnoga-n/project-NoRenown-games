@@ -20,8 +20,16 @@
   <body>
     <?php
       include 'header.php';
-    ?>
+      include 'connect.php';
+      // $id = mysqli_real_escape_string($conn,$_GET['user_id']);
+      $gdt_id = $_GET['id'];
 
+      $sql = mysqli_query($conn,"SELECT * FROM game_detail where gdt_id = {$gdt_id}");
+      $sql1 = mysqli_query($conn,"SELECT * FROM games where gid = {$gdt_id}");
+
+      $row = mysqli_fetch_assoc($sql);
+      $row2 = mysqli_fetch_assoc($sql1);
+    ?>
     <div class="parallax">
       <img src="./assets/img/sky3.jpg">
     </div>
@@ -29,15 +37,16 @@
     <div class="main-content">
       <div class="product-app">
         <div class="header-content">
+        
           <div class="video-game">
             <video controls muted src=""></video>
           </div>
           <div class="panel">
             <div class="name">
-              <h2>Hogwarts Legacy</h2>
+              <h2><?php echo $row2['gname'] ?></h2>
             </div>
             <div class="price">
-                <small><s>40.00$</s></small>
+                <small><s><?php echo $row2['gprice'] ?>$</s></small>
                 <div class="price-number">20.00</div>
                 <div class="price-dollar">$</div>
             </div>
@@ -74,29 +83,29 @@
             </div>
           </div>
           <div class="seperator"></div>
-          <div class="infomation">
+          <div class="information">
             <div class="about-game">
               <h2>About this game</h2>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta in quod illo totam ut libero adipisci quibusdam natus voluptate, quas id sequi nesciunt mollitia eveniet quos expedita doloremque veniam quasi.</p>
+              <p><?php echo $row['about'] ?>.</p>
             </div>
             <div class="configuration">
               <h2>Configurations</h2>
               <ul id="configuration-list">
                 <li id="os">
                   <span>OS :</span>
-                  <span>Windows 10 64-bit 1909</span>
+                  <span><?php echo $row['cfg_os'] ?></span>
                 </li>
                 <li id="processor">
                   <span>Processor:</span>
-                  <span>Intel Core i3-4160, 3.6 GHz or AMD equivalent</span>
+                  <span><?php echo $row['cfg_processor'] ?></span>
                 </li>
                 <li id="graphics">
                   <span>Graphics:</span>
-                  <span>NVIDIA GTX 950 or AMD Radeon RX 470</span>
+                  <span><?php echo $row['cfg_graphics'] ?></span>
                 </li>
                 <li id="storage">
                   <span>Storage:</span>
-                  <span>75 GB available space</span>
+                  <span><?php echo $row['cfg_storage'] ?></span>
                 </li>
               </ul>
             </div>

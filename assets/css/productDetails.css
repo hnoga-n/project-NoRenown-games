@@ -29,9 +29,9 @@
 
 .header-content,
 .visuals-gameplay,
-.infomation {
+.information {
   display: flex;
-  height: 300px;
+  min-height: 300px;
 }
 
 .header-content {
@@ -139,29 +139,29 @@
   flex: 0 0 calc(50% - 30px);
 }
 
-.infomation {
+.information {
   font-size: 17px;
 }
 
-.infomation > div {
+.information > div {
   flex: 0 0 50%;
 }
 
-.infomation h2 {
+.information h2 {
   margin-bottom: 10px;
 }
 
-.infomation .configuration {
+.information .configuration {
   padding-left: 15px;
 }
 
-.infomation .configuration ul li {
+.information .configuration ul li {
   display: flex;
   /* justify-content: space-between; */
   margin-bottom: 5px;
 }
 
-.infomation .configuration ul li span:first-child {
+.information .configuration ul li span:first-child {
   margin-right: auto;
 }
 
@@ -200,10 +200,10 @@
     flex: 0 0 calc(50% - 10px);
   }
 
-  .infomation {
+  .information {
     flex-direction: column;
   }
-  .infomation .configuration {
+  .information .configuration {
     padding-left: 0;
   }
 }
