@@ -1,15 +1,15 @@
 let selections = document.querySelectorAll(".selection");
 let selectionIcons = document.querySelectorAll(".selection i");
 let dropdownCategories = document.querySelectorAll(".dropdown-category");
-let paginations = document.querySelectorAll(".pagination input ");
+// let paginations = document.querySelectorAll(".pagination input");
 
-$(document).ready(function(){
+/* $(document).ready(function(){
     $(paginations).click(function(){
             $(".pagination input.active").removeClass("active");
             $(this).addClass("active")  
     
     });
-});
+}); */
 
 selectionIcons.forEach((selectionIcon,index) => {
     let item = dropdownCategories[index];
@@ -23,11 +23,11 @@ selectionIcons.forEach((selectionIcon,index) => {
         item.classList.toggle('showDropdownCategory');
     }
 
-    /* selectionIcon.parentElement.querySelector("input").onblur = () => {
+    selectionIcon.parentElement.onblur = () => {
         //chỗ này for sẽ check mục lục xem có tên loại mục đó không
         // if có thì lúc blur không bị mất chữ 
         // else nhấn chữ lung tung blur thì mất chữ
-        let flagItem = 0;
+       /*  let flagItem = 0;
 
         item.querySelectorAll("li").forEach(itemLi => {
 
@@ -39,24 +39,25 @@ selectionIcons.forEach((selectionIcon,index) => {
         });
 
         if(flagItem == 0) {
-            item.classList.remove('showDropdownCategory');
             selectionIcon.parentElement.querySelector("input").value = '';
-        }
-        
-    } */
+        } */
+        item.classList.remove('showDropdownCategory');
+        console.log("hi");
+    }
     
 
 });
 
+/* 
 const menuNavbar = document.querySelector(".menu");
-menuNavbar_games = menuNavbar.querySelector("#games");
+menuNavbar_games = menuNavbar.querySelector("#games"); */
 
 // menuNavbar_games.onclick = () => {
 //     console.log("hi");
 // }
 
 
-menuNavbar_games.onclick = () => {
+/* menuNavbar_games.onclick = () => {
     const xhr = new XMLHttpRequest();
     xhr.open("GET","test.php",true);
     xhr.onload = function() {
@@ -66,7 +67,7 @@ menuNavbar_games.onclick = () => {
         }    
     }
     xhr.send();
-}
+} */
 
 
 
