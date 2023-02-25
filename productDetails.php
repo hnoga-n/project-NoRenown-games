@@ -28,12 +28,6 @@
 <body>
   <?php
   include 'header.php';
-  // include 'connect.php';
-  // $id = $_GET['id'];
-  // $sql = mysqli_query($conn, "SELECT * FROM game_detail where gdt_id = {$id}");
-  // $sql1 = mysqli_query($conn, "SELECT * FROM games where gid = {$id}");
-  // $row = mysqli_fetch_assoc($sql);
-  // $row2 = mysqli_fetch_assoc($sql1);
   ?>
   <div class="parallax">
     <img src="./assets/img/sky3.jpg">
@@ -126,8 +120,10 @@
   <?php
   include 'footer.php';
   ?>
+  
 </body>
 <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>
 <script src="./assets/js/header.js"></script>
 
 </html>
+

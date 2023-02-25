@@ -6,7 +6,7 @@ const priceFrom = document.querySelector("#price-from");
 const priceTo = document.querySelector("#price-to");
 const genreDropdown = document.querySelector(".category-list")
 
-function search(str, page, genre,priceFrom, priceTo,sortby ) {
+function search(str, page, genre,priceFrom, priceTo,sortby ,element) {
   if(str == undefined){
     str = '';
   }
@@ -42,11 +42,16 @@ function search(str, page, genre,priceFrom, priceTo,sortby ) {
     else{
       let handleDataRes = dataRes[1] + showPagination(parseInt(dataRes[0]));
       container.innerHTML = handleDataRes;
-      
+      document.querySelectorAll(".pagination input").forEach(index=> {
+        if(index.value == page) {
+          document.querySelector(".pagination input.active").classList.remove("active");
+          index.classList.add("active");
+        }
+      })
     }
     
   }
-
+  
   xmlhttp.open("GET", "searchHandle.php?queryGames=" + str + "&page=" + page + "&genre=" + genre + "&priceFrom=" + priceFrom + "&priceTo=" + priceTo+ "&sort=" + sortby);
   xmlhttp.send();
 }
@@ -54,9 +59,9 @@ function search(str, page, genre,priceFrom, priceTo,sortby ) {
 // create page number btn
 function showPagination(pageNumber) {
   let s = "<input type='button' value='&laquo;' onclick='previous()'>"
-  s += `<input type='button' value='1' onclick='search(searchValue.value,this.value,genreInp.value, priceFrom.value, priceTo.value,sortBy.value)'>`
+  s += `<input type='button' value='1' class="active" onclick='search(searchValue.value,this.value,genreInp.value, priceFrom.value, priceTo.value,sortBy.value)'>`
   for (let i = 2; i <= pageNumber; i++) {
-    s += `<input type='button' value='${i}' onclick='search(searchValue.value,this.value,genreInp.value, priceFrom.value, priceTo.value,sortBy.value)'>`
+    s += `<input type='button' value='${i}' onclick='search(searchValue.value,this.value,genreInp.value, priceFrom.value, priceTo.value,sortBy.value,this)'>`
   }
   s += "<input type='button' value='&raquo;' onclick='next()'>"
 

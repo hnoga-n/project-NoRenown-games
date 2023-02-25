@@ -79,15 +79,14 @@
 
 .header-content .panel .price small {
   margin-right: 15px;
-  opacity: .8;
+  opacity: 0.8;
 }
 
-.header-content .panel a{
+.header-content .panel a {
   color: white;
 }
 
 .header-content .panel .addToCartBtn {
-  
   padding: 20px;
   width: 100%;
   font-size: 20px;
@@ -101,7 +100,6 @@
   transition: all 0.2s ease;
   position: relative;
 }
-
 
 .header-content .panel .addToCartBtn i {
   position: absolute;
@@ -163,6 +161,38 @@
 
 .information .configuration ul li span:first-child {
   margin-right: auto;
+}
+
+@media screen and (max-width: 550px) {
+  .product-app {
+    transform: translateY(-100px)!important;
+  }
+  .header-content {
+    margin: 0 30px!important;
+  }
+  .header-content .panel .name {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .visuals-gameplay {
+    margin-left: -5px;
+    margin-right: -5px;
+    flex-direction: column;
+  }
+
+  .product-app {
+    width: 100%;
+    max-width: 1200px;
+    transform: translateY(-220px);
+  }
+  .header-content .panel .price {
+    font-size: 25px;
+  }
+  .header-content .panel .addToCartBtn {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 1000px) {
