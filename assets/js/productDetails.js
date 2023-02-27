@@ -1,6 +1,10 @@
 let getImgPos = 0;
 let array = document.querySelectorAll('.visuals-gameplay img');
 
+function antiPropagation(event) {
+    console.log("hi");
+    event.stopPropagation();
+}
 // _src : src path of image
 // element: image tag
 function zoomIn(_src,element) {
@@ -14,7 +18,7 @@ function zoomIn(_src,element) {
     })
 }
 
-document.querySelector('.box-image-zoom-in i').onclick = ()=> {
+document.querySelector('.box-image-zoom-in').onclick = ()=> {
     document.querySelector('.box-image-zoom-in').style.display='none';
 }
 
