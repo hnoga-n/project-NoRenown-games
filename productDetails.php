@@ -35,11 +35,15 @@ $result = round((float)$row2['gprice'] - (float)$row2['gprice'] * (int)$row2['gd
 
   <div class="box-image-zoom-in">
     <i class="fa-solid fa-xmark"></i>
-    <i class="fa-sharp fa-solid fa-chevron-left"></i>
-    <div>
+    <div class="icon-chevron icon-chevron-left" onclick="antiPropagation(event)">
+      <i class="fa-sharp fa-solid fa-chevron-left"></i>
+    </div>
+    <div class="image-zoom-in" onclick="antiPropagation(event)">
       <img src="" id="imageZoomId" />
     </div>
-    <i class="fa-sharp fa-solid fa-chevron-right"></i>
+    <div class="icon-chevron icon-chevron-right" onclick="antiPropagation(event)">
+      <i class="fa-sharp fa-solid fa-chevron-right"></i>
+    </div>
   </div>
 
   <div class="main-content">
@@ -47,7 +51,7 @@ $result = round((float)$row2['gprice'] - (float)$row2['gprice'] * (int)$row2['gd
       <div class="header-content">
 
         <div class="video-game">
-          <video controls muted src=""></video>
+          <video controls muted src="./assets/video/I Am Atomic 4k.mp4"></video>
         </div>
         <div class="panel">
           <div class="name">
