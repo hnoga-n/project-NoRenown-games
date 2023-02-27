@@ -1,12 +1,12 @@
 <?php
-  include 'connect.php';
-  $id = $_GET['id'];
-  $sql = mysqli_query($conn, "SELECT * FROM game_detail where gdt_id = {$id}");
-  $sql1 = mysqli_query($conn, "SELECT * FROM games where gid = {$id}");
-  $row = mysqli_fetch_assoc($sql);
-  $row2 = mysqli_fetch_assoc($sql1);
-  $result = round((float)$row2['gprice'] - (float)$row2['gprice'] * (int)$row2['gdiscount'] * 0.01,2);
-  ?>
+include 'connect.php';
+$id = $_GET['id'];
+$sql = mysqli_query($conn, "SELECT * FROM game_detail where gdt_id = {$id}");
+$sql1 = mysqli_query($conn, "SELECT * FROM games where gid = {$id}");
+$row = mysqli_fetch_assoc($sql);
+$row2 = mysqli_fetch_assoc($sql1);
+$result = round((float)$row2['gprice'] - (float)$row2['gprice'] * (int)$row2['gdiscount'] * 0.01, 2);
+?>
 <html lang="en">
 
 <head>
@@ -31,6 +31,15 @@
   ?>
   <div class="parallax">
     <img src="./assets/img/sky3.jpg">
+  </div>
+
+  <div class="box-image-zoom-in">
+    <i class="fa-solid fa-xmark"></i>
+    <i class="fa-sharp fa-solid fa-chevron-left"></i>
+    <div>
+      <img src="" id="imageZoomId" />
+    </div>
+    <i class="fa-sharp fa-solid fa-chevron-right"></i>
   </div>
 
   <div class="main-content">
@@ -64,20 +73,20 @@
         <h2>Screenshots</h2>
         <div class="visuals-gameplay">
           <div class="main-img">
-            <img src="./assets/img/sky3.jpg">
+            <img src="./assets/img/sky3.jpg" onclick="zoomIn(this.src,this)" />
           </div>
           <div class="sub-img">
             <div class="sub-img-item">
-              <img src="./assets/img/sky3.jpg">
+              <img src="./assets/img/4horseman.jpg" onclick="zoomIn(this.src,this)" />
             </div>
             <div class="sub-img-item">
-              <img src="./assets/img/sky3.jpg">
+              <img src="./assets/img/pacman-ghost-logo-4E0E79293D-seeklogo.com.png" onclick="zoomIn(this.src,this)" />
             </div>
             <div class="sub-img-item">
-              <img src="./assets/img/sky3.jpg">
+              <img src="./assets/img/sky-of-star.jpg" onclick="zoomIn(this.src,this)" />
             </div>
             <div class="sub-img-item">
-              <img src="./assets/img/sky3.jpg">
+              <img src="./assets/img/gowSlideShow.jpg" onclick="zoomIn(this.src,this)" />
             </div>
           </div>
         </div>
@@ -120,10 +129,10 @@
   <?php
   include 'footer.php';
   ?>
-  
+
 </body>
 <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>
 <script src="./assets/js/header.js"></script>
+<script src="./assets/js/productDetails.js"></script>
 
 </html>
-

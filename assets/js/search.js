@@ -6,7 +6,7 @@ const priceFrom = document.querySelector("#price-from");
 const priceTo = document.querySelector("#price-to");
 const genreDropdown = document.querySelector(".category-list")
 
-function search(str, page, genre,priceFrom, priceTo,sortby ,element) {
+function search(str, page, genre,priceFrom, priceTo,sortby) {
   if(str == undefined){
     str = '';
   }
@@ -34,7 +34,7 @@ function search(str, page, genre,priceFrom, priceTo,sortby ,element) {
     if(dataRes[1] === "empty"){
       message = `
       <div class=message-container> 
-        <div class='message'> can not find the game you need ! </div>
+        <div class='message'> Can not find the game you need ! </div>
       </div>
       `;
       container.innerHTML = message;
@@ -61,7 +61,7 @@ function showPagination(pageNumber) {
   let s = "<input type='button' value='&laquo;' onclick='previous()'>"
   s += `<input type='button' value='1' class="active" onclick='search(searchValue.value,this.value,genreInp.value, priceFrom.value, priceTo.value,sortBy.value)'>`
   for (let i = 2; i <= pageNumber; i++) {
-    s += `<input type='button' value='${i}' onclick='search(searchValue.value,this.value,genreInp.value, priceFrom.value, priceTo.value,sortBy.value,this)'>`
+    s += `<input type='button' value='${i}' onclick='search(searchValue.value,this.value,genreInp.value, priceFrom.value, priceTo.value,sortBy.value)'>`
   }
   s += "<input type='button' value='&raquo;' onclick='next()'>"
 
