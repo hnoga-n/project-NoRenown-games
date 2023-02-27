@@ -18,7 +18,7 @@
           <a href="./contact.php"> Contact </a>
         </div>
         <div>
-          <a href=""> About </a>
+          <a href="./about.php"> About </a>
         </div>
       </div>
       <div class="search">

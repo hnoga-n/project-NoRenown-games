@@ -26,20 +26,20 @@
       <div class="products-trending">
         <div class="products-filter">
           <div class="products-filter-selections">
-            <div class="selection">
+            <div class="selection" onclick="antiPropagation(event)">
               <input class="glass-card" id="genres" type="text" placeholder="Genres.." onkeyup="searchGenres(this.value)" />
               <i class="fa-sharp fa-solid fa-caret-down"></i>
-              <div class="dropdown-category">
+              <div class="dropdown-category" onclick="antiPropagation(event)">
                 <ul class="category-list">
                   <!-- <li>Fighting</li>
                   <li>Action</li> -->
                 </ul>
               </div>
             </div>
-            <div class="selection">
+            <div class="selection" onclick="antiPropagation(event)">
               <input class="glass-card" id="sortby" type="text" value='ASC' placeholder="Sort by :" />
               <i class="fa-sharp fa-solid fa-caret-down"></i>
-              <div class="dropdown-category">
+              <div class="dropdown-category" onclick="antiPropagation(event)">
                 <ul class="category-list">
                   <li onclick="setSort('ASC')" id="asc" value="asc">Price: Ascend</li>
                   <li onclick="setSort('DESC')" id="desc" value="desc">Price: Descend</li>
@@ -51,7 +51,7 @@
             <label>Between</label>
             <input class="glass-card" id="price-from" type="number" min="0" value="0" data-default="0" onchange="search(searchValue.value,1,genreInp.value,priceFrom.value,priceTo.value)" />
             <label>and</label>
-            <input class="glass-card" id="price-to" type="number" value="1000000" data-default="100" onchange="search(searchValue.value,1,genreInp.value,priceFrom.value,priceTo.value)" />
+            <input class="glass-card" id="price-to" type="number" value="1000" data-default="100" onchange="search(searchValue.value,1,genreInp.value,priceFrom.value,priceTo.value)" />
             <label>$</label>
             <i class="fa-solid fa-rotate-right"></i>
           </div>
