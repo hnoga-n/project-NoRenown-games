@@ -36,6 +36,42 @@
       <div id="my-orders">
         <header class="my-orders-header">My orders</header>
         <div class="list-orders">
+        <div class="order">
+            <div class="order-top">
+              <div class="order-date">Order date: 21/02/2023</div>
+              <div class="order-status">Pending order</div>
+            </div>
+            <div class="order-mid">
+              <div class="order-products">
+                <div class="order-img">
+                  <img src="./assets/img/sky3.jpg" alt="" />
+                </div>
+                <div class="order-name">Hogward Legacy</div>
+                <div class="order-quantity">x 5</div>
+                <div class="order-price">20.00$</div>
+              </div>
+              <div class="order-products">
+                <div class="order-img">
+                  <img src="./assets/img/sky3.jpg" alt="" />
+                </div>
+                <div class="order-name">Hogward Legacy</div>
+                <div class="order-quantity">x 5</div>
+                <div class="order-price">20.00$</div>
+              </div>
+              <div class="order-products">
+                <div class="order-img">
+                  <img src="./assets/img/sky3.jpg" alt="" />
+                </div>
+                <div class="order-name">Hogward Legacy</div>
+                <div class="order-quantity">x 5</div>
+                <div class="order-price">20.00$</div>
+              </div>
+            </div>
+            <div class="order-bot">
+              <button class="order-cancel">Cancel an order</button>
+              <div class="order-total">Total: 100.00$</div>
+            </div>
+          </div>
           <!-- <div class="order">
             <div class="order-top">
               <div class="order-date">Order date: 21/02/2023</div>
@@ -108,10 +144,10 @@
               <div class="order-total">Total: 100.00$</div>
             </div>
           </div> -->
-          <div class="notification">
+          <!-- <div class="notification">
             <header>You have not paid for any products yet</header>
             <a href="./search.php" title="Move to search page">Go around and buy some stuff (Touch this)</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

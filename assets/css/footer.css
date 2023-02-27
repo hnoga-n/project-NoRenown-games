@@ -9,7 +9,8 @@
     padding: 30px 15px;
     display: flex;
     flex-direction: column;
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     color: white;
 }
 
@@ -63,7 +64,8 @@
 
 .footer-social {
     display: flex;
-    width: calc(330px - 30px);
+    width: 100%;
+    max-width: 300px;
     flex-direction: column;
     align-self: stretch;
 }
@@ -131,6 +133,20 @@
     text-align: right;
 }
 
+@media screen and (max-width: 330px) {
+    .footer .content {
+        padding: 10px!important;
+    }
+
+    .footer-social-apps {
+        margin: 0 auto!important;
+        flex-direction: column;
+    }
+
+    .footer-social-apps a {
+        padding-bottom: 5px;
+    }
+}
 
 @media screen and (max-width: 1000px) {
     .footer .content {

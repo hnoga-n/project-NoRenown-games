@@ -104,6 +104,10 @@
   cursor: pointer;
 }
 
+.category-list li.active {
+  background-color: #ff1e1e;
+}
+
 .category-list li:hover {
   background-color: #ff1e1e;
 }

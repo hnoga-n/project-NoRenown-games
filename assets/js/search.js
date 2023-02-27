@@ -75,7 +75,7 @@ function searchGenres(str){
   xml.onreadystatechange = function(){
     if(this.responseText.match("empty")=="empty"){
       genreDropdown.innerHTML = "<div>No genre match !</div>"
-    }
+    } 
     else{
       let str = ''
       let genre = this.responseText.split("/");
@@ -83,6 +83,13 @@ function searchGenres(str){
         str += `<li onclick="setGenre('${index}')">${index}</li>`;
       }
       genreDropdown.innerHTML = str;
+      document.querySelectorAll(".category-list-genre li").forEach(item=> {
+        item.addEventListener('click',()=> {
+          if(document.querySelector(".category-list-genre li.active") != null)
+            document.querySelector(".category-list-genre li.active").classList.remove('active');
+          item.classList.add('active');
+        })
+      })
     }
   }
   xml.open("GET","searchGenres.php?queryGenres="+str);
@@ -97,7 +104,10 @@ function setGenre(str){
 
 // SORT 
 
-function setSort(str){
+function setSort(str,element){
+  if(document.querySelector(".category-list-sort li.active") != null)
+    document.querySelector(".category-list-sort li.active").classList.remove('active');
+  element.classList.add('active');
   sortBy.value = str;
   // console.log(str);
   search(searchValue.value,1,genreInp.value,priceFrom.value, priceTo.value,sortBy.value);

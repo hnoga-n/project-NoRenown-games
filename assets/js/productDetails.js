@@ -2,7 +2,6 @@ let getImgPos = 0;
 let array = document.querySelectorAll('.visuals-gameplay img');
 
 function antiPropagation(event) {
-    console.log("hi");
     event.stopPropagation();
 }
 // _src : src path of image
