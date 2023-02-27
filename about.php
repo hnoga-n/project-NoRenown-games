@@ -30,7 +30,7 @@
             <div class="content">
                 <h2>About Us</h2>
                 <span><!-- line here --></span>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis aspernatur voluptas inventore ab voluptates nostrum minus illo laborum harum laudantium earum ut, temporibus fugiat sequi explicabo facilis unde quos corporis!</p>
+                <p>Tam hoang cong nghe SGU</p>
                 <ul class="links">
                     <li><a href="https://github.com/hnoga-n/project-NoRenown-games" target="_blank">github</a></li>
                     <div class="vertical-line"></div>
