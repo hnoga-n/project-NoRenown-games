@@ -27,7 +27,7 @@ function showlistgame(num,category,str,pfrom,pto) {
         }  
     }
     console.log(num + ' ' + category + ' ' + str + ' ' + pfrom + ' ' + pto)
-    xmlhttp.open("GET","showlistgame.php?q=" + num + "&v=" + category + "&search=" + str + "&pfrom=" + pfrom + "&pto=" + pto)
+    xmlhttp.open("GET","../model/showlistgame.php?q=" + num + "&v=" + category + "&search=" + str + "&pfrom=" + pfrom + "&pto=" + pto)
     xmlhttp.send()
 }
 function showPagination(dataRes) {

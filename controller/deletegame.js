@@ -7,7 +7,7 @@ function deletegame(gid) {
             xmlhttp.onload = function() {
                 alert(this.responseText) 
             }
-            xmlhttp.open("GET","deletegame.php?gid=" + gid )
+            xmlhttp.open("GET","../../ShopGamePj/model/deletegame.php?gid=" + gid )
             xmlhttp.send()
         }
     }
