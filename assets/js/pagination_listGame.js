@@ -4,10 +4,6 @@ function showlistgame(num,category,str,pfrom,pto) {
     if(str == "") {
         str = ''
     }
-    /* if((pfrom == "" && pto == "") || (pfrom == undefined && pto == undefined)) {
-        pfrom = 0 
-        pto = 100
-    } */
     if(pfrom == "" || pfrom == undefined) {
         pfrom = 0 
     }
@@ -26,7 +22,7 @@ function showlistgame(num,category,str,pfrom,pto) {
             showPagination(myobj.pagenum)
         }  
     }
-    console.log(num + ' ' + category + ' ' + str + ' ' + pfrom + ' ' + pto)
+    //console.log(num + ' ' + category + ' ' + str + ' ' + pfrom + ' ' + pto)
     xmlhttp.open("GET","showlistgame.php?q=" + num + "&v=" + category + "&search=" + str + "&pfrom=" + pfrom + "&pto=" + pto)
     xmlhttp.send()
 }
