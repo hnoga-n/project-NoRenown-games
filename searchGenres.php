@@ -11,7 +11,8 @@ if (isset($_GET['queryGenres'])) {
     while ($row = $result->fetch_assoc()) {
       echo $row['genre'] . '/';
     }
-  } else {
+  } else {  
     echo "empty";
   }
 }
+?>

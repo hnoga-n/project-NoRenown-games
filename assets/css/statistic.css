@@ -1,0 +1,26 @@
+.statistic-container {
+    margin-left: 120px;
+    background: rgb(39,39,39);
+    width: calc(100% - 120px);    
+    min-height: 1000px;
+}
+
+.statistic-container-content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    min-height: 300px;
+    max-height: 700px;
+}
+
+/* 
+.chart {
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 90%;
+    height: 100%;
+} */
+
+.statistic-container-header {
+}
