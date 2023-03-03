@@ -2,6 +2,7 @@
     include 'connect.php';
     $q = intval($_GET['q']);
     $v = $_GET['v'];
+    $sort = $_GET['sort'];
     $count=0;
     $loc = intval(($q-1)*12);
     $sql="";
@@ -15,18 +16,23 @@
             $sql = "SELECT * 
             FROM games
             WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
-            LIMIT $loc,12";
+            ORDER BY gprice $sort
+            LIMIT $loc,12
+            ";
             $sql1 = "SELECT * 
             FROM games
-            WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gprice $sort";
         }else {
             $sql = "SELECT * 
             FROM games
             WHERE gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gprice $sort
             LIMIT $loc,12";
             $sql1 = "SELECT * 
             FROM games
-            WHERE gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            WHERE gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gprice $sort";
         }
     }
     $result = $conn->query($sql);
