@@ -7,6 +7,7 @@ const priceTo = document.querySelector("#price-to");
 const genreDropdown = document.querySelector(".category-list")
 
 function search(str, page, genre,priceFrom, priceTo,sortby) {
+
   if(str == undefined){
     str = '';
   }
@@ -52,7 +53,7 @@ function search(str, page, genre,priceFrom, priceTo,sortby) {
     
   }
   
-  xmlhttp.open("GET", "searchHandle.php?queryGames=" + str + "&page=" + page + "&genre=" + genre + "&priceFrom=" + priceFrom + "&priceTo=" + priceTo+ "&sort=" + sortby);
+  xmlhttp.open("GET", "../model/searchHandle.php?queryGames=" + str + "&page=" + page + "&genre=" + genre + "&priceFrom=" + priceFrom + "&priceTo=" + priceTo+ "&sort=" + sortby);
   xmlhttp.send();
 }
 
@@ -92,7 +93,7 @@ function searchGenres(str){
       })
     }
   }
-  xml.open("GET","searchGenres.php?queryGenres="+str);
+  xml.open("GET","../model/searchGenres.php?queryGenres="+str);
   xml.send();
 }
 

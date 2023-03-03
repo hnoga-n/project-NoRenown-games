@@ -32,7 +32,7 @@ if (!empty($_POST["signup_name"]) && !empty($_POST["signup_phone"]) && !empty($_
   const confirmBtn = document.getElementById('confirm-button');
   // confirm sign up sucessed box 
   confirmBtn.addEventListener("click", () => {
-    window.location.href = "/ShopGamePj/login.php";
+    window.location.href = "/ShopGamePj/view/login.php";
   })
 </script>
 

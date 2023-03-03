@@ -9,29 +9,29 @@
     <div class="selection">
       <select name="category" id="gcategory" onchange="showlistgame(1,this.value,document.getElementById('searchgames').value,document.getElementById('pfrom').value,document.getElementById('pto').value)">
         <?php
-          include 'connect.php';
-          $sql = "SELECT DISTINCT (gcategory) 
+        include '../../model/connect.php';
+        $sql = "SELECT DISTINCT (gcategory) 
           FROM games
           ORDER BY gcategory ASC";
-          $result = $conn->query($sql);
-          echo "<option value='all' selected>All</option><br>";
-          if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-              echo "<option value='".$row['gcategory']."'>".$row['gcategory']."</option><br>";
-            }
-          } 
-          $conn->close();
+        $result = $conn->query($sql);
+        echo "<option value='all' selected>All</option><br>";
+        if ($result->num_rows > 0) {
+          // output data of each row
+          while ($row = $result->fetch_assoc()) {
+            echo "<option value='" . $row['gcategory'] . "'>" . $row['gcategory'] . "</option><br>";
+          }
+        }
+        $conn->close();
         ?>
       </select>
     </div>
     <div class="price-filter">
-      <span>Between</span>  
-        <input type="number" step="0.01" id="pfrom" onkeyup="showlistgame(1,document.getElementById('gcategory').value,document.getElementById(`searchgames`).value,this.value,document.getElementById('pto').value)">&nbsp;
-        <span>$</span>&nbsp;
-        <span>and</span>&nbsp;
-        <input type="number" step="0.01" id="pto"  onkeyup="showlistgame(1,document.getElementById('gcategory').value,document.getElementById(`searchgames`).value,document.getElementById('pfrom').value,this.value)">&nbsp;
-        <span>$</span>
+      <span>Between</span>
+      <input type="number" step="0.01" id="pfrom" onkeyup="showlistgame(1,document.getElementById('gcategory').value,document.getElementById(`searchgames`).value,this.value,document.getElementById('pto').value)">&nbsp;
+      <span>$</span>&nbsp;
+      <span>and</span>&nbsp;
+      <input type="number" step="0.01" id="pto" onkeyup="showlistgame(1,document.getElementById('gcategory').value,document.getElementById(`searchgames`).value,document.getElementById('pfrom').value,this.value)">&nbsp;
+      <span>$</span>
     </div>
     <div class="button">
       <a href="editgame.php">
@@ -58,13 +58,13 @@
         </tr>
       </thead>
       <tbody id="showlistgame">
-          <!-- Show list games -->
+        <!-- Show list games -->
       </tbody>
     </table>
   </div>
   <div class="pagination">
     <div id="showpagination">
-     <!-- show pagination -->
+      <!-- show pagination -->
     </div>
   </div>
 </div>
@@ -72,16 +72,16 @@
 
 <div class="message" id="mess">
   <div class="message-box">
-  <div class="message-header">
-        <span class="close" onclick="document.getElementById('mess').style.display = 'none'">&times;</span>
-        <h2>Notification</h2>
-      </div>
-      <div class="message-body">
-        <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>
-      </div>
-      <div class="message-footer">
-        <h3>Modal Footer</h3>
-      </div>
+    <div class="message-header">
+      <span class="close" onclick="document.getElementById('mess').style.display = 'none'">&times;</span>
+      <h2>Notification</h2>
+    </div>
+    <div class="message-body">
+      <p>Some text in the Modal Body</p>
+      <p>Some other text...</p>
+    </div>
+    <div class="message-footer">
+      <h3>Modal Footer</h3>
+    </div>
   </div>
 </div>

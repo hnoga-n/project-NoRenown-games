@@ -19,7 +19,7 @@
 
 <body>
     <?php
-    include 'header.php';
+    include './view/user/header.php';
     ?>
     <div class="main-content">
         <section>
