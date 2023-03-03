@@ -1,9 +1,15 @@
 <?php
 include 'connect.php';
-$data = json_decode($_GET['x']);
+
 /* $sql = $conn->prepare("INSERT INTO games (gname,gcategory,gprice,gdiscount,gimg) VALUES (?,?,?,?,?)");
 $sql = $conn->prepare("INSERT INTO game_detail (gdt_id,about,cfg_os,cfg_processor,cfg_graphics,cfg_storage) VALUES (?,?,?,?,?,?)");
  */
+$sql = $conn->prepare("UPDATE games SET gquantity = (?) WHERE gid = (?)");
+for ($i = 1; $i <= 112; $i++) {
+  $rand = rand(30, 50);
+  $sql->bind_param("ii", $rand, $i);
+  $sql->execute();
+}
 /* $sql->bind_param("isssss", $data->gid, $data->about, $data->os, $data->process, $data->graph, $data->storage);
 $sql->execute();
 $rand = rand(1, 10);
@@ -71,4 +77,3 @@ switch ($rand) {
       break;
     } 
 }*/
-echo json_encode($data);

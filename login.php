@@ -12,18 +12,12 @@
 </head>
 
 <body>
-    <div class="loggin-message">
-        <div class="message-container">
-            <div class="message">Sign up successfully !</div>
-            <input id="confirm-button" type="button" value="Confirm">
-        </div>
-    </div>
     <div class="body">
         <div class="back"><a href="index.php"><i class="fa-solid fa-arrow-left"></i></a></div>
         <div class="container" id="container">
 
             <div class="form-container sign-up-container">
-                <form name="signup_form" onsubmit="return sanitizeForm()" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+                <form name="signup_form" onsubmit="return sanitizeForm(event)" action="signupHandle.php" method="POST">
                     <h1>Create Account</h1>
                     <input name="signup_name" type="text" placeholder="Name" name="name" />
                     <div style="display:none;" class="input_message" id="name_validate_message"></div>
@@ -31,19 +25,11 @@
                     <div style="display:none;" class="input_message" id="phone_validate_message"></div>
                     <input name="signup_mail" type="email" placeholder="Email" name="email" />
                     <div style="display:none;" class="input_message" id="mail_validate_message"></div>
-                    <input name="signup_passwd" type="password" placeholder="Password" name="password" require />
+                    <input name="signup_passwd" type="password" placeholder="Password" name="password" />
                     <input name="signup_passwd_cfm" type="password" placeholder="Confirm password" />
                     <div style="display:none;" class="input_message" id="passwd_cfm_message"></div>
                     <button type="submit">Sign Up</button>
-                    <?php
-                    if (isset($_POST['signup_name']) || isset($_POST['signup_name'])) {
 
-                        echo "<script>
-                        document.querySelector('.loggin-message').style.display = 'flex'
-                        document.querySelector('.body').style.display = 'none'
-                            </script>";
-                    }
-                    ?>
                 </form>
             </div>
             <div class="form-container sign-in-container">
