@@ -14,102 +14,65 @@
     padding: 5px;
 }
 .main .nav-bar {
-    height: 70px;
+    height: 10%;
     width: 100%;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
 }
 .main .nav-bar .search {
-    width: 25%;
-    padding: 10px;
+    width: 40%;
+    padding: 5px;
 }
-.main .nav-bar .search input ,.main .nav-bar .selection input{
-    height: 40px;
-    width: 300px;
+.main .nav-bar .search input,.main .nav-bar .selection select,.main .nav-bar .price-filter input{
+    height: 45px;
     border: 3px solid #3d3d3d;
-    padding: 10px;
+    padding:7px;
     border-radius: 10px;
     background-color: rgba(16,16,16,.4);
     color: white;
     font-size: 15px;
     font-family: 'Righteous', cursive;
     transition: .2s;
+    outline: unset;
 }
-.main .nav-bar .selection input {
-    padding: 10px 30px 10px 10px;
+.main .nav-bar .search input {
+  width: 450px;
 }
-.main .nav-bar .search input:focus,.main .nav-bar .search input:hover,.main .nav-bar .selection input:hover {
+.main .nav-bar .selection select{
+  width: 200px;
+}
+.main .nav-bar .price-filter input{
+  width: 100px;
+}
+.main .nav-bar .search input:focus,
+.main .nav-bar .search input:hover,
+.main .nav-bar .selection select:focus,
+.main .nav-bar .selection select:hover,
+.main .nav-bar .price-filter input:hover,
+.main .nav-bar .price-filter input:focus{
     border: 3px solid #FF1E1E;
 }
  
 .main .nav-bar .selection {
-    width: 25%;
-    padding: 10px;
-}
-.main .nav-bar .selection input:focus ~ .dropdown-category {
-    scale: 1;
-    opacity: 1;
-}
-.main .nav-bar .selection i {
-    position: relative;
-    top: -30px;
-    left: 275px;
-    color: white;
-    pointer-events: visible;
-}
-.main .nav-bar .selection .dropdown-category {
-    scale: 0;
-    opacity: 0;
-    position: relative;
-    top: 10px;
-    width: 300px;
-    height: 200px;
-    padding: 15px 10px;
-    font-size: 15px;
-    font-weight: 500;
-    border: 3px solid transparent;
-    border-radius: 10px;
-    overflow-y: auto;
-    backdrop-filter: blur(60px) saturate(100%);
-    -webkit-backdrop-filter: blur(60px) saturate(100%);
-    background-color: rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    animation: dropdownRotate 0.4s ease;
-}
-@keyframes dropdownRotate {
-    from {
-      opacity: 0;
-      transform: translateY(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-}
-.category-list li {
-    padding: 10px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: white;
-} 
-.category-list li:hover {
-    background-color: #ff1e1e;
-}
-.dropdown-category::-webkit-scrollbar-track {
-    padding: 2px 0;
-    backdrop-filter: blur(60px) saturate(100%);
-    -webkit-backdrop-filter: blur(60px) saturate(100%);
-    background-color: hsla(0, 0%, 100%, 0.1);
+    width: 20%;
+    padding: 5px;
 }
 
-.dropdown-category::-webkit-scrollbar {
-  width: 10px;
+.main .nav-bar .selection select {
+    background-color: rgba(16,16,16,.4);
 }
 
-.dropdown-category::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: rgba(255, 30, 30, 0.5);
+.main .nav-bar .price-filter {
+  width: 30%;
+  padding: 5px;
+}
+.main .nav-bar .price-filter span {
+  color: white;
+  font-size: 16px;
+}
+.main .nav-bar .price-filter span:nth-child(3),.main .nav-bar .price-filter span:nth-child(6) {
+  font-size: 20px;
 }
 
 .main .nav-bar .button {
@@ -117,7 +80,7 @@
 }
 .main .nav-bar .button button {
     font-family: 'Righteous', cursive;
-    height: 35px;
+    height: 40px;
     width: 120px;
     border-radius: 7px;
     font-size: 18px;
@@ -132,7 +95,8 @@
     background-color: #e1981a;
 }
 .main .listgames{
-    height: 70%;    
+    height: 70%; 
+    margin-top: 20px;   
 }
 .main .listgames table {
     border-collapse: collapse;
@@ -179,7 +143,7 @@ th:last-child {
     height: 100px;
     width: 200px;
 }
-.main .listgames table tbody tr td button {
+.main .listgames table tbody tr td a button {
     height: 30px;
     width: 70px;
     font-family: 'Righteous', cursive;
@@ -188,13 +152,28 @@ th:last-child {
     border: unset;
     font-size: 16px;
     cursor: pointer;
+    transition: background .2s;
 }
-.main .listgames table tbody tr td button:first-child {
+.main .listgames table tbody tr td a:first-child button {
     background-color: #2e89ff;
 }
-.main .listgames table tbody tr td button:last-child {
+.main .listgames table tbody tr td a:first-child button:hover {
+    background-color: white ;
+    color: #2e89ff;
+    border: 2px solid #2e89ff;
+}
+.main .listgames table tbody tr td a:last-child button {
     background-color: #000000;
 }
+.main .listgames table tbody tr td a:last-child button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+.main .listgames table tbody tr td a{
+  all:unset;
+}
+
 
 
 /* CSS TOGGLE CHECKBOX */
@@ -289,4 +268,65 @@ input:checked + .slider:before {
 .pagination input:hover:not(.active) {
   background-color: #ddd;
   border-radius: 5px;
+}
+
+
+/* MESSAGE BOX */
+.message {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.message-box {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+.message-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.message-body {padding: 2px 16px;}
+
+.message-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+/* The Close Button */
+.close {
+  color: white;
+  font-family:Arial, Helvetica, sans-serif;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.close:hover,
+.close:focus {
+  color: #3d3d3d;
+  text-decoration: none;
+  cursor: pointer;
 }
