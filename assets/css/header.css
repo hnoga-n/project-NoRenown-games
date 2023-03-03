@@ -250,10 +250,10 @@
 
 
 .header .header-right .user {
-    display: none;
+    display: block;
 }
 .header .header-right .user-logged {
-    display: block;
+    display: none;
 }
 
 .header .header-right .user-logged button {
