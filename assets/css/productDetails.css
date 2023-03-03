@@ -1,6 +1,78 @@
 .parallax {
 }
 
+.box-image-zoom-in {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, .85);
+  z-index: 1001;
+}
+
+.box-image-zoom-in > i,
+.box-image-zoom-in .icon-chevron {
+  position: absolute;
+  color: white;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.box-image-zoom-in i {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 12px;
+
+}
+
+.box-image-zoom-in > i:hover,
+.box-image-zoom-in .icon-chevron:hover {
+  border-radius: 50%;
+  background: rgba(173, 167, 167, 0.85);
+}
+
+.box-image-zoom-in .fa-xmark {
+  right: 5%;
+  top: 5%;
+}
+
+.box-image-zoom-in .icon-chevron-right {
+  right: 5%;
+}
+
+.box-image-zoom-in .icon-chevron-left {
+  left: 5%;
+}
+
+@keyframes animationZoom {
+  from {
+    scale: .2;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+
+.box-image-zoom-in .image-zoom-in {
+  width: 75%;
+  max-height: 70%;
+  height: 100%;
+}
+
+.box-image-zoom-in .image-zoom-in img {
+  width: 100%;
+  height: 100%;
+  animation: animationZoom .65s ease;
+}
+
 .parallax img {
   width: 100%;
   object-fit: cover;
@@ -46,6 +118,11 @@
   margin-right: 15px;
 }
 
+.header-content .video-game video {
+  max-width: 100%;
+  height: auto;
+}
+
 .header-content .video-game img {
   width: 100%;
   height: 100%;
@@ -79,15 +156,14 @@
 
 .header-content .panel .price small {
   margin-right: 15px;
-  opacity: .8;
+  opacity: 0.8;
 }
 
-.header-content .panel a{
+.header-content .panel a {
   color: white;
 }
 
 .header-content .panel .addToCartBtn {
-  
   padding: 20px;
   width: 100%;
   font-size: 20px;
@@ -101,7 +177,6 @@
   transition: all 0.2s ease;
   position: relative;
 }
-
 
 .header-content .panel .addToCartBtn i {
   position: absolute;
@@ -119,6 +194,10 @@
 .visuals-gameplay {
   margin-left: -15px;
   margin-right: -15px;
+}
+
+.visuals-gameplay img {
+  cursor: pointer;
 }
 
 .visuals-gameplay .main-img {
@@ -157,7 +236,6 @@
 
 .information .configuration ul li {
   display: flex;
-  /* justify-content: space-between; */
   margin-bottom: 5px;
 }
 
@@ -165,7 +243,68 @@
   margin-right: auto;
 }
 
+@media screen and (max-width: 550px) {
+  .box-image-zoom-in .image-zoom-in {
+    width: 100%;
+    max-height: 5%;
+    height: 100%;
+  }
+
+  .product-app {
+    transform: translateY(-100px)!important;
+  }
+  .header-content {
+    margin: 0 30px!important;
+  }
+  .header-content .panel {
+    padding: 10px!important;
+  }
+
+  .header-content .panel .name {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .box-image-zoom-in .image-zoom-in {
+    width: 100%;
+    max-height: 50%;
+    height: 100%;
+  }
+  .visuals-gameplay {
+    margin-left: -5px;
+    margin-right: -5px;
+    flex-direction: column;
+  }
+  .visuals-gameplay .main-img {
+    height: 100%;
+  }
+  .visuals-gameplay .sub-img {
+    flex: 0 0 0;
+    height: 100%;
+  }
+  .product-app {
+    width: 100%;
+    max-width: 1200px;
+    transform: translateY(-220px);
+  }
+  .header-content .panel .price {
+    font-size: 25px;
+  }
+  .header-content .panel .addToCartBtn {
+    font-size: 16px;
+  }
+  .header-content .panel > div {
+    width: 100%;
+}
+}
+
 @media screen and (max-width: 1000px) {
+  .box-image-zoom-in .image-zoom-in {
+    width: 100%;
+    height: 100%;
+  }
+
   .product-app {
     padding: 0;
   }
@@ -195,13 +334,17 @@
   }
 
   .visuals-gameplay .sub-img-item {
-    height: calc(50% - 5px);
+    height: 100%;
+    max-height: calc(50% - 5px);
     margin: 5px;
     flex: 0 0 calc(50% - 10px);
   }
-
+  .product-app img, .product-app video {
+    border-radius: 10px;
+  }
   .information {
     flex-direction: column;
+    min-height: 200px;
   }
   .information .configuration {
     padding-left: 0;

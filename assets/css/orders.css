@@ -146,8 +146,12 @@
 }
 
 @media screen and (max-width: 1000px) {
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
   .list-orders {
-    overflow: hidden;
+    overflow: auto;
     min-height: 150px;
     max-height: none;
   }
@@ -169,6 +173,10 @@
     overflow: hidden;
     min-height: 200px;
     max-height: none;
+  }
+
+  .order-bot {
+    flex-direction: column-reverse;
   }
 
   .order-products {
