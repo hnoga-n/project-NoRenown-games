@@ -20,14 +20,25 @@ function showlistgame(num,category,str,pfrom,pto) {
         else {
             document.getElementById('showlistgame').innerHTML = myobj.s
             showPagination(myobj.pagenum)
+            document.querySelectorAll(".pageNum").forEach(page => {
+                // console.log(page.value);
+                
+                // console.log(document.querySelector(".pageNum.active"));
+                if(page.value == num) {
+                    document.querySelector(".pageNum.active").classList.remove('active')
+                    page.classList.add('active')
+
+                }
+                
+            }) 
         }  
     }
-    console.log(num + ' ' + category + ' ' + str + ' ' + pfrom + ' ' + pto)
+    //console.log(num + ' ' + category + ' ' + str + ' ' + pfrom + ' ' + pto)
     xmlhttp.open("GET","showlistgame.php?q=" + num + "&v=" + category + "&search=" + str + "&pfrom=" + pfrom + "&pto=" + pto)
     xmlhttp.send()
 }
 function showPagination(dataRes) {
-    let s = "<input type='button' value='1' class='pageNum' onclick='showlistgame(this.value,document.getElementById(`gcategory`).value,document.getElementById(`searchgames`).value,document.getElementById(`pfrom`).value,document.getElementById(`pto`).value)'>"   
+    let s = "<input type='button' value='1' class='pageNum active' onclick='showlistgame(this.value,document.getElementById(`gcategory`).value,document.getElementById(`searchgames`).value,document.getElementById(`pfrom`).value,document.getElementById(`pto`).value)'>"   
     if(dataRes == 0) {
         document.getElementById('showpagination').innerHTML = ""
         return;
@@ -40,4 +51,6 @@ function showPagination(dataRes) {
       s+= `<input type='button' value='${i}' class='pageNum' onclick='showlistgame(this.value,document.getElementById("gcategory").value,document.getElementById("searchgames").value,document.getElementById("pfrom").value,document.getElementById("pto").value)'>`
     }    
     document.getElementById('showpagination').innerHTML = s
+    // document.querySelector(".pageNum.active").classList.remove('active')
+    
 } 
