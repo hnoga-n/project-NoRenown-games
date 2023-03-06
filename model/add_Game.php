@@ -36,10 +36,14 @@ if ($result1 === TRUE) {
         ";
     $result3 = $conn->query($sql3);
     if ($result3 === TRUE) {
-        header('../view/admin/employee.php');
+        echo "<script>
+                alert('Add successfully !')
+                window.location.replace('../view/admin/employee.php?page=listgame')
+            </script>";
     } else {
         echo "Error: " . $sql3 . "<br>" . $conn->error . "<br>" . "Error: " . $sql3 . "<br>" . $conn->error;
     }
 } else {
     echo "Error: " . $sql1 . "<br>" . $conn->error . "<br>" . "Error: " . $sql1 . "<br>" . $conn->error;
 }
+?>

@@ -4,10 +4,6 @@ function showlistgame(num,category,str,pfrom,pto) {
     if(str == "") {
         str = ''
     }
-    /* if((pfrom == "" && pto == "") || (pfrom == undefined && pto == undefined)) {
-        pfrom = 0 
-        pto = 100
-    } */
     if(pfrom == "" || pfrom == undefined) {
         pfrom = 0 
     }
@@ -24,14 +20,19 @@ function showlistgame(num,category,str,pfrom,pto) {
         else {
             document.getElementById('showlistgame').innerHTML = myobj.s
             showPagination(myobj.pagenum)
+            document.querySelectorAll(".pageNum").forEach(page => {
+                if(page.value == num) {
+                    document.querySelector(".pageNum.active").classList.remove('active')
+                    page.classList.add('active')
+                }
+            }) 
         }  
     }
-    console.log(num + ' ' + category + ' ' + str + ' ' + pfrom + ' ' + pto)
-    xmlhttp.open("GET","../model/showlistgame.php?q=" + num + "&v=" + category + "&search=" + str + "&pfrom=" + pfrom + "&pto=" + pto)
+    xmlhttp.open("GET","../../model/showlistgame.php?q=" + num + "&v=" + category + "&search=" + str + "&pfrom=" + pfrom + "&pto=" + pto)
     xmlhttp.send()
 }
 function showPagination(dataRes) {
-    let s = "<input type='button' value='1' class='pageNum' onclick='showlistgame(this.value,document.getElementById(`gcategory`).value,document.getElementById(`searchgames`).value,document.getElementById(`pfrom`).value,document.getElementById(`pto`).value)'>"   
+    let s = "<input type='button' value='1' class='pageNum active' onclick='showlistgame(this.value,document.getElementById(`gcategory`).value,document.getElementById(`searchgames`).value,document.getElementById(`pfrom`).value,document.getElementById(`pto`).value)'>"   
     if(dataRes == 0) {
         document.getElementById('showpagination').innerHTML = ""
         return;

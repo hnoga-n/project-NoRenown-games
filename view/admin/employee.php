@@ -17,5 +17,5 @@ if (isset($_GET['page'])) {
 ?>
 <script src="../../assets/js/leftmenu.js"></script>
 <script src="../../assets/js/listGame.js"></script>
-<script src="../../assets/js/pagination_listGame.js"></script>
-<script src="../../assets/js/deletegame.js"></script>
+<script src="../../controller/pagination_listGame.js"></script>
+<script src="../../controller/deletegame.js"></script>
