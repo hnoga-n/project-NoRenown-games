@@ -18,7 +18,7 @@
         <a href="/project-NoRenowned-games/view/user/contact.php"> Contact </a>
       </div>
       <div>
-        <a href=""> About </a>
+        <a href="/project-NoRenowned-games/view/user/about.php"> About </a>
       </div>
     </div>
     <div class="search">

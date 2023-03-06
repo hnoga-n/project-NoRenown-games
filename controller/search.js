@@ -60,12 +60,11 @@ function search(str, page, genre,priceFrom, priceTo,sortby) {
 
 // create page number btn
 function showPagination(pageNumber) {
-  let s = "<input type='button' value='&laquo;' onclick='previous()'>"
+  let s = ""
   s += `<input type='button' value='1' class="active" onclick='search(searchValue.value,this.value,genreInp.value, priceFrom.value, priceTo.value,sortBy.value)'>`
   for (let i = 2; i <= pageNumber; i++) {
     s += `<input type='button' value='${i}' onclick='search(searchValue.value,this.value,genreInp.value, priceFrom.value, priceTo.value,sortBy.value)'>`
   }
-  s += "<input type='button' value='&raquo;' onclick='next()'>"
 
   document.getElementById('showPagination').innerHTML = s
   
