@@ -21,7 +21,7 @@
 <body>
   <!-- header -->
   <?php
-  include 'header.php';
+  include './view/user/header.php';
   ?>
   <!-- slider -->
   <div class="slider-container">
@@ -255,7 +255,7 @@
   </div>
 
   <?php
-  include 'footer.php';
+  include './view/user/footer.php';
   ?>
 </body>
 <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>

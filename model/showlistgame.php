@@ -41,10 +41,10 @@
                         <td>".$row['gname']."</td>
                         <td>".$row['gcategory']."</td>
                         <td>".$row['gprice']."$</td>
-                        <td>50</td>
+                        <td>".$row['gquantity']."</td>
                         <td>-".$row['gdiscount']."%</td>
                         <td>
-                            <img src='./assets/img/genshinSlideShow.jpg'>
+                            <img src='../../assets/img/genshinSlideShow.jpg'>
                         </td>
                         <td>
                             <label class='switch'>
