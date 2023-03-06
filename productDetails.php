@@ -1,11 +1,22 @@
 <?php
-include 'connect.php';
-$id = $_GET['id'];
-$sql = mysqli_query($conn, "SELECT * FROM game_detail where gdt_id = {$id}");
-$sql1 = mysqli_query($conn, "SELECT * FROM games where gid = {$id}");
-$row = mysqli_fetch_assoc($sql);
-$row2 = mysqli_fetch_assoc($sql1);
-$result = round((float)$row2['gprice'] - (float)$row2['gprice'] * (int)$row2['gdiscount'] * 0.01, 2);
+  include 'connect.php';
+  if(empty($_GET['id'])) {
+    header('location: page404.php');
+  } else {
+    $id = $_GET['id'] ;
+    $sql = mysqli_query($conn, "SELECT * FROM game_detail where gdt_id = {$id}");
+    $sql1 = mysqli_query($conn, "SELECT * FROM games where gid = {$id}");
+    if (mysqli_num_rows($sql) > 0 && mysqli_num_rows($sql1) > 0) {
+      $row = mysqli_fetch_assoc($sql);
+      $row2 = mysqli_fetch_assoc($sql1);
+      $result = round((float)$row2['gprice'] - (float)$row2['gprice'] * (int)$row2['gdiscount'] * 0.01, 2);
+    } else {
+      header('location: page404.php');
+    }
+  }
+  
+  
+  
 ?>
 <html lang="en">
 
@@ -22,7 +33,7 @@ $result = round((float)$row2['gprice'] - (float)$row2['gprice'] * (int)$row2['gd
   <link rel="stylesheet" href="./assets/css/footer.css" />
   <link rel="stylesheet" href="./assets/css/filterProducts.css" />
   <link rel="stylesheet" href="./assets/css/productDetails.css" />
-
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
 <body>

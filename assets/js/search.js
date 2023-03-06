@@ -80,7 +80,7 @@ function searchGenres(str){
       let str = ''
       let genre = this.responseText.split("/");
       for(let index of genre){
-        str += `<li onclick="setGenre('${index}')">${index}</li>`;
+        str += `<li onclick="setGenre('${index}',this)">${index}</li>`;
       }
       genreDropdown.innerHTML = str;
       document.querySelectorAll(".category-list-genre li").forEach(item=> {
@@ -96,8 +96,9 @@ function searchGenres(str){
   xml.send();
 }
 
-function setGenre(str){
+function setGenre(str,element){
   // console.log(str);
+  element.parentElement.parentElement.parentElement.querySelector("input").focus();
   genreInp.value = str;
   search(searchValue.value,1,genreInp.value,priceFrom.value, priceTo.value, sortBy.value);
 }
@@ -105,8 +106,8 @@ function setGenre(str){
 // SORT 
 
 function setSort(str,element){
-  if(document.querySelector(".category-list-sort li.active") != null)
-    document.querySelector(".category-list-sort li.active").classList.remove('active');
+  element.parentElement.parentElement.parentElement.querySelector("input").focus(); 
+  document.querySelector(".category-list-sort li.active").classList.remove('active');
   element.classList.add('active');
   sortBy.value = str;
   // console.log(str);

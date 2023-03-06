@@ -43,6 +43,7 @@
     font-size: 45px;
     text-align: center;
     position: absolute;
+    pointer-events: none;
     top: 20px;
     left: 50px;
     text-shadow: 1.5px 1.5px white;
@@ -128,10 +129,18 @@
     color: white;
     text-align: center;
     font-family: 'Righteous', cursive;
-    padding: 19px 10px;
     font-size: 18px;
     transition: .5s;
     cursor: pointer;
+}
+
+.header .container .menu div a {
+    padding: 20px 22px;
+    line-height: 60px;
+}
+
+.header.sticky .container .menu div a {
+    line-height: 80px;
 }
 
 .header.sticky .container .menu div{
@@ -139,11 +148,11 @@
     color: white;
     text-align: center;
     font-family: 'Righteous', cursive;
-    padding: 27px 15px;
     font-size: 18px;
     transition: .5s;
     cursor: pointer;
 }
+
 .header .container .menu div:hover {
     color: #FF1E1E;
 }
