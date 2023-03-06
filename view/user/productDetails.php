@@ -25,12 +25,12 @@ if (empty($_GET['id'])) {
   <title><?php echo $row2['gname'] ?></title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
   <link rel="icon" href="./assets/img/logo.png" />
-  <link rel="stylesheet" href="./assets/css/product.css" />
-  <link rel="stylesheet" href="./assets/css/header.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/footer.css" />
-  <link rel="stylesheet" href="./assets/css/filterProducts.css" />
-  <link rel="stylesheet" href="./assets/css/productDetails.css" />
+  <link rel="stylesheet" href="../../assets/css/product.css" />
+  <link rel="stylesheet" href="../../assets/css/header.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/footer.css" />
+  <link rel="stylesheet" href="../../assets/css/filterProducts.css" />
+  <link rel="stylesheet" href="../../assets/css/productDetails.css" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
@@ -39,7 +39,7 @@ if (empty($_GET['id'])) {
   include 'header.php';
   ?>
   <div class="parallax">
-    <img src="./assets/img/sky3.jpg">
+    <img src="../../assets/img/sky3.jpg">
   </div>
 
   <div class="box-image-zoom-in">
@@ -60,7 +60,7 @@ if (empty($_GET['id'])) {
       <div class="header-content">
 
         <div class="video-game">
-          <video controls muted src="./assets/video/I Am Atomic 4k.mp4"></video>
+          <video controls muted src="../../assets/video/I Am Atomic 4k.mp4"></video>
         </div>
         <div class="panel">
           <div class="name">
@@ -86,20 +86,20 @@ if (empty($_GET['id'])) {
         <h2>Screenshots</h2>
         <div class="visuals-gameplay">
           <div class="main-img">
-            <img src="./assets/img/sky3.jpg" onclick="zoomIn(this.src,this)" />
+            <img src="../../assets/img/sky3.jpg" onclick="zoomIn(this.src,this)" />
           </div>
           <div class="sub-img">
             <div class="sub-img-item">
-              <img src="./assets/img/4horseman.jpg" onclick="zoomIn(this.src,this)" />
+              <img src="../../assets/img/4horseman.jpg" onclick="zoomIn(this.src,this)" />
             </div>
             <div class="sub-img-item">
-              <img src="./assets/img/pacman-ghost-logo-4E0E79293D-seeklogo.com.png" onclick="zoomIn(this.src,this)" />
+              <img src="../../assets/img/pacman-ghost-logo-4E0E79293D-seeklogo.com.png" onclick="zoomIn(this.src,this)" />
             </div>
             <div class="sub-img-item">
-              <img src="./assets/img/sky-of-star.jpg" onclick="zoomIn(this.src,this)" />
+              <img src="../../assets/img/sky-of-star.jpg" onclick="zoomIn(this.src,this)" />
             </div>
             <div class="sub-img-item">
-              <img src="./assets/img/gowSlideShow.jpg" onclick="zoomIn(this.src,this)" />
+              <img src="../../assets/img/gowSlideShow.jpg" onclick="zoomIn(this.src,this)" />
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@ if (empty($_GET['id'])) {
 
 </body>
 <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>
-<script src="./assets/js/header.js"></script>
-<script src="./assets/js/productDetails.js"></script>
+<script src="../../assets/js/header.js"></script>
+<script src="../../assets/js/productDetails.js"></script>
 
 </html>

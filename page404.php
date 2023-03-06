@@ -28,8 +28,8 @@
                 <div class="navbar-links">
                     <ul>
                         <li><a href="./index.html">Home</a></li>
-                        <li><a href="./contact.php">Contact</a></li>
-                        <li><a href="./about.php">About</a></li>
+                        <li><a href="./view/user/contact.php">Contact</a></li>
+                        <li><a href="./view/user/about.php">About</a></li>
                     </ul>
                 </div>
             </div>

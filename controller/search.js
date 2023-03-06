@@ -93,7 +93,7 @@ function searchGenres(str){
       })
     }
   }
-  xml.open("GET","../model/searchGenres.php?queryGenres="+str);
+  xml.open("GET","../../model/searchGenres.php?queryGenres="+str);
   xml.send();
 }
 
