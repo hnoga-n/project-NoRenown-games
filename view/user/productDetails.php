@@ -1,5 +1,5 @@
 <?php
-include '../admin/connect.php';
+include '../../model/connect.php';
 $id = $_GET['id'];
 $sql = mysqli_query($conn, "SELECT * FROM game_detail where gdt_id = {$id}");
 $sql1 = mysqli_query($conn, "SELECT * FROM games where gid = {$id}");

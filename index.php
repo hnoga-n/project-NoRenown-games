@@ -51,7 +51,7 @@
     </div>
   </div>
 
-  <!-- <div class="main-content">
+  <div class="main-content">
     <div class="products-trending">
       <div class="headline">
         <h2>Trending</h2>
@@ -253,7 +253,7 @@
       </div>
     </div>
   </div>
- -->
+
   <?php
   include './view/user/footer.php';
   ?>
