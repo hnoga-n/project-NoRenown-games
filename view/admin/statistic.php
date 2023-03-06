@@ -18,10 +18,24 @@
   <div class="statistic-container">
     <div class="statistic-container-header">
       <div class="sales">
+        <div class="content">
+          <div class="text">Sales</div>
+          <div>
 
+            <div class="number">100</div>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+        </div>
       </div>
       <div class="earning">
+        <div class="content">
+          <div class="text">Earning</div>
+          <div>
 
+            <div class="number">$9999.99</div>
+            <i class="fa-solid fa-sack-dollar"></i>
+          </div>
+        </div>
       </div>
     </div>
     <div class="statistic-container-content">
