@@ -1,5 +1,5 @@
 <div class="header" id="myHeader">
-  <a href="./index.php">
+  <a href="/project-NoRenowned-games/index.php">
     <div class="logo">
       <span class="text1">NoRENOWN</span>
       <br />

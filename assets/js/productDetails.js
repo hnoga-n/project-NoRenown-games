@@ -4,6 +4,7 @@ let array = document.querySelectorAll('.visuals-gameplay img');
 function antiPropagation(event) {
     event.stopPropagation();
 }
+
 // _src : src path of image
 // element: image tag
 function zoomIn(_src,element) {
@@ -52,3 +53,4 @@ for (let index = 0; index < array.length; index++) {
         document.querySelector('.box-image-zoom-in img').src = array[getImgPos].src;
     }
 }
+
