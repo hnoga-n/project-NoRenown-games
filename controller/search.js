@@ -99,11 +99,7 @@ function searchGenres(str){
 
 function setGenre(str,element){
   // console.log(str);
-<<<<<<< HEAD:assets/js/search.js
-  element.parentElement.parentElement.parentElement.querySelector("input").focus();
-=======
   element.parentElement.parentElement.parentElement.querySelector('input').focus();
->>>>>>> b2d18fdb27d3a5558ff1fed7929ce3db73e4b2ca:controller/search.js
   genreInp.value = str;
   search(searchValue.value,1,genreInp.value,priceFrom.value, priceTo.value, sortBy.value);
 }
@@ -111,11 +107,7 @@ function setGenre(str,element){
 // SORT 
 
 function setSort(str,element){
-<<<<<<< HEAD:assets/js/search.js
-  element.parentElement.parentElement.parentElement.querySelector("input").focus(); 
-=======
   element.parentElement.parentElement.parentElement.querySelector('input').focus();
->>>>>>> b2d18fdb27d3a5558ff1fed7929ce3db73e4b2ca:controller/search.js
   document.querySelector(".category-list-sort li.active").classList.remove('active');
   element.classList.add('active');
   sortBy.value = str;

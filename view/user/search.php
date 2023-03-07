@@ -32,22 +32,7 @@
                 <ul class="category-list category-list-genre">
                   <!-- <li>Fighting</li>
                     <li>Action</li> -->
-<<<<<<< HEAD:search.php
-                  </ul>
-                </div>
-              </div>
-              <div class="selection" onclick="antiPropagation(event)">
-                <input class="glass-card" id="sortby" type="text" value='ASC' placeholder="Sort by :" />
-                <i class="fa-sharp fa-solid fa-caret-down"></i>
-                <div class="dropdown-category" onclick="antiPropagation(event)">
-                  <ul class="category-list category-list-sort">
-                    <li onclick="setSort('ASC',this)" class="active" id="asc" value="asc">Price: Ascend</li>
-                    <li onclick="setSort('DESC',this)" id="desc" value="desc">Price: Descend</li>
-                  </ul>
-                </div>
-=======
                 </ul>
->>>>>>> b2d18fdb27d3a5558ff1fed7929ce3db73e4b2ca:view/user/search.php
               </div>
             </div>
             <div class="selection" onclick="antiPropagation(event)">
