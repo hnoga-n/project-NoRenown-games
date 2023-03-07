@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../assets/css/login.css">
     <link rel="stylesheet" href="../../assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title>Login</title>
+    <title>Sign in/Sign up</title>
 </head>
 
 <body>
