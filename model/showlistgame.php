@@ -15,7 +15,8 @@
             $sql = "SELECT * 
             FROM games
             WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
-            LIMIT $loc,12";
+            LIMIT $loc,12
+            ";
             $sql1 = "SELECT * 
             FROM games
             WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
@@ -40,10 +41,10 @@
                         <td>".$row['gname']."</td>
                         <td>".$row['gcategory']."</td>
                         <td>".$row['gprice']."$</td>
-                        <td>50</td>
+                        <td>".$row['gquantity']."</td>
                         <td>-".$row['gdiscount']."%</td>
                         <td>
-                            <img src='./assets/img/genshinSlideShow.jpg'>
+                            <img src='../../assets/img/genshinSlideShow.jpg'>
                         </td>
                         <td>
                             <label class='switch'>
