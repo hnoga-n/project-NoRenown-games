@@ -48,7 +48,9 @@ body {
 .form-outside-container .form-container {
   background:url(../img/contact-img.jpg);
   background-position: 50% 50%;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
   height: 600px;
   background-color: whitesmoke;
   z-index: 100;
@@ -154,6 +156,7 @@ body {
   background:rgba(123, 61, 239, 0.703)  ;
   transition: .5s;
   color: rgb(93, 247, 116);
+  cursor: pointer;
 }
 .form-outside-container  .form-container .form button:hover{
   background:rgba(158, 111, 245, 0.703)  ;
@@ -196,5 +199,78 @@ body {
   100%{
     transform: rotate(360deg);
     font-size: 20px;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .form-outside-container .form-container .deco-img {
+    display: none;
+  }
+  .form-outside-container .deco-icon {
+    display: none;
+  }
+
+  .form-outside-container .form-container .form {
+    padding: 10px;
+    width: auto;
+    min-height: 550px;
+    background-color: rgba(35, 30, 102, 0.785);
+    display: grid;
+    grid-template-rows: 4% 10% 10% 10% 10% 10% 10% 10% 18% 8%;
+    grid-template-columns: none;
+    border-radius: 15px;
+    border: 3px solid rgba(132, 120, 200, 0.703);
+    /* box-shadow: 0px 0px 5px 10px rgb(105 89 196 / 70%); */
+  }
+
+  .form-outside-container .form-container .form input,
+  .form-outside-container .form-container .form #message {
+    grid-column: 1;
+    margin: 0;
+  }
+
+  .form-outside-container .form-container .form label,
+  .form-outside-container .form-container .form button {
+    grid-column: 1;
+
+  }
+
+  .form-outside-container .form-container .form label {
+    margin-top: 5px;
+  }
+
+  .form-outside-container .form-container .form button {
+    margin-top: 5px;
+    width: 100%;
+    
+  }
+  .form-outside-container .form-container .form .title #console-icon {
+    left: 60px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .form-outside-container .form-container {
+    border-radius: 0;
+  }
+
+  .form-outside-container .form-container .deco-img {
+    display: none;
+  }
+  .form-outside-container .deco-icon {
+    display: none;
+  }
+
+  .form-outside-container { 
+    margin-bottom: 50px;
+  }
+
+  .form-outside-container .form-container .form {
+    border-radius: 10px;
+  }
+
+  .form-outside-container .form-container .form .title #console-icon {
+    left: 60px;
   }
 }

@@ -11,21 +11,12 @@
   <title><?php echo $row2['gname'] ?></title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
   <link rel="icon" href="./assets/img/logo.png" />
-<<<<<<< HEAD:productDetails.php
-  <link rel="stylesheet" href="./assets/css/product.css" />
-  <link rel="stylesheet" href="./assets/css/header.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/footer.css" />
-  <link rel="stylesheet" href="./assets/css/filterProducts.css" />
-  <link rel="stylesheet" href="./assets/css/productDetails.css" />
-=======
   <link rel="stylesheet" href="../../assets/css/product.css" />
   <link rel="stylesheet" href="../../assets/css/header.css" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/footer.css" />
   <link rel="stylesheet" href="../../assets/css/filterProducts.css" />
   <link rel="stylesheet" href="../../assets/css/productDetails.css" />
->>>>>>> b2d18fdb27d3a5558ff1fed7929ce3db73e4b2ca:view/user/productDetails.php
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 

@@ -395,9 +395,13 @@
         border-radius: unset;
     }
     .header .container .menu div{
-        padding: 12px 20px;
         font-size: 12px;
         width: 25%;
+    }
+
+    .header .container .menu div a {
+        padding: 12px 30px;
+        line-height: 40px;
     }
 
     .header .container .search {
