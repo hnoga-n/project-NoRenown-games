@@ -1,5 +1,5 @@
 <?php
-include '../admin/connect.php';
+include '../../model/connect.php';
 $id = $_GET['id'];
 $sql = mysqli_query($conn, "SELECT * FROM game_detail where gdt_id = {$id}");
 $sql1 = mysqli_query($conn, "SELECT * FROM games where gid = {$id}");
@@ -138,5 +138,6 @@ $result = round((float)$row2['gprice'] - (float)$row2['gprice'] * (int)$row2['gd
 <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>
 <script src="../../assets/js/header.js"></script>
 <script src="../../assets/js/productDetails.js"></script>
+<script src="../../controller/search.js"></script>
 
 </html>

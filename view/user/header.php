@@ -9,13 +9,13 @@
   <div class="container">
     <div class="menu">
       <div>
-        <a href="../.././index.php"> Home </a>
+        <a href="./index.php"> Home </a>
       </div>
       <div>
-        <a href="../../view/user/search.php"> Games </a>
+        <a href="./view/user/search.php"> Games </a>
       </div>
       <div>
-        <a href="../../view/user/contact.php"> Contact </a>
+        <a href="./view/user/contact.php"> Contact </a>
       </div>
       <div>
         <a href=""> About </a>

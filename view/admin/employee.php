@@ -5,10 +5,10 @@ if (isset($_GET['page'])) {
     $page = $_GET['page'];
     switch ($page) {
         case 'employee-profile':
-            require_once('employeeProfile.php');
+            require_once('./employeeProfile.php');
             break;
         case 'listgame':
-            require_once('listgame.php');
+            require_once('./listgame.php');
             break;
     }
 } else {
@@ -17,5 +17,5 @@ if (isset($_GET['page'])) {
 ?>
 <script src="../../assets/js/leftmenu.js"></script>
 <script src="../../assets/js/listGame.js"></script>
-<script src="../../assets/js/pagination_listGame.js"></script>
+<script src="../../controller/pagination_listGame.js"></script>
 <script src="../../assets/js/deletegame.js"></script>

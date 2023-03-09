@@ -53,7 +53,7 @@ function search(str, page, genre,priceFrom, priceTo,sortby) {
     
   }
   
-  xmlhttp.open("GET", "../model/searchHandle.php?queryGames=" + str + "&page=" + page + "&genre=" + genre + "&priceFrom=" + priceFrom + "&priceTo=" + priceTo+ "&sort=" + sortby);
+  xmlhttp.open("GET", "../../model/searchHandle.php?queryGames=" + str + "&page=" + page + "&genre=" + genre + "&priceFrom=" + priceFrom + "&priceTo=" + priceTo+ "&sort=" + sortby);
   xmlhttp.send();
 }
 
