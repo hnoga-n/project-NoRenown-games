@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
         <h2><?= !empty($_GET['id']) ? "Edit Game" : "Add Game" ?></h2>
     </div>
     <div class='modal-body'>
-        <form action='<?= !empty($game) ? "edit_Game.php" : "add_Game.php" ?>' method="post">
+        <form action='<?= !empty($game) ? "../../model/edit_Game.php?gid=$id" : "../../model/add_Game.php" ?>' method="post">
             <div class='general'>
                 <span>General</span>
                 <div class='game-image' style="display:<?= !empty($game) ? 'block' : 'none' ?>;">
@@ -101,7 +101,7 @@ if (isset($_GET['id'])) {
                         <label>Quantity :</label>
                     </div>
                     <div>
-                        <input type='number' name='gquantity' min='0' <?= !empty($game) ? 'disabled' : '' ?> value='<?= !empty($game) ? $game['gquantity'] : ''; ?>' required>
+                        <input type='number' name='gquantity' min='0' <?= !empty($game) ? 'readonly' : '' ?> value='<?= !empty($game) ? $game['gquantity'] : ''; ?>' required>
                     </div>
                 </div>
                 <hr>
@@ -162,7 +162,7 @@ if (isset($_GET['id'])) {
                 </div>
                 <hr>
                 <div class='modal-input'>
-                    <textarea name='about' placeholder="About" value='<?= !empty($game) ? $game['about'] : ''; ?>' required></textarea>
+                    <textarea name='about' placeholder="About" required><?= !empty($game) ? $game['about'] : ''; ?></textarea>
                 </div>
             </div>
             <div class='form-submit'>

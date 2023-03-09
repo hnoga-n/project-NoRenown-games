@@ -34,7 +34,7 @@
       <span>$</span>
     </div>
     <div class="button">
-      <a href="editgame.php">
+      <a href="./editgame.php">
         <button>
           <i class="fa-solid fa-plus"></i>
           <span>Add</span>
