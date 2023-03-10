@@ -13,10 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoRenowned Games</title>
     <link rel="icon" href="./assets/img/logo.png" />
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/header.css">
-    <link rel="stylesheet" href="./assets/css/footer.css">
-    <link rel="stylesheet" href="./assets/css/cart.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <link rel="stylesheet" href="../../assets/css/cart.css">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
@@ -180,14 +180,9 @@
         <?php
         include "footer.php";
         ?>
-        <div class="content">
-        <div class="information">
-        <div class="trustpilot-container">
-        <div class="trustpilot">
-        <div class="trustpilot-logo"></div>
-        <div class="trustpilot-stars"></div>
+        
         </div>
 </body>
-<script src="./assets/js/cart.js"></script>
+<script src="../../assets/js/cart.js"></script>
 <!-- <script src="./assets/js/header.js"></script> -->
 </html>
