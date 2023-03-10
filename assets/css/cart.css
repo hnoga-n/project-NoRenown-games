@@ -472,6 +472,22 @@ body{
 .count_input{
     width: 15%;
 }
+@media screen and (max-width: 850px){
+.count_input{
+    width: 30px;
+}
+}
+
+@media screen and (max-width: 730px){
+.cartpage-container{
+    padding-top: 326px;
+    flex-direction: column;
+}
+.cartpage-container .cartpage-right {
+    margin: auto;
+}
+}
+
 
 @media screen and (min-width: 650px){
 .cartpage-container .cart-listing .cart-item .item-container .price {
