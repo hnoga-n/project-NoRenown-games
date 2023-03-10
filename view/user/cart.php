@@ -1,10 +1,11 @@
 <?php
-// include "connect.php";
+include "../../model/connect.php";
 
-// $sql = mysqli_query($conn," SELECT * FROM cart");
 
 
 ?>
+
+
 
 <html lang="en">
 
@@ -13,7 +14,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NoRenowned Games</title>
-  <link rel="icon" href="./assets/img/logo.png" />
+  <link rel="icon" href="../../assets/img/logo.png" />
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="../../assets/css/header.css">
   <link rel="stylesheet" href="../../assets/css/footer.css">
@@ -64,7 +65,7 @@
       <div class="cartpage-left">
         <div class="cartpage-section">
           <h2>Cart</h2>
-          <div class="cart-listing">
+          <div class="cart-listing" id="itemsList">
             <?php
             // if ($sql->num_rows > 0) {
             //     while($result = $sql->fetch_assoc()) {
@@ -72,17 +73,17 @@
             //     }
             // }
             ?>
-            <div class="cart-item">
+            <!-- <div class="cart-item">
               <div class="item-container">
                 <a href="/en/12153-buy-wo-long-fallen-dynasty-pc-game-steam/" class="cover">
                   <picture><img data-src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" alt="Wo Long: Fallen Dynasty" src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" loading="lazy">
                   </picture>
                 </a>
                 <div class="information">
-                  <div class="name"><!---->
+                  <div class="name">
                     <span title="Wo Long: Fallen Dynasty" class="title">Wo Long: Fallen Dynasty</span>
                   </div>
-                  <div class="type">Steam</div> <!---->
+                  <div class="type">Steam</div>
                   <div class="actions">
                     <a href="" class="deleteItem">
                       <div class="icon-delete icon-xs"></div>
@@ -91,31 +92,9 @@
                 </div>
                 <input type="number" value="1" class="count_input">
                 <div class="price">44.39€</div>
-              </div> <!---->
-            </div>
-            <div class="cart-item">
-              <div class="item-container">
-                <a href="/en/12153-buy-wo-long-fallen-dynasty-pc-game-steam/" class="cover">
-                  <picture><img data-src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" alt="Wo Long: Fallen Dynasty" src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" loading="lazy">
-                  </picture>
-                </a>
-                <div class="information">
-                  <div class="name"><!---->
-                    <span title="Wo Long: Fallen Dynasty" class="title">Wo Long: Fallen Dynasty</span>
-                  </div>
-                  <div class="type">Steam</div> <!---->
-                  <div class="actions">
-                    <a href="" class="deleteItem">
-                      <div class="icon-delete icon-xs"></div>
-                    </a>
-
-                  </div>
-                </div>
-                <input type="number" value="1" class="count_input">
-                </span>
-                <div class="price">44.39€</div>
-              </div> <!---->
-            </div>
+              </div>
+            </div> -->
+            
             <!-- <div class="cart-empty">
                   <div class="icon-cart icon-xxl"></div> 
                   <h2 class="title">Your cart is empty</h2> 
