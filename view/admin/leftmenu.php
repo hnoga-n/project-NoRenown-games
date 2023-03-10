@@ -1,6 +1,6 @@
-<div class="sidebar" onmouseenter="openSidebar()" onmouseleave="closeSidebar()" >
+<div class="sidebar" onmouseenter="openSidebar()" onmouseleave="closeSidebar()">
     <div class="logo">
-        <img src="./assets/img/logo.png" alt=". . .">
+        <img src="../../assets/img/logo.png" alt=". . .">
         <div class="logo-text">
             <span class="text1">NoRENOWN</span><br>
             <span class="text2">GAMING</span>
@@ -23,8 +23,8 @@
                     <span>Import goods</span>
                 </li>
             </a>
-            <a href="employee.php?page=listgame" >
-                <li class="nav-item" >
+            <a href="employee.php?page=listgame">
+                <li class="nav-item">
                     <i class="fa-solid fa-gamepad "></i>
                     <span>Games</span>
                 </li>
@@ -48,12 +48,12 @@
         </div>
         <ul>
             <a href="employee.php?page=employee-profile">
-                <li class="nav-item" >                  
+                <li class="nav-item">
                     <i class="fa-solid fa-user-large"></i>
-                    <span>Your profile</span>                  
+                    <span>Your profile</span>
                 </li>
             </a>
-            <a href="index.php">
+            <a href="../../index.php">
                 <li class="nav-item">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span>Log out</span>

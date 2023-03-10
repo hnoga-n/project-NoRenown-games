@@ -1,5 +1,5 @@
 <div class="header" id="myHeader">
-  <a href="index.php">
+  <a href="/project-NoRenowned-games/index.php">
     <div class="logo">
       <span class="text1">NoRENOWN</span>
       <br />
@@ -9,16 +9,16 @@
   <div class="container">
     <div class="menu">
       <div>
-        <a href="./index.php"> Home </a>
+        <a href="/project-NoRenowned-games/index.php"> Home </a>
       </div>
       <div>
-        <a href="./search.php"> Games </a>
+        <a href="/project-NoRenowned-games/view/user/search.php"> Games </a>
       </div>
       <div>
-        <a href="./contact.php"> Contact </a>
+        <a href="/project-NoRenowned-games/view/user/contact.php"> Contact </a>
       </div>
       <div>
-        <a href=""> About </a>
+        <a href="/project-NoRenowned-games/view/user/about.php"> About </a>
       </div>
     </div>
     <div class="search">

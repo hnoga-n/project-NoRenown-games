@@ -21,7 +21,7 @@
 <body>
   <!-- header -->
   <?php
-  include 'header.php';
+  include './view/user/header.php';
   ?>
   <!-- slider -->
   <div class="slider-container">
@@ -55,7 +55,7 @@
     <div class="products-trending">
       <div class="headline">
         <h2>Trending</h2>
-        <a href="./search.php" class="button button-more-games glass-card">More Games</a>
+        <a href="./view/user/search.php" class="button button-more-games glass-card">More Games</a>
       </div>
       <div class="products-list">
         <div class="item">
@@ -255,7 +255,7 @@
   </div>
 
   <?php
-  include 'footer.php';
+  include './view/user/footer.php';
   ?>
 </body>
 <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>
