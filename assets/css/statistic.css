@@ -5,14 +5,6 @@
     min-height: 1000px;
 }
 
-.statistic-container-content {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    min-height: 300px;
-    max-height: 700px;
-}
-
 /* 
 .chart {
     padding: 20px;
@@ -70,4 +62,57 @@
     color: #0cc94b;
     font-size: 35px;
     font-weight: 600;
+}
+
+.statistic-container-content {
+    text-align: center;
+    padding: 20px;
+    min-height: 100px;
+    color: white;
+}
+
+.statistic-container-content > div {
+    margin-bottom: 15px;
+}
+
+.products-filter-date {
+}
+
+.products-filter-date input,label,button,
+.statistic-container-content select  {
+    margin: 0 5px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+}
+
+.products-filter-date input,
+.statistic-container-content select {
+    text-align: center;
+    border-radius: 5px;
+    background: rgb(241, 237, 237);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, .2);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.products-filter-date button {
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.products-filter-date #btn-filter {
+    box-shadow: 0 5px 20px rgba(255, 255, 255, .2);
+    background: rgba(16,16,16,.8);
+    color: white;
+}
+
+.products-filter-date #btn-filter:hover {
+    background: rgba(16,16,16,1);
+}
+
+.products-filter-date #btn-return {
+    background: none;
+    color: rgba(10, 42, 205,.8);
 }
