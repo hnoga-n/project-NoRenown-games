@@ -21,7 +21,6 @@
         <div class="content">
           <div class="text">Sales</div>
           <div>
-
             <div class="number">100</div>
             <i class="fa-solid fa-cart-shopping"></i>
           </div>
@@ -29,9 +28,8 @@
       </div>
       <div class="earning">
         <div class="content">
-          <div class="text">Earning</div>
+          <div class="text">Revenue</div>
           <div>
-
             <div class="number">$9999.99</div>
             <i class="fa-solid fa-sack-dollar"></i>
           </div>
@@ -39,6 +37,20 @@
       </div>
     </div>
     <div class="statistic-container-content">
+      <div class="products-filter-date">
+        <label>Date</label>
+        <input id="date-start" type="date" required/>
+        <label>to</label>
+        <input id="date-end" type="date" required/>
+        <button id="btn-filter"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button id="btn-return" title="Return"><i class="fa-solid fa-rotate-right"></i></button>
+      </div>
+      <div class="products-filter-category">
+        <label>Category</label>
+        <select name="" id="">
+          <option value="all">All</option>
+        </select>
+      </div>
       <!-- <div class="chart">
             <canvas id="pie" style="width: inherit; height: inherit;margin: 0 auto;"></canvas>
         </div> -->

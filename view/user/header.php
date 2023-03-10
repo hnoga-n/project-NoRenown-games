@@ -33,7 +33,7 @@
       </button>
     </div>
     <div class="user">
-      <a href="login.php">
+      <a href="/project-NoRenowned-games/view/user/login.php">
         <button>
           <i class="fa-solid fa-user"></i>
         </button>
