@@ -43,3 +43,4 @@ if ($list_product_card->num_rows > 0) {
 } else {
   echo "empty";
 }
+?>

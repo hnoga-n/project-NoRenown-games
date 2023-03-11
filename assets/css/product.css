@@ -140,18 +140,18 @@
 
   /* Track */
   .products-list::-webkit-scrollbar-track {
-    background: #ff1e1e;
+    background: #888;
   }
 
   /* Handle */
   .products-list::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #ff1e1e;
   }
 
   /* Handle on hover */
-  .products-list::-webkit-scrollbar-thumb:hover {
+  /* .products-list::-webkit-scrollbar-thumb:hover {
     background: #ff1e1e;
-  }
+  } */
 
 
   .products-list .item {

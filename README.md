@@ -7,11 +7,10 @@
 | STT  | MSSV | Họ tên |
 | :-------------: | :-------------: | :-------------: |
 | l  | 3121410182  | Trần Vĩ Hào  |
-| 2  | 3121410555  | Mach Hạo Tuấn  |
+| 2  | 3121410555  | Mạch Hạo Tuấn  |
 | 3  | 3121410212  | Nguyễn Huy Hoàng  |
 | 4  | 3121410210  | Lê Long Hoàng  |
 
-## SREENSHOTS
+## SCREENSHOTS
 
-
-
+<img src="/assets/img/logo.png">

@@ -1,5 +1,5 @@
 <div class="header" id="myHeader">
-  <a href="./index.php">
+  <a href="/project-NoRenowned-games/index.php">
     <div class="logo">
       <span class="text1">NoRENOWN</span>
       <br />
@@ -18,7 +18,7 @@
         <a href="/project-NoRenowned-games/view/user/contact.php"> Contact </a>
       </div>
       <div>
-        <a href=""> About </a>
+        <a href="/project-NoRenowned-games/view/user/about.php"> About </a>
       </div>
     </div>
     <div class="search">
@@ -33,7 +33,7 @@
       </button>
     </div>
     <div class="user">
-      <a href="login.php">
+      <a href="/project-NoRenowned-games/view/user/login.php">
         <button>
           <i class="fa-solid fa-user"></i>
         </button>
