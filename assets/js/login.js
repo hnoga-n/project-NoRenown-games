@@ -5,6 +5,7 @@ const container = document.getElementById('container');
 const body = document.querySelector(".body")
 console.log(body);
 
+
 // css sign in/up animation 
 signUpButton.addEventListener('click', () => {
 	container.classList.add("right-panel-active");
@@ -42,9 +43,9 @@ let flagPw 		= true;
 		nameMess.style.display = 'block'
 		flagName = false;
 	}else{
-		flagName = true;
-		nameMess.style.display = 'none'
-	}
+							flagName = true;
+							nameMess.style.display = 'none'
+							}
 	if(phone == ''){
 		phoneMess.innerHTML = "* Phone is required"
 		phoneMess.style.display = "block"
@@ -72,10 +73,24 @@ let flagPw 		= true;
 					mailMess.innerHTML = "* Mail is not valid ! Exp: norenown@gmail.com"
 					mailMess.style.display = 'block'
 					flagMail = false;
-					}else{
-						mailMess.style.display = 'none'
-						flagMail = true;
-					}
+					}else if(mail != ''){
+									let xml = new XMLHttpRequest();
+									xml.open("GET","../../model/checkExistUsername.php?mail=" + mail,false);
+									xml.onreadystatechange = function(){
+										if(this.responseText == "mailExist"){
+											mailMess.innerHTML = "* This email has already been used ";
+											mailMess.style.display = 'block'
+											flagMail = false;
+											console.log(this.responseText);
+										}
+									};
+									
+									xml.send();
+								}
+								else{
+									mailMess.style.display = 'none'
+									flagMail = true;
+								}
 	
 
 	if(passwd == "" || cfm_passwd == "" ){
@@ -98,4 +113,49 @@ let flagPw 		= true;
 	}
 	
 	
+}
+
+function sanitizeSigninForm(){
+	const mail = document.forms['signin_form']['signin_mail'].value;
+	const passwd = document.forms['signin_form']['signin_pw'].value;
+	const mailMess = document.getElementById('mail_validate_signin_message');
+	console.log(mail);
+	console.log(passwd);
+	const cfmMess = document.getElementById('passwd_signin_cfm_message');
+	let flagMail = true;
+	let flagPw = true;
+	
+	if(mail == ""){
+		mailMess.innerHTML = "* Mail is required !"
+		mailMess.style.display = 'block'
+		flagMail = false;
+	}else if(mail.match(/((\w|\W){5,})+@+(\w{1,})+.+(\w{1,})/i ) == null){
+					mailMess.innerHTML = "* Mail is not valid ! Exp: norenown@gmail.com"
+					mailMess.style.display = 'block'
+					flagMail = false;
+					}else{
+									mailMess.style.display = 'none'
+									flagMail = true;
+								}
+
+	if(passwd == "" ){
+		cfmMess.innerHTML = "* Password is required."
+		cfmMess.style.display = 'block'
+		flagPw = false;
+	}else{
+					cfmMess.style.display = 'none'
+					flagPw = true;
+				}
+
+	
+	if(flagMail ==false ||flagPw==false ){
+		return false;
+	}else{
+		return true;
+	}	
+	
+	function signout(){
+		$.cookie("fullname",null,{path:'/'});
+		window.location.href = "/index.php";
+	}
 }

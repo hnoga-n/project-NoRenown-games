@@ -32,47 +32,53 @@
         <i class="fa-solid fa-cart-shopping"></i>
       </button>
     </div>
-    <div class="user">
-      <a href="login.php">
-        <button>
-          <i class="fa-solid fa-user"></i>
+
+    <?php
+    if (isset($_COOKIE["fullname"])) { ?>
+      <div class="user-logged" style="display:block;">
+        <button onclick="document.getElementById('panel-el').style.display = 'block'">
+          <i class="fa-solid fa-user-secret"></i>
         </button>
-      </a>
-    </div>
-    <div class="user-logged">
-      <button onclick="document.getElementById('panel-el').style.display = 'block'">
-        <i class="fa-solid fa-user-secret"></i>
-      </button>
-      <div class="user-menu" id="panel-el">
-        <div class="panel">
-          <div>
-            <span>Mach Hao Tuan</span>
-          </div>
-          <hr>
-          <div>
-            <a href="userProfile.php">
-              <i class="fa-solid fa-user"></i>
-              &nbsp;
-              Profile
-            </a>
-          </div>
-          <div>
-            <a href="">
-              <i class="fa-solid fa-money-bill"></i>
-              &nbsp;
-              My orders
-            </a>
-          </div>
-          <hr>
-          <div>
-            <a href="">
-              <i class="fa-solid fa-right-from-bracket"></i>
-              &nbsp;
-              Sign out
-            </a>
+        <div class="user-menu" id="panel-el">
+          <div class="panel">
+            <div>
+              <span><?php echo $_COOKIE["fullname"] ?></span>
+            </div>
+            <hr>
+            <div>
+              <a href="./view/user/userProfile.php">
+                <i class="fa-solid fa-user"></i>
+                &nbsp;
+                Profile
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <i class="fa-solid fa-money-bill"></i>
+                &nbsp;
+                My orders
+              </a>
+            </div>
+            <hr>
+            <div onclick="signout()">
+              <div>
+                <i class="fa-solid fa-right-from-bracket"></i>
+                &nbsp;
+                Sign out
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <?php } else { ?>
+      <div class="user" style="display:block;">
+        <a href="./view/user/login.php">
+          <button>
+            <i class="fa-solid fa-user"></i>
+          </button>
+        </a>
+      </div>
+    <?php } ?>
+
   </div>
 </div>

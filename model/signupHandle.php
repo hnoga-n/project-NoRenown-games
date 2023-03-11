@@ -1,14 +1,14 @@
 <?php
 include 'connect.php';
 if (!empty($_POST["signup_name"]) && !empty($_POST["signup_phone"]) && !empty($_POST["signup_mail"]) && !empty($_POST["signup_passwd"])) {
-  $username = $_POST['signup_mail'];
   $passwd = $_POST['signup_passwd'];
   $fullname = $_POST['signup_name'];
   $phone = $_POST['signup_phone'];
   $mail = $_POST['signup_mail'];
   $auth = '1,2,3';
-  $sql = $conn->prepare("INSERT INTO account (username,passwd,	auth,	fullname,	mail,	phone)	 VALUES (?,?,?,?,?,?) ");
-  $sql->bind_param("ssssss", $username, $passwd, $auth, $fullname, $mail, $phone);
+
+  $sql = $conn->prepare("INSERT INTO account (passwd,	auth,	fullname,	mail,	phone)	 VALUES (?,?,?,?,?) ");
+  $sql->bind_param("sssss", $passwd, $auth, $fullname, $mail, $phone);
   $sql->execute();
   $conn->close();
 }
@@ -16,7 +16,7 @@ if (!empty($_POST["signup_name"]) && !empty($_POST["signup_phone"]) && !empty($_
 <html>
 
 <head>
-  <link rel="stylesheet" href="./assets/css/login.css">
+  <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 
 <body>
@@ -32,7 +32,7 @@ if (!empty($_POST["signup_name"]) && !empty($_POST["signup_phone"]) && !empty($_
   const confirmBtn = document.getElementById('confirm-button');
   // confirm sign up sucessed box 
   confirmBtn.addEventListener("click", () => {
-    window.location.href = "/ShopGamePj/view/login.php";
+    window.location.href = "../view/user/login.php";
   })
 </script>
 
