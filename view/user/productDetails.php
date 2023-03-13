@@ -1,5 +1,5 @@
 <?php
-  include_once "../../model/getProductDetails.php"
+include_once "../../model/getProductDetails.php"
 ?>
 
 <html lang="en">
@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><?php echo $row2['gname'] ?></title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  <link rel="icon" href="./assets/img/logo.png" />
+  <link rel="icon" href="../../assets/img/logo.png" />
   <link rel="stylesheet" href="../../assets/css/product.css" />
   <link rel="stylesheet" href="../../assets/css/header.css" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
@@ -58,12 +58,10 @@
             <div class="price-dollar">$</div>
           </div>
           <div>
-            <a href="">
-              <div class="addToCartBtn">
-                Add to cart
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-            </a>
+            <div id="addToCartBtn">
+              Add to cart
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
           </div>
         </div>
       </div>
@@ -133,6 +131,6 @@
 <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>
 <script src="../../assets/js/header.js"></script>
 <script src="../../assets/js/productDetails.js"></script>
-<script src="../../controller/search.js"></script>
+<script src="../../controller/addToCart.js"></script>
 
 </html>

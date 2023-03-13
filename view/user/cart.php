@@ -79,10 +79,10 @@
                   </picture>
                 </a>
                 <div class="information">
-                  <div class="name"><!---->
+                  <div class="name">
                     <span title="Wo Long: Fallen Dynasty" class="title">Wo Long: Fallen Dynasty</span>
                   </div>
-                  <div class="type">Steam</div> <!---->
+                  <div class="type">Steam</div> 
                   <div class="actions">
                     <a href="" class="deleteItem">
                       <div class="icon-delete icon-xs"></div>
@@ -91,7 +91,7 @@
                 </div>
                 <input type="number" value="1" class="count_input">
                 <div class="price">44.39€</div>
-              </div> <!---->
+              </div> 
             </div>
             <div class="cart-item">
               <div class="item-container">
@@ -100,10 +100,10 @@
                   </picture>
                 </a>
                 <div class="information">
-                  <div class="name"><!---->
+                  <div class="name">
                     <span title="Wo Long: Fallen Dynasty" class="title">Wo Long: Fallen Dynasty</span>
                   </div>
-                  <div class="type">Steam</div> <!---->
+                  <div class="type">Steam</div> 
                   <div class="actions">
                     <a href="" class="deleteItem">
                       <div class="icon-delete icon-xs"></div>
@@ -114,7 +114,7 @@
                 <input type="number" value="1" class="count_input">
                 </span>
                 <div class="price">44.39€</div>
-              </div> <!---->
+              </div> 
             </div>
             <!-- <div class="cart-empty">
                   <div class="icon-cart icon-xxl"></div> 
@@ -123,7 +123,7 @@
                   <a href="/en/search/" class="button button-secondary">Discover games</a>
                 </div>  -->
           </div>
-        </div> <!----> <!----> <!----> <!---->
+        </div>    
       </div>
       <!-- <div class="cartpage-right cartpage-empty">
             <h2>Summary</h2> 

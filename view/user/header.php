@@ -28,9 +28,11 @@
   </div>
   <div class="header-right">
     <div class="cart">
-      <button>
-        <i class="fa-solid fa-cart-shopping"></i>
-      </button>
+        <a href="/project-NoRenowned-games/view/user/cart.php">
+          <button>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+        </a>
     </div>
 
     <?php
