@@ -11,7 +11,7 @@
 |  3  | 3121410212 | Nguyễn Huy Hoàng |
 |  4  | 3121410210 |  Lê Long Hoàng   |
 
-<img src="/assets/img/logo.png">
+<img src="/assets/img/logo.png" width="200" height="300">
 
 ## SCREENSHOTS
 
