@@ -5,10 +5,11 @@ if (!empty($_POST["signup_name"]) && !empty($_POST["signup_phone"]) && !empty($_
   $fullname = $_POST['signup_name'];
   $phone = $_POST['signup_phone'];
   $mail = $_POST['signup_mail'];
+  $address = "Address hasn't been set ";
   $auth = '1,2,3';
 
-  $sql = $conn->prepare("INSERT INTO account (passwd,	auth,	fullname,	mail,	phone)	 VALUES (?,?,?,?,?) ");
-  $sql->bind_param("sssss", $passwd, $auth, $fullname, $mail, $phone);
+  $sql = $conn->prepare("INSERT INTO account (passwd,	auth,	fullname,	mail,	phone,address)	 VALUES (?,?,?,?,?,?) ");
+  $sql->bind_param("sssss", $passwd, $auth, $fullname, $mail, $phone, $address);
   $sql->execute();
   $conn->close();
 }

@@ -153,9 +153,67 @@ function sanitizeSigninForm(){
 	}else{
 		return true;
 	}	
-	
-	function signout(){
-		$.cookie("fullname",null,{path:'/'});
-		window.location.href = "/index.php";
+}
+
+
+function sanitizeUpdateProfileForm(){
+	const name = document.forms['update_profile_form']['profile_fullname'].value;
+	const phone = document.forms['update_profile_form']['profile_phone'].value;
+	const passwd =  document.forms['update_profile_form']['profile_newPasswd'].value;
+
+	/* const nameMess = document.getElementById('name_validate_message');
+	const phoneMess = document.getElementById('phone_validate_message');
+	const mailMess = document.getElementById('mail_validate_message');
+	const cfmMess = document.getElementById('passwd_cfm_message'); */
+
+/* 	phone = phone.trim();
+mail = mail.trim(); 
+console.log(phone.trim());*/
+
+let flagName 	= true;
+let flagPhone = true;
+let flagPw 		= true;
+
+	if(name == ''){
+		nameMess.innerHTML = "* Name is required";
+		nameMess.style.display = 'block'
+		flagName = false;
+	}else{
+							flagName = true;
+							nameMess.style.display = 'none'
+							}
+	if(phone == ''){
+		phoneMess.innerHTML = "* Phone is required"
+		phoneMess.style.display = "block"
+		flagPhone = false;
+	}else if(phone.match(/\d/g) == null){
+					phoneMess.innerHTML = "* Phone must be digit ! Exp: 0968644022"
+					phoneMess.style.display = 'block'
+					flagPhone = false;
+				}else if(phone.match(/(09)+(\d{8})\b/) == null) {
+							console.log("hello");
+							phoneMess.innerHTML = "* Phone is not valid ! Exp: 0968644022"
+							phoneMess.style.display = 'block'
+							flagPhone = false;
+							}else{
+									phoneMess.style.display = "none"
+									flagPhone = true;
+							}
+				
+	if(passwd == ""){
+		cfmMess.innerHTML = "* Password is required."
+		cfmMess.style.display = 'block'
+		flagPw = false;
+	}else{
+					cfmMess.style.display = 'none'
+					flagPw = true;
+				}
+
+	if(flagName==false || flagPhone ==false ||flagPw==false ){
+		return false;
+	}else{
+		return true;
 	}
+	
+	
 }
