@@ -15,7 +15,7 @@
 
 ## SCREENSHOTS
 
-## -Giao diện người dùng
+## - Giao diện người dùng
 
 +Home 
 
@@ -31,7 +31,7 @@
 
 +Chi tiết sản phẩm 
 
-## -Giao diện quản trị
+## - Giao diện quản trị
 
 +Quản lí tài khoản
 
