@@ -14,7 +14,12 @@ addToCartBtn.addEventListener('click',()=> {
         if(xhr.readyState == XMLHttpRequest.DONE) {
             if(xhr.status == 200) {
                 let data = xhr.responseText;
-                alert(data);
+                if(data == "NotSignIn") {
+                    alert("You have not sign in yet");
+                    window.location.href = "../../view/user/login.php";
+                } else {
+                    alert(data);
+                }
             }
         }
     }
