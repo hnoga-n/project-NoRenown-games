@@ -21,11 +21,11 @@
 
 +Search
 
-+++Contact
++Contact
 
 +About
 
-++Giỏ hàng
++Giỏ hàng
 
 +Profile
 
