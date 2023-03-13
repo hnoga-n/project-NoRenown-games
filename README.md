@@ -15,24 +15,24 @@
 
 ## SCREENSHOTS
 
-###Giao diện người dùng
+##-Giao diện người dùng
 
-####Home 
++Home 
 
-####Search
++Search
 
-####Contact
++++Contact
 
-####About
++About
 
-####Giỏ hàng
+++Giỏ hàng
 
-####Profile
++Profile
 
-####Chi tiết sản phẩm 
++Chi tiết sản phẩm 
 
-###Giao diện quản trị
+##-Giao diện quản trị
 
-####Quản lí tài khoản
++Quản lí tài khoản
 
-####Trang thống kê
++Trang thống kê
