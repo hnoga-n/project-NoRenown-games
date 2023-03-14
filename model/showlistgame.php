@@ -52,7 +52,7 @@
                                 <span class='slider round'></span>
                             </label>
                         </td>
-                        <td><a href='editgame.php?id=".$row['gid']."'>
+                        <td><a href='editgame.php?page=listgame&id=".$row['gid']."'>
                         <button>Edit</button></a>
                         <br>
                         <br>
