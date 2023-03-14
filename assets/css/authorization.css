@@ -1,0 +1,100 @@
+.au_main{
+    height: 100%;
+    width: 90%;
+    padding: 20px;
+    margin-left: 120px;
+    font-family: 'Righteous', cursive;
+    display: flex;
+    flex-direction: column;
+}
+.au_main .title {
+    position: relative;
+    height: 10%;
+    color: white;
+    font-size: 30px;
+    padding: 5px;
+}
+.au_main .title button {
+    position: absolute;
+    right: 0;
+    font-family: 'Righteous', cursive;
+    height: 40px;
+    width: 120px;
+    border-radius: 7px;
+    font-size: 18px;
+    background-color: #FF1E1E;
+    color: white;
+    border: unset;
+    padding: 5px;
+    transition: .4s;
+    cursor: pointer;
+}
+.au_main .title button:hover {
+    background-color: #e1981a;
+}
+.au_main .author_group {
+    height: 90%;
+    width: 100%;
+    margin-top: 20px;
+}
+.au_main .author_group  table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.au_main .author_group  table thead {
+    background-color: #FF1E1E;
+    width: 100%;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+}
+.au_main .author_group table thead tr {
+    border-radius: 10px;
+}
+.au_main .author_group table thead th {
+    height: 100%;
+    padding: 10px;
+}
+.au_main .author_group table tbody {
+    width: 100%;
+}
+.au_main .author_group table tbody tr {
+    text-align: center;
+    width: 100%;
+}
+.au_main .author_group table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+.au_main .author_group table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+.au_main .author_group table tbody tr td {
+    padding:5px;
+}
+.au_main .author_group table tbody tr td button {
+    height: 30px;
+    width: 70px;
+    font-family: 'Righteous', cursive;
+    color: white;
+    border-radius: 7px;
+    border: unset;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background .2s;
+}
+.au_main .author_group table tbody tr td a button {
+    background-color: #2e89ff;
+}
+.au_main .author_group table tbody tr td a button:hover {
+    background-color: white ;
+    color: #2e89ff;
+    border: 2px solid #2e89ff;
+}
+.au_main .author_group table tbody tr td button{
+    background-color: #000000;
+}
+.au_main .author_group table tbody tr td button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
