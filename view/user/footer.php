@@ -2,7 +2,7 @@
   <div class="content">
     <div class="footer-link">
       <div class="footer-logo">
-        <a href="./index.php">
+        <a href="/project-NoRenowned-games/index.php">
           <div class="logo">
             <span class="text1">NoRENOWN</span>
             <br />

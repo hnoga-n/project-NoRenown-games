@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +11,7 @@
     <link rel="stylesheet" href="../../assets/css/login.css">
     <link rel="stylesheet" href="../../assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title>Login</title>
+    <title>Sign in/Sign up</title>
 </head>
 
 <body>
@@ -17,7 +20,7 @@
         <div class="container" id="container">
 
             <div class="form-container sign-up-container">
-                <form name="signup_form" onsubmit="return sanitizeForm(event)" action="signupHandle.php" method="POST">
+                <form name="signup_form" onsubmit="return sanitizeForm()" action="../../model/signupHandle.php" method="POST">
                     <h1>Create Account</h1>
                     <input name="signup_name" type="text" placeholder="Name" name="name" />
                     <div style="display:none;" class="input_message" id="name_validate_message"></div>
@@ -32,11 +35,22 @@
 
                 </form>
             </div>
+            <!-- action="../../model/signinHandle.php" method="POST" -->
             <div class="form-container sign-in-container">
-                <form action="">
+                <form name="signin_form" onsubmit="return sanitizeSigninForm()" action="../../model/signinHandle.php" method="POST">
                     <h1>Sign in</h1>
-                    <input name="mail" type="email" placeholder="Email" />
-                    <input name="passwd" type="password" placeholder="Password" />
+                    <input name="signin_mail" type="email" placeholder="Email" />
+                    <div style="display:none;" class="input_message" id="mail_validate_signin_message"></div>
+                    <input name="signin_pw" type="password" placeholder="Password" />
+                    <div style="display:none;" class="input_message" id="passwd_signin_cfm_message"></div>
+                    <span id="input_message_signin">
+                        <?php
+                        if (isset($_SESSION['message'])) {
+                            echo $_SESSION['message'];
+                        }
+                        unset($_SESSION['message']);
+                        ?>
+                    </span>
                     <a href="#">Forgot your password?</a>
                     <button type="submit">Sign In</button>
                 </form>
@@ -59,7 +73,7 @@
     </div>
 
 </body>
-<script src="./assets/js/login.js"></script>
+<script src="../../assets/js/login.js"></script>
 <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>
 
 </html>

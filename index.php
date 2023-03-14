@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+  
+?>
 <html lang="en">
 
 <head>
@@ -55,7 +60,7 @@
     <div class="products-trending">
       <div class="headline">
         <h2>Trending</h2>
-        <a href="./search.php" class="button button-more-games glass-card">More Games</a>
+        <a href="./view/user/search.php" class="button button-more-games glass-card">More Games</a>
       </div>
       <div class="products-list">
         <div class="item">
@@ -263,5 +268,6 @@
 <script src="./assets/js/slider.js"></script>
 <script src="./assets/js/search.js"></script>
 <script src="./assets/js/result.js"></script>
+<script src="./assets/js/login.js"></script>
 
 </html>
