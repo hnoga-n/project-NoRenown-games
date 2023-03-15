@@ -8,7 +8,7 @@
     </div>
     <nav>
             <div class="nav-title">
-                Apps
+                Features
             </div>
             <ul>
                 <a href="">

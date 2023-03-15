@@ -98,3 +98,139 @@
     color: black;
     border: 2px solid black;
 }
+
+/* edit and add */
+.authorize-modalbox {
+    height: 100%;
+    width: 90%;
+    margin-left: 120px;
+    font-family: 'Righteous', cursive;
+    display: flex;
+    flex-direction: column;
+}
+.authorize-modalbox .modal-header {
+    height: 7%;
+}
+.authorize-modalbox .modal-form {
+    height: 93%;
+    margin-top: 50px;
+    padding: 20px;
+}
+.authorize-modalbox .modal-form form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.authorize-modalbox .modal-form form .form-general {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.authorize-modalbox .modal-form form .form-general .form-general-div {
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+}
+.authorize-modalbox .modal-form form .form-general .form-general-div div:first-child {
+    width: 10%;
+    padding: 20px 0;
+}
+.authorize-modalbox .modal-form form .form-general .form-general-div div:last-child {
+    width: 90%;
+    padding: 10px 0;
+}
+.authorize-modalbox .modal-form form .form-general div input {
+    height: 45px;
+    width: 40%;
+    border: 3px solid #3d3d3d;
+    padding:7px;
+    border-radius: 10px;
+    background-color: rgba(16,16,16,.4);
+    color: white;
+    font-size: 15px;
+    font-family: 'Righteous', cursive;
+    transition: .2s;
+    outline: unset;
+}
+.authorize-modalbox .modal-form form .form-general div input:hover,
+.authorize-modalbox .modal-form form .form-general div input:focus {
+    border: 3px solid #FF1E1E;
+}
+
+
+.authorize-modalbox .modal-form form .form-authorize {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.authorize-modalbox .modal-form form .form-authorize .authorize-header {
+    height: 5%;
+    font-size: 18px;
+}
+.authorize-modalbox .modal-form form .form-authorize .authorize-content {
+    height: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 20px;
+    margin: 15px;
+    border: 3px solid #3d3d3d;
+    border-radius: 15px;
+    background-color: rgba(16,16,16,.4);
+    box-shadow: 0 14px 28px rgba(20, 20, 20, 0.25), 
+			0 10px 10px rgba(18, 18, 18, 0.22);
+    transition: .2s;
+}
+.authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card:hover {
+    border-color: #FF1E1E;
+}
+.authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card header {
+    font-size: 30px;
+}
+.authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card .authorize-card-div {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    margin-top: 10px;
+}
+.authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card .authorize-card-div div:first-child {
+    width: 70%;
+    padding: 10px 0;
+}
+.authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card .authorize-card-div div:last-child {
+    width: 30%;
+    padding: 10px 0;
+}
+
+.authorize-modalbox .modal-form form .form-button {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.authorize-modalbox .modal-form form .form-button button {
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #FF1E1E;
+    border: unset;
+    color: white;
+    font-size: 18px;
+    font-family: 'Righteous', cursive;
+    cursor: pointer;
+    transition: background .2s;
+}
+.authorize-modalbox .modal-form form .form-button button:hover {
+    background-color: #e1981a;
+}
