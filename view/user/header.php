@@ -48,7 +48,7 @@
             </div>
             <hr>
             <div>
-              <a href="./view/user/userProfile.php">
+              <a href="/project-NoRenowned-games/view/user/userProfile.php">
                 <i class="fa-solid fa-user"></i>
                 &nbsp;
                 Profile
