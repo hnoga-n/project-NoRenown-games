@@ -9,7 +9,7 @@ if (!empty($_POST["signup_name"]) && !empty($_POST["signup_phone"]) && !empty($_
   $auth = '1,2,3';
 
   $sql = $conn->prepare("INSERT INTO account (passwd,	auth,	fullname,	mail,	phone,address)	 VALUES (?,?,?,?,?,?) ");
-  $sql->bind_param("sssss", $passwd, $auth, $fullname, $mail, $phone, $address);
+  $sql->bind_param("ssssss", $passwd, $auth, $fullname, $mail, $phone, $address);
   $sql->execute();
   $conn->close();
 }
