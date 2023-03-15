@@ -59,20 +59,20 @@ if (!isset($_SESSION['accountId'])) {
         <div class="b-input">
           <div>
             <input name="profile_fullname" type="text" required="required" value="<?php echo $row['fullname'] ?>">
-            <span><?php echo $row['fullname'] ?></span>
+            <span>Name</span>
           </div>
           <div>
 
             <input name="profile_phone" type="text" required="required" value="<?php echo $row['phone'] ?>">
-            <span><?php echo $row['phone'] ?></span>
+            <span>Phone</span>
           </div>
           <div>
             <input name="profile_address" type="text" required="required" value="<?php echo $row['address'] ?>">
-            <span><?php echo $row['address'] ?></span>
+            <span>Address</span>
           </div>
           <div>
             <input name="profile_mail" type="text" required="required" readonly value="<?php echo $row['mail'] ?>">
-            <span><?php echo $row['mail'] ?></span>
+            <span>Mail</span>
           </div>
           <div>
             <input name="profile_newPasswd" type="text" required="required" value="<?php echo $row['passwd'] ?>">
