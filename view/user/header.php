@@ -9,13 +9,13 @@
   <div class="container">
     <div class="menu">
       <div>
-        <a href="/ShopGamePj/index.php"> Home </a>
+        <a href="/project-NoRenowned-games/index.php"> Home </a>
       </div>
       <div>
-        <a href="/ShopGamePj/view/user/search.php"> Games </a>
+        <a href="/project-NoRenowned-games/view/user/search.php"> Games </a>
       </div>
       <div>
-        <a href="/ShopGamePj/view/user/contact.php"> Contact </a>
+        <a href="/project-NoRenowned-games/view/user/contact.php"> Contact </a>
       </div>
       <div>
         <a href="/project-NoRenowned-games/view/user/about.php"> About </a>
@@ -48,7 +48,7 @@
             </div>
             <hr>
             <div>
-              <a href="/ShopGamePj/view/user/userProfile.php">
+              <a href="/project-NoRenowned-games/view/user/userProfile.php">
                 <i class="fa-solid fa-user"></i>
                 &nbsp;
                 Profile
