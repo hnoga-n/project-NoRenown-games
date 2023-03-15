@@ -34,9 +34,8 @@
       <span>$</span>
     </div>
     <div class="button">
-      <a href="./editgame.php">
+      <a href="./editgame.php?page=listgame">
         <button>
-          <i class="fa-solid fa-plus"></i>
           <span>Add</span>
         </button>
       </a>
@@ -68,8 +67,7 @@
     </div>
   </div>
 </div>
-
-
+x
 <div class="message" id="mess">
   <div class="message-box">
     <div class="message-header">

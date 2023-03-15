@@ -10,6 +10,9 @@ if (isset($_GET['page'])) {
         case 'listgame':
             require_once('./listgame.php');
             break;
+        case 'authorization':
+            require_once('authorization.php');
+            break;
     }
 } else {
     require_once('listgame.php');

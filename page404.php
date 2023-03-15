@@ -1,3 +1,8 @@
+<?php
+    if(isset($_SERVER["REDIRECT_STATUS"]))
+        $error = $_SERVER["REDIRECT_STATUS"] 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page 404</title>
-    <link rel="stylesheet" href="./assets/css/page404.css">
-    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="/project-NoRenowned-games/assets/css/page404.css">
+    <link rel="stylesheet" href="/project-NoRenowned-games/assets/css/header.css">
 </head>
 
 <body>
@@ -27,15 +32,15 @@
                 </div>
                 <div class="navbar-links">
                     <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./view/user/contact.php">Contact</a></li>
-                        <li><a href="./view/user/about.php">About</a></li>
+                        <li><a href="/project-NoRenowned-games/index.php">Home</a></li>
+                        <li><a href="/project-NoRenowned-games/view/user/contact.php">Contact</a></li>
+                        <li><a href="/project-NoRenowned-games/view/user/about.php">About</a></li>
                     </ul>
                 </div>
             </div>
             <div class="central-body">
                 <img class="image-404" src="http://salehriaz.com/404Page/img/404.svg" width="300px">
-                <a href="./index.php" class="btn-go-home">GO BACK HOME</a>
+                <a href="/project-NoRenowned-games/index.php" class="btn-go-home">GO BACK HOME</a>
             </div>
             <div class="objects">
                 <img class="object_rocket" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px">

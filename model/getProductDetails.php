@@ -1,6 +1,6 @@
 <?php
   include 'connect.php';
-  if (empty($_GET['id'])) {
+  if (empty($_GET['id']) || !is_numeric($_GET['id'])) {
     header('location: ../../page404.php');
   } else {
     $id = $_GET['id'];
@@ -14,4 +14,5 @@
       header('location: ../../page404.php');
     }
   }
+  $conn->close();
 ?>
