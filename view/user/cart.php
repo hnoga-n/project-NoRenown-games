@@ -2,8 +2,10 @@
 // include "connect.php";
 
 // $sql = mysqli_query($conn," SELECT * FROM cart");
-
-
+  session_start();
+  if(empty($_SESSION['accountId'])) {
+    header('location: /project-NoRenowned-games/view/user/login.php');
+  }
 ?>
 
 <html lang="en">
@@ -12,8 +14,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NoRenowned Games</title>
-  <link rel="icon" href="./assets/img/logo.png" />
+  <title>Cart</title>
+  <link rel="icon" href="../../assets/img/logo.png" />
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="../../assets/css/header.css">
   <link rel="stylesheet" href="../../assets/css/footer.css">
@@ -66,13 +68,14 @@
           <h2>Cart</h2>
           <div class="cart-listing">
             <?php
-            // if ($sql->num_rows > 0) {
-            //     while($result = $sql->fetch_assoc()) {
-            //         echo 
-            //     }
-            // }
+              // if ($sql->num_rows > 0) {
+              //     while($result = $sql->fetch_assoc()) {
+              //         echo 
+              //     }
+              // }
+              include '../../model/getProductsInCart.php';
             ?>
-            <div class="cart-item">
+           <!--  <div class="cart-item">
               <div class="item-container">
                 <a href="/en/12153-buy-wo-long-fallen-dynasty-pc-game-steam/" class="cover">
                   <picture><img data-src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" alt="Wo Long: Fallen Dynasty" src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" loading="lazy">
@@ -115,7 +118,7 @@
                 </span>
                 <div class="price">44.39€</div>
               </div> 
-            </div>
+            </div> -->
             <!-- <div class="cart-empty">
                   <div class="icon-cart icon-xxl"></div> 
                   <h2 class="title">Your cart is empty</h2> 

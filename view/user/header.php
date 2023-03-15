@@ -55,7 +55,7 @@
               </a>
             </div>
             <div>
-              <a href="">
+              <a href="/project-NoRenowned-games/view/user/order.php">
                 <i class="fa-solid fa-money-bill"></i>
                 &nbsp;
                 My orders
