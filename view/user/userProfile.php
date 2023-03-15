@@ -58,41 +58,47 @@ if (!isset($_SESSION['accountId'])) {
         </div>
         <div class="b-input">
           <div>
-            <input name="profile_fullname" type="text" required="required" value="<?php echo $row['fullname'] ?>">
-            <span><?php echo $row['fullname'] ?></span>
+            <input name="profile_fullname" type="text" value="<?php echo $row['fullname'] ?>">
+            <span>Name</span>
+            <div style="display:none;" class="input_message" id="name_update_message"></div>
           </div>
           <div>
-
-            <input name="profile_phone" type="text" required="required" value="<?php echo $row['phone'] ?>">
-            <span><?php echo $row['phone'] ?></span>
+            <input name="profile_phone" type="text" value="<?php echo $row['phone'] ?>">
+            <span>Phone</span>
+            <div style="display:none;" class="input_message" id="phone_update_message"></div>
           </div>
           <div>
-            <input name="profile_address" type="text" required="required" value="<?php echo $row['address'] ?>">
-            <span><?php echo $row['address'] ?></span>
+            <input name="profile_address" type="text" value="<?php echo $row['address'] ?>">
+            <span>Address</span>
           </div>
           <div>
-            <input name="profile_mail" type="text" required="required" readonly value="<?php echo $row['mail'] ?>">
-            <span><?php echo $row['mail'] ?></span>
+            <input name="profile_mail" type="text" readonly value="<?php echo $row['mail'] ?>">
+            <span>Mail</span>
           </div>
           <div>
-            <input name="profile_newPasswd" type="text" required="required" value="<?php echo $row['passwd'] ?>">
-            <span>New Password</span>
+            <input name="profile_newPasswd" type="password" value="<?php echo $row['passwd'] ?>">
+            <span>Password</span>
+            <div style="display:none;" class="input_message" id="pw_update_message"></div>
           </div>
         </div>
+
+        <div class="update_message">
+          <?php
+          if (isset($_SESSION['message'])) {
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+          }
+          ?>
+        </div>
+
         <div class="b-button">
           <div>
-            <button type="submit">
+            <button type="submit" id="submit">
               Update
             </button>
           </div>
         </div>
-        <span>
-          <?php if (isset($_SESSION["message"])) {
-            echo $_SESSION["message"];
-            unset($_SESSION["message"]);
-          }
-          ?>
-        </span>
+
       </form>
     </div>
   </div>

@@ -8,7 +8,7 @@ if (!empty($_POST["signup_name"]) && !empty($_POST["signup_phone"]) && !empty($_
   $address = "Address hasn't been set ";
   $auth = '1,2,3';
 
-  $sql = $conn->prepare("INSERT INTO account (passwd,	auth,	fullname,	mail,	phone, address)	 VALUES (?,?,?,?,?,?) ");
+  $sql = $conn->prepare("INSERT INTO account (passwd,	auth,	fullname,	mail,	phone,address)	 VALUES (?,?,?,?,?,?) ");
   $sql->bind_param("ssssss", $passwd, $auth, $fullname, $mail, $phone, $address);
   $sql->execute();
   $conn->close();

@@ -1,19 +1,4 @@
-const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
-
-const body = document.querySelector(".body")
-console.log(body);
-
-
-// css sign in/up animation 
-signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
-});
-
-signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
-});
+console.log("login.js join the fucking show ");
 
 
 // validated and sanitize from form
@@ -119,8 +104,6 @@ function sanitizeSigninForm(){
 	const mail = document.forms['signin_form']['signin_mail'].value;
 	const passwd = document.forms['signin_form']['signin_pw'].value;
 	const mailMess = document.getElementById('mail_validate_signin_message');
-	console.log(mail);
-	console.log(passwd);
 	const cfmMess = document.getElementById('passwd_signin_cfm_message');
 	let flagMail = true;
 	let flagPw = true;
@@ -154,44 +137,48 @@ function sanitizeSigninForm(){
 		return true;
 	}	
 }
-
-
 function sanitizeUpdateProfileForm(){
-	const name = document.forms['update_profile_form']['profile_fullname'].value;
-	const phone = document.forms['update_profile_form']['profile_phone'].value;
-	const passwd =  document.forms['update_profile_form']['profile_newPasswd'].value;
+	let name = document.forms['update_profile_form']['profile_fullname'].value;
+	let phone = document.forms['update_profile_form']['profile_phone'].value;
+	let passwd =  document.forms['update_profile_form']['profile_newPasswd'].value;
+	let address =  document.forms['update_profile_form']['profile_address'].value;
+	const nameMess = document.getElementById('name_update_message');
+	const phoneMess = document.getElementById('phone_update_message');
+	const pwMess = document.getElementById('pw_update_message');
 
-	/* const nameMess = document.getElementById('name_validate_message');
-	const phoneMess = document.getElementById('phone_validate_message');
-	const mailMess = document.getElementById('mail_validate_message');
-	const cfmMess = document.getElementById('passwd_cfm_message'); */
-
-/* 	phone = phone.trim();
-mail = mail.trim(); 
-console.log(phone.trim());*/
-
-let flagName 	= true;
-let flagPhone = true;
-let flagPw 		= true;
+	let flagName = true;
+	let flagPhone = true;
+	let flagpasswd =  true;
+	let flagAddress = true;
 
 	if(name == ''){
-		nameMess.innerHTML = "* Name is required";
-		nameMess.style.display = 'block'
+		nameMess.innerHTML = "* Name is required"
+		nameMess.style.display = "block"
 		flagName = false;
 	}else{
-							flagName = true;
-							nameMess.style.display = 'none'
-							}
+		nameMess.style.display = "none"
+		flagName = true;
+	}
+
+	if(passwd == ''){
+		pwMess.innerHTML = "* Password is required"
+		pwMess.style.display = "block"
+		flagpasswd = false;
+	}else{
+		pwMess.style.display = "none"
+		flagpasswd = true;
+	}
+
+
 	if(phone == ''){
+		flagPhone = false;
 		phoneMess.innerHTML = "* Phone is required"
 		phoneMess.style.display = "block"
-		flagPhone = false;
 	}else if(phone.match(/\d/g) == null){
 					phoneMess.innerHTML = "* Phone must be digit ! Exp: 0968644022"
 					phoneMess.style.display = 'block'
 					flagPhone = false;
 				}else if(phone.match(/(09)+(\d{8})\b/) == null) {
-							console.log("hello");
 							phoneMess.innerHTML = "* Phone is not valid ! Exp: 0968644022"
 							phoneMess.style.display = 'block'
 							flagPhone = false;
@@ -200,16 +187,8 @@ let flagPw 		= true;
 									flagPhone = true;
 							}
 				
-	if(passwd == ""){
-		cfmMess.innerHTML = "* Password is required."
-		cfmMess.style.display = 'block'
-		flagPw = false;
-	}else{
-					cfmMess.style.display = 'none'
-					flagPw = true;
-				}
-
-	if(flagName==false || flagPhone ==false ||flagPw==false ){
+						
+	if(flagPhone ==false || flagName ==false || flagAddress ==false || flagpasswd ==false ){
 		return false;
 	}else{
 		return true;
@@ -217,3 +196,20 @@ let flagPw 		= true;
 	
 	
 }
+
+
+
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+const body = document.querySelector(".body")
+
+
+// css sign in/up animation 
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
