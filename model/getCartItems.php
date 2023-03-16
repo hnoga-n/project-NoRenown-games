@@ -20,7 +20,7 @@
                   </a>
                 </div>
               </div>
-              <input type="number" value=' . $row["cItem_quantity"] . ' class="count_input">';
+              <input type="number" value=' . $row["cItem_quantity"] . ' min="1" oninput="validity.valid||(value=``);" onChange="changed_quantity();" class="count_input">';
             
             $formatter = new NumberFormatter('vi_VN',NumberFormatter::CURRENCY);
             $formatter->setTextAttribute(NumberFormatter::CURRENCY_CODE,'VND');
