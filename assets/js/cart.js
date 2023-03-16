@@ -10,7 +10,7 @@ loadDoc("../../model/getCartItems.php", loaded);
 function loaded(xhttp){
     document.getElementById("itemsList").innerHTML += xhttp.responseText;
     calmoney();
-
+    send_link();
     
     
 }
@@ -53,4 +53,11 @@ function changed_quantity(){
             }
         }
     }
+    send_link();
+}
+
+function send_link(){
+    item = document.getElementById("goto_payment");
+    total = document.getElementById("subtotal").innerText;
+    item.href = "../../model/sendCartItemsToSV.php?total=" + total; 
 }

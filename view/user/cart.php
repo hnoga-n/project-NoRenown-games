@@ -147,7 +147,7 @@ include "../../model/connect.php";
             <span>Subtotal</span>
             <span id="subtotal">0</span>
           </div>
-          <a href="" class="button gotopayment">
+          <a href="#" class="button gotopayment" id="goto_payment">
             Go to payment
             <div class="icon-arrow icon-xxs"></div>
           </a> <span class="choice">or</span>
