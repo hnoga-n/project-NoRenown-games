@@ -6,7 +6,7 @@
             echo '<div class="cart-item" id="' . $row["cItem_id"] . '">
             <div class="item-container">
               <a href="/en/12153-buy-wo-long-fallen-dynasty-pc-game-steam/" class="cover">
-                <picture><img data-src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" alt="Wo Long: Fallen Dynasty" src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" loading="lazy">
+                <picture><img data-src="../../assets/img/'. $row["cItem_image"] .'" alt="'. $row["cItem_name"] .'" src="../../assets/img/'. $row["cItem_image"] .'" loading="lazy">
                 </picture>
               </a>
               <div class="information">
@@ -20,9 +20,18 @@
                   </a>
                 </div>
               </div>
-              <input type="number" value=' . $row["cItem_quantity"] . ' class="count_input">
-              <div class="price">' . $row["cItem_price"] . '</div>
-            </div> <!---->
+              <input type="number" value=' . $row["cItem_quantity"] . ' class="count_input">';
+            
+            $formatter = new NumberFormatter('vi_VN',NumberFormatter::CURRENCY);
+            $formatter->setTextAttribute(NumberFormatter::CURRENCY_CODE,'VND');
+            $formatter->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
+            if($row["cItem_price"] == $row["cItem_discountedPrice"]) 
+                echo '<div class="price" value="'. $row["cItem_price"] .'">' . $formatter->formatCurrency($row["cItem_price"],'VND') . '</div>';
+            else if($row["cItem_discountedPrice"] < $row["cItem_price"])
+                echo '<div class="price" value="'. $row["cItem_price"] .'"><s style="color:gray">' . $formatter->formatCurrency($row["cItem_price"],'VND') . '</s>
+                        <div class="discounted" value="'. $row["cItem_discountedPrice"] .'">' . $formatter->formatCurrency($row["cItem_discountedPrice"],'VND') . '</div>
+                    </div>';
+            echo '</div> <!---->
           </div>';
         }
       
@@ -31,7 +40,7 @@
         <div class="icon-cart icon-xxl"></div> 
         <h2 class="title">Your cart is empty</h2> 
         <span class="content">You didn\'t add any item in your cart yet. Browse the website to find amazing deals!</span> 
-        <a href="/en/search/" class="button button-secondary">Discover games</a>
+        <a href="/search.php" class="button button-secondary">Discover games</a>
       </div>';
     }
 ?>

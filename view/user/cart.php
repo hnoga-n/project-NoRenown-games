@@ -94,7 +94,7 @@ include "../../model/connect.php";
                 <div class="price">44.39€</div>
               </div>
             </div> -->
-            
+
             <!-- <div class="cart-empty">
                   <div class="icon-cart icon-xxl"></div> 
                   <h2 class="title">Your cart is empty</h2> 
@@ -136,17 +136,17 @@ include "../../model/connect.php";
         <div class="cart-summary">
           <div class="summary-row">
             <span>Official price</span>
-            <span>179.97€</span>
+            <span id="offcprice">0</span>
           </div>
           <div class="summary-row">
             <span>Discount</span>
-            <span>-63.30€</span>
+            <span id="discount">0</span>
           </div>
           <div class="summary-row">
             <span>Subtotal</span>
-            <span>116.67€</span>
+            <span id="subtotal">0</span>
           </div>
-          <a href="https://www.instant-gaming.com/en/payment/" class="button gotopayment">
+          <a href="" class="button gotopayment">
             Go to payment
             <div class="icon-arrow icon-xxs"></div>
           </a> <span class="choice">or</span>

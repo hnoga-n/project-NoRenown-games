@@ -379,6 +379,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    column-gap: 10px;
 }
 .cartpage-container .cart-listing .cart-item .item-container .cover {
     margin-right: 20px;
