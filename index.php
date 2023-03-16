@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+  
+?>
 <html lang="en">
 
 <head>
@@ -263,5 +268,6 @@
 <script src="./assets/js/slider.js"></script>
 <script src="./assets/js/search.js"></script>
 <script src="./assets/js/result.js"></script>
+<script src="./assets/js/login.js"></script>
 
 </html>

@@ -5,10 +5,13 @@ if (isset($_GET['page'])) {
     $page = $_GET['page'];
     switch ($page) {
         case 'employee-profile':
-            require_once('employeeProfile.php');
+            require_once('./employeeProfile.php');
             break;
         case 'listgame':
-            require_once('listgame.php');
+            require_once('./listgame.php');
+            break;
+        case 'authorization':
+            require_once('authorization.php');
             break;
     }
 } else {
