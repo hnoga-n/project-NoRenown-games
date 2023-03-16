@@ -1,12 +1,12 @@
 <?php
-// include "connect.php";
-
-// $sql = mysqli_query($conn," SELECT * FROM cart");
+  include "../../model/connect.php";
   session_start();
   if(empty($_SESSION['accountId'])) {
     header('location: /project-NoRenowned-games/view/user/login.php');
   }
 ?>
+
+
 
 <html lang="en">
 
@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="../../assets/css/cart.css">
   <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -66,7 +67,7 @@
       <div class="cartpage-left">
         <div class="cartpage-section">
           <h2>Cart</h2>
-          <div class="cart-listing">
+          <div class="cart-listing" id="itemsList">
             <?php
               // if ($sql->num_rows > 0) {
               //     while($result = $sql->fetch_assoc()) {
@@ -160,17 +161,17 @@
         <div class="cart-summary">
           <div class="summary-row">
             <span>Official price</span>
-            <span>179.97€</span>
+            <span id="offcprice">0</span>
           </div>
           <div class="summary-row">
             <span>Discount</span>
-            <span>-63.30€</span>
+            <span id="discount">0</span>
           </div>
           <div class="summary-row">
             <span>Subtotal</span>
-            <span>116.67€</span>
+            <span id="subtotal">0</span>
           </div>
-          <a href="https://www.instant-gaming.com/en/payment/" class="button gotopayment">
+          <a href="" class="button gotopayment">
             Go to payment
             <div class="icon-arrow icon-xxs"></div>
           </a> <span class="choice">or</span>
