@@ -8,4 +8,5 @@
     }
 
     // echo "hi2";
+    $conn->close();
 ?>

@@ -10,7 +10,6 @@ active()
 function active() {
     let navItems = document.querySelectorAll(".nav-item")
     navItems.forEach(navItem => {
-        
         navItem.addEventListener('click',() => {
             
             navItems.forEach(navItem => {
