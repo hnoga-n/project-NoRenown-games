@@ -16,8 +16,8 @@
                     <th style="width: 25%;">Action</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
+            <tbody class="auth_table_body">
+                <!--  <tr>
                     <td style="width: 5%;">1</td>
                     <td style="width: 20%;">Admin</td>
                     <td style="width: 25%;">10/10/2020</td>
@@ -28,9 +28,9 @@
                         </a>
                         <button>Delete</button>
                     </td>
-                </tr>
-                
+                </tr> -->
             </tbody>
         </table>
     </div>
 </div>
+<script src="../../controller/authority.js"></script>
