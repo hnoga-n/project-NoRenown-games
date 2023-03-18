@@ -143,6 +143,7 @@
               <div class="order-total">Total: 100.00$</div>
             </div>
           </div> -->
+
         <div class="notification">
             <header>You have not paid for any products yet</header>
             <a href="search.php" title="Move to search page">Go around and buy some stuff (Touch this)</a>

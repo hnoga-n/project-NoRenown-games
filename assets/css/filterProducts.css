@@ -223,6 +223,7 @@
   width: 100%;
   height: 65px;
   overflow-y: auto;
+  cursor: auto;
 }
 
 .pagination input {
@@ -255,16 +256,19 @@
 .pagination::-webkit-scrollbar {
   width: 20px;
   height: 10px;
+  cursor: auto;
 }
 
 /* Track */
 .pagination::-webkit-scrollbar-track {
   background: #888;
+  cursor: auto;
 }
 
 /* Handle */
 .pagination::-webkit-scrollbar-thumb {
   background: #ff1e1e;
+  cursor: auto;
 }
 
 @media screen and (max-width: 1000px) {

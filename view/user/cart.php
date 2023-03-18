@@ -1,7 +1,6 @@
 <?php
-  include "../../model/connect.php";
   session_start();
-  if(empty($_SESSION['accountId'])) {
+  if(empty($_SESSION['accountId']) || !isset($_SESSION['accountId'])) {
     header('location: /project-NoRenowned-games/view/user/login.php');
   }
 ?>
@@ -74,7 +73,9 @@
               //         echo 
               //     }
               // }
-              include '../../model/getProductsInCart.php';
+              // include '../../model/getCartItems.php';
+              // include '../../model/getProductsInCart.php';
+
             ?>
            <!--  <div class="cart-item">
               <div class="item-container">
@@ -188,6 +189,8 @@
     ?>
 </body>
 <script src="../../assets/js/cart.js"></script>
+<script src="../../assets/js/list.js"></script>
+
 <!-- <script src="./assets/js/header.js"></script> -->
 
 </html>

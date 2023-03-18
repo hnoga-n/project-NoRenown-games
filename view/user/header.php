@@ -74,7 +74,7 @@
       </div>
     <?php } else { ?>
       <div class="user" style="display:block;">
-        <a href="./view/user/login.php">
+        <a href="/project-NoRenowned-games/view/user/login.php">
           <button>
             <i class="fa-solid fa-user"></i>
           </button>
