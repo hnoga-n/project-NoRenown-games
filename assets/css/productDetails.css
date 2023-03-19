@@ -76,6 +76,8 @@
 .parallax img {
   width: 100%;
   object-fit: cover;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .product-app {

@@ -25,7 +25,7 @@ if ($list_product_card->num_rows > 0) {
             <div class='item'>
             <a href='./productDetails.php?id=" . $row['gid'] . "'>
             <i class='fa-solid fa-cart-shopping'></i>
-            <img src='../../assets/img/4horseman.jpg' alt='' />
+            <img src='../../assets/img/" . $row['gimg'] . "' alt='' />
             <div class='discount'>
                 <span>-<label>" . $row['gdiscount'] . "</label>%</span>
             </div>

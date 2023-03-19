@@ -1,3 +1,4 @@
+// add to cart table 
 let addToCartBtn = document.querySelector('#addToCartBtn');
 
 addToCartBtn.addEventListener('click',()=> {
@@ -6,7 +7,8 @@ addToCartBtn.addEventListener('click',()=> {
     var arrUrl = document.URL.split("=");
     var idUrlProduct = arrUrl[arrUrl.length-1];
     var nameProduct = document.querySelector('.panel .name h2').innerHTML;  
-    var priceProduct = document.querySelector('.price .price-number').innerHTML;
+    var priceProductAfterDiscount = document.querySelector('.price .price-number').innerHTML;
+    var priceProductBeforeDiscount = document.querySelector('.price small s').innerHTML;
     var arrImgSrc = document.querySelector('.parallax img').src.split("/");
     var imgSrc = arrImgSrc[arrImgSrc.length-1];
     
@@ -23,7 +25,8 @@ addToCartBtn.addEventListener('click',()=> {
             }
         }
     }
-    xhr.open("GET","../../model/insertProductToCart.php?userId="+idUrlProduct+"&nameProduct="+nameProduct+"&priceProduct="+priceProduct+"&imgSrc="+imgSrc,true);
+    xhr.open("GET","../../model/insertProductToCart.php?userId="+idUrlProduct+"&nameProduct="+nameProduct+"&priceProductAfterDiscount="+priceProductAfterDiscount+"&priceProductBeforeDiscount="+priceProductBeforeDiscount+"&imgSrc="+imgSrc,true);
     xhr.send();
 })
 
+//get data from cart table and inner to cart

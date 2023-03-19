@@ -25,7 +25,7 @@ include_once "../../model/getProductDetails.php"
   include 'header.php';
   ?>
   <div class="parallax">
-    <img src="../../assets/img/sky3.jpg">
+    <img src="../../assets/img/<?php echo $row2['gimg'] ?>">
   </div>
 
   <div class="box-image-zoom-in">

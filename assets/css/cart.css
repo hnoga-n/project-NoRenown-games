@@ -111,7 +111,7 @@ body{
 
 @media screen and (max-width: 1000px){
 .cartpage-container {
-    margin-top: 300px;
+    margin-top: 100px;
 }
 }
 
@@ -120,7 +120,7 @@ body{
     align-self: center;
     width: 100%;
     display: flex;
-    margin-top: 100px;
+    margin-top: 50px;
     align-items: flex-start;
 }
 
@@ -378,6 +378,8 @@ body{
 .cartpage-container .cart-listing .cart-item .item-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    column-gap: 10px;
 }
 .cartpage-container .cart-listing .cart-item .item-container .cover {
     margin-right: 20px;
@@ -401,7 +403,8 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 20px;
+    max-width: 190px;
+    width: 100%;
 }
 .cartpage-container .cart-listing .cart-item .item-container .information .name {
     font-size: 17px;
@@ -462,7 +465,24 @@ body{
 
 .count_input{
     width: 15%;
+    text-align: center;
 }
+@media screen and (max-width: 850px){
+.count_input{
+    width: 30px;
+}
+}
+
+@media screen and (max-width: 700px){
+.cartpage-container{
+    padding-top: 20px;
+    flex-direction: column;
+}
+.cartpage-container .cartpage-right {
+    margin: auto;
+}
+}
+
 
 @media screen and (min-width: 650px){
 .cartpage-container .cart-listing .cart-item .item-container .price {
@@ -475,4 +495,7 @@ body{
     font-weight: 700;
     text-align: right;
     white-space: nowrap;
+    text-align: center;
+    max-width: 90px;
+    width: 100%;
 }

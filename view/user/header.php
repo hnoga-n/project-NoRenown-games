@@ -28,15 +28,15 @@
   </div>
   <div class="header-right">
     <div class="cart">
-        <a href="/project-NoRenowned-games/view/user/cart.php">
-          <button>
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-        </a>
+      <a href="/project-NoRenowned-games/view/user/cart.php">
+        <button>
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+      </a>
     </div>
 
-    <?php
-    if (isset($_COOKIE["fullname"])) { ?>
+
+    <?php if (isset($_COOKIE["fullname"])) { ?>
       <div class="user-logged" style="display:block;">
         <button onclick="document.getElementById('panel-el').style.display = 'block'">
           <i class="fa-solid fa-user-secret"></i>
@@ -55,7 +55,7 @@
               </a>
             </div>
             <div>
-              <a href="">
+              <a href="/project-NoRenowned-games/view/user/order.php">
                 <i class="fa-solid fa-money-bill"></i>
                 &nbsp;
                 My orders
@@ -72,7 +72,7 @@
       </div>
     <?php } else { ?>
       <div class="user" style="display:block;">
-        <a href="./view/user/login.php">
+        <a href="/project-NoRenowned-games/view/user/login.php">
           <button>
             <i class="fa-solid fa-user"></i>
           </button>
