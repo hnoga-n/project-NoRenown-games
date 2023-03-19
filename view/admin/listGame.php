@@ -67,7 +67,7 @@
     </div>
   </div>
 </div>
-x
+
 <div class="message" id="mess">
   <div class="message-box">
     <div class="message-header">
