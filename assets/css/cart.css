@@ -160,7 +160,6 @@ body{
 
 .cartpage-container .cart-listing .cart-empty .icon-cart {
     background-color: orangered;
-    margin-bottom: 30px;
 }
 
 @media screen and (max-width: 1000px){
@@ -271,7 +270,7 @@ body{
     border-radius: 8px;
     font-weight: 700;
     font-size: 17px;
-    background-color: #ff5400;
+    background-color: #FF1E1E;
     color: #fff;
     display: inline-flex;
     align-items: center;
@@ -279,12 +278,25 @@ body{
     height: 56px;
     box-sizing: border-box;
     padding: 0 30px;
-    transition: .2s;
+    transition: .4s ease;
     border: 0;
     cursor: pointer;
     text-align: center;
     white-space: normal;
     -webkit-appearance: none;
+}
+
+.button:hover  {
+    background-color: #fff;
+    color: #FF1E1E;
+}
+
+:is(.cartpage-section,.cartpage-right) > h2 {
+    margin-bottom: 15px;
+}
+
+.cart-empty span {
+    margin: 25px 0;
 }
 
 @media screen and (max-width: 800px){
