@@ -22,12 +22,12 @@ $title = $_GET['title'];
 // $processor = $_GET['graphics'];
 // $graphics = $_GET['processor'];
 // $storage = $_GET['storage'];
-$screenshot1 = $_GET['screenshot1'];
-$screenshot2 = $_GET['screenshot2'];
-$screenshot3 = $_GET['screenshot3'];
-$screenshot4 = $_GET['screenshot4'];
-$index = (int)$_GET['index'];
-
+// $screenshot1 = $_GET['screenshot1'];
+// $screenshot2 = $_GET['screenshot2'];
+// $screenshot3 = $_GET['screenshot3'];
+// $screenshot4 = $_GET['screenshot4'];
+// $index = (int)$_GET['index']-1;
+// $video = $_GET['video'];
 
 /* $stmt = $conn->prepare("SELECT about FROM game_detail WHERE gdt_id = ?");
 $stmt->bind_param("i",$index);
@@ -68,12 +68,16 @@ $stmt->bind_param("ssssi",$os,$processor,$graphics,$storage,$index);
 $stmt->bind_param("ssssi",$screenshot1,$screenshot2,$screenshot3,$screenshot4,$index);
  */
 
+/* $stmt = $conn->prepare("UPDATE game_detail SET trailer = ? WHERE gdt_id = ?");
+$stmt->bind_param("si",$video,$index);
+ */
+
  //about
 /* $stmt = $conn->prepare("UPDATE game_detail SET about = ? WHERE gdt_id = ?");
 $stmt->bind_param("si",$about,$index);*/
 
-/* 
-$stmt->execute();
+
+/* $stmt->execute();
 $stmt->close();
 $conn->close();  */
 ?>
