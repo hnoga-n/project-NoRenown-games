@@ -1,14 +1,33 @@
-document.getElementById('header-search').addEventListener('click',function() {
-    document.getElementById('close').style.display = 'block'
-    document.getElementById('header-search').placeholder = 'Minecraft, RPG, multiplayer...'
-    document.getElementById('header-search').style.width = '450px'
-    if(window.matchMedia("(max-width: 1100px)").matches) {
-        document.getElementById('header-search').style.width = '300px'
-        document.querySelector('.search').style.backgroundColor = '#101010'
-        document.querySelector('.search').style.zIndex = '1'
+if(window.location.href.split("/")[window.location.href.split("/").length-1] == 'search.php'){
+    document.getElementById('header-search').disabled = false;
+}
+else {
+    document.getElementById('header-search').disabled = true;
+}  
+
+document.querySelector(".search").addEventListener("click",()=> {
+    if(window.location.href.split("/")[window.location.href.split("/").length-1] == 'search.php'){
+        return;
     }
-    document.getElementById('header-search').style.backgroundImage = 'none'
+    else {
+        window.location.href = '/project-NoRenowned-games/view/user/search.php';
+    }    
 })
+
+document.getElementById('header-search').addEventListener('click',function() {
+    if(window.location.href.split("/")[window.location.href.split("/").length-1] == 'search.php') {
+        document.getElementById('close').style.display = 'block'
+        document.getElementById('header-search').placeholder = 'Minecraft, RPG, multiplayer...'
+        document.getElementById('header-search').style.width = '450px'
+        if(window.matchMedia("(max-width: 1100px)").matches) {
+            document.getElementById('header-search').style.width = '300px'
+            document.querySelector('.search').style.backgroundColor = '#101010'
+            document.querySelector('.search').style.zIndex = '1'
+        }
+        document.getElementById('header-search').style.backgroundImage = 'none'
+    }
+})
+
 document.getElementById('close').addEventListener('click',function () {
     document.getElementById('close').style.display = 'none'
     document.getElementById('header-search').placeholder = ''
@@ -48,3 +67,4 @@ window.onclick = function(event) {
         panel.style.display = "none";
     }
 }
+
