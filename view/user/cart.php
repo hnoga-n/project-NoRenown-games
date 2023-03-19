@@ -176,7 +176,7 @@
             Go to payment
             <div class="icon-arrow icon-xxs"></div>
           </a> <span class="choice">or</span>
-          <a href="/" class="back">
+          <a href="./search.php" class="back">
             <div class="icon-arrow icon-xxs"></div>
             Continue shopping
           </a>
@@ -189,8 +189,6 @@
     ?>
 </body>
 <script src="../../assets/js/cart.js"></script>
-<script src="../../assets/js/list.js"></script>
-
 <!-- <script src="./assets/js/header.js"></script> -->
 
 </html>

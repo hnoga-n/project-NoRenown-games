@@ -40,7 +40,7 @@
         <div class="icon-cart icon-xxl"></div> 
         <h2 class="title">Your cart is empty</h2> 
         <span class="content">You didn\'t add any item in your cart yet. Browse the website to find amazing deals!</span> 
-        <a href="/search.php" class="button button-secondary">Discover games</a>
+        <a href="./search.php" class="button button-secondary">Discover games</a>
       </div>';
     }
 ?>
