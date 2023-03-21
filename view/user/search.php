@@ -7,7 +7,7 @@
   <title>Search Results</title>
   <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  <link rel="icon" href="./assets/img/logo.png" />
+  <link rel="icon" href="../../assets/img/logo.png" />
   <link rel="stylesheet" href="../../assets/css/product.css" />
   <link rel="stylesheet" href="../../assets/css/header.css" />
   <link rel="stylesheet" href="../../assets/css/style.css" />

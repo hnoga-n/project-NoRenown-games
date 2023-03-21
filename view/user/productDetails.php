@@ -46,7 +46,9 @@ include_once "../../model/getProductDetails.php"
       <div class="header-content">
 
         <div class="video-game">
-          <video controls muted src="<?php echo $row['trailer'] ?>"></video>
+          <video controls src="<?php echo $row['trailer'] ?>">
+            <source src='../../assets/video/I Am Atomic 4k.mp4' type='video/mp4'>
+          </video>
         </div>
         <div class="panel">
           <div class="name">
