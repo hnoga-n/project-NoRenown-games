@@ -21,10 +21,17 @@ $list_product_card = $conn->query($product_of_specified_page_sql);
 if ($list_product_card->num_rows > 0) {
 
   while ($row = $list_product_card->fetch_assoc()) {
+    $trailer_sql = "SELECT trailer FROM game_detail WHERE gdt_id = {$row['gid']}";
+    $trailer = $conn->query($trailer_sql);
+    $row1 = $trailer->fetch_assoc();
     echo "
             <div class='item'>
-            <a href='./productDetails.php?id=" . $row['gid'] . "'>
-            <i class='fa-solid fa-cart-shopping'></i>
+            <a href='./productDetails.php?id=" . $row['gid'] . "' onmouseover='showVid(event,this)' onmouseout='closeVid(event,this)'>
+            <video muted autoplay>
+                <source src='" . $row1['trailer'] . "' type=''>
+                <source src='../../assets/video/I Am Atomic 4k.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+            </video>
             <img src='../../assets/img/" . $row['gimg'] . "' alt='' />
             <div class='discount'>
                 <span>-<label>" . $row['gdiscount'] . "</label>%</span>
