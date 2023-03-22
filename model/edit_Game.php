@@ -1,10 +1,11 @@
 <?php
-    include 'connect.php';
+    include './connect.php';
     $gid = $_GET['gid'];
     $gname = $_POST['gname'];
     $gcategory = $_POST['gcategory'];
     $gquantity = $_POST['gquantity'];
     $gdiscount = $_POST['gdiscount'];
+    $gimg = $_POST['gimg'];
     $gprice = $_POST['gprice'];
     $cfg_os = $_POST['cfg_os'];
     $cfg_processor = $_POST['cfg_processor'];
@@ -14,7 +15,7 @@
 
     $sql1 = "
                 UPDATE games 
-                SET gname='$gname',gcategory='$gcategory',gprice=$gprice,gdiscount=$gdiscount,gimg='../../assets/img/genshinSlideShow.jpg',gquantity=$gquantity
+                SET gname='$gname',gcategory='$gcategory',gprice=$gprice,gdiscount=$gdiscount,gimg='$gimg',gquantity=$gquantity
                 WHERE gid=$gid     
             ";
     $sql2 = "

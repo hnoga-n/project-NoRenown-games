@@ -29,8 +29,8 @@
                         <span>Games</span>
                     </li>
                 </a>
-                <a href="">
-                    <li class="nav-item">
+                <a href="employee.php?page=listaccount">
+                    <li class="nav-item <?=($_GET['page']=='listaccount') ? 'active':''?>" >
                         <i class="fa-solid fa-users-gear"></i>
                         <span>Accounts</span>
                     </li>
