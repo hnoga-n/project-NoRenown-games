@@ -7,21 +7,32 @@ if (!isset($_SESSION["accountId"])) {
 
 include "connect.php";
 
+$accid = $_SESSION['accountId'];
 $passwd = $_POST['profile_newPasswd'];
 $fullname = $_POST['profile_fullname'];
 $phone = $_POST['profile_phone'];
 $address = $_POST['profile_address'];
-$accid = $_SESSION['accountId'];
-$sql = $conn->prepare("UPDATE account SET 
+
+$sql_account = $conn->prepare("UPDATE account SET passwd = (?)");
+$sql_account->bind_param("s", $passwd);
+if (!$sql_account->execute()) {
+  $_SESSION['message'] = "update Password failed ";
+}
+
+$account = $conn->query("SELECT userID FROM account WHERE accID = $accid")->fetch_assoc();
+$userID = $account['userID'];
+$sql_user = $conn->prepare("UPDATE users SET 
       fullname = (?),
-      passwd = (?),
       phone = (?),
       address = (?)
-    WHERE accid = $accid;
+      WHERE userID = $userID;
       ");
-$sql->bind_param("ssss", $fullname, $passwd, $phone,  $address);
-$sql->execute();
+$sql_user->bind_param("sss", $fullname, $phone,  $address);
+$sql_user->execute();
+
+
+
 header('location: ../view/user/userProfile.php');
 $_SESSION['message'] = "Update info successfully !";
-$sql->close();
+$sql_user->close();
 $conn->close();

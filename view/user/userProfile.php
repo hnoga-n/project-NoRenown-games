@@ -5,7 +5,10 @@ if (!isset($_SESSION['accountId'])) {
 } else {
   include "../../model/connect.php";
   $id = $_SESSION['accountId'];
-  $sql = "SELECT * FROM account WHERE accid = $id";
+  $sql = "SELECT *  FROM account
+                      JOIN users
+                        on account.userID = users.userID 
+                    WHERE accid = $id";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
 }
