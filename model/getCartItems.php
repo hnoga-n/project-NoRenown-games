@@ -1,17 +1,19 @@
 <?php
   include 'connect.php';
-    $sql = mysqli_query($conn, "SELECT * FROM cart");
+  session_start();
+  $accountId = $_SESSION['accountId'];
+    $sql = mysqli_query($conn, "SELECT * FROM cart WHERE cUser_id = {$accountId}");
     if (mysqli_num_rows($sql) > 0) {
         while($row = $sql->fetch_assoc()){
             echo '<div class="cart-item" id="' . $row["cItem_id"] . '">
             <div class="item-container">
-              <a href="/en/12153-buy-wo-long-fallen-dynasty-pc-game-steam/" class="cover">
+              <a href="../../view/user/productDetails.php?id=' . $row['cItem_id'] . '" class="cover">
                 <picture><img data-src="../../assets/img/'. $row["cItem_image"] .'" alt="'. $row["cItem_name"] .'" src="../../assets/img/'. $row["cItem_image"] .'" loading="lazy">
                 </picture>
               </a>
               <div class="information">
                 <div class="name"><!---->
-                  <span title=' . $row["cItem_name"] . ' class="title">' . $row["cItem_name"] . '</span>
+                  <span title="' . $row["cItem_name"] . '" class="title">' . $row["cItem_name"] . '</span>
                 </div>
                 <div class="type">Steam</div> <!---->
                 <div class="actions">
@@ -22,14 +24,12 @@
               </div>
               <input type="number" value=' . $row["cItem_quantity"] . ' min="1" oninput="validity.valid||(value=``);" onChange="changed_quantity();" class="count_input">';
             
-            $formatter = new NumberFormatter('vi_VN',NumberFormatter::CURRENCY);
-            $formatter->setTextAttribute(NumberFormatter::CURRENCY_CODE,'VND');
-            $formatter->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
-            if($row["cItem_price"] == $row["cItem_discountedPrice"]) 
-                echo '<div class="price" value="'. $row["cItem_price"] .'">' . $formatter->formatCurrency($row["cItem_price"],'VND') . '</div>';
-            else if($row["cItem_discountedPrice"] < $row["cItem_price"])
-                echo '<div class="price" value="'. $row["cItem_price"] .'"><s style="color:gray">' . $formatter->formatCurrency($row["cItem_price"],'VND') . '</s>
-                        <div class="discounted" value="'. $row["cItem_discountedPrice"] .'">' . $formatter->formatCurrency($row["cItem_discountedPrice"],'VND') . '</div>
+
+            if((float)$row["cItem_price_before_discount"] == (float)$row["cItem_price_after_discount"]) 
+                echo '<div class="price" value="'. $row["cItem_price_before_discount"] .'">' . $row["cItem_price_before_discount"] . '$</div>';
+            else if((float)$row["cItem_price_after_discount"] < (float)$row["cItem_price_before_discount"])
+                echo '<div class="price" value="'. $row["cItem_price_before_discount"] .'$"><s style="color:gray">' . $row["cItem_price_before_discount"] . '$</s>
+                        <div class="discounted" value="'. $row["cItem_price_after_discount"] .'">' . $row["cItem_price_after_discount"] . '$</div>
                     </div>';
             echo '</div> <!---->
           </div>';

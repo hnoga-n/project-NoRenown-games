@@ -2,7 +2,7 @@
    include 'connect.php';
    session_start();
 
-   if(empty($_SESSION['accountId'])) {
+   if(!isset($_SESSION['accountId'])) {
       echo "NotSignIn";
    } else {
 

@@ -25,16 +25,16 @@ function calmoney(){
         let counts = document.getElementsByClassName("count_input");
         var s = 0;
         for(var i=0;i<items.length;i++){
-            s += parseInt(items[i].getAttribute('value')) * parseInt(counts[i].value);
+            s += parseFloat(items[i].getAttribute('value')) * parseFloat(counts[i].value);
         }
-        document.getElementById("offcprice").innerText = s.toLocaleString('vn-VN') + " ₫";
+        document.getElementById("offcprice").innerText = s.toLocaleString('en-US') + " $";
         const itemDiscounts = document.getElementsByClassName("discounted");
         var sDiscounted = 0;
         for(var i=0;i<itemDiscounts.length;i++){
-            sDiscounted += parseInt(itemDiscounts[i].getAttribute('value')) * parseInt(counts[i].value);
+            sDiscounted += parseFloat(itemDiscounts[i].getAttribute('value')) * parseFloat(counts[i].value);
         }
-        document.getElementById("discount").innerText = (-(s - sDiscounted)).toLocaleString('vn-VN') + " ₫";
-        document.getElementById("subtotal").innerText = sDiscounted.toLocaleString('vn-VN') + " ₫";
+        document.getElementById("discount").innerText = (-(s - sDiscounted)).toLocaleString('en-US') + "$";
+        document.getElementById("subtotal").innerText = sDiscounted.toLocaleString('en-US') + "$";
 
     }
 
@@ -45,6 +45,10 @@ function changed_quantity(){
     var arr = [].slice.call(items);
     if(arr.every(element => element.value != '')){
         calmoney();
+        for(var i=0;i<arr.length;i++) {
+            loadDoc("../../model/update_cart.php?item_id=" + arr[i].parentNode.parentNode.id + "&item_quantity=" + arr[i].value,updatedItem)
+        }
+        
     }
     else {
         for(var i=0;i<arr.length;i++){
@@ -53,6 +57,7 @@ function changed_quantity(){
             }
         }
     }
+    
     send_link();
 }
 
@@ -60,4 +65,9 @@ function send_link(){
     item = document.getElementById("goto_payment");
     total = document.getElementById("subtotal").innerText;
     item.href = "../../model/sendCartItemsToSV.php?total=" + total; 
+}
+
+function updatedItem(xhttp){
+    responseText = xhttp.responseText;
+    console.log("UPDATED")
 }
