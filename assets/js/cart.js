@@ -26,11 +26,13 @@ function calmoney(){
         var s = 0;
         for(var i=0;i<items.length;i++){
             s += parseFloat(items[i].getAttribute('value')) * parseFloat(counts[i].value);
+            s += parseFloat(items[i].getAttribute('value')) * parseFloat(counts[i].value);
         }
         document.getElementById("offcprice").innerText = s.toLocaleString('en-US') + " $";
         const itemDiscounts = document.getElementsByClassName("discounted");
         var sDiscounted = 0;
         for(var i=0;i<itemDiscounts.length;i++){
+            sDiscounted += parseFloat(itemDiscounts[i].getAttribute('value')) * parseFloat(counts[i].value);
             sDiscounted += parseFloat(itemDiscounts[i].getAttribute('value')) * parseFloat(counts[i].value);
         }
         document.getElementById("discount").innerText = (-(s - sDiscounted)).toLocaleString('en-US') + "$";

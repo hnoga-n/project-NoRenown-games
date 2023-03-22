@@ -1,7 +1,6 @@
 
 
 <?php
-  include "../../model/connect.php";
   session_start();
   if(!isset($_SESSION['accountId'])) {
     header('location: /project-NoRenowned-games/view/user/login.php');
@@ -122,7 +121,9 @@
               //         echo 
               //     }
               // }
+              // include '../../model/getCartItems.php';
               // include '../../model/getProductsInCart.php';
+
             ?>
            <!--  <div class="cart-item">
               <div class="item-container">

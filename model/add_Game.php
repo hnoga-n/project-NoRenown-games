@@ -1,9 +1,10 @@
 <?php
-include 'connect.php';
+include './connect.php';
 $gname = $_POST['gname'];
 $gcategory = $_POST['gcategory'];
 $gquantity = $_POST['gquantity'];
 $gdiscount = $_POST['gdiscount'];
+$gimg = $_POST['gimg'];
 $gprice = $_POST['gprice'];
 $cfg_os = $_POST['cfg_os'];
 $cfg_processor = $_POST['cfg_processor'];
@@ -13,7 +14,7 @@ $about = $_POST['about'];
 
 $sql1 = "
             INSERT INTO games (gname,gcategory,gprice,gdiscount,gimg,gquantity) VALUES
-            ('$gname','$gcategory','$gprice',$gdiscount,'?',$gquantity);  
+            ('$gname','$gcategory','$gprice',$gdiscount,'$gimg',$gquantity);  
               
     ";
 $result1 = $conn->query($sql1);

@@ -67,7 +67,7 @@
     </div>
   </div>
 </div>
-x
+
 <div class="message" id="mess">
   <div class="message-box">
     <div class="message-header">
@@ -83,3 +83,5 @@ x
     </div>
   </div>
 </div>
+<script src="../../controller/pagination_listGame.js"></script>
+<script src="../../controller/deletegame.js"></script>

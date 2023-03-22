@@ -61,13 +61,13 @@ function search(str, page, genre,priceFrom, priceTo,sortby) {
 // create page number btn
 function showPagination(pageNumber) {
   let s = ""
-  s += `<input type='button' value='1' class="active" onclick='search(searchValue.value,this.value,genreInp.value, priceFrom.value, priceTo.value,sortBy.value)'>`
+  s += `<input type='button' value='1' class="active" onclick='search(searchValue.value,this.value,genreInp.value, priceFrom.value, priceTo.value,sortBy.value);returnPageValue(this);'>`
   for (let i = 2; i <= pageNumber; i++) {
-    s += `<input type='button' value='${i}' onclick='search(searchValue.value,this.value,genreInp.value, priceFrom.value, priceTo.value,sortBy.value)'>`
+    s += `<input type='button' value='${i}' onclick='search(searchValue.value,this.value,genreInp.value, priceFrom.value, priceTo.value,sortBy.value);returnPageValue(this);'>`
   }
 
   document.getElementById('showPagination').innerHTML = s
-  
+  scrollToPosition(document.getElementById('showPagination'),document.querySelectorAll('#showPagination input').length);
 } 
 
 //search for genres

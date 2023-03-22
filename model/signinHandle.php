@@ -9,15 +9,19 @@ if (!empty($_POST['signin_mail']) && !empty($_POST['signin_pw'])) {
   $sql->bind_param("ss", $user, $passwd);
   $sql->execute();
   $result = $sql->get_result();
-  echo $result->num_rows;
   if ($result->num_rows <= 0) {
     $_SESSION["message"] = "Invalid username or password";
     header('location: ../view/user/login.php');
   } else {
-    $row = $result->fetch_assoc();
-    setcookie("fullname", $row['fullname'], time() + (86400 * 10), "/");
+    $account_info = $result->fetch_assoc();
 
-    $_SESSION['accountId'] = $row['accid'];
+    $sql_userinfo = "SELECT * FROM users WHERE userID = " . $account_info['userID'] . " ";
+    $result = $conn->query($sql_userinfo);
+    $user_info = $result->fetch_assoc();
+
+    setcookie("fullname", $user_info['fullname'], time() + (86400 * 10), "/");
+    $_SESSION['accountId'] = $account_info['accid'];
+
     header('location: ../index.php');
   }
 }

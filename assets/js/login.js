@@ -197,7 +197,9 @@ function sanitizeUpdateProfileForm(){
 	
 }
 
-
+function signout(){
+	console.log("hello");
+}
 
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
@@ -213,3 +215,5 @@ signUpButton.addEventListener('click', () => {
 signInButton.addEventListener('click', () => {
 	container.classList.remove("right-panel-active");
 });
+
+
