@@ -83,3 +83,5 @@
     </div>
   </div>
 </div>
+<script src="../../controller/pagination_listGame.js"></script>
+<script src="../../controller/deletegame.js"></script>

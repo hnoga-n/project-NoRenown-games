@@ -53,6 +53,19 @@
 .editaccount-modalbox .modal-form form .form-div div select:focus {
     border: 3px solid #FF1E1E;
 }
+.editaccount-modalbox .modal-form form .form-div div .switch {
+    width: 75px;
+    height: 40px;
+}
+.editaccount-modalbox .modal-form form .form-div div .slider::before{
+    height: 32px;
+    width: 32px;
+}
+.editaccount-modalbox .modal-form form .form-div div input:checked + .slider:before {
+    -webkit-transform: translateX(32px);
+    -ms-transform: translateX(32px);
+    transform: translateX(32px);
+  }
 
 .editaccount-modalbox .modal-form form .form-button {
     height: 10%;
