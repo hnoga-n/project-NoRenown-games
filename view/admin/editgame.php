@@ -1,34 +1,35 @@
 <?php
-include '../admin/head1.php';
-include '../admin/leftmenu.php';
-include '../../model/connect.php';
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $game = array();
-    $sql = "SELECT *
-        FROM games join game_detail on games.gid = game_detail.gdt_id
-        WHERE gid = '$id'";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $game = array(
-                'gid' => $row['gid'],
-                'gname' => $row['gname'],
-                'gcategory' => $row['gcategory'],
-                'gdiscount' => $row['gdiscount'],
-                'gprice' => $row['gprice'],
-                'gquantity' => $row['gquantity'],
-                'cfg_os' => $row['cfg_os'],
-                'cfg_processor' => $row['cfg_processor'],
-                'cfg_graphics' => $row['cfg_graphics'],
-                'cfg_storage' => $row['cfg_storage'],
-                'about' => $row['about']
-            );
+    include '../admin/head1.php';
+    include '../admin/leftmenu.php';
+    include '../../model/connect.php';
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $game = array();
+        $sql = "SELECT *
+            FROM games join game_detail on games.gid = game_detail.gdt_id
+            WHERE gid = '$id'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $game = array(
+                    'gid' => $row['gid'],
+                    'gname' => $row['gname'],
+                    'gcategory' => $row['gcategory'],
+                    'gdiscount' => $row['gdiscount'],
+                    'gprice' => $row['gprice'],
+                    'gimg' => $row['gimg'],
+                    'gquantity' => $row['gquantity'],
+                    'cfg_os' => $row['cfg_os'],
+                    'cfg_processor' => $row['cfg_processor'],
+                    'cfg_graphics' => $row['cfg_graphics'],
+                    'cfg_storage' => $row['cfg_storage'],
+                    'about' => $row['about']
+                );
+            }
         }
+    } else {
+        $game = array();
     }
-} else {
-    $game = array();
-}
 ?>
 
 <div class='editgame-modalbox'>
@@ -40,14 +41,14 @@ if (isset($_GET['id'])) {
             <div class='general'>
                 <span>General</span>
                 <div class='game-image' style="display:<?= !empty($game) ? 'block' : 'none' ?>;">
-                    <img src='../../assets/img/genshinSlideShow.jpg'>
+                    <img src='../../assets/img/<?= !empty($game) ? $game['gimg'] : ''; ?>'>
                 </div>
                 <div class='modal-input'>
                     <div>
                         <label>Image :</label>
                     </div>
                     <div>
-                        <input type='file'>
+                        <input type='file' name="gimg">
                     </div>
                 </div>
                 <hr>
@@ -130,7 +131,7 @@ if (isset($_GET['id'])) {
                         <label>OS :</label>
                     </div>
                     <div>
-                        <input type='text' name='cfg_os' value='<?= !empty($game) ? $game['cfg_os'] : '';; ?>' required>
+                        <input type='text' name='cfg_os' value='<?= !empty($game) ? $game['cfg_os'] : ''; ?>' required>
                     </div>
                 </div>
                 <hr>
@@ -172,7 +173,6 @@ if (isset($_GET['id'])) {
             </div>
         </form>
     </div>
-
 </div>
 
 <script src="../../assets/js/leftmenu.js"></script>

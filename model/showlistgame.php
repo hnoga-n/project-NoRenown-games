@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
                         <td>" . $row['gquantity'] . "</td>
                         <td>-" . $row['gdiscount'] . "%</td>
                         <td>
-                            <img src='../../assets/img/genshinSlideShow.jpg'>
+                            <img src='../../assets/img/" . $row['gimg'] . "'>
                         </td>
                         <td>
                             <label class='switch'>

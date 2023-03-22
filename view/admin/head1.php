@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../../assets/css/leftmenu.css" />
   <link rel="stylesheet" href="../../assets/css/listGame.css" />
   <link rel="stylesheet" href="../../assets/css/authorization.css" />
+  <link rel="stylesheet" href="../../assets/css/editaccount.css" />
   <link rel="stylesheet" href="../../assets/css/editgame.css" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/employeeProfile.css" />

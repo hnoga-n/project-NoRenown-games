@@ -63,11 +63,9 @@
             </div>
             <hr>
             <div onclick="signout()">
-              <div>
                 <i class="fa-solid fa-right-from-bracket"></i>
                 &nbsp;
                 Sign out
-              </div>
             </div>
           </div>
         </div>
