@@ -27,7 +27,7 @@ if ($list_product_card->num_rows > 0) {
     echo "
             <div class='item'>
             <a href='./productDetails.php?id=" . $row['gid'] . "' onmouseover='showVid(event,this)' onmouseout='closeVid(event,this)'>
-            <video muted autoplay>
+            <video muted autoplay loop>
                 <source src='" . $row1['trailer'] . "' type=''>
                 <source src='../../assets/video/I Am Atomic 4k.mp4' type='video/mp4'>
                 Your browser does not support the video tag.
