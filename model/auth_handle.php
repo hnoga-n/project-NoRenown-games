@@ -1,5 +1,4 @@
 <?php
-
 switch ($_GET['query']) {
   case 'listgroup':
     getListGroup();
@@ -16,9 +15,11 @@ switch ($_GET['query']) {
     $gridID = $_GET['grid'];
     getGeneralGroupInformationEdit($gridID);
     getListFeatureEdit($gridID);
+    break;
   case 'deletegroup':
     $gridID = $_GET['grid'];
     deleteGroup($gridID);
+    break;
 }
 
 

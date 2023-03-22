@@ -40,7 +40,7 @@ $(document).ready(function(){
     console.log(groupID[1]);
     const xml = new XMLHttpRequest;
     xml.onreadystatechange = function(){
-      console.log(this.responseText);
+      //console.log(this.responseText);
       let data = this.responseText.split("###");
       group_general_info.innerHTML = data[0];
       auth_list_table.innerHTML = data[1]
@@ -55,14 +55,16 @@ $(document).ready(function(){
 
 function deleteGroup(groupID){
   if(confirm("Delete this authority group ?") == true){
+    console.log("delete");
     const xml = new XMLHttpRequest;
     console.log(groupID);
     xml.onreadystatechange = function(){
-      /* if(this.responseText.match("delete successed")){
-        alert("Delete succesed! "); */
+      if(this.responseText.match("delete successed")){
+        alert("Delete succesed! "); 
         console.log(this.responseText);
       }
     xml.open("GET","../../model/auth_handle.php?query=deletegroup&grid="+ groupID)
     xml.send();
   }
+}
 }
