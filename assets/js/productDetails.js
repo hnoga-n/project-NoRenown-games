@@ -5,6 +5,13 @@ function antiPropagation(event) {
     event.stopPropagation();
 }
 
+//check if img source is undefined , display none it
+array.forEach((item)=>{
+    if(item.src.split("/")[item.src.split("/").length-1] == 'undefined') {
+        item.parentElement.style.display = 'none';
+    }
+})
+
 // _src : src path of image
 // element: image tag
 function zoomIn(_src,element) {
@@ -15,6 +22,7 @@ function zoomIn(_src,element) {
         if(item == element) {
             getImgPos = pos;
         } 
+        console.log(item);
     })
 }
 

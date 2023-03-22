@@ -1,7 +1,6 @@
 <?php
-  include "../../model/connect.php";
   session_start();
-  if(empty($_SESSION['accountId'])) {
+  if(empty($_SESSION['accountId']) || !isset($_SESSION['accountId'])) {
     header('location: /project-NoRenowned-games/view/user/login.php');
   }
 ?>
@@ -74,7 +73,9 @@
               //         echo 
               //     }
               // }
-              include '../../model/getProductsInCart.php';
+              // include '../../model/getCartItems.php';
+              // include '../../model/getProductsInCart.php';
+
             ?>
            <!--  <div class="cart-item">
               <div class="item-container">
@@ -175,7 +176,7 @@
             Go to payment
             <div class="icon-arrow icon-xxs"></div>
           </a> <span class="choice">or</span>
-          <a href="/" class="back">
+          <a href="./search.php" class="back">
             <div class="icon-arrow icon-xxs"></div>
             Continue shopping
           </a>
