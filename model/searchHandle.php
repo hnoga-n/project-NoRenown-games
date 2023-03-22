@@ -10,6 +10,7 @@ $param6 = strtoupper($_GET['sort']);
 $param2 = intval($_GET['page']);
 $startPos = 12 *  $param2 - 12;
 
+
 // search games
 $product_matched_search_sql = "SELECT * FROM  games WHERE gname REGEXP '$param1' AND gcategory REGEXP '$param3' AND gprice BETWEEN $param4 AND $param5";
 $product_of_specified_page_sql = "SELECT * FROM  games WHERE gname REGEXP '$param1'AND gcategory REGEXP '$param3' AND gprice BETWEEN $param4 AND $param5 ORDER BY gprice $param6 LIMIT 12 OFFSET $startPos ";
@@ -50,4 +51,3 @@ if ($list_product_card->num_rows > 0) {
 } else {
   echo "empty";
 }
-?>
