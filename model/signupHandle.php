@@ -18,6 +18,8 @@ if (!empty($_POST["signup_name"]) && !empty($_POST["signup_phone"]) && !empty($_
     $last_insert_userID = $conn->insert_id;
     $date_create = date("Y/m/d");
     $acc_status = true;
+
+    // start insert into account
     $sql_account = $conn->prepare("INSERT INTO account (passwd,	mail,	groupID,userID,date_create,acc_status)	 VALUES (?,?,?,?,?,?) ");
     $sql_account->bind_param("ssiiss", $passwd, $mail, $groupid, $last_insert_userID, $date_create, $acc_status);
     $sql_account->execute();

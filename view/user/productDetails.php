@@ -46,7 +46,9 @@ include_once "../../model/getProductDetails.php"
       <div class="header-content">
 
         <div class="video-game">
-          <video controls muted src="../../assets/video/I Am Atomic 4k.mp4"></video>
+          <video controls src="<?php echo $row['trailer'] ?>">
+            <source src='../../assets/video/I Am Atomic 4k.mp4' type='video/mp4'>
+          </video>
         </div>
         <div class="panel">
           <div class="name">
@@ -70,20 +72,20 @@ include_once "../../model/getProductDetails.php"
         <h2>Screenshots</h2>
         <div class="visuals-gameplay">
           <div class="main-img">
-            <img src="../../assets/img/sky3.jpg" onclick="zoomIn(this.src,this)" />
+            <img src="../../assets/img/<?php echo $row2['gimg'] ?>" onclick="zoomIn(this.src,this)" />
           </div>
           <div class="sub-img">
             <div class="sub-img-item">
-              <img src="../../assets/img/4horseman.jpg" onclick="zoomIn(this.src,this)" />
+              <img src=" <?php echo $row['screenshot1'] ?>" onclick="zoomIn(this.src,this)" />
             </div>
             <div class="sub-img-item">
-              <img src="../../assets/img/pacman-ghost-logo-4E0E79293D-seeklogo.com.png" onclick="zoomIn(this.src,this)" />
+              <img src="<?php echo $row['screenshot2'] ?>" onclick="zoomIn(this.src,this)" />
             </div>
             <div class="sub-img-item">
-              <img src="../../assets/img/sky-of-star.jpg" onclick="zoomIn(this.src,this)" />
+              <img src="<?php echo $row['screenshot3'] ?>" onclick="zoomIn(this.src,this)" />
             </div>
             <div class="sub-img-item">
-              <img src="../../assets/img/gowSlideShow.jpg" onclick="zoomIn(this.src,this)" />
+              <img src="<?php echo $row['screenshot4'] ?>" onclick="zoomIn(this.src,this)" />
             </div>
           </div>
         </div>
