@@ -1,4 +1,5 @@
 <?php
+
       $servername = "localhost";
       $username = "root";
       $password = "";
@@ -12,4 +13,3 @@
         die("Connection failed: " . $conn->connect_error);
       }
     //echo "Connected successfully<br>";
-?>
