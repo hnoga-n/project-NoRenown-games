@@ -62,12 +62,12 @@
               </a>
             </div>
             <hr>
-            <div onclick="signout()">
-              <div>
+            <div>
+              <a href="/project-NoRenowned-games/model/logout.php">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 &nbsp;
                 Sign out
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -83,4 +83,5 @@
     <?php } ?>
 
   </div>
+
 </div>

@@ -1,5 +1,4 @@
 <?php
-
 switch ($_GET['query']) {
   case 'listgroup':
     getListGroup();
