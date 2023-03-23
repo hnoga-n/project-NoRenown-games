@@ -24,3 +24,8 @@ document.getElementById("7").onclick = function() {
     subtotal[0].innerText = savedtotal;
 }
 
+document.getElementById("formsubmit").onclick = function() {
+    if(document.getElementById("7").classList.contains("selected")){
+        alert("This form of payment is not supported yet");
+    }
+}

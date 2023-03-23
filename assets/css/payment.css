@@ -95,6 +95,14 @@ body {
     position: relative;
     align-items: flex-start;
 }
+@media screen and (max-width: 560px) {
+    .payment-container .payment-app .payment-form {
+        display: flex;
+        position: relative;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
 .payment-container .payment-app {
     width: 100%;
 }
@@ -304,5 +312,5 @@ body {
 
 .payment-platform-label.pay_by_link .logo {
     background-size: 70px;
-    background-image: url(../img/Google_Pay_Logo.png);
+    background-image: url(../img/icon-paybylink.svg);
 }

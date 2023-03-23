@@ -361,7 +361,7 @@ session_start();
       <span class="subtotal"><?php echo $_SESSION['total']?></span>
     </div> 
     <div class="payment-platform-submit"><!----> <!----> 
-      <div class="hipay"><button type="submit" class="button hipay_tpp_submit">Pay</button>
+      <div class="hipay"><button type="submit" class="button" id="formsubmit">Pay</button>
       </div> <!----> <!----> <!---->
     </div>
   </div>
