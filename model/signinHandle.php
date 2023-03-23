@@ -20,7 +20,7 @@ if (!empty($_POST['signin_mail']) && !empty($_POST['signin_pw'])) {
     $user_info = $result->fetch_assoc();
 
     setcookie("fullname", $user_info['fullname'], time() + (86400 * 10), "/");
-    $_SESSION['accountId'] = $account_info['accid'];
+    setcookie("accountId", $account_info['accid'], time() + (86400 * 1), "/");
 
     header('location: ../index.php');
   }

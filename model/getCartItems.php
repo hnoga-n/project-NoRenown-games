@@ -1,7 +1,7 @@
 <?php
   include 'connect.php';
   session_start();
-  $accountId = $_SESSION['accountId'];
+  $accountId = $_COOKIE['accountId'];
     $sql = mysqli_query($conn, "SELECT * FROM cart WHERE cUser_id = {$accountId}");
     if (mysqli_num_rows($sql) > 0) {
         while($row = $sql->fetch_assoc()){
@@ -43,4 +43,3 @@
         <a href="./search.php" class="button button-secondary">Discover games</a>
       </div>';
     }
-?>

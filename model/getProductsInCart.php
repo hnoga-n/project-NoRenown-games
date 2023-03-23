@@ -1,7 +1,7 @@
 <?php 
     include 'connect.php';
 
-    $accountId = $_SESSION['accountId'];
+    $accountId = $_COOKIE['accountId'];
     $query = "SELECT * FROM cart WHERE cUser_id = {$accountId}";
     $result = $conn->query($query);
     $data = '';
@@ -42,5 +42,3 @@
             <a href="/en/search/" class="button button-secondary">Discover games</a>
             </div>';
     }
-    
-?> 
