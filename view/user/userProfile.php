@@ -1,10 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['accountId'])) {
+if (!isset($_COOKIE['accountId'])) {
   header('location: ./login.php');
 } else {
   include "../../model/connect.php";
-  $id = $_SESSION['accountId'];
+  $id = $_COOKIE['accountId'];
   $sql = "SELECT *  FROM account
                       JOIN users
                         on account.userID = users.userID 

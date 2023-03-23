@@ -1,13 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION["accountId"])) {
-  $_SESSION["message"] = "Logged in expired";
+if (!isset($_COOKIE["accountId"])) {
+  $_COOKIE["message"] = "Logged in expired";
   header('location: ../view/user/login.php');
 }
 
 include "connect.php";
 
-$accid = $_SESSION['accountId'];
+$accid = $_COOKIE['accountId'];
 $passwd = $_POST['profile_newPasswd'];
 $fullname = $_POST['profile_fullname'];
 $phone = $_POST['profile_phone'];
@@ -19,16 +19,18 @@ if (!$sql_account->execute()) {
   $_SESSION['message'] = "update Password failed ";
 }
 
-$account = $conn->query("SELECT userID FROM account WHERE accID = $accid")->fetch_assoc();
-$userID = $account['userID'];
-$sql_user = $conn->prepare("UPDATE users SET 
-      fullname = (?),
-      phone = (?),
-      address = (?)
-      WHERE userID = $userID;
-      ");
-$sql_user->bind_param("sss", $fullname, $phone,  $address);
-$sql_user->execute();
+$account = $conn->query("SELECT userID FROM account WHERE accID = $accid");
+while ($row = $account->fetch_assoc()) {
+  $userID = $row['userID'];
+  $sql_user = $conn->prepare("UPDATE users SET 
+        fullname = (?),
+        phone = (?),
+        address = (?)
+        WHERE userID = $userID;
+        ");
+  $sql_user->bind_param("sss", $fullname, $phone,  $address);
+  $sql_user->execute();
+}
 
 
 

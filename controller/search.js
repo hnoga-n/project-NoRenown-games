@@ -8,6 +8,8 @@ const genreDropdown = document.querySelector(".category-list")
 
 function search(str, page, genre,priceFrom, priceTo,sortby) {
   //window.location.href = "search.php"
+  let pattern = /[^a-zA-Z0-9]/g;
+  str = str.replace(pattern,"linkinpark")
 
   if(str == undefined){
     str = '';
@@ -22,17 +24,17 @@ function search(str, page, genre,priceFrom, priceTo,sortby) {
     priceFrom = '1';
   }
   if (priceTo == undefined) { 
-    priceTo = '100';
+    priceTo = '1000';
   }
   if (sortby == undefined) { 
-    sortby = 'asc';
+    sortby = sortBy.value;
   }
-
+  console.log(sortby);
   let xmlhttp = new XMLHttpRequest();
   xmlhttp.onload = function () {
     // dataRes[0] = pagenumber || dataRes[1] = game_div
     let dataRes = this.responseText.split("page_number");
-    // console.log(this.responseText);
+    //console.log(dataRes);
     if(dataRes[1] === "empty"){
       message = `
       <div class=message-container> 
@@ -105,13 +107,11 @@ function setGenre(str,element){
 }
 
 // SORT 
-
 function setSort(str,element){
   element.parentElement.parentElement.parentElement.querySelector('input').focus();
   document.querySelector(".category-list-sort li.active").classList.remove('active');
   element.classList.add('active');
   sortBy.value = str;
-  // console.log(str);
   search(searchValue.value,1,genreInp.value,priceFrom.value, priceTo.value,sortBy.value);
 
 }

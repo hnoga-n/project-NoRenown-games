@@ -2,11 +2,11 @@
    include 'connect.php';
    session_start();
 
-   if(empty($_SESSION['accountId'])) {
+   if(empty($_COOKIE['accountId'])) {
       echo "NotSignIn";
    } else {
 
-      $cUser_id = $_SESSION['accountId'];
+      $cUser_id = $_COOKIE['accountId'];
       $cItem_id = (int)$_GET['userId'];
       $cItem_name = $_GET['nameProduct'];
       $cItem_price_after_discount = $_GET['priceProductAfterDiscount'];
@@ -38,4 +38,3 @@
       $stmt->close();
       $conn->close();
    }
-?>
