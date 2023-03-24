@@ -38,7 +38,7 @@ session_start();
   <label style="width: 50%;">
     <input placeholder="Full name" type="text" name="fullname" required="required" value="" autocomplete="payment-form" class="name">
   </label>
-  <label style="width: 45%;">
+  <label style="width: calc(50% - 15px)">
     <input placeholder="Address" type="text" name="address" required="required" value="" autocomplete="payment-form" class="street">
   </label>
   <label class="country_container">

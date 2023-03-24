@@ -1,7 +1,7 @@
 <?php
     include 'connect.php';
     session_start();
-    $accountId = $_SESSION['accountId'];
+    $accountId = $_COOKIE['accountId'];
     if(isset($_GET['item_id'])) {
         $item_id=$_GET['item_id'];
         $sql="DELETE FROM cart WHERE cItem_id = $item_id AND cUser_id = $accountId";

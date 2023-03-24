@@ -35,8 +35,8 @@
                         <span>Accounts</span>
                     </li>
                 </a>
-                <a href="">
-                    <li class="nav-item">
+                <a href="employee.php?page=statistic">
+                    <li class="nav-item <?=($_GET['page']=='statistic') ? 'active':''?>">
                         <i class="fa-solid fa-chart-simple"></i>
                         <span>Statistic</span>
                     </li>
