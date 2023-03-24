@@ -1,6 +1,6 @@
 <?php
 
-      $servername = "localhost:3307";
+      $servername = "localhost";
       $username = "root";
       $password = "";
       $dbname = "norenown";
@@ -13,3 +13,4 @@
         die("Connection failed: " . $conn->connect_error);
       }
     //echo "Connected successfully<br>";
+?>

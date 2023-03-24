@@ -1,3 +1,5 @@
+
+
 <?php
 session_start();
 
@@ -28,39 +30,85 @@ if (!isset($_COOKIE['accountId'])) {
 <body>
   <!-- header -->
   <div class="header" id="myHeader">
-    <a href="index.html">
-      <div class="logo">
-        <span class="text1">NoRENOWN</span>
-        <br>
-        <span class="text2">GAMING</span>
+  <a href="/project-NoRenowned-games/index.php">
+    <div class="logo">
+      <span class="text1">NoRENOWN</span>
+      <br />
+      <span class="text2">GAMING</span>
+    </div>
+  </a>
+  <div class="container">
+    <div class="menu">
+      <div>
+        <a href="/project-NoRenowned-games/index.php"> Home </a>
       </div>
-    </a>
-
-
-    <div class="progress-steps">
-      <span class="step active">
-        <span class="number">1</span>
-        <span class="text">Shopping cart</span>
-        <span class="spacer"></span>
-      </span>
-      <span class="step ">
-        <span class="number">2</span>
-        <span class="text">Payment</span>
-        <span class="spacer"></span>
-      </span>
-      <span class="step">
-        <span class="number">3</span>
-        <span class="text last">Game activation</span>
-      </span>
+      <div>
+        <a href="/project-NoRenowned-games/view/user/search.php"> Games </a>
+      </div>
+      <div>
+        <a href="/project-NoRenowned-games/view/user/contact.php"> Contact </a>
+      </div>
+      <div>
+        <a href="/project-NoRenowned-games/view/user/about.php"> About </a>
+      </div>
     </div>
-    <div class="user">
-      <a href="login.html">
-        <button>
-          <i class="fa-solid fa-user"></i>
-        </button>
-      </a>
+    <div class="search">
+      <input type="text" class="search-inp" id="header-search" onkeyup="search(searchValue.value,1,genreInp.value, priceFrom.value, priceTo.value,sortBy.value)" />
     </div>
+    <div class="close" id="close">&times;</div>
   </div>
+  <div class="header-right">
+    
+
+    <?php
+    if (isset($_COOKIE["fullname"])) { ?>
+      <div class="user-logged" style="display:block;">
+        <button onclick="document.getElementById('panel-el').style.display = 'block'">
+          <i class="fa-solid fa-user-secret"></i>
+        </button>
+        <div class="user-menu" id="panel-el">
+          <div class="panel" style="margin: 70px 74%;">
+            <div>
+              <span><?php echo $_COOKIE["fullname"] ?></span>
+            </div>
+            <hr>
+            <div>
+              <a href="/project-NoRenowned-games/view/user/userProfile.php">
+                <i class="fa-solid fa-user"></i>
+                &nbsp;
+                Profile
+              </a>
+            </div>
+            <div>
+              <a href="/project-NoRenowned-games/view/user/order.php">
+                <i class="fa-solid fa-money-bill"></i>
+                &nbsp;
+                My orders
+              </a>
+            </div>
+            <hr>
+            <div onclick="signout()">
+              <div>
+                <i class="fa-solid fa-right-from-bracket"></i>
+                &nbsp;
+                Sign out
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <?php } else { ?>
+      <div class="user" style="display:block;">
+        <a href="./view/user/login.php">
+          <button>
+            <i class="fa-solid fa-user"></i>
+          </button>
+        </a>
+      </div>
+    <?php } ?>
+
+  </div>
+</div>
   </header>
   <div class="main-content">
     <div id="cartpage-app" class="cartpage-container">
@@ -173,7 +221,7 @@ if (!isset($_COOKIE['accountId'])) {
             <span>Subtotal</span>
             <span id="subtotal">0</span>
           </div>
-          <a href="" class="button gotopayment">
+          <a href="#" class="button gotopayment" id="goto_payment">
             Go to payment
             <div class="icon-arrow icon-xxs"></div>
           </a> <span class="choice">or</span>
@@ -190,6 +238,7 @@ if (!isset($_COOKIE['accountId'])) {
   ?>
 </body>
 <script src="../../assets/js/cart.js"></script>
-<!-- <script src="./assets/js/header.js"></script> -->
+<script src="../../assets/js/header.js"></script>
+
 
 </html>
