@@ -46,7 +46,7 @@
             </tbody>
         </table>
     </div>  
-    <div class="pagination" >
+    <div class="pagination">
         <div id="showpagination-listaccount">
             <!-- show pagination -->
         </div>
