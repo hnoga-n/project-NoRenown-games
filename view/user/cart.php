@@ -87,6 +87,7 @@ if (!isset($_COOKIE['accountId'])) {
               </a>
             </div>
             <hr>
+
             <div>
             <a href="/project-NoRenowned-games/model/logout.php">
                 <i class="fa-solid fa-right-from-bracket"></i>

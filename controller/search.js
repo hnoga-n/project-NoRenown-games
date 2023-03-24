@@ -45,7 +45,7 @@ function search(str, page, genre,priceFrom, priceTo,sortby) {
     }
     else{
       let handleDataRes = dataRes[1] + showPagination(parseInt(dataRes[0]));
-      container.innerHTML = handleDataRes;
+      container.innerHTML = handleDataRes.replace("undefined","");
       document.querySelectorAll(".pagination input").forEach(index=> {
         if(index.value == page) {
           document.querySelector(".pagination input.active").classList.remove("active");

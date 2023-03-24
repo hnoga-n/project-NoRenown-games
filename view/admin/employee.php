@@ -14,8 +14,11 @@ if (isset($_GET['page'])) {
             require_once('./listaccount.php');
             break;
         case 'authorization':
-            require_once('authorization.php');
+            require_once('./authorization.php');
             break;
+        case 'statistic':
+            require_once('./statistic.php');
+            break;    
     }
 } else {
     require_once('listgame.php');
