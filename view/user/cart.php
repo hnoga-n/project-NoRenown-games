@@ -1,10 +1,11 @@
 
 
 <?php
-  session_start();
-  if(!isset($_SESSION['accountId'])) {
-    header('location: /project-NoRenowned-games/view/user/login.php');
-  }
+session_start();
+
+if (!isset($_COOKIE['accountId'])) {
+  header('location: /project-NoRenowned-games/view/user/login.php');
+}
 ?>
 
 
@@ -116,16 +117,16 @@
           <h2>Cart</h2>
           <div class="cart-listing" id="itemsList">
             <?php
-              // if ($sql->num_rows > 0) {
-              //     while($result = $sql->fetch_assoc()) {
-              //         echo 
-              //     }
-              // }
-              // include '../../model/getCartItems.php';
-              // include '../../model/getProductsInCart.php';
+            // if ($sql->num_rows > 0) {
+            //     while($result = $sql->fetch_assoc()) {
+            //         echo 
+            //     }
+            // }
+            // include '../../model/getCartItems.php';
+            // include '../../model/getProductsInCart.php';
 
             ?>
-           <!--  <div class="cart-item">
+            <!--  <div class="cart-item">
               <div class="item-container">
                 <a href="/en/12153-buy-wo-long-fallen-dynasty-pc-game-steam/" class="cover">
                   <picture><img data-src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" alt="Wo Long: Fallen Dynasty" src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" loading="lazy">
@@ -176,7 +177,7 @@
                   <a href="/en/search/" class="button button-secondary">Discover games</a>
                 </div>  -->
           </div>
-        </div>    
+        </div>
       </div>
       <!-- <div class="cartpage-right cartpage-empty">
             <h2>Summary</h2> 
@@ -232,9 +233,9 @@
       </div>
     </div>
   </div>
-    <?php
-    include "footer.php";
-    ?>
+  <?php
+  include "footer.php";
+  ?>
 </body>
 <script src="../../assets/js/cart.js"></script>
 <script src="../../assets/js/header.js"></script>

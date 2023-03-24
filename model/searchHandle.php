@@ -10,15 +10,13 @@ $param6 = strtoupper($_GET['sort']);
 $param2 = intval($_GET['page']);
 $startPos = 12 *  $param2 - 12;
 
+$product_matched_search_sql = "SELECT * FROM  games WHERE gname REGEXP '$param1' AND gcategory REGEXP '$param3' AND CAST(gprice as FLOAT)  BETWEEN $param4 AND $param5";
 
-// search games
-$product_matched_search_sql = "SELECT * FROM  games WHERE gname REGEXP '$param1' AND gcategory REGEXP '$param3' AND gprice BETWEEN $param4 AND $param5";
-$product_of_specified_page_sql = "SELECT * FROM  games WHERE gname REGEXP '$param1'AND gcategory REGEXP '$param3' AND gprice BETWEEN $param4 AND $param5 ORDER BY gprice $param6 LIMIT 12 OFFSET $startPos ";
+$product_of_specified_page_sql = "SELECT * FROM  games WHERE gname REGEXP '$param1' AND gcategory REGEXP '$param3' AND gprice BETWEEN $param4 AND $param5 ORDER BY CAST(gprice as FLOAT) $param6 LIMIT 12 OFFSET $startPos ";
 $pageNumber = floor(($conn->query($product_matched_search_sql)->num_rows) / 12);
-
 echo $pageNumber . "page_number";
-$list_product_card = $conn->query($product_of_specified_page_sql);
 
+$list_product_card = $conn->query($product_of_specified_page_sql);
 if ($list_product_card->num_rows > 0) {
 
   while ($row = $list_product_card->fetch_assoc()) {
