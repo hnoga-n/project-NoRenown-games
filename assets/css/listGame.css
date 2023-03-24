@@ -252,7 +252,7 @@ input:checked + .slider:before {
   cursor: auto;
 }
   
-.pagination input {
+.pagination div input {
   font-size: 18px;
   color: white;
   float: left;

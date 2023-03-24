@@ -23,7 +23,12 @@
                     'cfg_processor' => $row['cfg_processor'],
                     'cfg_graphics' => $row['cfg_graphics'],
                     'cfg_storage' => $row['cfg_storage'],
-                    'about' => $row['about']
+                    'about' => $row['about'],
+                    'scr1' => $row['screenshot1'],
+                    'scr2' => $row['screenshot2'],
+                    'scr3' => $row['screenshot3'],
+                    'scr4' => $row['screenshot4'],
+                    'trailer' => $row['trailer']
                 );
             }
         }
@@ -40,18 +45,6 @@
         <form action='<?= !empty($game) ? "../../model/edit_Game.php?gid=$id" : "../../model/add_Game.php" ?>' method="post">
             <div class='general'>
                 <span>General</span>
-                <div class='game-image' style="display:<?= !empty($game) ? 'block' : 'none' ?>;">
-                    <img src='../../assets/img/<?= !empty($game) ? $game['gimg'] : ''; ?>'>
-                </div>
-                <div class='modal-input'>
-                    <div>
-                        <label>Image :</label>
-                    </div>
-                    <div>
-                        <input type='file' name="gimg">
-                    </div>
-                </div>
-                <hr>
                 <div class='modal-input' style="display:<?= !empty($game) ? 'flex' : 'none' ?>;">
                     <div>
                         <label>ID :</label>
@@ -97,15 +90,15 @@
                     </div>
                 </div>
                 <hr>
-                <div class='modal-input'>
+                <div class='modal-input' <?= !empty($game) ? "style='display:flex'" : "style='display:none'" ?>>
                     <div>
                         <label>Quantity :</label>
                     </div>
                     <div>
-                        <input type='number' name='gquantity' min='0' <?= !empty($game) ? 'readonly' : '' ?> value='<?= !empty($game) ? $game['gquantity'] : ''; ?>' required>
+                        <input type='number' name='gquantity' min='0' <?= !empty($game) ? 'readonly' : '' ?> value='<?= !empty($game) ? $game['gquantity'] : '0'; ?>' required>
                     </div>
                 </div>
-                <hr>
+                <hr <?= !empty($game) ? "style='display:block'" : "style='display:none'" ?>>
                 <div class='modal-input'>
                     <div>
                         <label>Discount :</label>
@@ -164,6 +157,97 @@
                 <hr>
                 <div class='modal-input'>
                     <textarea name='about' placeholder="About" required><?= !empty($game) ? $game['about'] : ''; ?></textarea>
+                </div>
+            </div>
+            <div class="image">
+                <span>Image / Trailer</span>  
+                <div class="image-div">
+                    <div class='game-image' style="display:<?= !empty($game) ? 'block' : 'none' ?>;">
+                        <img src='../../assets/img/<?= !empty($game) ? $game['gimg'] : ''; ?>'>
+                    </div>
+                    <div class='modal-input'>
+                        <div>
+                            <label>Avartar :</label>
+                        </div>
+                        <div>
+                            <input type='file' name="gimg">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="image-div">
+                    <div class='game-image' style="display:<?= !empty($game) ? 'block' : 'none' ?>;">
+                        <img src='<?= !empty($game) ? $game['scr1'] : ''; ?>'>
+                    </div>
+                    <div class='modal-input'>
+                        <div>
+                            <label>Screenshot 1 :</label>
+                        </div>
+                        <div>
+                            <input type='url' name="gscr1" placeholder="URL" value="<?= !empty($game) ? $game['scr1'] : ''; ?>">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="image-div">
+                    <div class='game-image' style="display:<?= !empty($game) ? 'block' : 'none' ?>;">
+                        <img src='<?= !empty($game) ? $game['scr2'] : ''; ?>'>
+                    </div>
+                    <div class='modal-input'>
+                        <div>
+                            <label>Screenshot 2 :</label>
+                        </div>
+                        <div>
+                            <input type='url' name="gscr2" placeholder="URL" value="<?= !empty($game) ? $game['scr2'] : ''; ?>">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="image-div">
+                    <div class='game-image' style="display:<?= !empty($game) ? 'block' : 'none' ?>;">
+                        <img src='<?= !empty($game) ? $game['scr3'] : ''; ?>'>
+                    </div>
+                    <div class='modal-input'>
+                        <div>
+                            <label>Screenshot 3 :</label>
+                        </div>
+                        <div>
+                            <input type='url' name="gscr3" placeholder="URL" value="<?= !empty($game) ? $game['scr3'] : ''; ?>">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="image-div">
+                    <div class='game-image' style="display:<?= !empty($game) ? 'block' : 'none' ?>;">
+                        <img src='<?= !empty($game) ? $game['scr4'] : ''; ?>'>
+                    </div>
+                    <div class='modal-input'>
+                        <div>
+                            <label>Screenshot 4 :</label>
+                        </div>
+                        <div>
+                            <input type='url' name="gscr4" placeholder="URL" value="<?= !empty($game) ? $game['scr4'] : ''; ?>">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="image-div">
+                    <div class='game-image' style="display:<?= !empty($game) ? 'block' : 'none' ?>;">
+                    <center>
+                        <video width="450" height="250" controls>
+                            <source src='<?= !empty($game) ? $game['trailer'] : ''; ?>' type="video/mp4">
+                            <source src="../../assets/video/I Am Atomic 4k.mp4" type="video/mp4">
+                        </video>
+                    </center>
+                    </div>
+                    <div class='modal-input'>
+                        <div>
+                            <label>Trailer :</label>
+                        </div>
+                        <div>
+                            <input type="url" name="gtrailer" placeholder="URL" value="<?= !empty($game) ? $game['trailer'] : ''; ?>">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class='form-submit'>
