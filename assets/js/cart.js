@@ -10,8 +10,14 @@ loadDoc("../../model/getCartItems.php", loaded);
 function loaded(xhttp){
     document.getElementById("itemsList").innerHTML += xhttp.responseText;
     calmoney();
+    send_link();
+    
+    
 }
 
+/* function delete_item(Item_id){
+    console.log(Item_id);
+} */
 
 function calmoney(){
     if(document.getElementsByClassName("cartpage-empty")!= null){
@@ -20,16 +26,17 @@ function calmoney(){
         var s = 0;
         for(var i=0;i<items.length;i++){
             s += parseFloat(items[i].getAttribute('value')) * parseFloat(counts[i].value);
+            s += parseFloat(items[i].getAttribute('value')) * parseFloat(counts[i].value);
         }
-
         document.getElementById("offcprice").innerText = s.toLocaleString('en-US') + " $";
         const itemDiscounts = document.getElementsByClassName("discounted");
         var sDiscounted = 0;
         for(var i=0;i<itemDiscounts.length;i++){
             sDiscounted += parseFloat(itemDiscounts[i].getAttribute('value')) * parseFloat(counts[i].value);
+            sDiscounted += parseFloat(itemDiscounts[i].getAttribute('value')) * parseFloat(counts[i].value);
         }
-        document.getElementById("discount").innerText = (-(s - sDiscounted)).toLocaleString('en-US') + " $";
-        document.getElementById("subtotal").innerText = sDiscounted.toLocaleString('en-US') + " $";
+        document.getElementById("discount").innerText = (-(s - sDiscounted)).toLocaleString('en-US') + "$";
+        document.getElementById("subtotal").innerText = sDiscounted.toLocaleString('en-US') + "$";
 
     }
 
@@ -40,6 +47,10 @@ function changed_quantity(){
     var arr = [].slice.call(items);
     if(arr.every(element => element.value != '')){
         calmoney();
+        for(var i=0;i<arr.length;i++) {
+            loadDoc("../../model/update_cart.php?item_id=" + arr[i].parentNode.parentNode.id + "&item_quantity=" + arr[i].value,updatedItem)
+        }
+        
     }
     else {
         for(var i=0;i<arr.length;i++){
@@ -48,4 +59,17 @@ function changed_quantity(){
             }
         }
     }
+    
+    send_link();
+}
+
+function send_link(){
+    item = document.getElementById("goto_payment");
+    total = document.getElementById("subtotal").innerText;
+    item.href = "../../model/sendCartItemsToSV.php?total=" + total; 
+}
+
+function updatedItem(xhttp){
+    responseText = xhttp.responseText;
+    console.log("UPDATED")
 }

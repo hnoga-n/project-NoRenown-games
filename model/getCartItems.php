@@ -13,7 +13,7 @@
               </a>
               <div class="information">
                 <div class="name"><!---->
-                  <span title=' . $row["cItem_name"] . ' class="title">' . $row["cItem_name"] . '</span>
+                  <span title="' . $row["cItem_name"] . '" class="title">' . $row["cItem_name"] . '</span>
                 </div>
                 <div class="type">Steam</div> <!---->
                 <div class="actions">
