@@ -6,8 +6,8 @@ $count = 0;
 $loc = intval(($q - 1) * 12);
 $sql = "";
 $sql1 = "";
-
-if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {
+$pattert = "//i";
+if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {  
     $search = strtolower($_GET['search']);
     $pfrom = floatval($_GET['pfrom']);
     $pto = floatval($_GET['pto']);
