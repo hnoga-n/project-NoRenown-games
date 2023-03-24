@@ -2,7 +2,7 @@
 include "connect.php";
 
 session_start();
-  $accountId = $_SESSION['accountId'];
+  $accountId = $_COOKIE['accountId'];
   
   if(isset($_GET['item_id']) && isset($_GET['item_quantity'])) {
     $item_id=$_GET['item_id'];
