@@ -66,6 +66,10 @@ function changed_quantity(){
 function send_link(){
     item = document.getElementById("goto_payment");
     total = document.getElementById("subtotal").innerText;
+    if(total==0){
+        item.href = "";
+    }
+    else
     item.href = "../../model/sendCartItemsToSV.php?total=" + total; 
 }
 
@@ -73,3 +77,4 @@ function updatedItem(xhttp){
     responseText = xhttp.responseText;
     console.log("UPDATED")
 }
+

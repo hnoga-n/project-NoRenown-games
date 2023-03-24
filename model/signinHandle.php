@@ -25,3 +25,4 @@ if (!empty($_POST['signin_mail']) && !empty($_POST['signin_pw'])) {
     header('location: ../index.php');
   }
 }
+?>
