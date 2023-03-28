@@ -26,14 +26,14 @@ function calmoney(){
         var s = 0;
         for(var i=0;i<items.length;i++){
             s += parseFloat(items[i].getAttribute('value')) * parseFloat(counts[i].value);
-            s += parseFloat(items[i].getAttribute('value')) * parseFloat(counts[i].value);
+            
         }
         document.getElementById("offcprice").innerText = s.toLocaleString('en-US') + " $";
         const itemDiscounts = document.getElementsByClassName("discounted");
         var sDiscounted = 0;
         for(var i=0;i<itemDiscounts.length;i++){
             sDiscounted += parseFloat(itemDiscounts[i].getAttribute('value')) * parseFloat(counts[i].value);
-            sDiscounted += parseFloat(itemDiscounts[i].getAttribute('value')) * parseFloat(counts[i].value);
+            
         }
         document.getElementById("discount").innerText = (-(s - sDiscounted)).toLocaleString('en-US') + "$";
         document.getElementById("subtotal").innerText = sDiscounted.toLocaleString('en-US') + "$";
@@ -66,8 +66,10 @@ function changed_quantity(){
 function send_link(){
     item = document.getElementById("goto_payment");
     total = document.getElementById("subtotal").innerText;
-    if(total==0){
-        item.href = "";
+    if(total=="0$"){
+        item.href = "#";
+        document.getElementById("goto_payment").style.pointerEvents = "none";
+        document.getElementById("goto_payment").style.backgroundColor = "#3d3d3d";
     }
     else
     item.href = "../../model/sendCartItemsToSV.php?total=" + total; 
