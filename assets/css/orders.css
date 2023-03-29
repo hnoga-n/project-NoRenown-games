@@ -151,10 +151,6 @@
   background: rgba(24, 172, 117,1);
 }
 
-.showConsigneeDetail {
-  display: block;
-}
-
 .consigneeDetail {
   position: absolute;
   bottom: 125%;
@@ -164,6 +160,15 @@
   width: 300px;
   min-height: 120px;
   display: none;
+}
+
+.consigneeDetail::after {
+  content: '';
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
 }
 
 .consigneeDetail header {

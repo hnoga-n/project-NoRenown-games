@@ -59,7 +59,7 @@
                             <input type="hidden" name="orderID" value="'. $row['orderID'] .'">
                                 <div style="display: flex;">
                                     ' . $cancleOrder . '
-                                    <div class="order-receiver-address" onclick="showAddressDetail(this)">
+                                    <div class="order-receiver-address" onmouseover="showAddressDetail(this)" onmouseout="hideAddressDetail(this)">
                                         <div class="consigneeDetail">
                                             <header>RECEIVER\'S INFO</header>
                                             <div class="name">Name: '. $row['consignee_name'] .'</div>
