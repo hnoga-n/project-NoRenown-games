@@ -19,6 +19,10 @@
     margin-top: 10px;
     display: flex;
     flex-direction: row;
+    position: sticky;
+    top: 0;
+    background-color: #272727;
+    z-index: 1;
 }
 .main .nav-bar .search {
     width: 40%;
@@ -106,14 +110,16 @@
     height: 50px;
     color: white;
     font-size: 16px;
-    
+    position: sticky;
+    top: 55px;
+    z-index: 1;
 }
-th:first-child {
+/* th:first-child {
     border-top-left-radius: 15px;
 }
 th:last-child {
     border-top-right-radius: 15px;
-}
+} */
 .main .listgames table thead tr {
     border-radius: 10px;
 }
