@@ -7,7 +7,7 @@
     $_SESSION['total'] = (double)str_replace("$","",$_SESSION['total']);// remove $ in total
     $_COOKIE['accountId'] = (int)$_COOKIE['accountId'];
     $consignee_name = $_POST['fullname'];
-    $address = $_POST['address'];
+    $address = $_POST['address'] . ',' . $_POST['country'];
     $phone_number = $_POST['phone'];
 
     //insert data to invoice table

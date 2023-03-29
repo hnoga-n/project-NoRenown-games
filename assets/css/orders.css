@@ -163,7 +163,7 @@
 }
 
 .consigneeDetail::after {
-  content: '';
+  content: 'hello';
   width: 100%;
   opacity: 0;
   position: absolute;
