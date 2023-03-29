@@ -20,7 +20,7 @@ let checkInfoExist = true;//delivery address hide
 }; */
 
 function scrollToEndPage() {
-    window.scrollTo(0, listOrders.scrollHeight)
+    window.scrollTo(0, listOrders.scrollHeight - 470)
 }
 
 document.querySelector("#more").addEventListener('click',()=> {
@@ -97,15 +97,18 @@ setInterval(function () {
 
 
 function showAddressDetail(element) {
-    if( element.querySelector(".consigneeDetail").style.display == 'block') {
-        element.querySelector(".consigneeDetail").style.display = 'none';
-        return;
-    } 
-    document.querySelectorAll(".consigneeDetail").forEach(index => {
-        index.style.display = 'none';
-    });
+    // if( element.querySelector(".consigneeDetail").style.display == 'block') {
+    //     element.querySelector(".consigneeDetail").style.display = 'none';
+    //     return;
+    // } 
+    // document.querySelectorAll(".consigneeDetail").forEach(index => {
+    //     index.style.display = 'none';
+    // });
     element.querySelector(".consigneeDetail").style.display = 'block';
 }
 
+function hideAddressDetail(element) {
+    element.querySelector(".consigneeDetail").style.display = 'none';
+}
 
 
