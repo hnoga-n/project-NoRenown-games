@@ -47,6 +47,12 @@
                         <span>Authorization</span>
                     </li>
                 </a>
+                <a href="employee.php?page=listgametrash">
+                    <li class="nav-item <?=($_GET['page']=='listgametrash') ? 'active':''?>">
+                    <i class="fa-solid fa-trash-can"></i>
+                        <span>Trash Game</span>
+                    </li>
+                </a>
             </ul>
             <hr>
             <div class="nav-title">

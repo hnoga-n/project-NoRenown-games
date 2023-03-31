@@ -36,7 +36,7 @@ session_start();
         include './model/connect.php';
         $sql = "SELECT gid,gimg
                 FROM games
-                WHERE trending=1
+                WHERE trending=1 AND visible=1
                 ORDER BY RAND()
                 LIMIT 4";
         $result = $conn->query($sql);
