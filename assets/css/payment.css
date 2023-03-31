@@ -147,6 +147,8 @@ body {
 .payment-container .payment-app .payment-form .panel {
     margin-left: 60px;
     flex: 0 1 33%;
+    position: sticky;
+    top: 115px;
 }
 .payment-container .payment-app .payment-form .panel .pay-button .summary-row {
     color: var(--color-light);

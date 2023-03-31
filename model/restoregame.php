@@ -2,13 +2,13 @@
     include './connect.php';
     if(isset($_GET['gid'])) {
         $gid = $_GET['gid'];
-        $sql = "UPDATE games SET visible=0,trending=0 WHERE gid = $gid;";
+        $sql = "UPDATE games SET visible=1 WHERE gid = $gid;";
         $result = $conn->query($sql);
         if($result === TRUE) {
-            echo "Delete successfully !";
+            echo "Restore successfully !";
         }
         else {
-            echo "Delete failed !";
+            echo "Restore failed !";
         }
     }
     else {

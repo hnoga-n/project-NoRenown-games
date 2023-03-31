@@ -14,10 +14,16 @@ if (isset($_GET['page'])) {
             require_once('./listaccount.php');
             break;
         case 'authorization':
-            require_once('./authorization.php');
+            require_once('././authorization.php');
             break;
         case 'import':
             require_once('./import.php');
+            break;
+        case 'statistic':
+            require_once('./statistic.php');
+            break;
+        case 'listgametrash':
+            require_once('./listgametrash.php');
             break;
     }
 } else {

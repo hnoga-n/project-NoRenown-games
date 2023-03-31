@@ -17,8 +17,8 @@
                     <span>Bills</span>
                 </li>
             </a>
-            <a href="employee.php?page=import">
-                <li class="nav-item <?= ($_GET['page'] == 'import') ? 'active' : '' ?>">
+            <a href="">
+                <li class="nav-item">
                     <i class="fa-sharp fa-solid fa-dolly"></i>
                     <span>Import goods</span>
                 </li>
@@ -35,8 +35,8 @@
                     <span>Accounts</span>
                 </li>
             </a>
-            <a href="">
-                <li class="nav-item">
+            <a href="employee.php?page=statistic">
+                <li class="nav-item <?= ($_GET['page'] == 'statistic') ? 'active' : '' ?>">
                     <i class="fa-solid fa-chart-simple"></i>
                     <span>Statistic</span>
                 </li>
@@ -45,6 +45,12 @@
                 <li class="nav-item <?= ($_GET['page'] == 'authorization') ? 'active' : '' ?>">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                     <span>Authorization</span>
+                </li>
+            </a>
+            <a href="employee.php?page=listgametrash">
+                <li class="nav-item <?= ($_GET['page'] == 'listgametrash') ? 'active' : '' ?>">
+                    <i class="fa-solid fa-trash-can"></i>
+                    <span>Trash Game</span>
                 </li>
             </a>
         </ul>

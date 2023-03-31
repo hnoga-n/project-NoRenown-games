@@ -11,10 +11,15 @@ $cfg_processor = $_POST['cfg_processor'];
 $cfg_graphics = $_POST['cfg_graphics'];
 $cfg_storage = $_POST['cfg_storage'];
 $about = $_POST['about'];
+$scr1 = $_POST['scr1'];
+$scr2 = $_POST['scr2'];
+$scr3 = $_POST['scr3'];
+$scr4 = $_POST['scr4'];
+$trailer = $_POST['trailer'];
 
 $sql1 = "
             INSERT INTO games (gname,gcategory,gprice,gdiscount,gimg,gquantity) VALUES
-            ('$gname','$gcategory','$gprice',$gdiscount,'$gimg',$gquantity);  
+            ('$gname','$gcategory','$gprice',$gdiscount,'$gimg',0);  
               
     ";
 $result1 = $conn->query($sql1);
@@ -32,8 +37,8 @@ if ($result1 === TRUE) {
         }
     }
     $sql3 = "
-                INSERT INTO game_detail (gdt_id,cfg_os,cfg_processor,cfg_graphics,cfg_storage,about) VALUES
-                ($gdt_id,'$cfg_os','$cfg_processor','$cfg_graphics','$cfg_storage','$about');
+                INSERT INTO game_detail (gdt_id,cfg_os,cfg_processor,cfg_graphics,cfg_storage,about,screenshot1,screenshot2,screenshot3,screenshot4,trailer) VALUES
+                ($gdt_id,'$cfg_os','$cfg_processor','$cfg_graphics','$cfg_storage','$about','$scr1','$scr2','$scr3','$scr4','$trailer');
         ";
     $result3 = $conn->query($sql3);
     if ($result3 === TRUE) {

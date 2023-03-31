@@ -14,7 +14,7 @@ function showlistgame(num,category,str,pfrom,pto) {
     xmlhttp.onload = function () {
         const myobj = JSON.parse(this.responseText)
         if(myobj.s == "" && myobj.pagenum == 0) {
-            document.getElementById('showlistgame').innerHTML = "<tr><td colspan='9'>No result</td></tr>"
+            document.getElementById('showlistgame').innerHTML = "<tr><td colspan='8'>No result</td></tr>"
             showPagination(myobj.pagenum)
         }
         else {
@@ -28,29 +28,38 @@ function showlistgame(num,category,str,pfrom,pto) {
             }) 
         }  
     }
-    xmlhttp.open("GET","../../model/showlistgame.php?q=" + num + "&v=" + category + "&search=" + str + "&pfrom=" + pfrom + "&pto=" + pto)
+    xmlhttp.open("GET","../../model/showlisttrashgame.php?q=" + num + "&v=" + category + "&search=" + str + "&pfrom=" + pfrom + "&pto=" + pto)
     xmlhttp.send()
 }
 function showPagination(dataRes) {
     let s = "<input type='button' value='1' class='pageNum active' onclick='showlistgame(this.value,document.getElementById(`gcategory`).value,document.getElementById(`searchgames`).value,document.getElementById(`pfrom`).value,document.getElementById(`pto`).value)'>"   
     if(dataRes == 0) {
-        document.getElementById('showpagination').innerHTML = ""
+        document.getElementById('showpagination-trash').innerHTML = ""
         return;
     }
     else if(dataRes == 1) {
-        document.getElementById('showpagination').innerHTML = s
+        document.getElementById('showpagination-trash').innerHTML = s
         return
     } else
     for(let i = 2  ; i <= dataRes ; i++) {
       s+= `<input type='button' value='${i}' class='pageNum' onclick='showlistgame(this.value,document.getElementById("gcategory").value,document.getElementById("searchgames").value,document.getElementById("pfrom").value,document.getElementById("pto").value)'>`
     }    
-    document.getElementById('showpagination').innerHTML = s
-} 
-function setTrending(gid,status) {
-    const xmlhttp = new XMLHttpRequest()
-    xmlhttp.onload = function () {
-        alert(this.responseText)
-    }
-    xmlhttp.open("GET","../../model/setTrending.php?gid=" + gid +"&status=" + status)
-    xmlhttp.send()
+    document.getElementById('showpagination-trash').innerHTML = s
 }
+function restoregame(gid) {
+    if(confirm("Confirm restore this game ?")) {
+        if(gid.length == 0) {
+            return
+        } else {
+            const xmlhttp = new XMLHttpRequest();
+            xmlhttp.onload = function() {
+                alert(this.responseText) 
+            }
+            xmlhttp.open("GET","../../model/restoregame.php?gid=" + gid)
+            xmlhttp.send()
+        }
+    }
+    else {
+        return true
+    }
+} 
