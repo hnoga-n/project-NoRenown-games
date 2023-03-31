@@ -14,7 +14,10 @@ if (isset($_GET['page'])) {
             require_once('./listaccount.php');
             break;
         case 'authorization':
-            require_once('authorization.php');
+            require_once('./authorization.php');
+            break;
+        case 'import':
+            require_once('./import.php');
             break;
     }
 } else {

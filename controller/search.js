@@ -7,11 +7,10 @@ const priceTo = document.querySelector("#price-to");
 const genreDropdown = document.querySelector(".category-list")
 
 function search(str, page, genre,priceFrom, priceTo,sortby) {
-  //window.location.href = "search.php"
   let pattern = /[^a-zA-Z0-9]/g;
   str = str.replace(pattern,"linkinpark")
 
-  if(str == undefined){
+  if(str == undefined){ 
     str = '';
   }
   if (page == undefined) {

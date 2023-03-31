@@ -1,0 +1,175 @@
+.main .general-and-import-card{
+  height: 50vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+.main .general-and-import-card .general-info{
+  width: 90%;
+}
+ .title{
+  height: 10%;
+  color: white;
+  font-size: 30px;
+  padding: 5px;
+  margin-bottom: 20px;
+ 
+}
+
+.main .general-and-import-card .general-info .form-general-div div{
+  margin:5px 0;
+}
+.main .general-and-import-card .general-info .form-general-div div span{
+  color: white;
+}
+
+.main .general-and-import-card .general-info .form-general-div div input{
+  height: 45px;
+  width: 100%;
+  border: 3px solid #3d3d3d;
+  padding:7px;
+  border-radius: 10px;
+  background-color: rgba(16,16,16,.4);
+  color: white;
+  font-size: 15px;
+  font-family: 'Righteous', cursive;
+  transition: .2s;
+  outline: unset;
+}
+
+.main .general-and-import-card .general-info .form-general-div div input:hover,
+.main .general-and-import-card .general-info .form-general-div div input:focus {
+    border: 3px solid #FF1E1E;
+}
+
+
+/* cart table */
+.main .general-and-import-card .list-import-card{
+  overflow: scroll;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.main .general-and-import-card .list-import-card::-webkit-scrollbar {
+  display: none;
+}
+.main .general-and-import-card .list-import-card .title{
+  position: sticky;
+ top: 0;
+ z-index: 10;
+ background: #272727b1;
+}
+
+.main .general-and-import-card .list-import-card table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: scroll;
+}
+.main .general-and-import-card .list-import-card  table thead {
+  background-color: #FF1E1E;
+  width: 100%;
+  height: 50px;
+  color: white;
+  font-size: 16px;
+  position: relative;
+}
+th:first-child {
+  border-top-left-radius: 15px;
+}
+th:last-child {
+  border-top-right-radius: 15px;
+}
+.main .general-and-import-card .list-import-card table thead tr {
+  border-radius: 10px;
+}
+.main .general-and-import-card .list-import-card table thead th {
+  height: 100%;
+  
+}
+.main .general-and-import-card .list-import-card table tbody {
+  width: 100%;
+}
+.main .general-and-import-card .list-import-card table tbody tr {
+  text-align: center;
+  width: 100%;
+}
+.main .general-and-import-card .list-import-card table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+.main .general-and-import-card .list-import-card  table tbody tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+.main .general-and-import-card .list-import-card  table tbody tr td {
+  padding:5px;
+
+}
+.main .general-and-import-card .list-import-card  table tbody tr td:last-child{
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .general-and-import-card .list-import-card  table tbody tr td div
+ {
+  height: 30px;
+  width: 50px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: .3s;
+}
+
+.main .general-and-import-card .list-import-card  table tbody tr td div:hover{
+  background-color: white;
+  border: 1px solid red;
+  color: red;
+}
+
+
+/* product table */
+.main .listProduct {
+  position: sticky;
+
+}
+
+.main .listProduct .nav-bar {
+  height: 10%;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color:#272727 ;
+}
+
+.main .listProduct .listgames  table tbody tr td:last-child{
+  height:100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .listProduct .listgames table tbody tr td div{
+  width: 100px;
+  height: 50px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: .3s;
+}
+
+.main .listProduct .listgames table tbody tr td div:hover{
+  background-color: white;
+  border: 1px solid red;
+  color: red;
+}
+
+.message-container #message{
+  color: white;
+}
