@@ -18,7 +18,3 @@ session_start();
         echo "<div>cart failed to update</div>";
     }
 }
-
-
-
-?>
