@@ -13,20 +13,20 @@ if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {
     if ($v == "all") {
         $sql = "SELECT * 
             FROM games
-            WHERE visible=1 AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            WHERE visible=0 AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
             LIMIT $loc,12
             ";
         $sql1 = "SELECT * 
             FROM games
-            WHERE visible=1 AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            WHERE visible=0 AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
     } else {
         $sql = "SELECT * 
             FROM games
-            WHERE visible=1 AND gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            WHERE visible=0 AND gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
             LIMIT $loc,12";
         $sql1 = "SELECT * 
             FROM games
-            WHERE visible=1 AND gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            WHERE visible=0 AND gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
     }
 }
 $result = $conn->query($sql);
@@ -49,17 +49,8 @@ if ($result->num_rows > 0) {
                             <img src='../../assets/img/" . $row['gimg'] . "'>
                         </td>
                         <td>
-                            <label class='switch'>
-                                <input type='checkbox' onchange='setTrending(".$row['gid'].",this.checked)' $status>
-                                <span class='slider round'></span>
-                            </label>
-                        </td>
-                        <td><a href='editgame.php?page=listgame&id=".$row['gid']."'>
-                        <button>Edit</button></a>
-                        <br>
-                        <br>
                             <a href=''>
-                                <button onclick='deletegame(" . $row['gid'] . ")'>Delete</button>
+                                <button onclick='restoregame(" . $row['gid'] . ")'>Restore</button>
                             </a>
                         </td>
                     </tr>";
