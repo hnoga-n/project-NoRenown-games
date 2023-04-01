@@ -120,4 +120,6 @@ session_start();
 <!-- <script src="./assets/js/list.js"></script> -->
 <!-- <script src="./assets/js/login.js"></script> -->
 <script src="./controller/pagination_trending.js"></script>
+<script src="./assets/js/productsView.js"></script>
+
 </html>

@@ -235,7 +235,7 @@
     height: 100%;
     display: flex;
 }
-.header .header-right div {
+.header .header-right > div {
     width: 50%;
     padding: 15px 20px;
 }
@@ -324,7 +324,10 @@
 }
 
 .header .header-right .user-logged .user-menu .panel div a {
-    all: unset;
+    display: block;
+    color: white;
+    padding: 15px 0 15px 20px;
+    width: 100%;
 }
 
 @media only screen and (max-width:1100px)   {
