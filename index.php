@@ -36,8 +36,8 @@ session_start();
         include './model/connect.php';
         $sql = "SELECT gid,gimg
                 FROM games
-                WHERE trending=1
-                ORDER BY gid DESC
+                WHERE trending=1 AND visible=1
+                ORDER BY RAND()
                 LIMIT 4";
         $result = $conn->query($sql);
         if($result->num_rows>0) {
@@ -103,9 +103,6 @@ session_start();
           </div>
         </div> -->
       </div>
-    </div>
-    <div class="pagination" id="showPagination">
-    
     </div>
   </div>
 
