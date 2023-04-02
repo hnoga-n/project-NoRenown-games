@@ -299,7 +299,3 @@ function importGame()
     }
   }
 }
-
-function getNameGame($gid)
-{
-}
