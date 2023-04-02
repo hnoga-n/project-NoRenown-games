@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('../admin/head1.php');
 require_once('../admin/leftmenu.php');
 if (isset($_GET['page'])) {
