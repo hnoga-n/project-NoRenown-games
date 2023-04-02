@@ -1,5 +1,6 @@
 <?php
     include './connect.php';
+
     $sql = "SELECT gid,gimg,gdiscount,gname,gprice,trending
             FROM games
             WHERE trending=1 AND visible=1
