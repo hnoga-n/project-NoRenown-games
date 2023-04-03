@@ -73,12 +73,6 @@
   font-size: 16px;
   position: relative;
 }
-th:first-child {
-  border-top-left-radius: 15px;
-}
-th:last-child {
-  border-top-right-radius: 15px;
-}
 .main .general-and-import-card .list-import-card table thead tr {
   border-radius: 10px;
 }

@@ -17,8 +17,8 @@
                     <span>Bills</span>
                 </li>
             </a>
-            <a href="">
-                <li class="nav-item">
+            <a href="employee.php?page=import">
+                <li class="nav-item <?= ($_GET['page'] == 'import') ? 'active' : '' ?>">
                     <i class="fa-sharp fa-solid fa-dolly"></i>
                     <span>Import goods</span>
                 </li>
