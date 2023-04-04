@@ -1,4 +1,7 @@
 var listGameSold = document.querySelector("#showListGamesSold");
+let sumQuantity;
+let sumRevenue;
+let duration; 
 
 showListGameSold("","","all")
 
@@ -46,29 +49,56 @@ function calSoldQuanity() {
     if(!document.querySelectorAll(".sold_quantity").length) {
         document.querySelector("#sum_sold_quantity").innerHTML = "0";
     } else {
-        let sumQuantity = 0;
+        sumQuantity = 0;
         document.querySelectorAll(".sold_quantity").forEach(element => {
             // console.log(element.innerText);
             sumQuantity += Number(element.innerText);
         });
         document.querySelector("#sum_sold_quantity").innerHTML = sumQuantity;
+        numberAnimated(document.querySelector("#sum_sold_quantity"));
 
+        setTimeout(() => {
+            document.querySelector("#sum_sold_quantity").innerHTML = sumQuantity;
+            
+        }, duration + 1000);
     }
 
 }
+
+
 
 function calRevenue() {
     if(!document.querySelectorAll(".price").length) {
         document.querySelector("#revenue").innerHTML = "$0";
     } else {
-        let sumRevenue = 0;
+        sumRevenue = 0;
         let arrPrice = document.querySelectorAll(".price");
         let arrQuantity = document.querySelectorAll(".sold_quantity");
         for (let i = 0; i < arrPrice.length; i++) {
-            // console.log(arrPrice[i]);
-            // console.log(arrQuantity[i]);
             sumRevenue += Number(arrPrice[i].innerText.replace("$","")) * Number(arrQuantity[i].innerText);
         }
-        document.querySelector("#revenue").innerHTML = "$" + Math.round(sumRevenue * 100)/100;
+        // console.log(sumRevenue);
+        document.querySelector("#revenue").innerHTML = Math.round(sumRevenue * 100)/100;
+        numberAnimated(document.querySelector("#revenue"));
+        setTimeout(() => {
+            document.querySelector("#revenue").innerHTML = "$" + Math.round(sumRevenue * 100)/100;
+        }, duration + 1000);
     }
+}
+
+function numberAnimated(element) {
+    let interval = 500;
+    // console.log(valueDisplay);
+    let startValue = 0;
+    let endValue = parseInt(element.innerHTML);
+    console.log(endValue);
+    duration = Math.floor(interval / endValue);
+    let counter = setInterval(function () {
+        startValue += 1;
+        element.textContent = startValue;
+        if(startValue == endValue) {
+            clearInterval(counter);
+        }
+    },duration);
+
 }
