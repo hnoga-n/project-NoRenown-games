@@ -27,7 +27,7 @@
 
 ++Trending
 
-<img src="/assets/img/trending_screenshot.png" width="300" height="300">
+<img src="/assets/img/trending_screenshot.png" width="500" height="300">
 
 +Search
 
@@ -45,7 +45,7 @@
 
 +Footer
 
-<img src="/assets/img/footer_screenshot.png" width="500" height="300">
+<img src="/assets/img/footer_screenshot.png" width="800" height="300">
 
 +Giỏ hàng
 
