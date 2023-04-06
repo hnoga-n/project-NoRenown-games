@@ -92,6 +92,7 @@ get_order();
 setInterval(function () {
     if(hideMore == 'Stop') {
         document.querySelector("#more").style.display = "none";
+        clearInterval(this);
     }
 },1000)
 

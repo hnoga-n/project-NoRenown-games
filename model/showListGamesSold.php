@@ -23,7 +23,7 @@
 
     if($getInvoiceData->num_rows > 0) {
         while($row = $getInvoiceData->fetch_assoc()) {
-            if($row['order_status'] == 0) {
+            if($row['order_status'] != "1" ) {
                 break;
             }
             $dateCreate = explode(" ",$row['date_create']);
