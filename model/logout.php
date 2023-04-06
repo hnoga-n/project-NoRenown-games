@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_COOKIE['accuontId']) || isset($_COOKIE['fullname'])) {
+if (isset($_COOKIE['accountId']) || isset($_COOKIE['fullname'])) {
   unset($_COOKIE['accountId']);
   unset($_COOKIE['fullname']);
   setcookie('accountId', null, -1, '/');
