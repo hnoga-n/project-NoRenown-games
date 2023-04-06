@@ -13,20 +13,20 @@ if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {
     if ($v == "all") {
         $sql = "SELECT * 
             FROM games
-            WHERE visible=1 AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            WHERE visible=1 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
             LIMIT $loc,12
             ";
         $sql1 = "SELECT * 
             FROM games
-            WHERE visible=1 AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            WHERE visible=1 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto";
     } else {
         $sql = "SELECT * 
             FROM games
-            WHERE visible=1 AND gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            WHERE visible=1 AND (gid='$search' OR LOWER(gname) REGEXP '$search') REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
             LIMIT $loc,12";
         $sql1 = "SELECT * 
             FROM games
-            WHERE visible=1 AND gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            WHERE visible=1 AND (gid='$search' OR LOWER(gname) REGEXP '$search') REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
     }
 }
 $result = $conn->query($sql);
