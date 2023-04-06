@@ -25,13 +25,6 @@ class games
   public static function __construct2(games $othergame)
   {
     return new self($othergame->gid, $othergame->gname, $othergame->gcategory, $othergame->gprice, $othergame->gdiscount, $othergame->gimg, $othergame->gquantity);
-    /* $instance = new self();
-    $instance->gname = $othergame->gname;
-    $instance->gcategory = $othergame->gcategory;
-    $instance->gprice =  $othergame->gprice;
-    $instance->gdiscount =  $othergame->gdiscount;
-    $instance->gimg = $othergame->gimg;
-    $instance->gquantity = $othergame->gquantity; */
   }
   public function getGameid()
   {

@@ -9,7 +9,9 @@
   text-align: center;
   color:white;
   border-bottom: 1px solid white;
+
 }
+
 .main .general-and-import-card{
   height: 50vh;
   width: 100%;
@@ -157,7 +159,28 @@ th:last-child {
     top: 0;
     background-color:#272727 ;
 }
-
+.main .listProduct .nav-bar .button {
+  display: flex;
+  justify-content:  center;
+  align-items: center;
+  font-family: 'Righteous', cursive;
+  height: 40px;
+  border-radius: 7px;
+  font-size: 18px;
+  background-color: #FF1E1E;
+  color: white;
+  border: unset;
+  padding: 5px;
+  transition: .4s;
+  cursor: pointer;
+  text-align: center;
+}
+.main .listProduct .nav-bar .button:hover{
+  background-color: #e1981a;
+}
+.main .listProduct .nav-bar .button div div{
+  color: white;
+}
 .main .listProduct .listgames  table tbody tr td:last-child{
   height:100px;
   display: flex;
@@ -185,3 +208,4 @@ th:last-child {
 .message-container #message{
   color: white;
 }
+
