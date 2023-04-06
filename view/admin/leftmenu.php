@@ -65,7 +65,7 @@
                     <span>Your profile</span>
                 </li>
             </a>
-            <a href="../../index.php">
+            <a href="../../model/logout.php">
                 <li class="nav-item">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span>Log out</span>

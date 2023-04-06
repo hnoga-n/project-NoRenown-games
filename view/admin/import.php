@@ -136,13 +136,13 @@
         <input type="number" step="0.01" id="pto" onkeyup="showlistgameImp(1,document.getElementById('gcategory').value,document.getElementById(`searchgames`).value,document.getElementById('pfrom').value,this.value)">&nbsp;
         <span>$</span>
       </div>
-      <div class="button">
-        <a href="">
-          <button>
+      <a href="./importList.php?page=import" class="button">
+        <div>
+          <div>
             <span>Invoices</span>
-          </button>
-        </a>
-      </div>
+          </div>
+        </div>
+      </a>
 
       <div class="button" style="padding-left:10px;">
         <a href="">
@@ -181,4 +181,4 @@
   </div>
 </form>
 
-<script src="../../controller/import_listGame.js"></script>
+<script src="../../controller/importListGame.js"></script>

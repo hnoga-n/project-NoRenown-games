@@ -2,7 +2,7 @@ let i = 1;
 loadGeneralInfo();
 setTimeout(() => {
     loadCart();
-}, 1000);
+}, 500);
 
 showlistgameImp(i,"all","","","");
 
@@ -78,6 +78,7 @@ function deleteFromCart(gid){
     xml.onreadystatechange = function(){
         if(this.responseText == "success"){
             loadCart();
+            
         }
         else{
             mess.innerHTML = this.responseText;
@@ -106,30 +107,36 @@ function loadCart(){
     const xml = new XMLHttpRequest;
     xml.onreadystatechange = function(){
         //console.log(this.responseText);
+        updateCurrPrice('-1','-1');
         showlistgameImp.innerHTML = this.responseText;
-        updateCurrPrice();
     }
     xml.open("GET","../../model/importHandle.php?query=loadcart")
     xml.send();
 }
 
-function updateCurrPrice(){
-    let quantity = document.querySelectorAll(".quantity_inp");
+function updateCurrPrice(gid,quantity_val){
+    
     let total_p = document.querySelector("#import-total-price");
+    const mess = document.getElementById("message");
+    if(quantity_val == '' || quantity_val == undefined|| quantity_val == null || quantity_val == "0"){
+        mess.innerHTML = "quantity must > 0";
+        return;
 
-    let total_price = 0;
-    // get quantity
-    quantity.forEach((imp_quantity,index) => {    
-        if(imp_quantity.value == '' || imp_quantity.value == undefined|| imp_quantity.value == null || imp_quantity.value == "0"){
-            imp_quantity.value = 1;
+    }
+
+    const xml = new XMLHttpRequest;
+    xml.onreadystatechange=function(){
+        if(this.responseText==''){
+            total_p.value=0;
+        }else{
+            total_p.value=this.responseText;
         }
-        // get price
-        let price_of_imp = imp_quantity.parentElement.parentElement.querySelector(".price").innerHTML;
-        total_price += parseFloat(price_of_imp)*parseFloat(imp_quantity.value);
-        
-    });
-    total_p.value =  Math.floor(total_price*100)/100;   
+            
 
+    }
+    xml.open("GET","../../model/importHandle.php?query=cartquantity&gid="+gid+"&quantity="+quantity_val);
+    xml.send();
+    
 } 
 
 $(document).ready(function() {

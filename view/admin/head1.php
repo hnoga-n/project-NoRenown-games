@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="../../assets/css/statistic.css" />
   <link rel="stylesheet" href="../../assets/css/listGamesSold.css" />
   <link rel="stylesheet" href="../../assets/css/importForm.css" />
+  <link rel="stylesheet" href="../../assets/css/importList.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
   <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type='text/css'>
 

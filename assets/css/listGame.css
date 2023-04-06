@@ -92,6 +92,7 @@
     padding: 5px;
     transition: .4s;
     cursor: pointer;
+
 }
 .main .nav-bar .button button:hover {
     background-color: #e1981a;

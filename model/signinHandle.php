@@ -5,7 +5,7 @@ if (!empty($_POST['signin_mail']) && !empty($_POST['signin_pw'])) {
   $user = $_POST['signin_mail'];
   $passwd = $_POST['signin_pw'];
 
-  $sql = $conn->prepare("SELECT * FROM account WHERE mail= (?) AND passwd= (?)");
+  $sql = $conn->prepare("SELECT * FROM account WHERE mail=(?) AND passwd=(?)");
   $sql->bind_param("ss", $user, $passwd);
   $sql->execute();
   $result = $sql->get_result();
@@ -14,15 +14,16 @@ if (!empty($_POST['signin_mail']) && !empty($_POST['signin_pw'])) {
     header('location: ../view/user/login.php');
   } else {
     $account_info = $result->fetch_assoc();
-
     $sql_userinfo = "SELECT * FROM users WHERE userID = " . $account_info['userID'] . " ";
     $result = $conn->query($sql_userinfo);
     $user_info = $result->fetch_assoc();
 
     setcookie("fullname", $user_info['fullname'], time() + (86400 * 10), "/");
     setcookie("accountId", $account_info['accid'], time() + (86400 * 1), "/");
-
-    header('location: ../index.php');
+    if ($user_info['usertypeID'] == 2) {
+      header('location: ../view/admin/employee.php?page=employee-profile');
+    } else {
+      header('location: ../index.php');
+    }
   }
 }
-?>
