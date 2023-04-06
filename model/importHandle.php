@@ -71,7 +71,7 @@ function showListGameImport()
                             <img src='../../assets/img/" . $row['gimg'] . "'>
                         </td>
                         <td>
-                          <div class='delete-button' onclick='addToImportCard(" . $row['gid'] . ")'>Del</div>
+                          <div class='delete-button' onclick='addToImportCard(" . $row['gid'] . ")'>Select</div>
                         </td>
                     </tr>";
     }
@@ -125,7 +125,7 @@ function loadCart()
             <td>" . $row['gname'] . "</td>
             <td class='price'>" . $row['gprice'] . "</td>
             <td>" . $row['gquantity'] . "</td>
-            <td><input type='number' name='quanof_" . $row['gid'] . "' class='quantity_inp' onkeyup='updateCurrPrice()'></td>";
+            <td><input type='number' name='quanof_" . $row['gid'] . "' class='quantity_inp' onchange='updateCurrPrice()'></td>";
     $sql_supp = "SELECT suppID,suppName FROM supplier";
     $result2 = $conn->query($sql_supp);
     $supp_opt = '';
@@ -188,7 +188,7 @@ function loadGen()
                 <span>Total price :</span>
               </div>
               <div>
-                <input id='import-total-price' name='import_total_price' type='text' value='' readonly>
+                <input id='import-total-price' name='import_total_price' type='number' value='0' readonly>
               </div>
             </div>
 
@@ -225,7 +225,7 @@ function loadGen()
             <span>Date create :</span>
           </div>
           <div>
-            <input id='import-date-create' name='import_date_create' type='text' value='" . date("Y/m/d") . "' readonly>
+            <input id='import-date-create' name='import_date_create' type='text' value='" . date("d/m/Y") . "' readonly>
           </div>
         </div>
         <div class='form-general-div'>
@@ -233,7 +233,7 @@ function loadGen()
             <span>Total price :</span>
           </div>
           <div>
-            <input id='import-total-price' name='import_total_price' type='text' value='0' readonly>
+            <input id='import-total-price' name='import_total_price' type='number' value='0' readonly>
           </div>
         </div>
 
@@ -267,7 +267,11 @@ function importGame()
   $impAccID = 3;
   $impDataCreate = $_POST['import_date_create'];
   $impTotalPrice = intval($_POST['import_total_price']);
-
+  if ($impTotalPrice == 0) {
+    $_SESSION['message'] = "PLEASE CHOOSE PRODUCT!";
+    header('location: ../view/admin/employee.php?page=import');
+    return;
+  }
   $sql_imp = "INSERT INTO import(accID,total_price,date_create) VALUES ($impAccID,$impTotalPrice,$impDataCreate)";
   if ($conn->query($sql_imp)) {
     $lastID = $conn->insert_id;
@@ -295,11 +299,15 @@ function importGame()
 
 
       $sql_imp_detail->bind_param("iisiii", $lastID, $gameID[1], $gname, $quantity, $gprice, $supp);
-      $sql_imp_detail->execute();
+      $result = $sql_imp_detail->execute();
+      if ($result == true) {
+        $sql_delete_cart = "DELETE FROM import_cart";
+        $result = $conn->query($sql_delete_cart);
+        $_SESSION['message'] = "ADD PRODUCT SUCESSED !";
+      } else {
+        $_SESSION['message'] = "ADD PRODUCT FAILED !";
+      }
+      header('location: ../view/admin/employee.php?page=import');
     }
   }
-}
-
-function getNameGame($gid)
-{
 }

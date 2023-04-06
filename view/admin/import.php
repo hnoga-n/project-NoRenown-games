@@ -1,4 +1,15 @@
 <form class="main" action="../../model/importHandle.php?query=import" method="POST">
+  <?php
+  if (isset($_SESSION['message'])) {
+    $data = "
+      <div class='big-message'>
+        <span>" . $_SESSION['message'] . "</span>
+      </div>";
+    echo $data;
+    unset($_SESSION['message']);
+  }
+  ?>
+
   <div class="general-and-import-card">
     <!-- general infor -->
     <div class="general-info">

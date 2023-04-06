@@ -120,7 +120,63 @@ include_once "../../model/getProductDetails.php"
       </div>
       <div class="seperator"></div>
       <div class="footer-content">
-        <h2>Reviews</h2>
+        <div class="reviews">
+          <h2>Reviews</h2>
+          <div class="your-reviews text-reviews">
+              <div class="avatar">
+                <img src="../../assets/img/4911053.webp" alt="" >
+              </div>
+              <div id="input-reviews" class="message-reviews">
+                <div class="user-name">Vi Hao</div>
+                <input type="text" maxlength = "200" name="user_reviews" placeholder="Write your feeling about this game here!">
+              </div>
+              <input type="submit" id="btn-send" value="POST">
+          </div>
+          <div class="seperator"></div>
+          <h2>Other reviews</h2>
+          <div class="other-reviews">
+              <div class="text-reviews">
+                <div class="avatar">
+                  <img src="../../assets/img/4911053.webp" alt="" >
+                </div>
+                <div class="message-reviews">
+                  <div class="user-name">Hao TV</div>
+                  <input type="text" maxlength = "200" value="hello" disabled>
+                </div>
+              </div>
+              <div class="seperator"></div>
+              <div class="text-reviews">
+                <div class="avatar">
+                  <img src="../../assets/img/4911053.webp" alt="" >
+                </div>
+                <div class="message-reviews">
+                  <div class="user-name">Hao TV</div>
+                  <input type="text" maxlength = "200" value="hello" disabled>
+                </div>
+              </div>
+              <div class="seperator"></div>
+              <div class="text-reviews">
+                <div class="avatar">
+                  <img src="../../assets/img/4911053.webp" alt="" >
+                </div>
+                <div class="message-reviews">
+                  <div class="user-name">Hao TV</div>
+                  <input type="text" maxlength = "200" value="hello" disabled>
+                </div>
+              </div>
+              <div class="seperator"></div>
+              <div class="text-reviews">
+                <div class="avatar">
+                  <img src="../../assets/img/4911053.webp" alt="" >
+                </div>
+                <div class="message-reviews">
+                  <div class="user-name">Hao TV</div>
+                  <input type="text" maxlength = "200" value="hello" disabled>
+                </div>
+              </div>
+              <div class="seperator"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

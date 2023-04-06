@@ -21,7 +21,7 @@ ul {
 }
 
 .main-content {
-  padding: 80px 20px 120px;
+  padding: 80px 20px 100px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -49,6 +49,6 @@ ul {
 
 @media screen and (max-width: 750px) {
   .main-content {
-    padding: 50px 0;
+    padding: 70px 0;
   }
 }

@@ -1,6 +1,9 @@
 let i = 1;
 loadGeneralInfo();
-loadCart();
+setTimeout(() => {
+    loadCart();
+}, 1000);
+
 showlistgameImp(i,"all","","","");
 
 function showlistgameImp(num,category,str,pfrom,pto) {
@@ -62,11 +65,11 @@ function addToImportCard(gameid){
             mess.innerHTML = "You have already added this game"
         }else{
             mess.innerHTML = ''
+            loadCart();
         }
     }
     xml.open("GET","../../model/importHandle.php?query=addgame&gid=" +gameid)
     xml.send();
-    loadCart();
 }
 
 function deleteFromCart(gid){
@@ -92,7 +95,6 @@ function loadGeneralInfo(){
 
     xml.onreadystatechange = function (){
         geneInfo.innerHTML = this.responseText;
-        //console.log(this.responseText);
     }
     xml.open("GET","../../model/importHandle.php?query=loadgen")
     xml.send();
@@ -111,9 +113,10 @@ function loadCart(){
     xml.send();
 }
 
-function updateCurrPrice(event){
+function updateCurrPrice(){
     let quantity = document.querySelectorAll(".quantity_inp");
     let total_p = document.querySelector("#import-total-price");
+
     let total_price = 0;
     // get quantity
     quantity.forEach((imp_quantity,index) => {    
@@ -123,8 +126,10 @@ function updateCurrPrice(event){
         // get price
         let price_of_imp = imp_quantity.parentElement.parentElement.querySelector(".price").innerHTML;
         total_price += parseFloat(price_of_imp)*parseFloat(imp_quantity.value);
+        
     });
     total_p.value =  Math.floor(total_price*100)/100;   
+
 } 
 
 $(document).ready(function() {

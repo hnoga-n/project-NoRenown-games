@@ -1,27 +1,15 @@
+<?php 
+  include_once "../../model/searchGenres.php";
+?>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Statistic</title>
-  <link rel="icon" href="./assets/img/logo.png" />
-  <link rel="stylesheet" href="../../assets/css/reset.css" />
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-  <link rel="stylesheet" href="../../assets/css/statistic.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-</head>
-
 <body>
   <div class="statistic-container">
     <div class="statistic-container-header">
       <div class="sales">
         <div class="content">
-          <div class="text">Sales</div>
+          <div class="text">Sold quantity</div>
           <div>
-            <div class="number">100</div>
+            <div class="number" id="sum_sold_quantity">0</div>
             <i class="fa-solid fa-cart-shopping"></i>
           </div>
         </div>
@@ -30,30 +18,64 @@
         <div class="content">
           <div class="text">Revenue</div>
           <div>
-            <div class="number">$9999.99</div>
+            <div class="number" id="revenue">$0</div>
             <i class="fa-solid fa-sack-dollar"></i>
           </div>
         </div>
       </div>
     </div>
     <div class="statistic-container-content">
+    <div class="products-filter-category">
+        <label>Category</label>
+        <select name="categoryValue" id="category">
+          <?php
+            include '../../model/connect.php';
+            $sql = "SELECT DISTINCT (gcategory) 
+              FROM games
+              ORDER BY gcategory ASC";
+            $result = $conn->query($sql);
+            echo "<option value='all' selected>All</option><br>";
+            if ($result->num_rows > 0) {
+              // output data of each row
+              while ($row = $result->fetch_assoc()) {
+                echo "<option value='" . $row['gcategory'] . "'>" . $row['gcategory'] . "</option><br>";
+              }
+            }
+            $conn->close();
+          ?>
+        </select>
+      </div>
       <div class="products-filter-date">
         <label>Date</label>
-        <input id="date-start" type="date" required/>
+        <input id="date-start" type="date" value="" required/>
         <label>to</label>
-        <input id="date-end" type="date" required/>
-        <button id="btn-filter"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input id="date-end" type="date" value="" required/>
+        <button id="btn-filter" title="Filter"><i class="fa-solid fa-magnifying-glass"></i></button>
         <button id="btn-return" title="Return"><i class="fa-solid fa-rotate-right"></i></button>
-      </div>
-      <div class="products-filter-category">
-        <label>Category</label>
-        <select name="" id="">
-          <option value="all">All</option>
-        </select>
       </div>
       <!-- <div class="chart">
             <canvas id="pie" style="width: inherit; height: inherit;margin: 0 auto;"></canvas>
         </div> -->
+      <div class="listGamesSold">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 10%;">ID</th>
+              <th style="width: 30%;">Name</th>
+              <th style="width: 15%;">Genres</th>
+              <th style="width: 10%;">Price</th>
+              <th style="width: 25%;">Image</th>
+              <th style="width: 10%;">Sold quantity</th>
+            </tr>
+          </thead>
+          <tbody id="showListGamesSold">
+            <!-- Show list games -->
+            
+          </tbody>
+        </table>
+      </div>  
+  </div>
+        
 
     </div>
     <div class="statistic-container-footer">
@@ -65,5 +87,6 @@
 
 <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>
 <script src="../../assets/js/statistic.js"></script>
+<script src="../../controller/showListGamesSold.js"></script>
 
 </html>
