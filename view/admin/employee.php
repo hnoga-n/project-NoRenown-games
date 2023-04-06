@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_COOKIE['accountId'])) {
+    header('location: ../user/login.php');
+}
 require_once('../admin/head1.php');
 require_once('../admin/leftmenu.php');
 if (isset($_GET['page'])) {
