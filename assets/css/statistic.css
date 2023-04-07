@@ -82,13 +82,13 @@
 } 
 
 .products-filter-category {
-    margin-right: 40px;
+    /* margin-right: 40px; */
 }
 
 .products-filter-date {
 }
 
-.products-filter-date input,label,button,
+:is(.products-filter-date,.products-filter-besst-seller) input,label,button,
 .statistic-container-content select  {
     margin: 0 5px;
     font-size: 18px;
@@ -96,7 +96,7 @@
     border: none;
 }
 
-.products-filter-date input,
+:is(.products-filter-date,.products-filter-besst-seller) input,
 .statistic-container-content select {
     text-align: center;
     border-radius: 5px;
@@ -110,6 +110,7 @@
     font-family: 'Righteous', cursive;
     transition: .2s;
     outline: unset;
+    color-scheme: dark;
 }
 
 .products-filter-date button {
