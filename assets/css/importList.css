@@ -7,6 +7,33 @@
   flex-direction: column;
   font-family: 'Righteous', cursive;
 }
+.main-import .back-to-import{
+  position: fixed;
+  top: 15px;
+  left: 137px;
+  width: 200px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-import .back-to-import span{
+  font-family: 'Righteous', cursive;
+  height: 40px;
+  line-height: 40px;
+  width: 80px;
+  border-radius: 7px;
+  font-size: 15px;
+  background-color: #FF1E1E;
+  color: white;
+  transition: .4s;
+  cursor: pointer;
+  text-align: center;
+}
+.main-import .back-to-import span:hover{
+  background-color: #e1981a;
+}
 .main-import .title{
   width: 100%;
   text-align: center;
@@ -136,13 +163,13 @@
   align-items: center;
   font-size: larger;
 }
-.pagination-container {
+.main-import .pagination-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.pagination {
+.main-import .pagination {
   width: 100%;
   display: flex;
   max-width: 185px;
@@ -152,7 +179,7 @@
   cursor: auto;
 }
 
-.pagination input {
+.main-import .pagination input {
   height: 40px;
   font-size: 18px;
   color: white;
@@ -167,48 +194,48 @@
   cursor: pointer;
 }
 
-.pagination input.active {
+.main-import .pagination input.active {
   background-color: #ff1e1e;
   color: white;
   border-radius: 5px;
 }
 
-.pagination input:hover:not(.active) {
+.main-import .pagination input:hover:not(.active) {
   background-color: #ddd;
   border-radius: 5px;
 }
 
 /* width */
-.pagination::-webkit-scrollbar {
+.main-import .pagination::-webkit-scrollbar {
   width: 20px;
   height: 10px;
   cursor: auto;
 }
 
 /* Track */
-.pagination::-webkit-scrollbar-track {
+.main-import .pagination::-webkit-scrollbar-track {
   background: #888;
   cursor: auto;
 }
 
 /* Handle */
-.pagination::-webkit-scrollbar-thumb {
+.main-import .pagination::-webkit-scrollbar-thumb {
   background: #ff1e1e;
   cursor: auto;
 }
 
 @media screen and (max-width: 750px) {
-  .pagination {
+  .main-import .pagination {
     bottom: 10px;
     padding: 5px 0;
     font-size: 16px;
   }
 
-  .pagination a {
+  .main-import .pagination a {
     margin: 0 5px;
   }
   /* width */
-  .pagination::-webkit-scrollbar {
+  .main-import .pagination::-webkit-scrollbar {
     width: 10px;
     height: 5px;
   }

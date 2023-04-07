@@ -1,7 +1,11 @@
 <?php
 session_start();
-
-  
+if (isset($_COOKIE['usertype'])) {
+  if ($_COOKIE['usertype'] == 2) {
+    require_once "./model/logout.php";
+    header('location: ./page404.php');
+  }
+}
 ?>
 <html lang="en">
 
@@ -30,29 +34,29 @@ session_start();
   ?>
   <!-- slider -->
   <div class="slider-container">
-    
+
     <div class="sliders">
       <?php
-        include './model/connect.php';
-        $sql = "SELECT gid,gimg
+      include './model/connect.php';
+      $sql = "SELECT gid,gimg
                 FROM games
                 WHERE trending=1 AND visible=1
                 ORDER BY RAND()
                 LIMIT 4";
-        $result = $conn->query($sql);
-        if($result->num_rows>0) {
-          while($row=$result->fetch_assoc()) {
-            echo "<div class='slide' id='slide-first'>
-                    <a class='slider-img' href='./view/user/productDetails.php?id=".$row['gid']."'><img src='./assets/img/".$row['gimg']."' class='slider-img' /></a>
+      $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          echo "<div class='slide' id='slide-first'>
+                    <a class='slider-img' href='./view/user/productDetails.php?id=" . $row['gid'] . "'><img src='./assets/img/" . $row['gimg'] . "' class='slider-img' /></a>
                   </div>";
-            break;
-          }
-          while($row=$result->fetch_assoc()) {
-            echo "<div class='slide'>
-                    <a class='slider-img' href='./view/user/productDetails.php?id=".$row['gid']."'><img src='./assets/img/".$row['gimg']."' class='slider-img' /></a>
-                  </div>";
-          }
+          break;
         }
+        while ($row = $result->fetch_assoc()) {
+          echo "<div class='slide'>
+                    <a class='slider-img' href='./view/user/productDetails.php?id=" . $row['gid'] . "'><img src='./assets/img/" . $row['gimg'] . "' class='slider-img' /></a>
+                  </div>";
+        }
+      }
       ?>
       <!-- <div class="slide" id="slide-first">
         <a class="slider-img" href="#"><img src="./assets/img/eldenRingSlide.jpg " class="slider-img" /></a>

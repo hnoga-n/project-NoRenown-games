@@ -14,12 +14,13 @@ if (!empty($_POST['signin_mail']) && !empty($_POST['signin_pw'])) {
     header('location: ../view/user/login.php');
   } else {
     $account_info = $result->fetch_assoc();
-    $sql_userinfo = "SELECT * FROM users WHERE userID = " . $account_info['userID'] . " ";
+    $sql_userinfo = "SELECT fullname,usertypeID  FROM users WHERE userID = " . $account_info['userID'] . " ";
     $result = $conn->query($sql_userinfo);
     $user_info = $result->fetch_assoc();
 
-    setcookie("fullname", $user_info['fullname'], time() + (86400 * 10), "/");
+    setcookie("fullname", $user_info['fullname'], time() + (86400 * 1), "/");
     setcookie("accountId", $account_info['accid'], time() + (86400 * 1), "/");
+    setcookie("usertype", $user_info['usertypeID'], time() + 86400 * 1, "/");
     if ($user_info['usertypeID'] == 2) {
       header('location: ../view/admin/employee.php?page=employee-profile');
     } else {
