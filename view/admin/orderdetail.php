@@ -1,18 +1,15 @@
 <?php
-    include '../admin/head1.php';
-    include '../admin/leftmenu.php';
-    include '../../model/connect.php';
+    include '../view/admin/head1.php';
+    include '../view/admin/leftmenu.php';
+    include './connect.php';
+    // include_once '../../model/getbilldetail.php';
+
     if(isset($_GET['orderID'])) {
         $orderid = $_GET['orderID'];
         $sql = "SELECT gid,quantity,price,discount,gname
                 FROM invoice_detail
                 WHERE orderID = $orderid";
         $result = $conn->query($sql);
-        echo `<div class="editaccount-modalbox">
-        <div class="modal-header">
-            <h2>Order Detail</h2>
-        </div>
-        <div class="modal-form">`;
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo `<div class="form-div">
@@ -44,10 +41,10 @@
             `;
             }
         }
-        echo `</div></div>`;
     } else {
         
     }
     
 ?>
-<script src="../../assets/js/leftmenu.js"></script>
+
+<script src="../assets/js/leftmenu.js"></script>

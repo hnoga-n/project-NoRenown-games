@@ -4,7 +4,7 @@ function showlistbill(search,pagenum) {
     xmlhttp.onload = function () {
         const myobj = JSON.parse(this.responseText)
         if(myobj.html == "" && myobj.pagenum == 0) {
-            document.getElementById('showlistbill').innerHTML = "<tr><td colspan='9'>No result</td></tr>"
+            document.getElementById('showlistbill').innerHTML = "<tr><td colspan='7'>No result</td></tr>"
             showPagination(myobj.pagenum)
         }
         else {
@@ -17,6 +17,8 @@ function showlistbill(search,pagenum) {
                 }
             }) 
         }
+        checkstatus();
+
     }
     xmlhttp.open("GET","../../model/showlistorder.php?search=" + search + "&pagenum=" + pagenum)
     xmlhttp.send()
@@ -36,3 +38,14 @@ function showPagination(pagenum) {
     }    
     document.getElementById('showpagination-listbill').innerHTML = s
 } 
+
+
+function checkstatus(){
+    let lists = document.querySelectorAll('#sts');
+    lists.forEach(function (list){
+        if (list.innerText == 'Processed' || list.innerText == 'Cancelled'){
+            document.getElementById('acp').remove();
+            document.getElementById('dcl').remove();
+        }
+    })
+}

@@ -7,11 +7,7 @@
         <input type="search" placeholder="Search" id="searchbill" onkeyup="showlistbill(this.value,1)">
         </div>
         
-        <div class="button">
-            <a href="./editaccount.php?page=listaccount">
-                <button><span>Add</span></button>
-            </a>
-        </div>
+        
     </div>  
     <div class="listbills">
         <table>
@@ -20,10 +16,8 @@
                 <th style="width: 5%;">OderID</th>
                 <th style="width: 5%;">AccountID</th>
                 <th style="width: 10%;">Total Price</th>
-                <th style="width: 5%;">Date Created</th>
-                <th style="width: 20%;">Consignee Name</th>
-                <th style="width: 15%;">Address</th>
-                <th style="width: 10%;">Phone Number</th>
+                <th style="width: 15%;">Date Created</th>
+                <th style="width: 25%;">Consignee Name</th>
                 <th style="width: 10%;">Status</th>
                 <th style="width: 20%;">Action</th>
                 </tr>
