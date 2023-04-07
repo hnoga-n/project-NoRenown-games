@@ -31,6 +31,10 @@ if (isset($_GET['page'])) {
             break;
         case 'statistic':
             require_once('./statistic.php');
+            break;   
+        case 'listbills':
+            require_once('./listbills.php');
+            break;   
             break;
         case 'listgametrash':
             require_once('./listgametrash.php');
