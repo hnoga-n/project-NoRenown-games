@@ -31,7 +31,7 @@ function showlistgame(num,category,str,pfrom,pto) {
     xmlhttp.open("GET","../../model/showlistgame.php?q=" + num + "&v=" + category + "&search=" + str + "&pfrom=" + pfrom + "&pto=" + pto)
     xmlhttp.send()
 }
-function showaPgination(dataRes) {
+function showPagination(dataRes) {
     let s = "<input type='button' value='1' class='pageNum active' onclick='showlistgame(this.value,document.getElementById(`gcategory`).value,document.getElementById(`searchgames`).value,document.getElementById(`pfrom`).value,document.getElementById(`pto`).value);returnPageValue(this)'>"   
     if(dataRes == 0) {
         document.getElementById('showpagination').innerHTML = ""
