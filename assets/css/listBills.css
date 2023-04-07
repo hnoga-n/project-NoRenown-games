@@ -1,4 +1,4 @@
-.main {
+.main-bill {
     width: 90%;
     height: 100%;
     margin-left: 120px;
@@ -7,13 +7,13 @@
     flex-direction: column;
     font-family: 'Righteous', cursive;
 }
-.main .title {
+.main-bill .title-bill {
     height: 10%;
     color: white;
     font-size: 30px;
     padding: 5px;
 }
-.main .nav-bar {
+.main-bill .nav-bar-bill {
     height: 10%;
     width: 100%;
     margin-top: 10px;
@@ -21,11 +21,11 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
-.main .nav-bar .search {
+.main-bill .nav-bar-bill .search {
     width: 40%;
     padding: 5px;
 }
-.main .nav-bar .search input,.main .nav-bar .selection select,.main .nav-bar .price-filter input{
+.main-bill .nav-bar-bill .search input,.main-bill .nav-bar-bill .selection select,.main-bill .nav-bar-bill .price-filter input{
     height: 45px;
     border: 3px solid #3d3d3d;
     padding:7px;
@@ -37,58 +37,58 @@
     transition: .2s;
     outline: unset;
 }
-.main .nav-bar .search input {
+.main-bill .nav-bar-bill .search input {
   width: 450px;
 }
-.main .nav-bar .selection select{
+.main-bill .nav-bar-bill .selection select{
   width: 200px;
   background-color: rgba(16,16,16,.4);
   cursor: pointer;
 }
-.main .nav-bar .selection select option{
+.main-bill .nav-bar-bill .selection select option{
     background-color: black;
 }
-.main .nav-bar .selection select:focus{
+.main-bill .nav-bar-bill .selection select:focus{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.main .nav-bar .price-filter input{
+.main-bill .nav-bar-bill .price-filter input{
   width: 100px;
 }
-.main .nav-bar .search input:focus,
-.main .nav-bar .search input:hover,
-.main .nav-bar .selection select:focus,
-.main .nav-bar .selection select:hover,
-.main .nav-bar .price-filter input:hover,
-.main .nav-bar .price-filter input:focus{
+.main-bill .nav-bar-bill .search input:focus,
+.main-bill .nav-bar-bill .search input:hover,
+.main-bill .nav-bar-bill .selection select:focus,
+.main-bill .nav-bar-bill .selection select:hover,
+.main-bill .nav-bar-bill .price-filter input:hover,
+.main-bill .nav-bar-bill .price-filter input:focus{
     border: 3px solid #FF1E1E;
     appearance: none;
 }
  
-.main .nav-bar .selection {
+.main-bill .nav-bar-bill .selection {
     width: 20%;
     padding: 5px;
 }
 
-.main .nav-bar .price-filter {
+.main-bill .nav-bar-bill .price-filter {
   width: 30%;
   padding: 5px;
 }
-.main .nav-bar .price-filter span {
+.main-bill .nav-bar-bill .price-filter span {
   color: white;
   font-size: 16px;
 }
-.main .nav-bar .price-filter span:nth-child(3),.main .nav-bar .price-filter span:nth-child(6) {
+.main-bill .nav-bar-bill .price-filter span:nth-child(3),.main-bill .nav-bar-bill .price-filter span:nth-child(6) {
   font-size: 20px;
 }
 
-.main .nav-bar .button {
+.main-bill .nav-bar-bill .button {
     width: 10%;
 }
-.main .nav-bar .button button {
+.main-bill .nav-bar-bill .button button {
     font-family: 'Righteous', cursive;
     height: 40px;
     width: 120px;
@@ -101,18 +101,18 @@
     transition: .4s;
     cursor: pointer;
 }
-.main .nav-bar .button button:hover {
+.main-bill .nav-bar-bill .button button:hover {
     background-color: #e1981a;
 }
-.main .listbills{
+.main-bill .listbills{
     height: auto; 
     margin-top: 20px;   
 }
-.main .listbills table {
+.main-bill .listbills table {
     border-collapse: collapse;
     width: 100%;
 }
-.main .listbills table thead {
+.main-bill .listbills table thead {
     background-color: #FF1E1E;
     width: 100%;
     height: 50px;
@@ -126,34 +126,34 @@ th:first-child {
 th:last-child {
     border-top-right-radius: 15px;
 }
-.main .listbills table thead tr {
+.main-bill .listbills table thead tr {
     border-radius: 10px;
 }
-.main .listbills table thead th {
+.main-bill .listbills table thead th {
     height: 100%;
     padding: 10px;
 }
-.main .listbills table tbody {
+.main-bill .listbills table tbody {
     width: 100%;
 }
-.main .listbills table tbody tr {
+.main-bill .listbills table tbody tr {
     text-align: center;
     width: 100%;
 }
-.main .listbills table tbody tr:nth-child(odd) {
+.main-bill .listbills table tbody tr:nth-child(odd) {
     background-color: white;
 }
-.main .listbills table tbody tr:nth-child(even) {
+.main-bill .listbills table tbody tr:nth-child(even) {
     background-color: #f3f3f3;
 }
-.main .listbills table tbody tr td {
+.main-bill .listbills table tbody tr td {
     padding:5px;
 }
-.main .listbills table tbody tr td img {
+.main-bill .listbills table tbody tr td img {
     height: 100px;
     width: 200px;
 }
-.main .listbills table tbody tr td a button {
+.main-bill .listbills table tbody tr td a button {
     height: 30px;
     width: 70px;
     font-family: 'Righteous', cursive;
@@ -164,31 +164,31 @@ th:last-child {
     cursor: pointer;
     transition: background .2s;
 }
-.main .listbills table tbody tr td a:first-child button {
+.main-bill .listbills table tbody tr td a:first-child button {
     background-color: #2e89ff;
 }
-.main .listbills table tbody tr td a:first-child button:hover {
+.main-bill .listbills table tbody tr td a:first-child button:hover {
     background-color: white ;
     color: #2e89ff;
     border: 2px solid #2e89ff;
 }
-.main .listbills table tbody tr td a:nth-child(2) button {
+.main-bill .listbills table tbody tr td a:nth-child(2) button {
     background-color: #41fd70;
 }
-.main .listbills table tbody tr td a:nth-child(2) button:hover {
+.main-bill .listbills table tbody tr td a:nth-child(2) button:hover {
     background-color: white ;
     color: #41fd70;
     border: 2px solid #41fd70;
 }
-.main .listbills table tbody tr td a:last-child button {
+.main-bill .listbills table tbody tr td a:last-child button {
     background-color: #000000;
 }
-.main .listbills table tbody tr td a:last-child button:hover {
+.main-bill .listbills table tbody tr td a:last-child button:hover {
     background-color: white;
     color: black;
     border: 2px solid black;
 }
-.main .listbills table tbody tr td a{
+.main-bill .listbills table tbody tr td a{
   all:unset;
 }
 
@@ -256,13 +256,13 @@ input:checked + .slider:before {
 }
 /* ======================== */
 
-.pagination {
+.pagination-bill {
     height: 10%;
     margin-top: 90px;
     display: flex;
     justify-content: center;
 }
-.pagination > div {
+.pagination-bill > div {
   display: flex;
   bottom: 40px;
   max-width: 169px;
@@ -276,7 +276,7 @@ input:checked + .slider:before {
     border-radius: 10px;
 }
   
-.pagination div input {
+.pagination-bill div input {
   font-size: 18px;
   color: white;
   float: left;
@@ -290,32 +290,32 @@ input:checked + .slider:before {
   cursor: pointer;
 }
 
-.pagination input.active {
+.pagination-bill input.active {
   background-color: #ff1e1e;
   color: white;
   border-radius: 5px;
 }
 
-.pagination input:hover:not(.active) {
+.pagination-bill input:hover:not(.active) {
   background-color: #ddd;
   border-radius: 5px;
 }
 
 /* width */
-.pagination > div::-webkit-scrollbar {
+.pagination-bill > div::-webkit-scrollbar {
   width: 20px;
   height: 10px;
   cursor: auto;
 }
 
 /* Track */
-.pagination > div::-webkit-scrollbar-track {
+.pagination-bill > div::-webkit-scrollbar-track {
   background: #888;
   cursor: auto;
 }
 
 /* Handle */
-.pagination > div::-webkit-scrollbar-thumb {
+.pagination-bill > div::-webkit-scrollbar-thumb {
   background: #ff1e1e;
   cursor: auto;
 }
