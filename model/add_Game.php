@@ -2,6 +2,7 @@
 include './connect.php';
 $gname = $_POST['gname'];
 $gcategory = $_POST['gcategory'];
+$gquantity = $_POST['gquantity'];
 $gdiscount = $_POST['gdiscount'];
 $gimg = $_POST['gimg'];
 $gprice = $_POST['gprice'];

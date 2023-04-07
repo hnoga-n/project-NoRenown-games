@@ -1,11 +1,9 @@
 <?php
-    include 'connect.php';
+    include './connect.php';
     if(isset($_GET['gid'])) {
         $gid = $_GET['gid'];
-        $sql = "DELETE FROM game_detail WHERE gdt_id = $gid;
-                DELETE FROM games WHERE gid = $gid;
-        ";
-        $result = $conn->multi_query($sql);
+        $sql = "UPDATE games SET visible=0,trending=0 WHERE gid = $gid;";
+        $result = $conn->query($sql);
         if($result === TRUE) {
             echo "Delete successfully !";
         }

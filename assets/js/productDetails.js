@@ -22,7 +22,7 @@ function zoomIn(_src,element) {
         if(item == element) {
             getImgPos = pos;
         } 
-        console.log(item);
+        // console.log(item);
     })
 }
 
