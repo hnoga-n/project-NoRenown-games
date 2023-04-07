@@ -22,7 +22,7 @@ function showlistgameImp(num,category,str,pfrom,pto) {
     xmlhttp.onload = function () {
         const myobj = JSON.parse(this.responseText)
         if(myobj.s == "" && myobj.pagenum == 0) {
-            document.getElementById('showlistgameImp').innerHTML = "<tr><td colspan='8'>No result</td></tr>"
+            document.getElementById('showlistgameImp').innerHTML = "<tr><td></td><td></td><td></td><td></td><td>No result</td><td></td><td></td><td></td></tr>"
             showPagination(myobj.pagenum)
         }
         else {

@@ -44,7 +44,7 @@
   width: 450px;
 }
 .main .nav-bar .selection select{
-  width: 200px;
+  width: 180px;
   background-color: rgba(16,16,16,.4);
   cursor: pointer;
 }
@@ -61,12 +61,12 @@
 }
  
 .main .nav-bar .selection {
-    width: 20%;
+    width: 18%;
     padding: 5px;
 }
 
 .main .nav-bar .price-filter {
-  width: 30%;
+  width: 32%;
   padding: 5px;
 }
 .main .nav-bar .price-filter span {

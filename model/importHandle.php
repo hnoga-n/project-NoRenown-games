@@ -184,14 +184,6 @@ function loadGen()
             </div>
             <div class='form-general-div'>
               <div>
-                <span>Import ID:</span>
-              </div>
-              <div>
-                <input id='importID' name='importID' type='text' value='1' readonly>
-              </div>
-            </div>
-            <div class='form-general-div'>
-              <div>
                 <span>Account ID:</span>
               </div>
               <div>
@@ -226,14 +218,6 @@ function loadGen()
     $data = "
           <div class='title'>
           <span>Import information</span>
-        </div>
-        <div class='form-general-div'>
-          <div>
-            <span>Import ID:</span>
-          </div>
-          <div>
-            <input id='importID' name='importID' type='text' value='" . $row['impID'] + 1 . "' readonly>
-          </div>
         </div>
         <div class='form-general-div'>
           <div>

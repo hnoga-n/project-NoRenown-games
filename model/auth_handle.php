@@ -31,7 +31,7 @@ function getListGroup()
   $result = $conn->query($sql);
   $data = '';
   while ($row = $result->fetch_assoc()) {
-    if($row['groupID'] == 1 || $row['groupID'] == 2) {
+    if ($row['groupID'] == 1 || $row['groupID'] == 2) {
       $data .= ' 
         <tr>
           <td style="width: 5%;">' . $row['groupID'] . '</td>
@@ -43,8 +43,7 @@ function getListGroup()
           </td>
       </tr>
   ';
-    }
-    else {
+    } else {
       $data .= ' 
           <tr>
             <td style="width: 5%;">' . $row['groupID'] . '</td>
@@ -72,14 +71,6 @@ function getGeneralGroupInformation()
   $sql = "SELECT * FROM auth_group ORDER BY groupID DESC";
   $row = $conn->query($sql)->fetch_assoc();
   $data = '
-  <div class="form-general-div">
-                    <div>
-                        <span>Group ID:</span>
-                    </div>
-                    <div>
-                        <input id="groupID" name="groupID" type="text" value="' . ($row['groupID'] + 1) . '" readonly>
-                    </div>
-                </div>
                 <div class="form-general-div">
                     <div>
                         <span>Group name:</span>
