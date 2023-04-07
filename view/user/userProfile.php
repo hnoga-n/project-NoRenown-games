@@ -33,59 +33,58 @@ if (!isset($_COOKIE['accountId'])) {
 
 <body>
   <!-- header -->
-  <?php
-  include 'header.php';
+  <?=
+    include './header.php';
   ?>
   <div class="main">
     <div class="top">
-      <div class="t-img">
+        <div class="t-img">
         <div>
         </div>
-      </div>
-      <div class="t-info">
-        <div class="t-info-div">
-          <div>
-            <span><?php echo $row['fullname'] ?></span>
-          </div>
-          <div>
-            <span>Member since: 01-01-2023</span>
-          </div>
         </div>
-
-      </div>
+        <div class="t-info">
+        <div class="t-info-div">
+            <div>
+            <span><?php echo $row['fullname'] ?></span>
+            </div>
+            <div>
+            <span>Member since: 01-01-2023</span>
+            </div>
+        </div>
+        
+        </div>
     </div>
     <div class="bottom">
-      <form name="update_profile_form" class="bottom-div" onsubmit="return sanitizeUpdateProfileForm()" action="../../model/updateProfile.php" method="POST">
+        <div class="bottom-div">
         <div class="b-title">
-          <span>Profile</span>
+            <span>Profile</span>
         </div>
         <div class="b-input">
-          <div>
-            <input name="profile_fullname" type="text" value="<?php echo $row['fullname'] ?>">
+            <div>
+            <input type="text" required="required" value="<?php echo $row['fullname'] ?>">
             <span>Name</span>
-            <div style="display:none;" class="input_message" id="name_update_message"></div>
-          </div>
-          <div>
-            <input name="profile_phone" type="text" value="<?php echo $row['phone'] ?>">
+		<div style="display:none;" class="input_message" id="name_update_message"></div>
+            </div>
+            <div>
+            <input type="text" required="required" value="<?php echo $row['phone'] ?>">
             <span>Phone</span>
-            <div style="display:none;" class="input_message" id="phone_update_message"></div>
-          </div>
-          <div>
-            <input name="profile_address" type="text" value="<?php echo $row['address'] ?>">
-            <span>Address</span>
-          </div>
-          <div>
-            <input name="profile_mail" type="text" readonly value="<?php echo $row['mail'] ?>">
-            <span>Mail</span>
-          </div>
-          <div>
-            <input name="profile_newPasswd" type="password" value="<?php echo $row['passwd'] ?>">
-            <span>Password</span>
-            <div style="display:none;" class="input_message" id="pw_update_message"></div>
-          </div>
+		<div style="display:none;" class="input_message" id="phone_update_message"></div>
+            </div>
+            <div>             
+              <input type="text" required="required" value="<?php echo $row['address'] ?>">
+              <span>Address</span>
+            </div>
+            <div>              
+              <input type="text" required="required" value="<?php echo $row['passwd'] ?>">             
+              <span>Password</span>
+              <div style="display:none;" class="input_message" id="pw_update_message"></div>
+            </div>
+            <div>              
+            <input type="text" required="required" value="<?php echo $row['mail'] ?>" readonly disabled>
+            <span id="useremail">Email</span>
+            </div>
         </div>
-
-        <div class="update_message">
+		    <div class="update_message">
           <?php
           if (isset($_SESSION['message'])) {
             echo $_SESSION['message'];
@@ -93,20 +92,18 @@ if (!isset($_COOKIE['accountId'])) {
           }
           ?>
         </div>
-
         <div class="b-button">
-          <div>
-            <button type="submit" id="submit">
-              Update
+            <div>
+            <button>
+                Update
             </button>
-          </div>
+            </div>
         </div>
-
-      </form>
+        </div> 
     </div>
-  </div>
+</div>
   <?php
-  include 'footer.php';
+  include './footer.php';
   ?>
 </body>
 <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>
