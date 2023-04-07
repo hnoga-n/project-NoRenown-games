@@ -9,7 +9,7 @@ function showlistgame(num,category,str,pfrom,pto) {
     }
     if(pto == "" || pto == undefined) {
         pto = 100 
-    }
+    }   
     const xmlhttp = new XMLHttpRequest()
     xmlhttp.onload = function () {
         const myobj = JSON.parse(this.responseText)
@@ -31,8 +31,8 @@ function showlistgame(num,category,str,pfrom,pto) {
     xmlhttp.open("GET","../../model/showlistgame.php?q=" + num + "&v=" + category + "&search=" + str + "&pfrom=" + pfrom + "&pto=" + pto)
     xmlhttp.send()
 }
-function showPagination(dataRes) {
-    let s = "<input type='button' value='1' class='pageNum active' onclick='showlistgame(this.value,document.getElementById(`gcategory`).value,document.getElementById(`searchgames`).value,document.getElementById(`pfrom`).value,document.getElementById(`pto`).value)'>"   
+function showaPgination(dataRes) {
+    let s = "<input type='button' value='1' class='pageNum active' onclick='showlistgame(this.value,document.getElementById(`gcategory`).value,document.getElementById(`searchgames`).value,document.getElementById(`pfrom`).value,document.getElementById(`pto`).value);returnPageValue(this)'>"   
     if(dataRes == 0) {
         document.getElementById('showpagination').innerHTML = ""
         return;
@@ -42,9 +42,11 @@ function showPagination(dataRes) {
         return
     } else
     for(let i = 2  ; i <= dataRes ; i++) {
-      s+= `<input type='button' value='${i}' class='pageNum' onclick='showlistgame(this.value,document.getElementById("gcategory").value,document.getElementById("searchgames").value,document.getElementById("pfrom").value,document.getElementById("pto").value)'>`
+      s+= `<input type='button' value='${i}' class='pageNum' onclick='showlistgame(this.value,document.getElementById("gcategory").value,document.getElementById("searchgames").value,document.getElementById("pfrom").value,document.getElementById("pto").value);returnPageValue(this)'>`
     }    
     document.getElementById('showpagination').innerHTML = s
+    scrollToPosition(document.getElementById('showpagination'),document.querySelectorAll('#showpagination input').length);
+  
 } 
 function setTrending(gid,status) {
     const xmlhttp = new XMLHttpRequest()
@@ -53,4 +55,32 @@ function setTrending(gid,status) {
     }
     xmlhttp.open("GET","../../model/setTrending.php?gid=" + gid +"&status=" + status)
     xmlhttp.send()
+}
+
+let tmpInputValuePage;
+function returnPageValue(input) {
+    tmpInputValuePage = Number(input.value);//input value pagination active
+}
+
+let tmpCount = 0;
+    function scrollToPosition(element,length) {
+    if(tmpInputValuePage == 1 || tmpInputValuePage == 2) {
+            document.querySelector('#showpagination').scrollTo(0,0);
+            return;
+    } else if(tmpInputValuePage == length || tmpInputValuePage == length - 1 ) {
+            document.querySelector('#showpagination').scrollTo(length*50,0);
+            return;
+    } else if(tmpInputValuePage == length - 2 ) {
+            document.querySelector('#showpagination').scrollTo(tmpInputValuePage*45,0);
+            return;
+    }
+    else {
+        if(tmpInputValuePage > length / 2) {
+            document.querySelector('#showpagination').scrollTo(tmpInputValuePage*40,0);
+        } else {
+            document.querySelector('#showpagination').scrollTo((tmpInputValuePage-1)*40,0);
+        }
+        
+    }
+        
 }
