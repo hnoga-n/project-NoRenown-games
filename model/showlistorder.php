@@ -42,7 +42,7 @@
                     "<tr>
                         <td>".$row['orderID']."</td>
                         <td>".$row['accID']."</td>
-                        <td>".$row['total_price']."</td>
+                        <td>".$row['total_price'].'$'."</td>
                         <td>".$row['date_create']."</td>
                         <td>".$row['consignee_name']."</td>
                         $status
