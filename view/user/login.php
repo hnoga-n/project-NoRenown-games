@@ -50,8 +50,9 @@ if (isset($_COOKIE['accountId'])) {
             <?php
             if (isset($_SESSION['message'])) {
               echo $_SESSION['message'];
+              unset($_SESSION['message']);
             }
-            unset($_SESSION['message']);
+
             ?>
           </span>
           <a href="#">Forgot your password?</a>

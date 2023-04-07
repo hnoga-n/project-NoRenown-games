@@ -54,7 +54,7 @@ if (!isset($_COOKIE['accountId'])) {
       </div>
     </div>
     <div class="bottom">
-      <form name="update_profile_form" class="bottom-div" onsubmit="return sanitizeUpdateProfileForm()" action="../../model/updateProfile.php" method="POST">
+      <form name="update_profile_form" class="bottom-div" onsubmit="return sanitizeUpdateProfileForm()" action="../../model/updateProfile.php?query=updatecustomer" method="POST">
         <div class="b-title">
           <span>Profile</span>
         </div>

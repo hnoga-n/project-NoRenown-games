@@ -26,7 +26,7 @@ $user_info = $result2->fetch_assoc();
         </div>
     </div>
     <div class="bottom">
-        <div class="bottom-div">
+        <form class="bottom-div" name="update_profile_employee" onsubmit="return sanitizeUpdateEmployeeProfileForm()" action="../../model/updateProfile.php?query=updateemployee" method="POST">
             <div class="b-title">
                 <span>Profile</span>
             </div>
@@ -34,13 +34,15 @@ $user_info = $result2->fetch_assoc();
                 <div>
                     <input name="user_name" type="text" required="required" value="<?= $_COOKIE['fullname'] ?>">
                     <span>Name</span>
+                    <div style="display:none;" class="input_message" id="name_update_message"></div>
                 </div>
                 <div>
                     <input name="user_phone" type="text" required="required" value="<?= $user_info['phone'] ?>">
                     <span>Phone</span>
+                    <div style="display:none;" class="input_message" id="phone_update_message"></div>
                 </div>
                 <div>
-                    <input name="user_mail" type="text" required="required" value="<?= $account['mail'] ?>">
+                    <input name="user_mail" type="text" required="required" value="<?= $account['mail'] ?>" readonly>
                     <span>Email</span>
                 </div>
                 <div>
@@ -50,15 +52,19 @@ $user_info = $result2->fetch_assoc();
                 <div>
                     <input name="user_passwd" type="password" required="required" value="<?= $account['passwd'] ?>">
                     <span>Password</span>
+                    <div style="display:none;" class="input_message" id="pw_update_message"></div>
+
                 </div>
             </div>
             <div class="update_message">
-                <?php
-                if (isset($_SESSION['message'])) {
-                    echo $_SESSION['message'];
-                    //unset($_SESSION['message']);
-                }
-                ?>
+                <div class="mess">
+                    <?php
+                    if (isset($_SESSION['message'])) {
+                        echo $_SESSION['message'];
+                        //unset($_SESSION['message']);
+                    }
+                    ?>
+                </div>
             </div>
             <div class="b-button">
                 <div>
@@ -67,6 +73,6 @@ $user_info = $result2->fetch_assoc();
                     </button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
