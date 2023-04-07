@@ -46,3 +46,11 @@ function showPagination(dataRes) {
     }    
     document.getElementById('showpagination').innerHTML = s
 } 
+function setTrending(gid,status) {
+    const xmlhttp = new XMLHttpRequest()
+    xmlhttp.onload = function () {
+        alert(this.responseText)
+    }
+    xmlhttp.open("GET","../../model/setTrending.php?gid=" + gid +"&status=" + status)
+    xmlhttp.send()
+}

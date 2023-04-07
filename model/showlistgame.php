@@ -6,7 +6,6 @@ $count = 0;
 $loc = intval(($q - 1) * 12);
 $sql = "";
 $sql1 = "";
-$pattert = "//i";
 if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {  
     $search = strtolower($_GET['search']);
     $pfrom = floatval($_GET['pfrom']);
@@ -14,20 +13,20 @@ if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {
     if ($v == "all") {
         $sql = "SELECT * 
             FROM games
-            WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            WHERE visible=1 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
             LIMIT $loc,12
             ";
         $sql1 = "SELECT * 
             FROM games
-            WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            WHERE visible=1 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto";
     } else {
         $sql = "SELECT * 
             FROM games
-            WHERE gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            WHERE visible=1 AND (gid='$search' OR LOWER(gname) REGEXP '$search') REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
             LIMIT $loc,12";
         $sql1 = "SELECT * 
             FROM games
-            WHERE gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            WHERE visible=1 AND (gid='$search' OR LOWER(gname) REGEXP '$search') REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
     }
 }
 $result = $conn->query($sql);
@@ -36,6 +35,9 @@ $str = "";
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
+        if($row['trending'] == 1) 
+            $status = "checked";
+        else $status = "";
         $str .= "    <tr>
                         <td>" . $row['gid'] . "</td>
                         <td>" . $row['gname'] . "</td>
@@ -48,11 +50,11 @@ if ($result->num_rows > 0) {
                         </td>
                         <td>
                             <label class='switch'>
-                                <input type='checkbox'>
+                                <input type='checkbox' onchange='setTrending(".$row['gid'].",this.checked)' $status>
                                 <span class='slider round'></span>
                             </label>
                         </td>
-                        <td><a href='editgame.php?page=listgame&id=".$row['gid']."'>
+                        <td><a href='editgame.php?page=listgame&id=" . $row['gid'] . "'>
                         <button>Edit</button></a>
                         <br>
                         <br>

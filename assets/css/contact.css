@@ -151,7 +151,7 @@ body {
 .form-outside-container  .form-container .form button{
   grid-column: 2/3;
   font-size: 20px;
-  width: 200px;
+  width: 100%;
   justify-self: right;
   background:rgba(123, 61, 239, 0.703)  ;
   transition: .5s;

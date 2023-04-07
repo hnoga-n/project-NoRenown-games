@@ -1,0 +1,344 @@
+.title {
+    height: 10%;
+    color: white;
+    font-size: 30px;
+    padding: 5px;
+}
+.nav-bar {
+    height: 10%;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.nav-bar .search {
+    width: 40%;
+    padding: 5px;
+}
+.nav-bar .search input,.nav-bar .selection select,.nav-bar .price-filter input{
+    height: 45px;
+    border: 3px solid #3d3d3d;
+    padding:7px;
+    border-radius: 10px;
+    background-color: rgba(16,16,16,.4);
+    color: white;
+    font-size: 15px;
+    font-family: 'Righteous', cursive;
+    transition: .2s;
+    outline: unset;
+}
+.nav-bar .search input {
+  width: 450px;
+}
+.nav-bar .selection select{
+  width: 200px;
+  background-color: rgba(16,16,16,.4);
+  cursor: pointer;
+}
+.nav-bar .price-filter input{
+  width: 100px;
+}
+.nav-bar .search input:focus,
+.nav-bar .search input:hover,
+.nav-bar .selection select:focus,
+.nav-bar .selection select:hover,
+.nav-bar .price-filter input:hover,
+.nav-bar .price-filter input:focus{
+    border: 3px solid #FF1E1E;
+}
+ 
+.nav-bar .selection {
+    width: 20%;
+    padding: 5px;
+}
+
+.nav-bar .price-filter {
+  width: 30%;
+  padding: 5px;
+}
+.nav-bar .price-filter span {
+  color: white;
+  font-size: 16px;
+}
+.nav-bar .price-filter span:nth-child(3),.nav-bar .price-filter span:nth-child(6) {
+  font-size: 20px;
+}
+
+.nav-bar .button {
+    width: 10%;
+}
+.nav-bar .button button {
+    font-family: 'Righteous', cursive;
+    height: 40px;
+    width: 120px;
+    border-radius: 7px;
+    font-size: 18px;
+    background-color: #FF1E1E;
+    color: white;
+    border: unset;
+    padding: 5px;
+    transition: .4s;
+    cursor: pointer;
+}
+.nav-bar .button button:hover {
+    background-color: #e1981a;
+}
+.listGamesSold{
+    height: auto; 
+    margin-top: 20px;   
+}
+.listGamesSold table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.listGamesSold table thead {
+    background-color: #FF1E1E;
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-size: 16px;
+    
+}
+.listGamesSold table thead tr {
+    border-radius: 10px;
+}
+.listGamesSold table thead th {
+    height: 100%;
+    padding: 10px;
+}
+.listGamesSold table tbody {
+    width: 100%;
+}
+.listGamesSold table tbody tr {
+    text-align: center;
+    width: 100%;
+    color: black;
+}
+.listGamesSold table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+.listGamesSold table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+.listGamesSold table tbody tr td {
+    padding:5px;
+}
+.listGamesSold table tbody tr td img {
+    height: 100px;
+    width: 200px;
+}
+.listGamesSold table tbody tr td a button {
+    height: 30px;
+    width: 70px;
+    font-family: 'Righteous', cursive;
+    color: white;
+    border-radius: 7px;
+    border: unset;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background .2s;
+}
+.listGamesSold table tbody tr td a:first-child button {
+    background-color: #2e89ff;
+}
+.listGamesSold table tbody tr td a:first-child button:hover {
+    background-color: white ;
+    color: #2e89ff;
+    border: 2px solid #2e89ff;
+}
+.listGamesSold table tbody tr td a:last-child button {
+    background-color: #000000;
+}
+.listGamesSold table tbody tr td a:last-child button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+.listGamesSold table tbody tr td a{
+  all:unset;
+}
+
+
+
+/* CSS TOGGLE CHECKBOX */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #FF1E1E;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #FF1E1E;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* ======================== */
+
+.pagination {
+    height: 10%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.pagination > div {
+  display: flex;
+  bottom: 40px;
+  max-width: 185px;
+  width: 100%;
+  height: 65px;
+  overflow-y: auto;
+  cursor: auto;
+}
+  
+.pagination div input {
+  font-size: 18px;
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  margin: 7px;
+  background:unset;
+  border: unset;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.pagination input.active {
+  background-color: #ff1e1e;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination input:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+/* width */
+.pagination > div::-webkit-scrollbar {
+  width: 20px;
+  height: 10px;
+  cursor: auto;
+}
+
+/* Track */
+.pagination > div::-webkit-scrollbar-track {
+  background: #888;
+  cursor: auto;
+}
+
+/* Handle */
+.pagination > div::-webkit-scrollbar-thumb {
+  background: #ff1e1e;
+  cursor: auto;
+}
+
+
+/* MESSAGE BOX */
+.message {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.message-box {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+.message-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.message-body {padding: 2px 16px;}
+
+.message-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+/* The Close Button */
+.close {
+  color: white;
+  font-family:Arial, Helvetica, sans-serif;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.close:hover,
+.close:focus {
+  color: #3d3d3d;
+  text-decoration: none;
+  cursor: pointer;
+}
