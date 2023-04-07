@@ -23,11 +23,11 @@
 
     if($getInvoiceData->num_rows > 0) {
         while($row = $getInvoiceData->fetch_assoc()) {
-            if($row['order_status'] != "1" ) {
+            /* if($row['order_status'] != "1" ) {
                 break;
-            }
+            } */
             $dateCreate = explode(" ",$row['date_create']);
-            $dateCreate = date('m-d-Y', strtotime(str_replace("/","-",$dateCreate[1])));
+            $dateCreate = date('m-d-Y', strtotime($dateCreate[1]));
             if (($dateCreate >= $dateStart) && ($dateCreate <= $dateEnd)){
                 echo "<tr>
                     <td>" . $row['gid'] ."</td>
