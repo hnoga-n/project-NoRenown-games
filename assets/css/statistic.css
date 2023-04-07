@@ -77,6 +77,14 @@
     display: inline-block;
 }
 
+.statistic-container-content .listGamesSold {
+    display: block;
+} 
+
+.products-filter-category {
+    margin-right: 40px;
+}
+
 .products-filter-date {
 }
 
