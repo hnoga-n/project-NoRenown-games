@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_COOKIE['accountId'])) {
+    header('location: ../user/login.php');
+}
 require_once('../admin/head1.php');
 require_once('../admin/leftmenu.php');
 if (isset($_GET['page'])) {
@@ -15,7 +18,7 @@ if (isset($_GET['page'])) {
             require_once('./listaccount.php');
             break;
         case 'authorization':
-            require_once('././authorization.php');
+            require_once('./authorization.php');
             break;
         case 'import':
             require_once('./import.php');
