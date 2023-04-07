@@ -4,6 +4,9 @@ include '../admin/leftmenu.php';
 include '../../model/connect.php';
 ?>
 <div class="main-import">
+  <div class="back-to-import">
+    <span>Back</span>
+  </div>
   <div class="title">IMPORT LIST</div>
   <div class="nav">
     <input type="date" id="date-start" placeholder="Search date start" value="2020-01-01" onchange="searchImportList(this.value,document.getElementById('date-end').value,document.getElementById('search-with-account').value,document.getElementById('price-from').value,document.getElementById('price-to').value)"></input>

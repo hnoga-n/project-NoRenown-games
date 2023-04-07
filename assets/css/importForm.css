@@ -198,8 +198,16 @@
   border: 1px solid red;
   color: red;
 }
-
+.message-container{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .message-container #message{
   color: white;
+  font-size: 20px;
+  text-decoration: overline;
+  text-decoration-color: red;
 }
 

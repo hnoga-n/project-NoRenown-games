@@ -2,7 +2,13 @@
 session_start();
 if (!isset($_COOKIE['accountId'])) {
     header('location: ../user/login.php');
+} else {
+    if ($_COOKIE['usertype'] == 1) {
+        require_once "../../model/logout.php";
+        header('location: ../../page404.php');
+    }
 }
+
 require_once('../admin/head1.php');
 require_once('../admin/leftmenu.php');
 if (isset($_GET['page'])) {

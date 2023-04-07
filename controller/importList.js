@@ -33,7 +33,7 @@ function searchImportList(dateStart,dateEnd,ID,priceFrom,priceTo){
   const xml = new XMLHttpRequest;
   xml.onreadystatechange=function(){
     if(this.responseText=="empty"){
-      message.innerHTML="Can not file import you needed !";
+      message.innerHTML="Can not find import you needed !";
       outside_container.innerHTML='';
       page_container.innerHTML='';
     }else{
@@ -129,3 +129,8 @@ function scrollToPosition(element,length) {
     }    
 }
 
+const backBtn = document.querySelector(".back-to-import span");
+backBtn.addEventListener("click",function(){
+  console.log("hello");
+  window.location.href="./employee.php?page=import";
+})

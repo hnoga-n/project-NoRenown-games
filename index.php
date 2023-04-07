@@ -2,7 +2,8 @@
 session_start();
 if (isset($_COOKIE['usertype'])) {
   if ($_COOKIE['usertype'] == 2) {
-    header('location: ../view/admin/employee.php?page=employee-profile');
+    require_once "./model/logout.php";
+    header('location: ./page404.php');
   }
 }
 ?>
