@@ -1,8 +1,8 @@
-<div class="main">
-    <div class="title">
+<div class="main-bill">
+    <div class="title-bill">
         <span>Bills</span>
     </div>
-    <div class="nav-bar">
+    <div class="nav-bar-bill">
         <div class="search">
         <input type="search" placeholder="Search" id="searchbill" onkeyup="showlistbill(this.value,1)">
         </div>
@@ -33,7 +33,7 @@
             </tbody>
         </table>
     </div>  
-    <div class="pagination">
+    <div class="pagination-bill">
         <div id="showpagination-listbill">
             <!-- show pagination -->
         </div>
