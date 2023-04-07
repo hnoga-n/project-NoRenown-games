@@ -11,8 +11,8 @@
             Features
         </div>
         <ul>
-            <a href="">
-                <li class="nav-item">
+            <a href="employee.php?page=listbills">
+                <li class="nav-item <?= ($_GET['page'] == 'listbills') ? 'active' : '' ?>">
                     <i class="fa-solid fa-barcode"></i>
                     <span>Bills</span>
                 </li>
