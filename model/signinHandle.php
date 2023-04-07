@@ -5,12 +5,15 @@ if (!empty($_POST['signin_mail']) && !empty($_POST['signin_pw'])) {
   $user = $_POST['signin_mail'];
   $passwd = $_POST['signin_pw'];
 
-  $sql = $conn->prepare("SELECT * FROM account WHERE mail=(?) AND passwd=(?)");
+  $sql = $conn->prepare("SELECT acc_status FROM account WHERE mail=(?) AND passwd=(?)");
   $sql->bind_param("ss", $user, $passwd);
   $sql->execute();
   $result = $sql->get_result();
   if ($result->num_rows <= 0) {
     $_SESSION["message"] = "Invalid username or password";
+    header('location: ../view/user/login.php');
+  } else if ($acc_status == 0) {
+    $_SESSION['message'] = "Your account had been locked !";
     header('location: ../view/user/login.php');
   } else {
     $account_info = $result->fetch_assoc();
