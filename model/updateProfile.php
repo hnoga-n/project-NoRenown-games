@@ -25,10 +25,11 @@ function updateCustomerProfile()
   $phone = $_POST['profile_phone'];
   $address = $_POST['profile_address'];
 
-  $sql_account = $conn->prepare("UPDATE account SET passwd = (?)");
+  $sql_account = $conn->prepare("UPDATE account SET passwd = (?) WHERE accid=$accid");
   $sql_account->bind_param("s", $passwd);
   if (!$sql_account->execute()) {
     $_SESSION['message'] = "update Password failed ";
+    header('location: ../view/user/userProfile.php');
   }
 
   $account = $conn->query("SELECT userID FROM account WHERE accID = $accid");
@@ -59,10 +60,11 @@ function updateEmployeeProfile()
   $phone = $_POST['user_phone'];
   $address = $_POST['user_address'];
 
-  $sql_account = $conn->prepare("UPDATE account SET passwd = (?)");
+  $sql_account = $conn->prepare("UPDATE account SET passwd = (?) WHERE accid=$accid");
   $sql_account->bind_param("s", $passwd);
   if (!$sql_account->execute()) {
     $_SESSION['message'] = "update Password failed ";
+    header('location: ../view/admin/employee.php?page=employee-profile');
   }
 
   $account = $conn->query("SELECT userID FROM account WHERE accID = $accid");

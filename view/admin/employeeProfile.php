@@ -61,7 +61,7 @@ $user_info = $result2->fetch_assoc();
                     <?php
                     if (isset($_SESSION['message'])) {
                         echo $_SESSION['message'];
-                        //unset($_SESSION['message']);
+                        unset($_SESSION['message']);
                     }
                     ?>
                 </div>
@@ -76,3 +76,4 @@ $user_info = $result2->fetch_assoc();
         </form>
     </div>
 </div>
+<script src="../../assets/js/login.js"></script>

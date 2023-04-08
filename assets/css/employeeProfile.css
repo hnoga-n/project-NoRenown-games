@@ -95,6 +95,15 @@
     color: white;
     position: relative;
 }
+.bottom .bottom-div .b-input div .input_message{
+	width: 100%;
+	color: red;
+	font-size: 12px;
+	text-align: left;
+	margin: 0 10px;
+
+}
+
 .bottom .bottom-div .b-input div span {
     position: absolute;
     top: 16%;
