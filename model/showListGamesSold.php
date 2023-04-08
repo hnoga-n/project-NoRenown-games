@@ -31,12 +31,16 @@
         }
     }
 
+    $data = "";
+    $soldQuantity = 0;
+    $revenue = 0;
+
     if($getInvoiceData->num_rows > 0) {
         while($row = $getInvoiceData->fetch_assoc()) {
             $dateCreate = explode(" ",$row['date_create']);
             $dateCreate = date('m-d-Y', strtotime($dateCreate[1]));
             if (($dateCreate >= $dateStart) && ($dateCreate <= $dateEnd)){
-                echo "<tr>
+                $data .= "<tr>
                     <td>" . $row['gid'] ."</td>
                     <td>" . $row['gname'] ."</td>
                     <td>" . $row['gcategory'] ."</td>
@@ -47,12 +51,21 @@
                     <td class='sold_quantity'>" . $row['SUM(quantity)'] ."</td>
                 </tr>";
                 $flag = true;
+                $soldQuantity += (int) $row['SUM(quantity)'];
+                $revenue += (int) $row['SUM(quantity)'] * (float) $row['price'];
             }
         }
     } 
     if(!$flag) {
-        echo "<tr><td colspan='6' style='font-weight: 600'>No result</td></tr>";
+        $data .= "<tr><td colspan='6' style='font-weight: 600'>No result</td></tr>";
     }
     // echo $dateStart . ',' . $dateEnd . ',' . $category;
-
+    // $count /= 12;
+    $myobj = new stdClass();
+    $myobj->data = $data;
+    $myobj->sold_quantity = $soldQuantity;
+    $myobj->revenue = $revenue;
+    $myJSON = json_encode($myobj);
+    echo $myJSON;
+    $conn->close();
 ?>

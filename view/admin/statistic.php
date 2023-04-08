@@ -23,6 +23,24 @@
           </div>
         </div>
       </div>
+      <div class="import-money">
+        <div class="content">
+          <div class="text">Import money</div>
+          <div>
+            <div class="number" id="import-money">$0</div>
+            <i class="fa-solid fa-sack-dollar"></i>
+          </div>
+        </div>
+      </div>
+      <div class="profit">
+        <div class="content">
+          <div class="text">Profit</div>
+          <div>
+            <div class="number" id="profit">$0</div>
+            <i class="fa-solid fa-arrow-trend-up"></i>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="statistic-container-content">
       <div class="products-filter-besst-seller">

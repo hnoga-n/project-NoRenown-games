@@ -1,6 +1,6 @@
 var listGameSold = document.querySelector("#showListGamesSold");
-let sumQuantity;
-let sumRevenue;
+let sumQuantity = 0;
+let sumRevenue = 0;
 let duration; 
 
 showListGameSold(0,"","","all")
@@ -37,9 +37,13 @@ function showListGameSold(topSell,dateStart,dateEnd,category) {
     const xhr = new XMLHttpRequest()
     xhr.onload = function () {
         if(this.status == 200 && this.readyState == 4) {
-            const data = this.responseText;
-            // console.log(data);
-            listGameSold.innerHTML = data;
+            const myObj = JSON.parse(this.responseText);
+            console.log(myObj);
+            sumQuantity = myObj.sold_quantity;
+            sumRevenue = myObj.revenue;
+            console.log(sumQuantity);
+            console.log(sumRevenue);
+            listGameSold.innerHTML = myObj.data;
             calSoldQuanity();
             calRevenue();
         }
@@ -52,13 +56,13 @@ function calSoldQuanity() {
     if(!document.querySelectorAll(".sold_quantity").length) {
         document.querySelector("#sum_sold_quantity").innerHTML = "0";
     } else {
-        sumQuantity = 0;
-        document.querySelectorAll(".sold_quantity").forEach(element => {
-            // console.log(element.innerText);
-            sumQuantity += Number(element.innerText);
-        });
+        // sumQuantity = 0;
+        // document.querySelectorAll(".sold_quantity").forEach(element => {
+        //     // console.log(element.innerText);
+        //     sumQuantity += Number(element.innerText);
+        // });
         document.querySelector("#sum_sold_quantity").innerHTML = sumQuantity;
-        numberAnimated(document.querySelector("#sum_sold_quantity"));
+        numberAnimated(document.querySelector("#sum_sold_quantity"),sumQuantity);
 
         setTimeout(() => {
             document.querySelector("#sum_sold_quantity").innerHTML = sumQuantity;
@@ -74,26 +78,27 @@ function calRevenue() {
     if(!document.querySelectorAll(".price").length) {
         document.querySelector("#revenue").innerHTML = "$0";
     } else {
-        sumRevenue = 0;
-        let arrPrice = document.querySelectorAll(".price");
-        let arrQuantity = document.querySelectorAll(".sold_quantity");
-        for (let i = 0; i < arrPrice.length; i++) {
-            sumRevenue += Number(arrPrice[i].innerText.replace("$","")) * Number(arrQuantity[i].innerText);
-        }
+        // sumRevenue = 0;
+        // let arrPrice = document.querySelectorAll(".price");
+        // let arrQuantity = document.querySelectorAll(".sold_quantity");
+        // for (let i = 0; i < arrPrice.length; i++) {
+        //     sumRevenue += Number(arrPrice[i].innerText.replace("$","")) * Number(arrQuantity[i].innerText);
+        // }
         // console.log(sumRevenue);
         document.querySelector("#revenue").innerHTML = Math.round(sumRevenue * 100)/100;
-        numberAnimated(document.querySelector("#revenue"));
+        numberAnimated(document.querySelector("#revenue"),Math.round(sumRevenue * 100)/100);
         setTimeout(() => {
             document.querySelector("#revenue").innerHTML = "$" + Math.round(sumRevenue * 100)/100;
         }, duration + 1000);
     }
 }
 
-function numberAnimated(element) {
+function numberAnimated(element,sum) {
     let interval = 500;
     // console.log(valueDisplay);
     let startValue = 0;
-    let endValue = parseInt(element.innerHTML);
+    // console.log(sum);
+    let endValue = parseInt(sum);
     console.log(endValue);
     duration = Math.floor(interval / endValue);
     let counter = setInterval(function () {

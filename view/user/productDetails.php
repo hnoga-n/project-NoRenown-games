@@ -141,7 +141,7 @@ include_once "../../model/getProductDetails.php"
                 </div>
                 <div class="message-reviews">
                   <div class="user-name">Hao TV</div>
-                  <input type="text" maxlength = "200" value="hello" disabled>
+                  <input type="text" maxlength = "200" value="hello" readonly>
                 </div>
               </div>
               <div class="seperator"></div>
@@ -151,7 +151,7 @@ include_once "../../model/getProductDetails.php"
                 </div>
                 <div class="message-reviews">
                   <div class="user-name">Hao TV</div>
-                  <input type="text" maxlength = "200" value="hello" disabled>
+                  <input type="text" maxlength = "200" value="hello" readonly>
                 </div>
               </div>
               <div class="seperator"></div>
@@ -161,7 +161,7 @@ include_once "../../model/getProductDetails.php"
                 </div>
                 <div class="message-reviews">
                   <div class="user-name">Hao TV</div>
-                  <input type="text" maxlength = "200" value="hello" disabled>
+                  <input type="text" maxlength = "200" value="hello" readonly>
                 </div>
               </div>
               <div class="seperator"></div>
@@ -171,7 +171,7 @@ include_once "../../model/getProductDetails.php"
                 </div>
                 <div class="message-reviews">
                   <div class="user-name">Hao TV</div>
-                  <input type="text" maxlength = "200" value="hello" disabled>
+                  <input type="text" maxlength = "200" value="hello" readonly>
                 </div>
               </div>
               <div class="seperator"></div>
