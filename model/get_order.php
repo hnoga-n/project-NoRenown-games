@@ -27,10 +27,10 @@
                 $cancleOrder .= '<button class="order-cancel" style="margin-right: 10px;" onclick="changeStatus(this)">Cancel an order</button>';
             } else if($row['order_status'] == '1') {
                 $pending .= '<div class="order-status" style="color: green;">Delivery successful</div>';
-                $cancleOrder .= '<button class="order-cancel" style="display: none;">Cancel an order</button>';
+                $cancleOrder .= '<button class="order-cancel" style="display: none;opacity: .6;pointer-events: none;margin-right: 10px;">Cancel an order</button>';
             } else if($row['order_status'] == '2') {
                 $pending .= '<div class="order-status" style="color: red;">Cancelled</div>';
-                $cancleOrder .= '<button class="order-cancel" style="opacity: .6;pointer-events: none;margin-right: 10px;">Cancel an order</button>';
+                $cancleOrder .= '<button class="order-cancel" style="display: none;opacity: .6;pointer-events: none;margin-right: 10px;">Cancel an order</button>';
             }
 
             //render products

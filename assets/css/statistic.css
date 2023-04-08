@@ -17,14 +17,15 @@
 .statistic-container-header {
     display: flex;
     justify-content: space-around;
-    height: 220px;
+    flex-wrap: wrap;
+    height: 440px;
     width: 100%;
     padding: 20px;
 }
 
 .statistic-container-header > div {
-    width: 30%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     border: 3px solid #3d3d3d;
     background: rgba(16,16,16,.4);
     border-radius: 15px;
