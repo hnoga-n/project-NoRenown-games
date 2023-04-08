@@ -101,7 +101,6 @@
 	font-size: 12px;
 	text-align: left;
 	margin: 0 10px;
-
 }
 
 .bottom .bottom-div .b-input div span {
@@ -124,10 +123,17 @@
     font-family: 'Righteous', cursive;
     transition: .2s;
 }
-.bottom .bottom-div .b-input div input:focus,.bottom .bottom-div .b-input div input:hover {
+#useremail{
+    top: -30px;
+    left: 15px;
+    font-size: 16px;
+    color: white;
+}
+
+.bottom .bottom-div .b-input div input:focus,.bottom .bottom-div .b-input div input:hover{
     border: 3px solid #FF1E1E;
 }
-.bottom .bottom-div .b-input div input:focus ~ span,.bottom .bottom-div .b-input div input:valid ~ span {
+.bottom .bottom-div .b-input div input:focus ~ span,.bottom .bottom-div .b-input div:not(:last-child) input:valid ~ span:not(#useremail) {
     transform: translateX(-13px) translateY(-45px);
     font-size: 16px;
     color: white;

@@ -19,7 +19,7 @@ $user_info = $result2->fetch_assoc();
                     <span><?php echo $_COOKIE['fullname'] ?></span>
                 </div>
                 <div>
-                    <span>Member since:<?= $account['date_create'] ?></span>
+                    <span>Employee since: <?= $account['date_create'] ?></span>
                 </div>
             </div>
 
@@ -42,10 +42,6 @@ $user_info = $result2->fetch_assoc();
                     <div style="display:none;" class="input_message" id="phone_update_message"></div>
                 </div>
                 <div>
-                    <input name="user_mail" type="text" required="required" value="<?= $account['mail'] ?>" readonly>
-                    <span>Email</span>
-                </div>
-                <div>
                     <input name="user_address" type="text" required="required" value="<?= $user_info['address'] ?>">
                     <span>Address</span>
                 </div>
@@ -54,6 +50,10 @@ $user_info = $result2->fetch_assoc();
                     <span>Password</span>
                     <div style="display:none;" class="input_message" id="pw_update_message"></div>
 
+                </div>
+                <div>
+                    <input name="user_mail" type="text" required="required" value="<?= $account['mail'] ?>" readonly disabled>
+                    <span id="useremail">Email</span>
                 </div>
             </div>
             <div class="update_message">
