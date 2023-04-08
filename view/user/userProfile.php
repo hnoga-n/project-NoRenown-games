@@ -25,7 +25,6 @@ if (!isset($_COOKIE['accountId'])) {
   <link rel="stylesheet" href="../../assets/css/footer.css" />
   <link rel="stylesheet" href="../../assets/css/reset.css" />
   <link rel="stylesheet" href="../../assets/css/userProfile.css" />
-  <link rel="stylesheet" href="../../assets/css/header.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
   <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type='text/css'>
   <title>Profile</title>
@@ -55,7 +54,7 @@ if (!isset($_COOKIE['accountId'])) {
       </div>
     </div>
     <div class="bottom">
-      <form name="update_profile_form" class="bottom-div" onsubmit="return sanitizeUpdateProfileForm()" action="../../model/updateProfile.php" method="POST">
+      <form name="update_profile_form" class="bottom-div" onsubmit="return sanitizeUpdateProfileForm()" action="../../model/updateProfile.php?query=updatecustomer" method="POST">
         <div class="b-title">
           <span>Profile</span>
         </div>

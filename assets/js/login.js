@@ -197,6 +197,70 @@ function sanitizeUpdateProfileForm(){
 	
 }
 
+function sanitizeUpdateEmployeeProfileForm(){
+	let name = document.forms['update_profile_employee']['user_name'].value;
+	let phone = document.forms['update_profile_employee']['user_phone'].value;
+	let passwd =  document.forms['update_profile_employee']['user_passwd'].value;
+	const nameMess = document.getElementById('name_update_message');
+	const phoneMess = document.getElementById('phone_update_message');
+	const pwMess = document.getElementById('pw_update_message');
+
+	let flagName = true;
+	let flagPhone = true;
+	let flagpasswd =  true;
+	let flagAddress = true;
+
+	if(name == ''){
+		nameMess.innerHTML = "* Name is required"
+		nameMess.style.display = "block"
+		flagName = false;
+		name.focus();
+	}else{
+		nameMess.style.display = "none"
+		flagName = true;
+	}
+
+	if(passwd == ''){
+		pwMess.innerHTML = "* Password is required!"
+		pwMess.style.display = "block"
+		flagpasswd = false;
+	}else if(passwd.length <8){
+		pwMess.innerHTML = "* Password must be at least 8 characters!"
+		pwMess.style.display = "block"
+		flagpasswd = false;
+	}else{
+		pwMess.style.display = "none"
+		flagpasswd = true;
+	}
+
+
+	if(phone == ''){
+		flagPhone = false;
+		phoneMess.innerHTML = "* Phone is required"
+		phoneMess.style.display = "block"
+	}else if(phone.match(/\d/g) == null){
+					phoneMess.innerHTML = "* Phone must be digit ! Exp: 0968644022"
+					phoneMess.style.display = 'block'
+					flagPhone = false;
+				}else if(phone.match(/(09)+(\d{8})\b/) == null) {
+							phoneMess.innerHTML = "* Phone is not valid ! Exp: 0968644022"
+							phoneMess.style.display = 'block'
+							flagPhone = false;
+							}else{
+									phoneMess.style.display = "none"
+									flagPhone = true;
+							}
+				
+						
+	if(flagPhone ==false || flagName ==false || flagAddress ==false || flagpasswd ==false ){
+		return false;
+	}else{
+		return true;
+	}
+}
+
+
+
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
