@@ -48,7 +48,7 @@ if (!isset($_COOKIE['accountId'])) {
             <span><?php echo $row['fullname'] ?></span>
             </div>
             <div>
-            <span>Member since: 01-01-2023</span>
+            <span>Member since: <?php echo $row['date_create'] ?></span>
             </div>
         </div>
         
