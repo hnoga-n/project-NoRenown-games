@@ -3,21 +3,24 @@ let sumQuantity;
 let sumRevenue;
 let duration; 
 
-showListGameSold("","","all")
+showListGameSold(0,"","","all")
 
 document.querySelector("#btn-return").addEventListener("click",()=> {
     // console.log("hello");
+    document.querySelector('#number-best-seller').value = "0";
     document.querySelector('#date-start').value = "";
     document.querySelector('#date-end').value = "";
     document.querySelector('#category').value = "all";
-    showListGameSold("","","all");
+    showListGameSold("0","","","all");
 })
 document.querySelector("#category").addEventListener("change",showListGameSold)
 document.querySelector("#btn-filter").addEventListener("click",showListGameSold)
-
+document.querySelector('#number-best-seller').addEventListener("change",showListGameSold)
 // let dateStart,dateEnd,category;  
 
-function showListGameSold(dateStart,dateEnd,category) {
+function showListGameSold(topSell,dateStart,dateEnd,category) {
+    topSell = document.querySelector('#number-best-seller').value;
+    console.log(document.querySelector('#number-best-seller').value);
     dateStart = document.querySelector('#date-start').value;
     dateEnd = document.querySelector('#date-end').value;
     if(dateStart == "") {
@@ -41,7 +44,7 @@ function showListGameSold(dateStart,dateEnd,category) {
             calRevenue();
         }
     }
-    xhr.open("GET","../../model/showListGamesSold.php?dateStart=" + dateStart + "&dateEnd=" + dateEnd + "&category=" + category,true)
+    xhr.open("GET","../../model/showListGamesSold.php?dateStart=" + dateStart + "&dateEnd=" + dateEnd + "&category=" + category + "&topSell=" + topSell,true)
     xhr.send()
 }
 

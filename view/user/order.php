@@ -1,3 +1,11 @@
+<?php 
+  session_start();
+
+  if (!isset($_COOKIE['accountId'])) {
+    header('location: /project-NoRenowned-games/view/user/login.php');
+  }
+?>
+
 <html lang="en">
 
 <head>
