@@ -29,3 +29,5 @@ document.getElementById("formsubmit").onclick = function() {
         alert("This form of payment is not supported yet");
     }
 }
+
+document.getElementById("6").click();
