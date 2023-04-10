@@ -41,6 +41,14 @@ switch ($_GET['query']) {
     $price_to = intval($_GET['priceTo']);
     listImportWithoutPagination($page, $date_start, $date_end, $accID, $price_from, $price_to);
     break;
+  case "showdetail":
+    $accid = $_GET['accID'];
+    $impid = $_GET['impID'];
+    $date_create = $_GET['date_create'];
+    echo $date_create;
+    $total_price = $_GET['total_price'];
+    showImportDetail($impid, $accid,  $date_create, $total_price);
+    break;
 }
 
 function showListGameImport()
@@ -434,61 +442,21 @@ function listImportWithPagination($date_start, $date_end, $accID, $priceFr, $pri
     while ($row = $page_one->fetch_assoc()) {
       //get general info
       $import_bill .= "
-      <div class='import-containers'>
-        <div class='infor'>
-          <div class='id'>
-            <span>Import ID:</span>
-            <span>" . $row['impID'] . "</span>
-          </div>
-          <div class='Account'>
-            <span>Account ID:</span>
-            <span>" . $row['accID'] . "</span>
-          </div>
-          <div class='Date'>
-            <span>Data create: </span>
-            <span>" . $row['date_create'] . "</span>
-          </div>
-        </div>
-        <div class='list-game-imported'>
-          <div class='game-imported-header'>
-            <div class='gid-import-header'>GID</div>
-            <div class='gname-import-header'>Name</div>
-            <div class='quantity-import-header'>QUANTITY</div>
-            <div class='price-import-header'>PRICE</div>
-            <div class='supp-import-header'>SUPPLIER</div>
-          </div>
-        ";
-      //get list game 
-      $sql_get_list_game = "SELECT * FROM import_detail WHERE impID=" . $row['impID'] . "";
-      $list = $conn->query($sql_get_list_game);
-      while ($game = $list->fetch_assoc()) {
-        $import_bill .= "
-          <div class='game-imported'>
-            <div class='gid-import'>" . $game['gid'] . "</div>
-            <div class='gname-import'>" . $game['gname'] . "</div>
-            <div class='quantity-import'>" . $game['quantity'] . "</div>
-            <div class='price-import'>" . $game['price'] . "</div>";
-        $suppTmp = supplier::__construct2(supplier::getSupp($game['suppID']));
-        $import_bill .= "
-            <div class='supp-import'>" . $suppTmp->getSuppName() . "</div>
-          </div> 
-        ";
-        unset($suppTmp);
-      }
-      $import_bill .= "
-        </div>
-        <div class='price-view'>
-          <div class='total-price'>
-            <span>TOTAL PRICE: </span>
-            <span>" . $row['total_price'] . "</span>
-          </div>
-        </div>
-      </div>";
+        <tr>
+          <td style='width: 20%;' id='impid'>" . $row['impID'] . "</td>
+          <td style='width: 20%;' id='accid'>" . $row['accID'] . "</td>
+          <td style='width: 20%;' id='date'>" . $row['date_create'] . "</td>
+          <td style='width:20%;' id='impid'>" . $row['total_price'] . "</td>
+          <td>
+            <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . ",document.getElementById(`date`).innerHTML," . $row['total_price'] . ")' >Select</div>
+          </td> 
+        </tr>
+      ";
     }
     echo $import_bill;
+    //document.getElementById('date').innerHTML
   }
 }
-
 
 function listImportWithoutPagination($page, $date_start, $date_end, $accID, $priceFr, $priceTo)
 {
@@ -507,57 +475,77 @@ function listImportWithoutPagination($page, $date_start, $date_end, $accID, $pri
     while ($row = $page->fetch_assoc()) {
       //get general info
       $import_bill .= "
-       <div class='import-containers'>
-         <div class='infor'>
-           <div class='id'>
-             <span>Import ID:</span>
-             <span>" . $row['impID'] . "</span>
-           </div>
-           <div class='Account'>
-             <span>Account ID:</span>
-             <span>" . $row['accID'] . "</span>
-           </div>
-           <div class='Date'>
-             <span>Data create: </span>
-             <span>" . $row['date_create'] . "</span>
-           </div>
-         </div>
-         <div class='list-game-imported'>
-           <div class='game-imported-header'>
-             <div class='gid-import-header'>GID</div>
-             <div class='gname-import-header'>Name</div>
-             <div class='quantity-import-header'>QUANTITY</div>
-             <div class='price-import-header'>PRICE</div>
-             <div class='supp-import-header'>SUPPLIER</div>
-           </div>
-         ";
-      //get list game 
-      $sql_get_list_game = "SELECT * FROM import_detail WHERE impID=" . $row['impID'] . "";
-      $list = $conn->query($sql_get_list_game);
-      while ($game = $list->fetch_assoc()) {
-        $import_bill .= "
-           <div class='game-imported'>
-             <div class='gid-import'>" . $game['gid'] . "</div>
-             <div class='gname-import'>" . $game['gname'] . "</div>
-             <div class='quantity-import'>" . $game['quantity'] . "</div>
-             <div class='price-import'>" . $game['price'] . "</div>";
-        $suppTmp = supplier::__construct2(supplier::getSupp($game['suppID']));
-        $import_bill .= "
-             <div class='supp-import'>" . $suppTmp->getSuppName() . "</div>
-           </div> 
-         ";
-        unset($suppTmp);
-      }
-      $import_bill .= "
-         </div>
-         <div class='price-view'>
-           <div class='total-price'>
-             <span>TOTAL PRICE: </span>
-             <span>" . $row['total_price'] . "</span>
-           </div>
-         </div>
-       </div>";
+        <tr>
+          <td style='width:20%;'>" . $row['impID'] . "</td>
+          <td style='width: 20%;'>" . $row['accID'] . "</td>
+          <td style='width: 20%;'>" . $row['date_create'] . "</td>
+          <td style='width:20%;'>" . $row['total_price'] . "</td>
+          <td>
+            <div class='view-button' onclick='showImportDetail(" . $row['importID'] . "," . $row['accountID'] . "," . $row['date_create'] . "," . $row['total_price'] . ")' >Select</div>
+          </td>
+        </tr>
+      ";
     }
   }
+  echo $import_bill;
+}
+
+function showImportDetail($importID, $accountId, $date_create, $total_price)
+{
+  include "../model/connect.php";
+  include "../model/object/supplier.php";
+  $import_bill = '';
+  //get general info
+  $import_bill .= "
+    <div class='import-container'>
+      <div class='infor'>
+        <div class='id'>
+          <span>Import ID:</span>
+          <span>" . $importID . "</span>
+        </div>
+        <div class='Account'>
+          <span>Account ID:</span>
+          <span>" . $date_create . "</span>
+        </div>
+        <div class='Date'>
+          <span>Data create: </span>
+          <span>" . $accountId . "</span>
+        </div>
+      </div>
+      <div class='list-game-imported'>
+        <div class='game-imported-header'>
+          <div class='gid-import-header'>GID</div>
+          <div class='gname-import-header'>Name</div>
+          <div class='quantity-import-header'>QUANTITY</div>
+          <div class='price-import-header'>PRICE</div>
+          <div class='supp-import-header'>SUPPLIER</div>
+        </div>
+      ";
+  //get list game 
+  $sql_get_list_game = "SELECT * FROM import_detail WHERE impID=" . $importID . "";
+  $list = $conn->query($sql_get_list_game);
+  while ($game = $list->fetch_assoc()) {
+    $import_bill .= "
+      <div class='game-imported'>
+        <div class='gid-import'>" . $game['gid'] . "</div>
+        <div class='gname-import'>" . $game['gname'] . "</div>
+        <div class='quantity-import'>" . $game['quantity'] . "</div>
+        <div class='price-import'>" . $game['price'] . "</div>";
+    $suppTmp = supplier::__construct2(supplier::getSupp($game['suppID']));
+    $import_bill .= "
+        <div class='supp-import'>" . $suppTmp->getSuppName() . "</div>
+      </div> 
+    ";
+    unset($suppTmp);
+  }
+  $import_bill .= "
+    </div>
+    <div class='price-view'>
+      <div class='total-price'>
+        <span>TOTAL PRICE: </span>
+        <span>" . $total_price . "</span>
+      </div>
+    </div>
+  </div>";
   echo $import_bill;
 }
