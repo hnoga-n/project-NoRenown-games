@@ -83,10 +83,23 @@
   color: white;
 }
 
-.main-import .import-container-outside .import-containers{
+.import-containers{
+  position: fixed;
+  top:0;
+  left: 0;
+  width:100vw;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.452);
+}
+
+.import-containers .import-container{
+  position: absolute;
+  top: 10%;
+  left: 10%;
   border: 2px solid white;
-  width: 90%;
-  height: 400px;
+  width: 80%;
+  height: 85%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -94,67 +107,69 @@
   margin-bottom: 80px;
 }
 
-.main-import .import-container-outside .import-containers .infor{
+.import-containers .import-container .infor{
   width: 100%;
-  height: 15%;
+  height: 10%;
   display: flex;
-  justify-content: space-evenly ;
+  justify-content: space-between ;
   align-items: center;
   font-weight: bold;
   background-color: #f84747;
 }
 
-.main-import .import-container-outside .import-containers .infor .id span,
-.main-import .import-container-outside .import-containers .infor .Account span,
-.main-import .import-container-outside .import-containers .infor .Date span{
+.import-containers .import-container .infor .id span,
+.import-containers .import-container .infor .Account span,
+.import-containers .import-container .infor .Date span{
   margin: 20px;
 
 }
 
-.main-import .import-container-outside .import-containers .list-game-imported {
+.import-containers .import-container .list-game-imported {
+  background: white;
+  color: black;
   width: 100%;
-  height: 70%;
-  display: grid;
-  grid-template-rows: auto;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
   border-bottom: 2px solid white;
-
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll; 
 }
-.main-import .import-container-outside .import-containers .list-game-imported::-webkit-scrollbar {
+.import-containers .import-container .list-game-imported::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
 
-.main-import .import-container-outside .import-containers .list-game-imported .game-imported-header{
+.import-containers .import-container .list-game-imported .game-imported-header{
   width: 100%;
   height: 30px;
   position: sticky;
   top:0;
   background-color: #3d3d3d;
-  display: flex ;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  display: grid ;
+  grid-template-columns: 10% 40% 15% 15% 20%;
+  text-align: center;
+  align-content: center;
   font-weight: bolder;
   border: 1px solid white;
-
+  color: white;
 }
 
-.main-import .import-container-outside .import-containers .list-game-imported .game-imported{
+.import-containers .import-container .list-game-imported .game-imported{
   height: 50px;
   width: 100%;
-  display: flex ;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  border-bottom: 1px solid white;
+  display: grid ;
+  grid-template-columns: 10% 40% 15% 15% 20%;
+    text-align: center;
+  align-content: center;
+  border-bottom: 1px solid black;
   border-radius: 25px;
 }
-.main-import .import-container-outside .import-containers .list-game-imported .game-imported:last-child{
+.import-containers .import-container .list-game-imported .game-imported:last-child{
   border: none;
 }
-.main-import .import-container-outside .import-containers .price-view{
+.import-containers .import-container .price-view{
   background-color: #FF1E1E;
   height: 15%;
   width: 100%;
@@ -162,6 +177,9 @@
   justify-content: center;
   align-items: center;
   font-size: larger;
+}
+.import-containers .import-container .price-view .total-price:first-child{
+  font-weight: bold;
 }
 .main-import .pagination-container {
   width: 100%;
@@ -222,6 +240,110 @@
 .main-import .pagination::-webkit-scrollbar-thumb {
   background: #ff1e1e;
   cursor: auto;
+}
+
+.main-import .import-container-outside table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.main-import .import-container-outside  table thead {
+  background-color: #FF1E1E;
+  width: 100%;
+  height: 50px;
+  color: white;
+  font-size: 16px;
+  position: sticky;
+  top: 55px;
+  z-index: 1;
+}
+/* th:first-child {
+  border-top-left-radius: 15px;
+}
+th:last-child {
+  border-top-right-radius: 15px;
+} */
+.main-import .import-container-outside  table thead tr {
+  border-radius: 10px;
+}
+.main-import .import-container-outside  table thead th {
+  height: 100%;
+  padding: 10px;
+}
+.main-import .import-container-outside  table tbody {
+  width: 100%;
+}
+.main-import .import-container-outside  table tbody tr {
+  text-align: center;
+  width: 100%;
+}
+.main-import .import-container-outside  table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+.main-import .import-container-outside  table tbody tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+.main-import .import-container-outside  table tbody tr td {
+  padding:5px;
+  color: #000000;
+}
+.main-import .import-container-outside  table tbody tr td img {
+  height: 100px;
+  width: 200px;
+}
+.main-import .import-container-outside  table tbody tr td a button {
+  height: 30px;
+  width: 70px;
+  font-family: 'Righteous', cursive;
+  color: white;
+  border-radius: 7px;
+  border: unset;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.main-import .import-container-outside  table tbody tr td a:first-child button {
+  background-color: #2e89ff;
+}
+.main-import .import-container-outside  table tbody tr td a:first-child button:hover {
+  background-color: white ;
+  color: #2e89ff;
+  border: 2px solid #2e89ff;
+}
+.main-import .import-container-outside  table tbody tr td a:last-child button {
+  background-color: #000000;
+}
+.main-import .import-container-outside  table tbody tr td a:last-child button:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+.main-import .import-container-outside  table tbody tr td a{
+all:unset;
+}
+
+.main-import .import-container-outside  table tbody tr td:last-child{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.main-import .import-container-outside table tbody tr td div{
+  width: 50%;
+  height: 50px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: .3s;
+}
+
+.main-import .import-container-outside table tbody tr td div:hover{
+  background-color: white;
+  border: 1px solid red;
+  color: red;
 }
 
 @media screen and (max-width: 750px) {
