@@ -19,51 +19,39 @@ include '../../model/connect.php';
     <span id="message"></span>
   </div>
   <div class="import-container-outside">
-    <!-- <div class="import-containers">
-      <div class="infor">
-        <div class="id">
-          <span>Import ID:</span>
-          <span>1</span>
-        </div>
-        <div class="Account">
-          <span>Account ID:</span>
-          <span>1</span>
-        </div>
-        <div class="Date">
-          <span>Data create: </span>
-          <span>03/03/2023</span>
-        </div>
-      </div>
-      <div class="list-game-imported">
-        <div class="game-imported-header">
-          <div class="gid-import-header">GID</div>
-          <div class="gname-import-header">Name</div>
-          <div class="quantity-import-header">QUANTITY</div>
-          <div class="price-import-header">PRICE</div>
-          <div class="supp-import-header">SUPPLIER</div>
-        </div>
-        <div class="game-imported">
-          <div class="gid-import">1</div>
-          <div class="gname-import">Genshin Impact</div>
-          <div class="quantity-import">12</div>
-          <div class="price-import">69.3$</div>
-          <div class="supp-import">Nintendo</div>
-        </div>
-      </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 20%;">ID</th>
+          <th style="width: 20%;">Account ID</th>
+          <th style="width: 20%;">Date create</th>
+          <th style="width: 20%;">Total price</th>
+          <th style="width: 20%;">View</th>
+        </tr>
+      </thead>
+      <tbody id="show-list-import">
+        <!-- Show list games -->
+        <!-- <tr>
+          <td style="width:20%;">1</td>
+          <td style="width: 20%;">2</td>
+          <td style="width: 20%;">03/03/03</td>
+          <td style="width:20%;">679.32</td>
+          <td>
+            <div class='view-button'>Select</div>
+          </td>
+        </tr> -->
 
-      <div class="price-view">
-        <div class="total-price">
-          <span>TOTAL PRICE: </span>
-          <span>159 $ </span>
-        </div>
-      </div>
-    </div> -->
+      </tbody>
+    </table>
   </div>
   <div class="pagination-container">
     <div class="pagination" id="showPagination">
       <!-- page -->
     </div>
   </div>
+</div>
+<div class="import-containers" style="display:none;">
+
 </div>
 <script src="../../assets/js/leftmenu.js"></script>
 <script src="../../controller/importList.js"></script>
