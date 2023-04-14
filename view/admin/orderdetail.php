@@ -1,4 +1,5 @@
 <?php
+
     include '../admin/head1.php';
     include '../admin/leftmenu.php';
     include '../../model/connect.php';
@@ -55,6 +56,7 @@
                     <input type="text" readonly value="<?php echo $row['phone_number'] ?>" name="phone">
                 </div>
             </div>
+
             <div class="form-div">
                 <div>
                     <span>Address:</span>

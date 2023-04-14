@@ -166,6 +166,7 @@
     color: #2e89ff;
     border: 2px solid #2e89ff;
 }
+
 .main-bill .listbills table tbody tr td a:nth-child(2) button {
     background-color: #41fd70;
 }
@@ -174,6 +175,10 @@
     color: #41fd70;
     border: 2px solid #41fd70;
 }
+.main-bill .listbills table tbody tr td a:nth-child(2) button:disabled {
+  background-color: #929793;
+  pointer-events: none;
+}
 .main-bill .listbills table tbody tr td a:last-child button {
     background-color: #000000;
 }
@@ -181,6 +186,10 @@
     background-color: white;
     color: black;
     border: 2px solid black;
+}
+.main-bill .listbills table tbody tr td a:last-child button:disabled {
+  background-color: #929793;
+  pointer-events: none;
 }
 .main-bill .listbills table tbody tr td a{
   all:unset;
