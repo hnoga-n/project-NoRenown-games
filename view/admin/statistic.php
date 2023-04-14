@@ -23,9 +23,31 @@
           </div>
         </div>
       </div>
+      <div class="import-money">
+        <div class="content">
+          <div class="text">Import money</div>
+          <div>
+            <div class="number" id="import-money">$0</div>
+            <i class="fa-solid fa-sack-dollar"></i>
+          </div>
+        </div>
+      </div>
+      <div class="profit">
+        <div class="content">
+          <div class="text">Profit</div>
+          <div>
+            <div class="number" id="profit">$0</div>
+            <i class="fa-solid fa-arrow-trend-up"></i>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="statistic-container-content">
-    <div class="products-filter-category">
+      <div class="products-filter-besst-seller">
+        <label>Top best seller</label>
+        <input id="number-best-seller" value="0" type="number" min="0" max="20">
+      </div>
+      <div class="products-filter-category">
         <label>Category</label>
         <select name="categoryValue" id="category">
           <?php
@@ -45,6 +67,7 @@
           ?>
         </select>
       </div>
+
       <div class="products-filter-date">
         <label>Date</label>
         <input id="date-start" type="date" value="" required/>
@@ -52,7 +75,7 @@
         <input id="date-end" type="date" value="" required/>
         <button id="btn-filter" title="Filter"><i class="fa-solid fa-magnifying-glass"></i></button>
         <button id="btn-return" title="Return"><i class="fa-solid fa-rotate-right"></i></button>
-      </div>
+    </div>
       <!-- <div class="chart">
             <canvas id="pie" style="width: inherit; height: inherit;margin: 0 auto;"></canvas>
         </div> -->

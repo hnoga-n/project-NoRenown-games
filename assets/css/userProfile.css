@@ -42,7 +42,7 @@ body {
 }
 
 .top .t-info {
-    height: 20%;
+    height: 50%;
     display: flex;
     justify-content: center;
 }
@@ -72,7 +72,7 @@ body {
 .bottom {
     display: flex;
     justify-content: center;
-    height: 40%;
+    height: 60%;
     width: 100%;
 }
 .bottom .bottom-div {
@@ -92,7 +92,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 .bottom .bottom-div .b-input div {
     height: 25%;
@@ -111,14 +111,14 @@ body {
 
 .bottom .bottom-div .b-input div span {
     position: absolute;
-    top: 15%;
+    top: 16%;
     left: 5%;
     transition: .4s;
     font-size: 18px;
     color: grey;
 }
 .bottom .bottom-div .b-input div input {
-    height: 58px;
+    height: 20px;
     width: 80%;
     border: 3px solid #3d3d3d;
     padding: 15px;
@@ -129,10 +129,17 @@ body {
     font-family: 'Righteous', cursive;
     transition: .2s;
 }
+#useremail {
+    top:-30px;
+    left: 15px;
+    font-size: 16px;
+    color: white;
+}
 .bottom .bottom-div .b-input div input:focus,.bottom .bottom-div .b-input div input:hover {
     border: 3px solid #FF1E1E;
+    outline: unset;
 }
-.bottom .bottom-div .b-input div input:focus ~ span,.bottom .bottom-div .b-input div input:valid ~ span {
+.bottom .bottom-div .b-input div input:focus ~ span,.bottom .bottom-div .b-input div:not(:last-child) input:valid ~ span:not(#useremail) {
     transform: translateX(-13px) translateY(-45px);
     font-size: 16px;
     color: white;
@@ -144,7 +151,7 @@ body {
     justify-content: center;
 }
 .bottom .bottom-div .b-button div button {
-    height: 75px;
+    height: 50px;
     width: 200px;
     border-radius: 10px;
     background-color: #FF1E1E;
