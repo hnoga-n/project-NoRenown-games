@@ -8,7 +8,6 @@ if (!isset($_COOKIE['accountId'])) {
         header('location: ../../page404.php');
     }
 }
-
 require_once('../admin/head1.php');
 require_once('../admin/leftmenu.php');
 if (isset($_GET['page'])) {
@@ -24,7 +23,7 @@ if (isset($_GET['page'])) {
             require_once('./listaccount.php');
             break;
         case 'authorization':
-            require_once('././authorization.php');
+            require_once('./authorization.php');
             break;
         case 'import':
             require_once('./import.php');
@@ -44,4 +43,4 @@ if (isset($_GET['page'])) {
 }
 ?>
 <script src="../../assets/js/leftmenu.js"></script>
-<script src="../../assets/js/listGame.js"></script>
+<script src="../../assets/js/listGame.js"></script> 

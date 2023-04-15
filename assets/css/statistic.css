@@ -1,3 +1,76 @@
+/*   DESKTOP DEMO OF SVG EFFECTS. */
+
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+
+.header_menu_bar {
+  width: 100%;
+  height: 75px;
+  background: rgb(24 22 22);
+  opacity: 0.95;
+  overflow: hidden;
+  -webkit-box-shadow: #333 1px 3px 4px;
+  -moz-box-shadow: #333 1px 3px 4px;
+  box-shadow: #333 1px 3px 4px;
+  
+}
+
+.header_menu_bar .menu {
+  height: 100%;
+
+}
+
+.header_menu_bar h1 {
+  letter-spacing: 4px;
+  padding: 1em;
+  color: white;
+  background-color: #17141d;
+  opacity: 0.8;
+}
+
+.header_menu_bar ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  color: white;
+  height: 100%;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.header_menu_bar ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 10%;
+    margin: 20px 5px 0;
+    padding: 0 10px;
+  height: 80%;
+  cursor: pointer;
+  border-radius: 20px 20px 0 0;
+}
+
+.header_menu_bar li:hover {
+    background-color: #272727;
+}
+
+.header_menu_barLiColor {
+    background-color: #272727;
+}
+
+@media (max-device-width: 991px) {
+  .header_menu_bar {
+    height: 64px;
+  }
+
+  body {
+    font-size: 0.4em;
+  }
+  .content {
+    height: calc(100% - 64px);
+  }
+}
+
 .statistic-container {
     margin-left: 120px;
     background: rgb(39,39,39);
@@ -16,15 +89,17 @@
 
 .statistic-container-header {
     display: flex;
-    justify-content: space-around;
-    height: 220px;
+    justify-content: left;
+    flex-wrap: wrap;
+    min-height: 220px;
     width: 100%;
     padding: 20px;
+    gap: 10px;
 }
 
 .statistic-container-header > div {
-    width: 30%;
-    height: 100%;
+    width: calc(50% - 10px);
+    height: 180px;
     border: 3px solid #3d3d3d;
     background: rgba(16,16,16,.4);
     border-radius: 15px;
@@ -82,13 +157,13 @@
 } 
 
 .products-filter-category {
-    margin-right: 40px;
+    /* margin-right: 40px; */
 }
 
 .products-filter-date {
 }
 
-.products-filter-date input,label,button,
+:is(.products-filter-date,.products-filter-besst-seller) input,label,button,
 .statistic-container-content select  {
     margin: 0 5px;
     font-size: 18px;
@@ -96,7 +171,7 @@
     border: none;
 }
 
-.products-filter-date input,
+:is(.products-filter-date,.products-filter-besst-seller) input,
 .statistic-container-content select {
     text-align: center;
     border-radius: 5px;
@@ -110,6 +185,7 @@
     font-family: 'Righteous', cursive;
     transition: .2s;
     outline: unset;
+    color-scheme: dark;
 }
 
 .products-filter-date button {

@@ -2,7 +2,7 @@
     include "connect.php";
     session_start();
     date_default_timezone_set('Asia/Ho_Chi_Minh');
-    $dateOrder =  date("H:i d-m-Y");
+    $dateOrder =  date("Y-m-d");
     $status = 0;//invoice unprocecss
     $_SESSION['total'] = (double)str_replace("$","",$_SESSION['total']);// remove $ in total
     $_COOKIE['accountId'] = (int)$_COOKIE['accountId'];

@@ -14,5 +14,4 @@
       header('location: ../../page404.php');
     }
   }
-  $conn->close();
 ?>

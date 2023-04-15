@@ -232,10 +232,7 @@ function createGroup()
 {
   /*   this function depends on groupID=1 aka admin auth . DO NOT MODIFY GROUPID=1*/
   include "../model/connect.php";
-
-  $sql = "SELECT * FROM auth_group WHERE groupID = " . $_POST['groupID'] . "";
-  $result = $conn->query($sql);
-  if ($result->num_rows <= 0) {
+  if (!isset($_POST['groupID'])) {
     // insert data into auth group
     $group_name = $_POST['groupName'];
     $dateCreate = $_POST['dateCreate'];

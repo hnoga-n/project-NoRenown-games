@@ -1,6 +1,7 @@
+const show_detail_in = document.querySelector(".import-containers");
 searchImportList("01/01/1970","01/01/2030","",'','')
 function searchImportList(dateStart,dateEnd,ID,priceFrom,priceTo){
-  const outside_container = document.querySelector(".import-container-outside");
+  const outside_container = document.querySelector("#show-list-import");
   const page_container = document.getElementById('showPagination');
   const date_start = new Date(dateStart);
   const date_end = new Date(dateEnd);
@@ -39,6 +40,7 @@ function searchImportList(dateStart,dateEnd,ID,priceFrom,priceTo){
     }else{
       let data = this.responseText.split("###");
       outside_container.innerHTML = data[1]; 
+
       showPagination(data[0])
     }
   }
@@ -49,7 +51,7 @@ function searchImportList(dateStart,dateEnd,ID,priceFrom,priceTo){
 }
 
 function searchImportListWithPage(page,dateStart,dateEnd,ID,priceFrom,priceTo){
-  const outside_container = document.querySelector(".import-container-outside");
+  const outside_container = document.querySelector("#show-list-import");
   const message = document.getElementById("message");
   const date_start = new Date(dateStart);
   const date_end = new Date(dateEnd);
@@ -133,4 +135,25 @@ const backBtn = document.querySelector(".back-to-import span");
 backBtn.addEventListener("click",function(){
   console.log("hello");
   window.location.href="./employee.php?page=import";
+})
+
+function showImportDetail(impID,accID,date_create,total_price){
+  console.log(date_create);
+  const xml = new XMLHttpRequest;
+  xml.onload = function(){
+    console.log(this.responseText);
+    show_detail_in.innerHTML = this.responseText;
+    const import_container=document.querySelector(".import-container");
+    import_container.addEventListener("click",function(event){
+      event.stopPropagation();
+    })
+    show_detail_in.style.display  = "block";
+    
+  }
+  xml.open("GET","../../model/importHandle.php?query=showdetail&impID="+impID+"&accID="+accID+"&date_create="+date_create+"&total_price="+total_price);
+  xml.send();
+}
+
+show_detail_in.addEventListener("click",function(event){
+  show_detail_in.style.display = "none";
 })

@@ -20,14 +20,16 @@ let checkInfoExist = true;//delivery address hide
 }; */
 
 function scrollToEndPage() {
-    window.scrollTo(0, listOrders.scrollHeight - 470)
+    window.scrollTo(0, listOrders.scrollHeight - 500)
 }
 
 document.querySelector("#more").addEventListener('click',()=> {
     if(checkOrderExist == 0) {
         // console.log(startIndex);
         get_order();
+        setTimeout(get_order,300);
         setTimeout(get_order,500);
+        setTimeout(get_order,700);
         setTimeout(scrollToEndPage,800);
     } else {
         console.log("no");
@@ -94,7 +96,7 @@ setInterval(function () {
         document.querySelector("#more").style.display = "none";
         clearInterval(this);
     }
-},1000)
+},500)
 
 
 function showAddressDetail(element) {

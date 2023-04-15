@@ -1,3 +1,4 @@
+
 <div class="sidebar" onmouseenter="openSidebar()" onmouseleave="closeSidebar()">
     <div class="logo">
         <img src="../../assets/img/logo.png" alt=". . .">
@@ -11,7 +12,32 @@
             Features
         </div>
         <ul>
-            <a href="employee.php?page=listbills">
+            <?php
+                include '../../model/connect.php';
+                if(isset($_COOKIE['accountId'])) {
+                    $accid = $_COOKIE['accountId'];
+                    $sql = "select feaName,feaIcon,feaCode
+                            from ((features join auth_group_detail on features.feaID=auth_group_detail.feaID) join auth_group on auth_group_detail.groupID = auth_group.groupID) join account on auth_group.groupID = account.groupID
+                            where accid=$accid and visible=1
+                            group by feaName,feaIcon,feaCode";
+                    $result = $conn->query($sql);
+                    if($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            if($_GET['page'] == $row['feaCode']) {
+                                $active = "active";
+                            } else 
+                                $active = "";
+                            echo "<a href='employee.php?page=".$row['feaCode']."'>
+                                    <li class='nav-item $active'>
+                                        <i class='".$row['feaIcon']."'></i>
+                                        <span>".$row['feaName']."</span>
+                                    </li>
+                                </a>";
+                        }
+                    }
+                }
+            ?>
+            <!-- <a href="employee.php?page=listbills">
                 <li class="nav-item <?= ($_GET['page'] == 'listbills') ? 'active' : '' ?>">
                     <i class="fa-solid fa-barcode"></i>
                     <span>Bills</span>
@@ -52,7 +78,7 @@
                     <i class="fa-solid fa-trash-can"></i>
                     <span>Trash Game</span>
                 </li>
-            </a>
+            </a> -->
         </ul>
         <hr>
         <div class="nav-title">

@@ -161,7 +161,7 @@
 .header .container .search input {
     height: 60px;
     width: 60px;
-    padding: 10px;
+    /* padding: 10px; */
     border-radius: 15px;
     border: unset;
     font-size: 18px;
@@ -183,7 +183,7 @@
 .header.sticky .container .search input {
     height: 60px;
     width: 60px;
-    padding: 10px;
+    /* padding: 10px; */
     border-radius: 50px;
     border: unset;
     font-size: 18px;

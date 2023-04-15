@@ -5,7 +5,7 @@
     if(isset($_GET['accid'])) {
         $accid = $_GET['accid'];
         $account = array();
-        $sql = "SELECT accid,account.userID,typeName,fullname,phone,address,mail,passwd,account.date_create,groupName,account.groupID,acc_status
+        $sql = "SELECT accid,account.userID,typeName,users.usertypeID,fullname,phone,address,mail,passwd,account.date_create,groupName,account.groupID,acc_status
                 FROM (users JOIN usertype ON users.usertypeID = usertype.usertypeID) JOIN (account JOIN auth_group ON account.groupID = auth_group.groupID) ON users.userID = account.userID
                 WHERE accid = $accid";
         $result = $conn->query($sql);
@@ -14,6 +14,7 @@
                 $account = array(
                     'accid' => $row['accid'],
                     'userid' => $row['userID'],
+                    'usertypeID' => $row['usertypeID'],
                     'typename' => $row['typeName'],
                     'fullname' => $row['fullname'],
                     'phone' => $row['phone'],
@@ -123,10 +124,15 @@
                             $result1 = $conn->query($sql1);
                             if ($result1->num_rows > 0) {
                                 while ($row = $result1->fetch_assoc()) {
-                                    if ($row['groupID']==$account['groupid']) {
-                                        $select .= "<option value='" . $row['groupID'] . "' selected>" . $row['groupName'] . "</option>&nbsp;&nbsp;";
-                                    }else
-                                        $select .= "<option value='" . $row['groupID'] . "'>" . $row['groupName'] . "</option>&nbsp;&nbsp;";
+                                    if($account['usertypeID'] == 1 && $row['groupID']==2) {
+                                        $select = "<option value='".$row['groupID']."' selected>" . $row['groupName'] . "</option>&nbsp;&nbsp;";
+                                        break;
+                                    } else {
+                                        if ($row['groupID']==$account['groupid']) {
+                                            $select .= "<option value='" . $row['groupID'] . "' selected>" . $row['groupName'] . "</option>&nbsp;&nbsp;";
+                                        }else
+                                            $select .= "<option value='" . $row['groupID'] . "'>" . $row['groupName'] . "</option>&nbsp;&nbsp;";
+                                    }
                                 }
                             }
                             echo $select;

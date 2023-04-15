@@ -57,7 +57,7 @@ function showListGameSold(topSell,dateStart,dateEnd,category) {
             console.log(err);
         }
     }
-    xhr.open("GET","../../model/showListGamesSold.php?dateStart=" + dateStart + "&dateEnd=" + dateEnd + "&category=" + category + "&topSell=" + topSell)
+    xhr.open("GET","../../model/showListGamesImport.php?dateStart=" + dateStart + "&dateEnd=" + dateEnd + "&category=" + category + "&topSell=" + topSell)
     xhr.send()
 }
 
@@ -71,7 +71,7 @@ function calSoldQuanity(sumQuantity) {
         setTimeout(() => {
             document.querySelector("#sum_sold_quantity").innerHTML = sumQuantity;
             
-        }, duration + 1000);
+        }, 3000);
     }
 
 }
@@ -86,30 +86,25 @@ function calRevenue(sumRevenue) {
         numberAnimated(document.querySelector("#revenue"),Math.round(sumRevenue * 100)/100);
         setTimeout(() => {
             document.querySelector("#revenue").innerHTML = "$" + Math.round(sumRevenue * 100)/100;
-        }, duration + 1000);
+        }, 3000);
     }
 }
 
 function numberAnimated(element,sum) {
     let interval = 500;
     let startValue = 0;
-    let endValue ;
-    if(parseInt(sum) > 300) {
-        endValue = 300;
-        console.log(endValue);
-        
-    } else {
-        
-        endValue = parseInt(sum);
-    }
+    let endValue = parseInt(sum);
     console.log(endValue);
     duration = Math.floor(interval / endValue);
+    if(endValue > 500) {
+        endValue = 100;
+    }
     let counter = setInterval(function () {
         startValue += 1;
         element.textContent = startValue;
         if(startValue == endValue) {
             clearInterval(counter);
         }
-    },duration);
+    },duration - 1000);
 
 }
