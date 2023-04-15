@@ -13,22 +13,22 @@
     $dateEnd = date('Y-m-d', strtotime($dateEnd));
     if((int)$topSell > 0) {
         if($category == "all") {
-            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,invoice_detail.gname,games.gcategory,order_status,games.gid,price,img FROM
-                       invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid WHERE order_status = 1 AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid ORDER BY SUM(quantity) DESC LIMIT $topSell";
+            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,import_detail.gname,games.gcategory,games.gid,price,games.gimg FROM
+            import JOIN import_detail ON import.impID = import_detail.impID JOIN games on import_detail.gid = games.gid WHERE date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid ORDER BY SUM(quantity) DESC LIMIT $topSell";
             $getInvoiceData = $conn->query($selecInvoiceData);       
         } else {
-            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,invoice_detail.gname,games.gcategory,games.gid,order_status,price,img FROM
-            invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid WHERE games.gcategory = '{$category}' AND order_status = 1 AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid ORDER BY SUM(quantity) DESC LIMIT $topSell";
+            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,import_detail.gname,games.gcategory,games.gid,price,games.gimg FROM
+            import JOIN import_detail ON import.impID = import_detail.impID JOIN games on import_detail.gid = games.gid WHERE games.gcategory = '{$category}' AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid ORDER BY SUM(quantity) DESC LIMIT $topSell";
             $getInvoiceData = $conn->query($selecInvoiceData);       
         }
     } else {
         if($category == "all") {
-            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,invoice_detail.gname,games.gcategory,order_status,games.gid,price,img FROM
-                       invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid WHERE order_status = 1 AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid";
+            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,import_detail.gname,games.gcategory,games.gid,price,games.gimg FROM
+            import JOIN import_detail ON import.impID = import_detail.impID JOIN games on import_detail.gid = games.gid WHERE date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid";
             $getInvoiceData = $conn->query($selecInvoiceData);       
         } else {
-            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,invoice_detail.gname,games.gcategory,games.gid,order_status,price,img FROM
-            invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid WHERE games.gcategory = '{$category}' AND order_status = 1 AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid";
+            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,import_detail.gname,games.gcategory,games.gid,price,games.gimg FROM
+            import JOIN import_detail ON import.impID = import_detail.impID JOIN games on import_detail.gid = games.gid WHERE games.gcategory = '{$category}' AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid";
             $getInvoiceData = $conn->query($selecInvoiceData);       
         }
     }
@@ -48,7 +48,7 @@
                     <td>" . $row['gcategory'] ."</td>
                     <td class='price'>" . $row['price'] ."$</td>
                     <td>
-                        <img src='../../assets/img/" . $row['img'] ."'>
+                        <img src='../../assets/img/" . $row['gimg'] ."'>
                     </td>
                     <td class='sold_quantity'>" . $row['SUM(quantity)'] ."</td>
                 </tr>";

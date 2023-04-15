@@ -2,9 +2,9 @@
     include "connect.php";
     session_start();
     date_default_timezone_set('Asia/Ho_Chi_Minh');
-    $dateOrder =  date("H:i d-m-Y");
+    $dateOrder =  date("Y-m-d");
     $status = 0;//invoice unprocecss
-    $_SESSION['total'] = (double)str_replace("$","",$_SESSION['total']);// remove $ in total
+    $total = (float)str_replace(array("$",","),"",$_SESSION['total']);// remove $ in total
     $_COOKIE['accountId'] = (int)$_COOKIE['accountId'];
     $consignee_name = $_POST['fullname'];
     $address = $_POST['address'] . ',' . $_POST['country'];
@@ -14,7 +14,7 @@
     $insertInvoiceData = "INSERT INTO invoice (accID,total_price,date_create,order_status,consignee_name,address,phone_number)
                           VALUES (?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($insertInvoiceData); 
-    $stmt->bind_param("idsisss",$_COOKIE['accountId'],$_SESSION['total'],$dateOrder,$status,$consignee_name,$address,$phone_number);
+    $stmt->bind_param("idsisss",$_COOKIE['accountId'],$total,$dateOrder,$status,$consignee_name,$address,$phone_number);
     $stmt->execute();
 
     //insert data to invoice_detail table

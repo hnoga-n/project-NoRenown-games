@@ -57,7 +57,7 @@ function showListGameSold(topSell,dateStart,dateEnd,category) {
             console.log(err);
         }
     }
-    xhr.open("GET","../../model/showListGamesSold.php?dateStart=" + dateStart + "&dateEnd=" + dateEnd + "&category=" + category + "&topSell=" + topSell)
+    xhr.open("GET","../../model/showListGamesImport.php?dateStart=" + dateStart + "&dateEnd=" + dateEnd + "&category=" + category + "&topSell=" + topSell)
     xhr.send()
 }
 
