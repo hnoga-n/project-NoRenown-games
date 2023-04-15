@@ -76,4 +76,3 @@ $user_info = $result2->fetch_assoc();
         </form>
     </div>
 </div>
-<script src="../../assets/js/login.js"></script>

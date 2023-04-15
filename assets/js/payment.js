@@ -30,4 +30,4 @@ document.getElementById("formsubmit").onclick = function() {
     }
 }
 
-document.getElementById("6").click();
+document.getElementById("7").click();
