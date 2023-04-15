@@ -1,5 +1,6 @@
 <?php
     include './connect.php';
+    include './function_employee.php';
     if(isset($_GET['search']) && isset($_GET['groupID']) && isset($_GET['pagenum'])) {
         $html="";
         $sql="";
@@ -33,6 +34,7 @@
         }
         $result = $conn->query($sql);
         $result1 = $conn->query($sql1);
+        $accountFeatures = json_decode($features_arr[1],true);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 if($row['acc_status'] == 1)
@@ -48,12 +50,15 @@
                         <td>".$row['phone']."</td>
                         <td>".$row['groupName']."</td>
                         <td>".$status."</td>
-                        <td>
-                            <a href='./editaccount.php?page=listaccount&accid=".$row['accid']."'><button>Edit</button></a>            
-                            <a href=''><button onclick='deleteaccount(".$row['userID'].")'>Delete</button></a>
-                        </td>
-                    </tr>"
-                ;
+                        <td>";
+                if($accountFeatures["EDIT ACCOUNT"]==1){
+                    $html.="<a href='./editaccount.php?page=listaccount&accid=".$row['accid']."'><button>Edit</button></a>";
+                }
+                if($accountFeatures["DELETE ACCOUNT"]==1){
+                    $html.="<a href=''><button onclick='deleteaccount(".$row['userID'].")'>Delete</button></a>";
+                }
+                $html.="</td>
+                    </tr>";
             }
         }
     

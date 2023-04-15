@@ -136,21 +136,34 @@
         <input type="number" step="0.01" id="pto" onkeyup="showlistgameImp(1,document.getElementById('gcategory').value,document.getElementById(`searchgames`).value,document.getElementById('pfrom').value,this.value)">&nbsp;
         <span>$</span>
       </div>
-      <a href="./importList.php?page=import" class="button">
-        <div>
-          <div>
-            <span>Invoices</span>
-          </div>
-        </div>
-      </a>
-
-      <div class="button" style="padding-left:10px;">
-        <a href="">
-          <button>
-            <span>Add</span>
-          </button>
-        </a>
-      </div>
+      <?php
+        include "../../model/connect.php";
+        include "../../model/function_employee.php";
+        $accountFeatures = json_decode($features_arr[5],true);
+        if($accountFeatures["VIEW IMPORT DETAIL"]==1) {
+          echo '
+              <a href="./importList.php?page=import" class="button">
+                <div class="button">
+                  <div>
+                    <span>Invoices</span>
+                  </div>
+                </div>
+              </a>
+              &nbsp;&nbsp;&nbsp; 
+          ';
+        }
+        if($accountFeatures["IMPORT GAMES"]==1) {
+          echo '
+              <div class="button">
+                <a href="">
+                  <button>
+                    <span>Add</span>
+                  </button>
+                </a>
+              </div>
+          ';
+        }
+      ?> 
     </div>
 
     <div class="listgames">

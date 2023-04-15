@@ -21,11 +21,22 @@
                 ?> 
             </select>
         </div>
-        <div class="button">
-            <a href="./editaccount.php?page=listaccount">
-                <button><span>Add</span></button>
-            </a>
-        </div>
+        <?php
+            include '../../model/connect.php';
+            include '../../model/function_employee.php';
+            $accountFeatures = json_decode($features_arr[1],true);
+            if($accountFeatures["ADD ACCOUNT"]==1) {
+                echo '
+                    <div class="button">
+                        <a href="./editaccount.php?page=listaccount">
+                            
+                            <button><span>Add</span></button>
+                        </a>
+                    </div>
+                ';
+            }
+            $conn->close();        
+        ?>
     </div>  
     <div class="listgames">
         <table>
