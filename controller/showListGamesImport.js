@@ -66,12 +66,17 @@ function calSoldQuanity(sumQuantity) {
         document.querySelector("#sum_sold_quantity").innerHTML = "0";
     } else {
         document.querySelector("#sum_sold_quantity").innerHTML = sumQuantity;
-        numberAnimated(document.querySelector("#sum_sold_quantity"),sumQuantity);
+        if(sumQuantity > 200) {
+            sum = 200;
+        } else {
+            sum = sumQuantity;
+        }
+        numberAnimated(document.querySelector("#sum_sold_quantity"),sum);
 
         setTimeout(() => {
             document.querySelector("#sum_sold_quantity").innerHTML = sumQuantity;
             
-        }, 3000);
+        }, duration + 1000);
     }
 
 }
@@ -83,10 +88,16 @@ function calRevenue(sumRevenue) {
         document.querySelector("#revenue").innerHTML = "$0";
     } else {
         document.querySelector("#revenue").innerHTML = Math.round(sumRevenue * 100)/100;
-        numberAnimated(document.querySelector("#revenue"),Math.round(sumRevenue * 100)/100);
+        if(Math.round(sumRevenue * 100)/100 > 200) {
+            sum = 200;
+        } else {
+            sum = Math.round(sumRevenue * 100)/100;
+        }
+        numberAnimated(document.querySelector("#revenue"),sum);
         setTimeout(() => {
+            console.log("hello");
             document.querySelector("#revenue").innerHTML = "$" + Math.round(sumRevenue * 100)/100;
-        }, 3000);
+        }, duration + 1000);
     }
 }
 
@@ -94,17 +105,13 @@ function numberAnimated(element,sum) {
     let interval = 500;
     let startValue = 0;
     let endValue = parseInt(sum);
-    console.log(endValue);
     duration = Math.floor(interval / endValue);
-    if(endValue > 500) {
-        endValue = 100;
-    }
     let counter = setInterval(function () {
         startValue += 1;
         element.textContent = startValue;
         if(startValue == endValue) {
             clearInterval(counter);
         }
-    },duration - 1000);
+    },duration);
 
 }
