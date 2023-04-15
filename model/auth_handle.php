@@ -1,7 +1,10 @@
 <?php
+include "../model/connect.php";
+include "../model/function_employee.php";
+$accountFeatures = json_decode($features_arr[4],true);
 switch ($_GET['query']) {
   case 'listgroup':
-    getListGroup();
+    getListGroup($accountFeatures["EDIT AUTHORITY"],$accountFeatures["DELETE AUTHORITY"]);
     break;
   case 'addgroup':
     getGeneralGroupInformation();
@@ -23,7 +26,7 @@ switch ($_GET['query']) {
 }
 
 
-function getListGroup()
+function getListGroup($edit,$delete)
 {
   include "../model/connect.php";
   $sql = "SELECT * FROM auth_group";
@@ -50,14 +53,17 @@ function getListGroup()
             <td style="width: 20%;">' . $row['groupName'] . '</td>
             <td style="width: 25%;">' . $row['date_create'] . '</td>
             <td style="width: 25%;">' . $row['last_modify'] . '</td>
-            <td style="width: 25%;">
-                <a href="./authorize.php?page=authorization&grid=' . $row['groupID'] . '">
-                    <button>Edit</button>
-                </a>
-                <button onclick="deleteGroup(' . $row['groupID'] . ')">Delete</button>
-            </td>
-        </tr>
-    ';
+            <td style="width: 25%;">';
+            if($edit==1) {
+              $data.= '<a href="./authorize.php?page=authorization&grid=' . $row['groupID'] . '">
+                        <button>Edit</button>
+                      </a>';
+            }
+            if($delete==1) {
+              $data.= '<button onclick="deleteGroup(' . $row['groupID'] . ')">Delete</button>';
+            }
+    $data.="</td>
+          </tr>"; 
     }
   }
   echo $data;

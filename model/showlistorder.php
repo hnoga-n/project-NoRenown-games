@@ -1,5 +1,6 @@
 <?php
     include './connect.php';
+    include './function_employee.php';
     if(isset($_GET['search'])  && isset($_GET['pagenum'])) {
         $html="";
         $sql="";
@@ -23,6 +24,7 @@
         
         $result = $conn->query($sql);
         $result1 = $conn->query($sql1);
+        $accountFeatures = json_decode($features_arr[2],true);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 if($row['order_status'] == 1){
@@ -49,12 +51,18 @@
                         <td style='
                         display: flex;
                         justify-content: space-around;
-                        flex-direction: row;'>
-                            <a href='./orderdetail.php?page=listbills&orderID=".$row['orderID']."'><button>Detail</button></a>
-                            <a  ><button onclick='changestatus(".$row['orderID'].",1)' class=". $ckst .">Accept</button></a>            
-                            <a  ><button onclick='changestatus(".$row['orderID'].",2)' class=". $ckst .">Decline</button></a>
-                        </td>
-                    </tr>"
+                        flex-direction: row;'>";
+                        if($accountFeatures["DETAIL INVOICE"]==1) {
+                            $html.= "<a href='./orderdetail.php?page=listbills&orderID=".$row['orderID']."'><button>Detail</button></a>";
+                        }
+                        if($accountFeatures["ACCEPT INVOICE"]==1) {
+                            $html.= "<a href=''><button onclick='changestatus(".$row['orderID'].",1)'>Accept</button></a>";
+                        }                   
+                        if($accountFeatures["DECLINE INVOICE"]==1) {
+                            $html.= "<a href=''><button onclick='changestatus(".$row['orderID'].",2)'>Decline</button></a>";
+                        }                   
+                $html.="</td>
+                    </tr>";
                 ;
             }
         }
