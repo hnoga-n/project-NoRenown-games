@@ -128,7 +128,7 @@
                 <input id="date-start" type="date" value="" required/>
                 <label>to</label>
                 <input id="date-end" type="date" value="" required/>
-                <button id="btn-return" title="Return"><i class="fa-solid fa-rotate-right"></i></button>
+                <button id="btn-return" title="Refresh"><i class="fa-solid fa-rotate-right"></i></button>
               </div>
           
               <div class="listGamesSold">
@@ -209,7 +209,7 @@
               <input id="date-start" type="date" value="" required/>
               <label>to</label>
               <input id="date-end" type="date" value="" required/>
-              <button id="btn-return" title="Return"><i class="fa-solid fa-rotate-right"></i></button>
+              <button id="btn-return" title="Refresh"><i class="fa-solid fa-rotate-right"></i></button>
             </div>
         
             <div class="listGamesSold">

@@ -48,6 +48,7 @@
                         $status
                         <td style='
                         display: flex;
+                        justify-content: space-around;
                         flex-direction: row;'>
                             <a href='./orderdetail.php?page=listbills&orderID=".$row['orderID']."'><button>Detail</button></a>
                             <a  ><button onclick='changestatus(".$row['orderID'].",1)' class=". $ckst .">Accept</button></a>            

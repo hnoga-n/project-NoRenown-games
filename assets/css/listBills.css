@@ -19,7 +19,7 @@
     margin-top: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: left;
 }
 .main-bill .nav-bar-bill .search {
     width: 40%;
@@ -38,7 +38,7 @@
     outline: unset;
 }
 .main-bill .nav-bar-bill .search input {
-  width: 450px;
+  width: 100%;
 }
 .main-bill .nav-bar-bill .selection select{
   width: 200px;

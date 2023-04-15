@@ -52,7 +52,7 @@
             <label>and</label>
             <input class="glass-card" id="price-to" type="number" value="1000" data-default="100" onchange="search(searchValue.value,1,genreInp.value,priceFrom.value,priceTo.value)" />
             <label>$</label>
-            <i class="fa-solid fa-rotate-right"></i>
+            <button id="btn-return" title="Refresh"><i class="fa-solid fa-rotate-right"></i></button>
           </div>
         </div>
         <div class="products-list-filter" id="showproduct">

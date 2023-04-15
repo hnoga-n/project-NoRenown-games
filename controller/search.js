@@ -5,6 +5,18 @@ const sortBy = document.querySelector("#sortby");
 const priceFrom = document.querySelector("#price-from");
 const priceTo = document.querySelector("#price-to");
 const genreDropdown = document.querySelector(".category-list")
+const refreshBtn = document.querySelector("#btn-return")
+
+refreshBtn.addEventListener('click',()=> {
+  document.querySelector('#header-search').value = '';
+  document.querySelector("#genres").value = '';
+  document.querySelector("#sortby").value = 'ASC';
+  document.querySelector(".category-list-sort li.active").classList.remove('active');
+  document.querySelector(".category-list-sort li").classList.add('active');
+  document.querySelector("#price-from").value = '1';
+  document.querySelector("#price-to").value = '1000';
+  search('', '1', '','1', '1000','ASC');
+});
 
 function search(str, page, genre,priceFrom, priceTo,sortby) {
   let pattern = /[^a-zA-Z0-9]/g;

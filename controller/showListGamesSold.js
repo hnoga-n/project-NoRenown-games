@@ -66,7 +66,12 @@ function calSoldQuanity(sumQuantity) {
         document.querySelector("#sum_sold_quantity").innerHTML = "0";
     } else {
         document.querySelector("#sum_sold_quantity").innerHTML = sumQuantity;
-        numberAnimated(document.querySelector("#sum_sold_quantity"),sumQuantity);
+        if(sumQuantity > 200) {
+            sum = 200;
+        } else {
+            sum = sumQuantity;
+        }
+        numberAnimated(document.querySelector("#sum_sold_quantity"),sum);
 
         setTimeout(() => {
             document.querySelector("#sum_sold_quantity").innerHTML = sumQuantity;
@@ -83,8 +88,14 @@ function calRevenue(sumRevenue) {
         document.querySelector("#revenue").innerHTML = "$0";
     } else {
         document.querySelector("#revenue").innerHTML = Math.round(sumRevenue * 100)/100;
-        numberAnimated(document.querySelector("#revenue"),Math.round(sumRevenue * 100)/100);
+        if(Math.round(sumRevenue * 100)/100 > 200) {
+            sum = 200;
+        } else {
+            sum = Math.round(sumRevenue * 100)/100;
+        }
+        numberAnimated(document.querySelector("#revenue"),sum);
         setTimeout(() => {
+            console.log("hello");
             document.querySelector("#revenue").innerHTML = "$" + Math.round(sumRevenue * 100)/100;
         }, duration + 1000);
     }
@@ -93,16 +104,7 @@ function calRevenue(sumRevenue) {
 function numberAnimated(element,sum) {
     let interval = 500;
     let startValue = 0;
-    let endValue ;
-    if(parseInt(sum) > 300) {
-        endValue = 300;
-        console.log(endValue);
-        
-    } else {
-        
-        endValue = parseInt(sum);
-    }
-    console.log(endValue);
+    let endValue = parseInt(sum);
     duration = Math.floor(interval / endValue);
     let counter = setInterval(function () {
         startValue += 1;

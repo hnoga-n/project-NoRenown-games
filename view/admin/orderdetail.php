@@ -124,7 +124,7 @@
                         <td>" . $row2['gname'] ."</td>
                         <td>" . $row2['price'] ."$</td>
                         <td>" . $row2['quantity'] ."</td>
-                        <td>" . $row2['discount'] ."</td>
+                        <td>" . $row2['discount'] ."$</td>
                         <td>
                             <img src='../../assets/img/" . $row2['img'] ."'>
                         </td>
