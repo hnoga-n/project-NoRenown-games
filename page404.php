@@ -1,4 +1,5 @@
 <?php
+
     if(isset($_SERVER["REDIRECT_STATUS"])){
         $error = $_SERVER["REDIRECT_STATUS"];
     }
@@ -8,8 +9,7 @@
 
     $meta_tag = '<meta http-equiv="refresh" content="' . $refresh_interval . '">';
 
-    echo $meta_tag;
-
+    echo $meta_tag;1
 ?>
 
 <!DOCTYPE html>
