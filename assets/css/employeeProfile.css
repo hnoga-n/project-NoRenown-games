@@ -130,6 +130,11 @@
     color: white;
 }
 
+.b-input i {
+    margin-left: -40px;
+    cursor: pointer;
+}
+
 .bottom .bottom-div .b-input div input:focus,.bottom .bottom-div .b-input div input:hover{
     border: 3px solid #FF1E1E;
 }

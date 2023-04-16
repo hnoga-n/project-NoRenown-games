@@ -1,5 +1,6 @@
 <?php
 include './connect.php';
+include './function_employee.php';
 $q = intval($_GET['q']);
 $v = $_GET['v'];
 $count = 0;
@@ -32,6 +33,7 @@ if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {
 $result = $conn->query($sql);
 $result1 = $conn->query($sql1);
 $str = "";
+$accountFeatures = json_decode($features_arr[0],true);
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
@@ -54,15 +56,20 @@ if ($result->num_rows > 0) {
                                 <span class='slider round'></span>
                             </label>
                         </td>
-                        <td><a href='editgame.php?page=listgame&id=" . $row['gid'] . "'>
-                        <button>Edit</button></a>
-                        <br>
-                        <br>
-                            <a href=''>
-                                <button onclick='deletegame(" . $row['gid'] . ")'>Delete</button>
+                        <td>";
+                if($accountFeatures["EDIT GAME"]==1) {
+                    $str.= "<a href='editgame.php?page=listgame&id=" . $row['gid'] . "'>
+                                <button>Edit</button>
                             </a>
-                        </td>
-                    </tr>";
+                            <br><br>";
+                }
+                if($accountFeatures["DELETE GAME"]==1) {
+                    $str.= "<a href=''>
+                                <button onclick='deletegame(" . $row['gid'] . ")'>Delete</button>
+                            </a>";
+                }            
+                    $str.="</td>
+                    </tr>";        
     }
 }
 if ($result1->num_rows > 0) {

@@ -1,4 +1,7 @@
 <?php
+include './connect.php';
+include './function_employee.php';
+$accountFeatures = json_decode($features_arr[5],true);
 session_start();
 switch ($_GET['query']) {
   case "cartquantity":
@@ -13,7 +16,7 @@ switch ($_GET['query']) {
     loadCart();
     break;
   case "listgame":
-    showListGameImport();
+    showListGameImport($accountFeatures["IMPORT GAMES"]);
     break;
   case "addgame":
     addGameToCart($_GET['gid']);
@@ -51,7 +54,7 @@ switch ($_GET['query']) {
     break;
 }
 
-function showListGameImport()
+function showListGameImport($import)
 {
   include '../model/connect.php';
   $q = intval($_GET['q']);
@@ -100,9 +103,11 @@ function showListGameImport()
                         <td>
                             <img src='../../assets/img/" . $row['gimg'] . "'>
                         </td>
-                        <td>
-                          <div class='delete-button' onclick='addToImportCard(" . $row['gid'] . ")'>Select</div>
-                        </td>
+                        <td>";
+                        if($import==1) {
+                          $str.="<div class='delete-button' onclick='addToImportCard(" . $row['gid'] . ")'>Select</div>";
+                        }
+                $str.="</td>
                     </tr>";
     }
   }

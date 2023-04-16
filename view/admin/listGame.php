@@ -33,13 +33,23 @@
       <input type="number" step="0.01" id="pto" onkeyup="showlistgame(1,document.getElementById('gcategory').value,document.getElementById(`searchgames`).value,document.getElementById('pfrom').value,this.value)">&nbsp;
       <span>$</span>
     </div>
-    <div class="button">
-      <a href="./editgame.php?page=listgame">
-        <button>
-          <span>Add</span>
-        </button>
-      </a>
-    </div>
+      <?php
+        include '../../model/connect.php';
+        include '../../model/function_employee.php';
+        $accountFeatures = json_decode($features_arr[0],true);
+        if($accountFeatures["ADD GAME"]==1) {
+          echo '
+              <div class="button">
+                <a href="./editgame.php?page=listgame">
+                  <button>
+                    <span>Add</span>
+                  </button>
+                </a>
+              </div>
+          ';
+        }
+      ?>
+    
   </div>
   <div class="listgames">
     <table>
