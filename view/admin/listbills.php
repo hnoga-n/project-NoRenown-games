@@ -4,10 +4,10 @@
     </div>
     <div class="nav-bar-bill">
         <div class="search">
-        <input type="search" placeholder="Search" id="searchbill" onkeyup="showlistbill(this.value,1)">
+        <input type="search" placeholder="Search" id="searchbill" onkeyup="showlistbill(this.value,1,document.querySelector('#groupcategory').value)">
         </div>
         <div class="selection">
-            <select name="groupcategory" id="groupcategory" onchange="showlistaccount(document.getElementById('searchaccount').value,this.value,1)">
+            <select name="groupcategory" id="groupcategory">
                 <option value="all">All</option>
                 <option value="0">Waiting</option>
                 <option value="1">Processed</option>

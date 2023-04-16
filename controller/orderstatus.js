@@ -31,4 +31,5 @@ function checkstatus(){
         list.disabled = true;
     
     })
+    console.log("hello");
 }

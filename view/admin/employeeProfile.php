@@ -46,7 +46,8 @@ $user_info = $result2->fetch_assoc();
                     <span>Address</span>
                 </div>
                 <div>
-                    <input name="user_passwd" type="password" required="required" value="<?= $account['passwd'] ?>">
+                    <input name="user_passwd" type="password" required="required" id="password" value="<?= $account['passwd'] ?>">
+                    <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
                     <span>Password</span>
                     <div style="display:none;" class="input_message" id="pw_update_message"></div>
 
