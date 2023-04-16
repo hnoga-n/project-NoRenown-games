@@ -1,6 +1,7 @@
 <?php
-    if(isset($_SERVER["REDIRECT_STATUS"]))
-        $error = $_SERVER["REDIRECT_STATUS"] 
+if (isset($_SERVER["REDIRECT_STATUS"])) {
+    $error = $_SERVER["REDIRECT_STATUS"];
+}
 ?>
 
 <!DOCTYPE html>

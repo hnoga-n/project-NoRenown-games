@@ -1,7 +1,11 @@
 <?php
 session_start();
-if (isset($_COOKIE['accountId'])) {
+// neu la nhan vien thi vao trang index khong thi vao profile employee
+if (isset($_COOKIE['accountId']) && $_COOKIE['usertype'] == 1) {
   header('location: ../../index.php');
+}
+if (isset($_COOKIE['accountId']) && $_COOKIE['usertype'] == 2) {
+  header('location: ../admin/employee.php?page=employee-profile');
 }
 ?>
 <!DOCTYPE html>
@@ -55,7 +59,7 @@ if (isset($_COOKIE['accountId'])) {
 
             ?>
           </span>
-          <a href="#">Forgot your password?</a>
+          <a href="../../model/forgotpasswd.php">Forgot your password?</a>
           <button type="submit">Sign In</button>
         </form>
       </div>
