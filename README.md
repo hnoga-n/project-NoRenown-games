@@ -23,7 +23,7 @@
 
 ++Slider
 
-<img src="/assets/img/slider_screenshot.png" width="800" height="300">
+<img src="/assets/img/slider_screenshot.png" width="800" height="400">
 
 ++Trending
 
