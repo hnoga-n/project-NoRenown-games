@@ -1,7 +1,7 @@
 <?php
 include './connect.php';
 include './function_employee.php';
-$accountFeatures = json_decode($features_arr[5],true);
+$accountFeatures = json_decode($features_arr[5], true);
 session_start();
 switch ($_GET['query']) {
   case "cartquantity":
@@ -104,10 +104,10 @@ function showListGameImport($import)
                             <img src='../../assets/img/" . $row['gimg'] . "'>
                         </td>
                         <td>";
-                        if($import==1) {
-                          $str.="<div class='delete-button' onclick='addToImportCard(" . $row['gid'] . ")'>Select</div>";
-                        }
-                $str.="</td>
+      if ($import == 1) {
+        $str .= "<div class='delete-button' onclick='addToImportCard(" . $row['gid'] . ")'>Select</div>";
+      }
+      $str .= "</td>
                     </tr>";
     }
   }
@@ -286,7 +286,7 @@ function importGame()
   /* $impAccID = intval($_POST['import_account_ID']); */
   $impAccID = 3;
   $impDataCreate = $_POST['import_date_create'];
-  $impTotalPrice = intval($_POST['import_total_price']);
+  $impTotalPrice = floatval($_POST['import_total_price']);
   if ($impTotalPrice == 0) { //check if no product is choose
     $_SESSION['message'] = "PLEASE CHOOSE PRODUCT!";
     header('location: ../view/admin/employee.php?page=import');
@@ -486,7 +486,7 @@ function listImportWithoutPagination($page, $date_start, $date_end, $accID, $pri
           <td style='width: 20%;'>" . $row['date_create'] . "</td>
           <td style='width:20%;'>" . $row['total_price'] . "</td>
           <td>
-            <div class='view-button' onclick='showImportDetail(" . $row['importID'] . "," . $row['accountID'] . "," . $row['date_create'] . "," . $row['total_price'] . ")' >Select</div>
+            <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . "," . $row['date_create'] . "," . $row['total_price'] . ")' >Select</div>
           </td>
         </tr>
       ";
