@@ -7,26 +7,28 @@
     $category = $_GET['category'];
     $flag = false;
 
-    $dateStart = date('m-d-Y', strtotime($dateStart));
-    $dateEnd = date('m-d-Y', strtotime($dateEnd));
+    
+
+    $dateStart = date('Y-m-d', strtotime($dateStart));
+    $dateEnd = date('Y-m-d', strtotime($dateEnd));
     if((int)$topSell > 0) {
         if($category == "all") {
             $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,invoice_detail.gname,games.gcategory,order_status,games.gid,price,img FROM
-                       invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid WHERE order_status = 1 GROUP BY games.gid ORDER BY SUM(quantity) DESC LIMIT $topSell";
+                       invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid WHERE order_status = 1 AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid ORDER BY SUM(quantity) DESC LIMIT $topSell";
             $getInvoiceData = $conn->query($selecInvoiceData);       
         } else {
             $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,invoice_detail.gname,games.gcategory,games.gid,order_status,price,img FROM
-            invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid WHERE games.gcategory = '{$category}' AND order_status = 1  GROUP BY games.gid ORDER BY SUM(quantity) DESC LIMIT $topSell";
+            invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid WHERE games.gcategory = '{$category}' AND order_status = 1 AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid ORDER BY SUM(quantity) DESC LIMIT $topSell";
             $getInvoiceData = $conn->query($selecInvoiceData);       
         }
     } else {
         if($category == "all") {
             $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,invoice_detail.gname,games.gcategory,order_status,games.gid,price,img FROM
-                       invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid WHERE order_status = 1 GROUP BY games.gid";
+                       invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid WHERE order_status = 1 AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid";
             $getInvoiceData = $conn->query($selecInvoiceData);       
         } else {
             $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,invoice_detail.gname,games.gcategory,games.gid,order_status,price,img FROM
-            invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid WHERE games.gcategory = '{$category}' AND order_status = 1  GROUP BY games.gid";
+            invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid WHERE games.gcategory = '{$category}' AND order_status = 1 AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid";
             $getInvoiceData = $conn->query($selecInvoiceData);       
         }
     }
@@ -37,9 +39,9 @@
 
     if($getInvoiceData->num_rows > 0) {
         while($row = $getInvoiceData->fetch_assoc()) {
-            $dateCreate = explode(" ",$row['date_create']);
-            $dateCreate = date('m-d-Y', strtotime($dateCreate[1]));
-            if (($dateCreate >= $dateStart) && ($dateCreate <= $dateEnd)){
+            // $dateCreate = explode(" ",$row['date_create']);
+            // $dateCreate = date('m-d-Y', strtotime($dateCreate[1]));
+            // if (($dateCreate >= '$dateStart') && ($dateCreate <= $dateEnd)){
                 $data .= "<tr>
                     <td>" . $row['gid'] ."</td>
                     <td>" . $row['gname'] ."</td>
@@ -53,7 +55,7 @@
                 $flag = true;
                 $soldQuantity += (int) $row['SUM(quantity)'];
                 $revenue += (int) $row['SUM(quantity)'] * (float) $row['price'];
-            }
+            // }
         }
     } 
     if(!$flag) {

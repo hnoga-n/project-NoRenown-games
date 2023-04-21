@@ -1,4 +1,5 @@
 <?php
+
     include '../admin/head1.php';
     include '../admin/leftmenu.php';
     include '../../model/connect.php';
@@ -55,6 +56,7 @@
                     <input type="text" readonly value="<?php echo $row['phone_number'] ?>" name="phone">
                 </div>
             </div>
+
             <div class="form-div">
                 <div>
                     <span>Address:</span>
@@ -122,7 +124,7 @@
                         <td>" . $row2['gname'] ."</td>
                         <td>" . $row2['price'] ."$</td>
                         <td>" . $row2['quantity'] ."</td>
-                        <td>" . $row2['discount'] ."</td>
+                        <td>" . $row2['discount'] ."$</td>
                         <td>
                             <img src='../../assets/img/" . $row2['img'] ."'>
                         </td>

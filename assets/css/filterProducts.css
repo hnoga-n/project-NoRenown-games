@@ -164,11 +164,15 @@
   max-width: 120px;
 }
 
-.products-filter-price i {
+.products-filter-price #btn-return {
+  background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) );
+  color: rgba(10, 42, 205);
+  filter: brightness(1);
   font-size: 20px;
+  padding: 10px 0;
+  margin: 0 5px;
+  border-radius: 50%;
   cursor: pointer;
-  color: #325fe5;
-  display: none;
 }
 
 .products-filter-price i:active {

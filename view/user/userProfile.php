@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (!isset($_COOKIE['accountId'])) {
   header('location: ./login.php');
 } else {
@@ -33,30 +34,30 @@ if (!isset($_COOKIE['accountId'])) {
 <body>
   <!-- header -->
   <?=
-    include './header.php';
+  include './header.php';
   ?>
   <div class="main">
     <div class="top">
-        <div class="t-img">
+      <div class="t-img">
         <div>
         </div>
-        </div>
-        <div class="t-info">
+      </div>
+      <div class="t-info">
         <div class="t-info-div">
-            <div>
+          <div>
             <span><?php echo $row['fullname'] ?></span>
-            </div>
-            <div>
+          </div>
+          <div>
             <span>Member since: <?php echo $row['date_create'] ?></span>
-            </div>
+          </div>
         </div>
-        
-        </div>
+
+      </div>
     </div>
     <div class="bottom">
       <form name="update_profile_form" class="bottom-div" onsubmit="return sanitizeUpdateProfileForm()" action="../../model/updateProfile.php?query=updatecustomer" method="POST">
         <div class="b-title">
-            <span>Profile</span>
+          <span>Profile</span>
         </div>
         <div class="b-input">
             <div>
@@ -81,9 +82,9 @@ if (!isset($_COOKIE['accountId'])) {
             <div>              
             <input type="text" name="profile_mail" required="required" value="<?php echo $row['mail'] ?>" readonly disabled>
             <span id="useremail">Email</span>
-            </div>
+          </div>
         </div>
-		    <div class="update_message">
+        <div class="update_message">
           <?php
           if (isset($_SESSION['message'])) {
             echo $_SESSION['message'];
@@ -92,15 +93,15 @@ if (!isset($_COOKIE['accountId'])) {
           ?>
         </div>
         <div class="b-button">
-            <div>
+          <div>
             <button>
-                Update
+              Update
             </button>
-            </div>
+          </div>
         </div>
-        </div> 
     </div>
-</div>
+  </div>
+  </div>
   <?php
   include './footer.php';
   ?>

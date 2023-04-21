@@ -1,96 +1,42 @@
-/* const ctx = document.getElementById("pie");
-
-var xValues = [];
-// ["Italy", "France", "Spain", "USA", "Argentina", "Finland"];
-var yValues = [12, 19, 3.93, 5, 2, 3];
-var barColors = [
-  "rgba(255,99,132,.4)",
-  "rgba(255,99,32,.4)",
-  "rgba(255,9,132,.4)",
-  "rgba(255,255,132,.4)",
-  "rgba(255,99,255,.4)",
-  "rgba(25,99,132,.4)",
-];
-var borColors = [
-  "rgba(255,99,132,1)",
-  "rgba(255,99,32,1)",
-  "rgba(255,9,132,1)",
-  "rgba(255,255,132,1)",
-  "rgba(255,99,255,1)",
-  "rgba(25,99,132,1)",
-]; */
+const lis = document.querySelectorAll(".header_menu_bar ul li");
+const lbs = document.querySelectorAll(".lb");
+const ul = document.querySelector("ul");
+const lineDash = document.querySelector(".line-dash");
 
 
-/* function showStatisticPieChart() {
-  const xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if(this.status == 200 && this.readyState == 4) {
-      let data = this.responseText.split('/');
-      console.log();
-      xValues = [];
-      for (const i of data) {
-        xValues.push(i);
+lis[0].classList.add("header_menu_barLiColor");
+
+
+lis.forEach((li)=> {
+  li.addEventListener("click",()=> {
+    document.querySelector(".header_menu_bar ul li.header_menu_barLiColor").classList.remove("header_menu_barLiColor");
+    li.classList.add("header_menu_barLiColor");
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET","../../model/navigate_statistic.php?case=" + li.innerHTML);
+    xhr.onload = function() {
+      if(xhr.status == 200 && xhr.readyState == 4) {
+        let data = xhr.responseText;
+        // alert(data);
+        document.querySelector("#container").innerHTML = data;
+        // console.log(document.querySelector("#showListGamesSold"));
+        // console.log(document.querySelector("#category"));
+        
+        if (li.innerHTML == "Sold out") {
+          
+          const script = document.createElement('script');
+          script.src = '../../controller/showListGamesSold.js';
+          document.querySelector("#container").appendChild(script);
+        } else if (li.innerHTML == "Import") {
+          
+          const script = document.createElement('script');
+          script.src = '../../controller/showListGamesImport.js';
+          document.querySelector("#container").appendChild(script);
+        }
       }
-      new Chart(ctx, {
-        type: "pie",
-        data: {
-          labels: xValues,
-          datasets: [
-            {
-              label: "Products quantity sold",
-              data: yValues,
-              backgroundColor: barColors,
-              borderColor: borColors,
-              borderWidth: 1,
-            },
-          ],
-        },
-        options: {
-          title: {
-              display: true,
-              text: "Best - selling products"
-          },
-          plugins: {
-            customCanvasBackgroundColor: {
-              color: 'lightGreen',
-            }
-          }
-        },
-        plugins: [plugin],
-      });
-      
-      
     }
-  }
-  xhr.open("GET","./getDataStatistic.php",true);
-  xhr.send();
-}
+    xhr.send();
 
-document.querySelector('.statistic-container').addEventListener('click',showStatisticPieChart)
-
- */
-
-/* var xValues = ["", "France", "Spain", "USA", "Argentina"];
-var yValues = [55, 49, 44, 24, 15];
-var barColors = ["red", "green", "blue", "orange", "brown"];
-
-new Chart("barchart", {
-  type: "bar",
-  data: {
-    labels: xValues,
-    datasets: [
-      {
-        backgroundColor: barColors,
-        data: yValues,
-      },
-    ],
-  },
-  options: {
-    legend: { display: false },
-    title: {
-      display: true,
-      text: "World Wine Production 2018",
-    },
-  },
-});
- */
+    
+  })
+})

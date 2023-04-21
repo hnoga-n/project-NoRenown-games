@@ -1,10 +1,10 @@
-showlistbill("",1)
-function showlistbill(search,pagenum) {
+showlistbill("",1,"all")
+function showlistbill(search,pagenum,category) {
     const xmlhttp = new XMLHttpRequest()
     xmlhttp.onload = function () {
         const myobj = JSON.parse(this.responseText)
         if(myobj.html == "" && myobj.pagenum == 0) {
-            document.getElementById('showlistbill').innerHTML = "<tr><td colspan='9'>No result</td></tr>"
+            document.getElementById('showlistbill').innerHTML = "<tr><td colspan='7'>No result</td></tr>"
             showPagination(myobj.pagenum)
         }
         else {
@@ -17,12 +17,14 @@ function showlistbill(search,pagenum) {
                 }
             }) 
         }
+        checkstatus();
+
     }
-    xmlhttp.open("GET","../../model/showlistorder.php?search=" + search + "&pagenum=" + pagenum)
+    xmlhttp.open("GET","../../model/showlistorder.php?search=" + search + "&pagenum=" + pagenum + "&category=" + category )
     xmlhttp.send()
 }
 function showPagination(pagenum) {
-    let s = "<input type='button' value='1' class='pageNum active' onclick='showlistbill(document.getElementById(`searchbill`).value,this.value)'>"   
+    let s = `<input type='button' value='1' class='pageNum active' onclick='showlistbill(document.getElementById("searchbill").value,this.value,document.querySelector("#groupcategory").value)'>`   
     if(pagenum == 0) {
         document.getElementById('showpagination-listbill').innerHTML = ""
         return
@@ -32,7 +34,23 @@ function showPagination(pagenum) {
         return
     } else
     for(let i = 2  ; i <= pagenum ; i++) {
-      s+= `<input type='button' value='${i}' class='pageNum' onclick='showlistbill(document.getElementById("searchbill").value,this.value)'>`
+      s+= `<input type='button' value='${i}' class='pageNum' onclick='showlistbill(document.getElementById("searchbill").value,this.value,document.querySelector("#groupcategory").value)'>`
     }    
     document.getElementById('showpagination-listbill').innerHTML = s
 } 
+
+document.querySelector("#groupcategory").addEventListener('change',()=> {
+    console.log(document.querySelector("#groupcategory").value);
+    showlistbill(document.getElementById(`searchbill`).value,1,document.querySelector("#groupcategory").value)
+})
+
+function checkstatus(){
+    let lists = document.querySelectorAll('#sts');
+    console.log("hello");
+    lists.forEach(function (list){
+        if (list.innerText == 'Processed' || list.innerText == 'Cancelled'){
+            document.getElementById('acp').remove();
+            document.getElementById('dcl').remove();
+        }
+    })
+}

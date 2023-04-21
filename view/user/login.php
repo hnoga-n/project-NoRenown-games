@@ -1,7 +1,11 @@
 <?php
 session_start();
-if (isset($_COOKIE['accountId'])) {
+// neu la nhan vien thi vao trang index khong thi vao profile employee
+if (isset($_COOKIE['accountId']) && $_COOKIE['usertype'] == 1) {
   header('location: ../../index.php');
+}
+if (isset($_COOKIE['accountId']) && $_COOKIE['usertype'] == 2) {
+  header('location: ../admin/employee.php?page=employee-profile');
 }
 ?>
 <!DOCTYPE html>
@@ -11,6 +15,7 @@ if (isset($_COOKIE['accountId'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../assets/img/logo.png" />
   <link rel="stylesheet" href="../../assets/css/login.css">
   <link rel="stylesheet" href="../../assets/css/reset.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -55,7 +60,7 @@ if (isset($_COOKIE['accountId'])) {
 
             ?>
           </span>
-          <a href="#">Forgot your password?</a>
+          <a href="../../model/forgotpasswd.php">Forgot your password?</a>
           <button type="submit">Sign In</button>
         </form>
       </div>
