@@ -23,25 +23,25 @@
 
 ++Slider
 
-<img src="/assets/img/slider_screenshot.png" width="500" height="300">
+<img src="/assets/img/slider_screenshot.png" width="800" height="400">
 
 ++Trending
 
-<img src="/assets/img/trending_screenshot.png" width="500" height="300">
+<img src="/assets/img/trending_screenshot.png" width="800" height="400">
 
 +Search
 
-<img src="/assets/img/search_screeenshot(1).png" width="500" height="300">
+<img src="/assets/img/search_screeenshot(1).png" width="800" height="400">
 
-<img src="/assets/img/search_screenshot(2).png" width="500" height="300">
+<img src="/assets/img/search_screenshot(2).png" width="800" height="400">
 
 +Contact
 
-<img src="/assets/img/contact_screenshot.png" width="500" height="300">
+<img src="/assets/img/contact_screenshot.png" width="800" height="400">
 
 +About
 
-<img src="/assets/img/about_screenshot.png" width="500" height="300">
+<img src="/assets/img/about_screenshot.png" width="800" height="400">
 
 +Footer
 
@@ -49,21 +49,21 @@
 
 +Giỏ hàng
 
-<img src="/assets/img/cart_screenshot.png" width="500" height="300">
+<img src="/assets/img/cart_screenshot.png" width="800" height="400">
 
 +Profile
 
 +Chi tiết sản phẩm 
 
-<img src="/assets/img/productDetail_screenshot(1).png" width="500" height="300">
+<img src="/assets/img/productDetail_screenshot(1).png" width="800" height="400">
 
-<img src="/assets/img/productDetail_screenshot(2).png" width="500" height="300">
+<img src="/assets/img/productDetail_screenshot(2).png" width="800" height="400">
 
-<img src="/assets/img/productDetail_screenshot(3).png" width="500" height="300">
+<img src="/assets/img/productDetail_screenshot(3).png" width="800" height="400">
 
 +Đơn hàng
 
-<img src="/assets/img/order_screenshot.png" width="500" height="300">
+<img src="/assets/img/order_screenshot.png" width="800" height="400">
 
 ## - Giao diện quản trị
 
