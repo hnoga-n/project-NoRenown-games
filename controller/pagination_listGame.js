@@ -1,5 +1,5 @@
 let i = 1;
-showlistgame(i,"all","","","");
+showlistgame(i,0,"","","");
 function showlistgame(num,category,str,pfrom,pto) {
     if(str == "") {
         str = ''

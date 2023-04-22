@@ -10,15 +10,16 @@
       <select name="category" id="gcategory" onchange="showlistgame(1,this.value,document.getElementById('searchgames').value,document.getElementById('pfrom').value,document.getElementById('pto').value)">
         <?php
         include '../../model/connect.php';
-        $sql = "SELECT DISTINCT (gcategory) 
-          FROM games
-          ORDER BY gcategory ASC";
+        $sql = "SELECT *
+          FROM genres
+          WHERE genStatus=1
+          ORDER BY genID ASC";
         $result = $conn->query($sql);
-        echo "<option value='all' selected>All</option><br>";
+        echo "<option value='0' selected>All</option><br>";
         if ($result->num_rows > 0) {
           // output data of each row
           while ($row = $result->fetch_assoc()) {
-            echo "<option value='" . $row['gcategory'] . "'>" . $row['gcategory'] . "</option><br>";
+            echo "<option value='" . $row['genID'] . "'>" . $row['genName'] . "</option><br>";
           }
         }
         $conn->close();
@@ -78,20 +79,5 @@
   </div>
 </div>
 
-<div class="message" id="mess">
-  <div class="message-box">
-    <div class="message-header">
-      <span class="close" onclick="document.getElementById('mess').style.display = 'none'">&times;</span>
-      <h2>Notification</h2>
-    </div>
-    <div class="message-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
-    </div>
-    <div class="message-footer">
-      <h3>Modal Footer</h3>
-    </div>
-  </div>
-</div>
 <script src="../../controller/pagination_listGame.js"></script>
 <script src="../../controller/deletegame.js"></script>

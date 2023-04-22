@@ -20,7 +20,7 @@
                 $GLOBALS['userid'] = $row['userID'];
             }
         }
-        $date_create = date("d/m/Y");
+        $date_create = date("Y-m-d");
         $sql1 = "INSERT INTO account(passwd,mail,groupID,userID,date_create,acc_status) VALUES 
                 ('$passwd','$mail',$groupid,$userid,'$date_create',1)";
         $result1 = $conn->query($sql1);

@@ -14,7 +14,7 @@
                 $game = array(
                     'gid' => $row['gid'],
                     'gname' => $row['gname'],
-                    'gcategory' => $row['gcategory'],
+                    'genreID' => $row['genreID'],
                     'gdiscount' => $row['gdiscount'],
                     'gprice' => $row['gprice'],
                     'gimg' => $row['gimg'],
@@ -70,17 +70,19 @@
                     <div>
                         <select name='gcategory'>
                             <?=
-                            $sql1 = 'SELECT genre
+                            $sql1 = 'SELECT *
                                 FROM genres
-                                ORDER BY genre ASC';
+                                WHERE genStatus=1
+                                ORDER BY genID ASC';
                             $select = "";
                             $result1 = $conn->query($sql1);
                             if ($result1->num_rows > 0) {
                                 while ($row = $result1->fetch_assoc()) {
-                                    $select .= "<option value='" . $row['genre'] . "'>" . $row['genre'] . "</option>&nbsp;&nbsp;";
-                                    if (strcmp($row['genre'], $game['gcategory']) == 0) {
-                                        $select .= "<option value='" . $row['genre'] . "' selected>" . $row['genre'] . "</option>&nbsp;&nbsp;";
+                                    if ($row['genID']==$game['genreID']) {
+                                        $select .= "<option value='" . $row['genID'] . "' selected>" . $row['genName'] . "</option>&nbsp;&nbsp;";
+                                        continue;
                                     }
+                                    $select .= "<option value='" . $row['genID'] . "'>" . $row['genName'] . "</option>&nbsp;&nbsp;";
                                 }
                             }
                             echo $select;
