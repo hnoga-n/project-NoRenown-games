@@ -44,7 +44,7 @@ if ($result1 === TRUE) {
     if ($result3 === TRUE) {
         echo "<script>
                 alert('Add successfully !')
-                window.location.replace('../view/admin/employee.php?page=listgame')
+                //window.location.replace('../view/admin/employee.php?page=listgame')
             </script>";
     } else {
         echo "Error: " . $sql3 . "<br>" . $conn->error . "<br>" . "Error: " . $sql3 . "<br>" . $conn->error;

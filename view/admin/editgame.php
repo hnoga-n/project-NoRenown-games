@@ -106,7 +106,7 @@
                         <label>Discount :</label>
                     </div>
                     <div>
-                        <input type='number' name='gdiscount' min='0' value='<?= !empty($game) ? $game['gdiscount'] : ''; ?>' required>&nbsp;&nbsp;<span>%</span>
+                        <input type='number' name='gdiscount' min='0' max="100" value='<?= !empty($game) ? $game['gdiscount'] : ''; ?>' required>&nbsp;&nbsp;<span>%</span>
                     </div>
                 </div>
                 <hr>

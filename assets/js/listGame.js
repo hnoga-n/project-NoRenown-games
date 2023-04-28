@@ -6,3 +6,4 @@ document.querySelectorAll(".pageNum").forEach(page => {
         page.classList.add('active')
     })
 }) 
+

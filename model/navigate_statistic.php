@@ -104,18 +104,18 @@
           
               <div class="products-filter-category">
                 <label>|  Category</label>
-                <select name="categoryValue" id="category">';
+                <select name="categoryValue" id="category" onfocus="this.size=5;" onblur="this.size=1;" onchange="this.size=1; this.blur();">';
                 
                 include './connect.php';
-                $sql = "SELECT DISTINCT (gcategory) 
-                  FROM games
-                  ORDER BY gcategory ASC";
+                $sql = "SELECT DISTINCT (genreID),genName 
+                  FROM games JOIN genres ON games.genreID = genres.genID 
+                  ORDER BY genreID ASC";
                 $result = $conn->query($sql);
                 $html_code .= "<option value='all' selected>All</option><br>";
                 if ($result->num_rows > 0) {
                   // output data of each row
                   while ($row = $result->fetch_assoc()) {
-                    $html_code .= "<option value='" . $row['gcategory'] . "'>" . $row['gcategory'] . "</option><br>";
+                    $html_code .= "<option value='" . $row['genreID'] . "'>" . $row['genName'] . "</option><br>";
                   }
                 }
                 $conn->close();
@@ -185,18 +185,18 @@
         
             <div class="products-filter-category">
               <label>|  Category</label>
-              <select name="categoryValue" id="category">';
+              <select name="categoryValue" id="category" onfocus="this.size=5;" onblur="this.size=1;" onchange="this.size=1; this.blur();">';
               
               include './connect.php';
-              $sql = "SELECT DISTINCT (gcategory) 
-                FROM games
-                ORDER BY gcategory ASC";
+              $sql = "SELECT DISTINCT (genreID),genName 
+                FROM games JOIN genres ON games.genreID = genres.genID 
+                ORDER BY genreID ASC";
               $result = $conn->query($sql);
               $html_code .= "<option value='all' selected>All</option><br>";
               if ($result->num_rows > 0) {
                 // output data of each row
                 while ($row = $result->fetch_assoc()) {
-                  $html_code .= "<option value='" . $row['gcategory'] . "'>" . $row['gcategory'] . "</option><br>";
+                  $html_code .= "<option value='" . $row['genreID'] . "'>" . $row['genName'] . "</option><br>";
                 }
               }
               $conn->close();
@@ -236,5 +236,40 @@
         ';
         echo $html_code;
           break;
+        case "Customer":
+          $html_code .= '
+          <div class="statistic-container-content">
+            <div class="products-filter-besst-seller">
+              <label>Top most customer buying</label>
+              <input id="number-best-seller" value="0" type="number" min="0" max="20">
+            </div>
+        
+            <div class="products-filter-date">
+              <label>|  Date</label>
+              <input id="date-start" type="date" value="" required/>
+              <label>to</label>
+              <input id="date-end" type="date" value="" required/>
+              <button id="btn-return" title="Refresh"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+        
+            <div class="listGamesSold">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 5%;">ID</th>
+                  <th style="width: 30%;">Name</th>
+                  <th style="width: 30%;">Email</th>
+                  <th style="width: 15%;">Buy quantity</th>
+                  <th style="width: 20%;">Spend</th>
+                </tr>
+              </thead>
+              <tbody id="showListGamesSold">
+                <!-- Show list games -->
+                
+              </tbody>
+            </table>
+          </div>  
+          </div>';
+        echo $html_code;  
+          break;  
     }
-?>

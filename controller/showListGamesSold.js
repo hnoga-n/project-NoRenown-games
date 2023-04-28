@@ -38,13 +38,13 @@ function showListGameSold(topSell,dateStart,dateEnd,category) {
         document.querySelector('#date-end').value = dateEnd;
     } 
     category = document.querySelector('#category').value;
-    console.log(topSell+ "," +dateStart + "," + dateEnd + "," +category);
+    // console.log(topSell+ "," +dateStart + "," + dateEnd + "," +category);
 
     const xhr = new XMLHttpRequest()
     xhr.onload = function () {
         if(this.status == 200 && this.readyState == 4) {
             const myObj = JSON.parse(this.responseText);
-            console.log(myObj);
+            // console.log(myObj);
             let duration; 
             let sumQuantity = myObj.sold_quantity;
             let sumRevenue = myObj.revenue;
