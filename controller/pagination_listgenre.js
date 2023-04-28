@@ -27,11 +27,16 @@ function editGenre(genid,genName) {
     document.getElementById('edit-genName').value = genName
 }
 
-function setStatus(genid,status) {
+function setStatus(genid) {
     const xmlhttp = new XMLHttpRequest()
-    xmlhttp.onload = function () {
-        alert(this.responseText)
+    if(confirm("Delete this Genre ?")) {
+        xmlhttp.onload = function () {
+            alert(this.responseText)
+        }
+        xmlhttp.open("GET","../../model/setGenreStatus.php?genid=" + genid)
+        xmlhttp.send()
+    } else {
+        return true;
     }
-    xmlhttp.open("GET","../../model/setGenreStatus.php?genid=" + genid +"&status=" + status)
-    xmlhttp.send()
+    
 }

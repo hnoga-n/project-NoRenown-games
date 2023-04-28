@@ -1,14 +1,12 @@
 <?php
     include './connect.php';
     $genid = $_GET['genid'];
-    if($_GET['status']== "true") {
-        $status = 1;
-        echo "Showed !";
-    } else {
-        $status = 0;
-        echo "Hidden !";
-    }
-    $sql = "UPDATE genres SET genStatus=$status WHERE genID = $genid";
+    $sql = "UPDATE genres SET genStatus=0 WHERE genID = $genid";
     $result = $conn->query($sql);
+    if($result) {
+        echo "Delete successfully !";
+    } else {
+        echo "Can not delete this Genre";
+    }
     $conn->close();
 ?>
