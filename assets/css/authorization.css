@@ -187,7 +187,7 @@
 }
 .authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card {
     width: 300px;
-    height: 300px;
+    height: 320px;
     display: flex;
     flex-direction: column;
     font-size: 20px;
@@ -241,4 +241,29 @@
 }
 .authorize-modalbox .modal-form form .form-button button:hover {
     background-color: #e1981a;
+}
+
+@media screen and (max-width: 991px) {
+    .au_main{
+        margin-left: 0;
+        padding: 0;
+        width: 100%;
+        width: calc( 100% - 40px);  
+    }
+    .au_main .author_group  table {
+        font-size: 16px;
+    }
+    .au_main .author_group  table thead{
+        
+    }
+}
+
+@media screen and (max-width: 450px){
+    .au_main .author_group table tbody tr{
+        height: 50px;
+    }
+    .au_main .author_group table tbody tr td button {
+        height: 20px;
+        padding-bottom: 5px;
+    }
 }

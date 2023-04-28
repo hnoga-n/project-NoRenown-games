@@ -10,23 +10,23 @@ if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {
     $search = strtolower($_GET['search']);
     $pfrom = floatval($_GET['pfrom']);
     $pto = floatval($_GET['pto']);
-    if ($v == "all") {
-        $sql = "SELECT * 
-            FROM games
-            WHERE visible=0 AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+    if ($v == 0) {
+        $sql = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending 
+            FROM games JOIN genres ON games.genreID=genres.genID  
+            WHERE visible=0 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
             LIMIT $loc,12
             ";
-        $sql1 = "SELECT * 
-            FROM games
-            WHERE visible=0 AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+        $sql1 = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending 
+            FROM games JOIN genres ON games.genreID=genres.genID
+            WHERE visible=0 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto";
     } else {
-        $sql = "SELECT * 
-            FROM games
-            WHERE visible=0 AND gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+        $sql = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending
+            FROM games JOIN genres ON games.genreID=genres.genID
+            WHERE visible=0 AND genreID=$v AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
             LIMIT $loc,12";
-        $sql1 = "SELECT * 
-            FROM games
-            WHERE visible=0 AND gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+        $sql1 = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending 
+            FROM games JOIN genres ON games.genreID=genres.genID
+            WHERE visible=0 AND genreID=$v AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto";
     }
 }
 $result = $conn->query($sql);
@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
         $str .= "    <tr>
                         <td>" . $row['gid'] . "</td>
                         <td>" . $row['gname'] . "</td>
-                        <td>" . $row['gcategory'] . "</td>
+                        <td>" . $row['genName'] . "</td>
                         <td>" . $row['gprice'] . "$</td>
                         <td>" . $row['gquantity'] . "</td>
                         <td>-" . $row['gdiscount'] . "%</td>

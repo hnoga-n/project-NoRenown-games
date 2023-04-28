@@ -130,14 +130,13 @@ body {
   border: 2px solid white;
   border-collapse: separate;
 }
-
 .form-outside-container  .form-container .form #message{
   text-align: left;
   resize: none;
   padding: 10px;
   margin: 5px 0;
   color: white;
-  font-size: 18px;
+  font-size: 18px;  
   background-color: rgba(140, 97, 218, 0.703) ;
   border-radius: 5px;
   border: 2px solid white;

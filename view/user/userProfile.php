@@ -60,27 +60,27 @@ if (!isset($_COOKIE['accountId'])) {
           <span>Profile</span>
         </div>
         <div class="b-input">
-          <div>
-            <input name="profile_fullname" type="text" required="required" value="<?php echo $row['fullname'] ?>">
+            <div>
+            <input type="text" name="profile_fullname" required="required" value="<?php echo $row['fullname'] ?>">
             <span>Name</span>
-            <div style="display:none;" class="input_message" id="name_update_message"></div>
-          </div>
-          <div>
-            <input name="profile_phone" type="text" required="required" value="<?php echo $row['phone'] ?>">
+		<div style="display:none;" class="input_message" id="name_update_message"></div>
+            </div>
+            <div>
+            <input type="text" name="profile_phone" required="required" value="<?php echo $row['phone'] ?>">
             <span>Phone</span>
-            <div style="display:none;" class="input_message" id="phone_update_message"></div>
-          </div>
-          <div>
-            <input name="profile_address" type="text" required="required" value="<?php echo $row['address'] ?>">
-            <span>Address</span>
-          </div>
-          <div>
-            <input name="profile_newPasswd" type="password" required="required" value="<?php echo $row['passwd'] ?>">
-            <span>Password</span>
-            <div style="display:none;" class="input_message" id="pw_update_message"></div>
-          </div>
-          <div>
-            <input type="text" required="required" value="<?php echo $row['mail'] ?>" readonly disabled>
+		<div style="display:none;" class="input_message" id="phone_update_message"></div>
+            </div>
+            <div>             
+              <input type="text" name="profile_address" required="required" value="<?php echo $row['address'] ?>">
+              <span>Address</span>
+            </div>
+            <div>              
+              <input type="text" name="profile_newPasswd" required="required" value="<?php echo $row['passwd'] ?>">             
+              <span>Password</span>
+              <div style="display:none;" class="input_message" id="pw_update_message"></div>
+            </div>
+            <div>              
+            <input type="text" name="profile_mail" required="required" value="<?php echo $row['mail'] ?>" readonly disabled>
             <span id="useremail">Email</span>
           </div>
         </div>

@@ -166,3 +166,10 @@ body {
     opacity: 1;
     transition: .4s;
 }
+
+
+@media screen and (max-width: 991px) {
+    .sidebar{
+        display: none;
+    }
+}

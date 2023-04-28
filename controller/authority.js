@@ -55,16 +55,15 @@ $(document).ready(function(){
 
 function deleteGroup(groupID){
   if(confirm("Delete this authority group ?") == true){
-    console.log("delete");
     const xml = new XMLHttpRequest;
-    console.log(groupID);
     xml.onreadystatechange = function(){
       if(this.responseText.match("delete successed")){
-        alert("Delete succesed! "); 
-        console.log(this.responseText);
+        //alert("Delete succesed! "); 
+
       }
+      console.log(this.responseText);
+    }
     xml.open("GET","../../model/auth_handle.php?query=deletegroup&grid="+ groupID)
     xml.send();
   }
-}
 }
