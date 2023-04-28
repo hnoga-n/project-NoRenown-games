@@ -127,6 +127,8 @@ if (isset($_GET['accid'])) {
                                 if ($account['usertypeID'] == 1 && $row['groupID'] == 2) {
                                     $select = "<option value='" . $row['groupID'] . "' selected>" . $row['groupName'] . "</option>&nbsp;&nbsp;";
                                     break;
+                                } else if ($account['usertypeID'] == 2 && $row['groupID'] == 2) {
+                                    continue;
                                 } else {
                                     if ($row['groupID'] == $account['groupid']) {
                                         $select .= "<option value='" . $row['groupID'] . "' selected>" . $row['groupName'] . "</option>&nbsp;&nbsp;";

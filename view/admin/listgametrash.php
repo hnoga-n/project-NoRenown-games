@@ -10,15 +10,16 @@
       <select name="category" id="gcategory" onchange="showlistgame(1,this.value,document.getElementById('searchgames').value,document.getElementById('pfrom').value,document.getElementById('pto').value)">
         <?php
         include '../../model/connect.php';
-        $sql = "SELECT DISTINCT (gcategory) 
-          FROM games
-          ORDER BY gcategory ASC";
+        $sql = "SELECT *
+          FROM genres
+          WHERE genStatus=1
+          ORDER BY genID ASC";
         $result = $conn->query($sql);
-        echo "<option value='all' selected>All</option><br>";
+        echo "<option value='0' selected>All</option><br>";
         if ($result->num_rows > 0) {
           // output data of each row
           while ($row = $result->fetch_assoc()) {
-            echo "<option value='" . $row['gcategory'] . "'>" . $row['gcategory'] . "</option><br>";
+            echo "<option value='" . $row['genID'] . "'>" . $row['genName'] . "</option><br>";
           }
         }
         $conn->close();
