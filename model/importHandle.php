@@ -70,21 +70,21 @@ function showListGameImport($import)
     $pto = floatval($_GET['pto']);
     if ($v == "all") {
       $sql = "SELECT * 
-            FROM games
+            FROM games JOIN genres ON games.genreID = genres.genID
             WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
             LIMIT $loc,12
             ";
       $sql1 = "SELECT * 
-            FROM games
+            FROM games JOIN genres ON games.genreID = genres.genID
             WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
     } else {
       $sql = "SELECT * 
-            FROM games
-            WHERE gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            FROM games  JOIN genres ON games.genreID = genres.genID
+            WHERE genreID = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
             LIMIT $loc,12";
       $sql1 = "SELECT * 
-            FROM games
-            WHERE gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            FROM games  JOIN genres ON games.genreID = genres.genID
+            WHERE genreID = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
     }
   }
   $result = $conn->query($sql);
@@ -96,7 +96,7 @@ function showListGameImport($import)
       $str .= "    <tr>
                         <td>" . $row['gid'] . "</td>
                         <td>" . $row['gname'] . "</td>
-                        <td>" . $row['gcategory'] . "</td>
+                        <td>" . $row['genName'] . "</td>
                         <td>" . $row['gprice'] . "$</td>
                         <td>" . $row['gquantity'] . "</td>
                         <td>-" . $row['gdiscount'] . "%</td>
@@ -459,7 +459,6 @@ function listImportWithPagination($date_start, $date_end, $accID, $priceFr, $pri
       ";
     }
     echo $import_bill;
-    //document.getElementById('date').innerHTML
   }
 }
 
