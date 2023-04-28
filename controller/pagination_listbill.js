@@ -44,13 +44,3 @@ document.querySelector("#groupcategory").addEventListener('change',()=> {
     showlistbill(document.getElementById(`searchbill`).value,1,document.querySelector("#groupcategory").value)
 })
 
-function checkstatus(){
-    let lists = document.querySelectorAll('#sts');
-    console.log("hello");
-    lists.forEach(function (list){
-        if (list.innerText == 'Processed' || list.innerText == 'Cancelled'){
-            document.getElementById('acp').remove();
-            document.getElementById('dcl').remove();
-        }
-    })
-}

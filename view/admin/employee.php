@@ -37,8 +37,13 @@ if (isset($_GET['page'])) {
         case 'listgametrash':
             require_once('./listgametrash.php');
             break;
+
+        case 'listsupply':
+            require_once('./listsupply.php');
+
         case 'listgenre':
             require_once('./listgenre.php');
+
             break;
     }
 } else {
