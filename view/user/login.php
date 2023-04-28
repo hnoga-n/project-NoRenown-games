@@ -1,6 +1,6 @@
 <?php
-session_start();
 // neu la nhan vien thi vao trang index khong thi vao profile employee
+session_start();
 if (isset($_COOKIE['accountId']) && $_COOKIE['usertype'] == 1) {
   header('location: ../../index.php');
 }

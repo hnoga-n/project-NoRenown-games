@@ -1,7 +1,7 @@
 <?php
 include './connect.php';
 include './function_employee.php';
-$accountFeatures = json_decode($features_arr[5],true);
+$accountFeatures = json_decode($features_arr[5], true);
 session_start();
 switch ($_GET['query']) {
   case "cartquantity":
@@ -70,21 +70,21 @@ function showListGameImport($import)
     $pto = floatval($_GET['pto']);
     if ($v == "all") {
       $sql = "SELECT * 
-            FROM games
+            FROM games JOIN genres ON games.genreID = genres.genID
             WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
             LIMIT $loc,12
             ";
       $sql1 = "SELECT * 
-            FROM games
+            FROM games JOIN genres ON games.genreID = genres.genID
             WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
     } else {
       $sql = "SELECT * 
-            FROM games
-            WHERE gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            FROM games  JOIN genres ON games.genreID = genres.genID
+            WHERE genreID = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
             LIMIT $loc,12";
       $sql1 = "SELECT * 
-            FROM games
-            WHERE gcategory = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            FROM games  JOIN genres ON games.genreID = genres.genID
+            WHERE genreID = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
     }
   }
   $result = $conn->query($sql);
@@ -96,7 +96,7 @@ function showListGameImport($import)
       $str .= "    <tr>
                         <td>" . $row['gid'] . "</td>
                         <td>" . $row['gname'] . "</td>
-                        <td>" . $row['gcategory'] . "</td>
+                        <td>" . $row['genName'] . "</td>
                         <td>" . $row['gprice'] . "$</td>
                         <td>" . $row['gquantity'] . "</td>
                         <td>-" . $row['gdiscount'] . "%</td>
@@ -104,10 +104,10 @@ function showListGameImport($import)
                             <img src='../../assets/img/" . $row['gimg'] . "'>
                         </td>
                         <td>";
-                        if($import==1) {
-                          $str.="<div class='delete-button' onclick='addToImportCard(" . $row['gid'] . ")'>Select</div>";
-                        }
-                $str.="</td>
+      if ($import == 1) {
+        $str .= "<div class='delete-button' onclick='addToImportCard(" . $row['gid'] . ")'>Select</div>";
+      }
+      $str .= "</td>
                     </tr>";
     }
   }
@@ -286,7 +286,7 @@ function importGame()
   /* $impAccID = intval($_POST['import_account_ID']); */
   $impAccID = 3;
   $impDataCreate = $_POST['import_date_create'];
-  $impTotalPrice = intval($_POST['import_total_price']);
+  $impTotalPrice = floatval($_POST['import_total_price']);
   if ($impTotalPrice == 0) { //check if no product is choose
     $_SESSION['message'] = "PLEASE CHOOSE PRODUCT!";
     header('location: ../view/admin/employee.php?page=import');
@@ -319,7 +319,7 @@ function importGame()
       $gameTmp = games::__construct2(games::getGame($gameID[1]));
       $supp = $val;
       $gname = $gameTmp->getGameName();
-      $gprice = floatval($gameTmp->getGamePrice()) * $quantity;
+      $gprice = floatval($gameTmp->getGamePrice()) * floatval($quantity);
 
       $sql_imp_detail->bind_param("iisiii", $lastID, $gameID[1], $gname, $quantity, $gprice, $supp);
 
@@ -459,7 +459,6 @@ function listImportWithPagination($date_start, $date_end, $accID, $priceFr, $pri
       ";
     }
     echo $import_bill;
-    //document.getElementById('date').innerHTML
   }
 }
 
@@ -486,7 +485,7 @@ function listImportWithoutPagination($page, $date_start, $date_end, $accID, $pri
           <td style='width: 20%;'>" . $row['date_create'] . "</td>
           <td style='width:20%;'>" . $row['total_price'] . "</td>
           <td>
-            <div class='view-button' onclick='showImportDetail(" . $row['importID'] . "," . $row['accountID'] . "," . $row['date_create'] . "," . $row['total_price'] . ")' >Select</div>
+            <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . "," . $row['date_create'] . "," . $row['total_price'] . ")' >Select</div>
           </td>
         </tr>
       ";
