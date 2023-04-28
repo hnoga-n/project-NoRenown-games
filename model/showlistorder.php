@@ -72,12 +72,12 @@
                         if($accountFeatures["ACCEPT INVOICE"]==1 && $row['order_status'] == 0) {
                             $html.= "<a href=''><button onclick='changestatus(".$row['orderID'].",1)'>Accept</button></a>";
                         } else {
-                            $html.= "<a href='' style='display: none;'><button onclick='changestatus(".$row['orderID'].",1)'>Accept</button></a>";
+                            $html.= "<a ><button onclick='changestatus(".$row['orderID'].",1)' disabled>Accept</button></a>";
                         }                  
                         if($accountFeatures["DECLINE INVOICE"]==1  && $row['order_status'] == 0) {
                             $html.= "<a href=''><button onclick='changestatus(".$row['orderID'].",2)'>Decline</button></a>";
                         } else {
-                            $html.= "<a href='' style='display: none;'><button onclick='changestatus(".$row['orderID'].",2)'>Decline</button></a>";
+                            $html.= "<a ><button onclick='changestatus(".$row['orderID'].",2)' disabled>Decline</button></a>";
 
                         }                  
                 $html.="</td>

@@ -236,5 +236,41 @@
         ';
         echo $html_code;
           break;
+        case "Customer":
+          $html_code .= '
+          <div class="statistic-container-content">
+            <div class="products-filter-besst-seller">
+              <label>Top most customer buying</label>
+              <input id="number-best-seller" value="0" type="number" min="0" max="20">
+            </div>
+        
+            <div class="products-filter-date">
+              <label>|  Date</label>
+              <input id="date-start" type="date" value="" required/>
+              <label>to</label>
+              <input id="date-end" type="date" value="" required/>
+              <button id="btn-return" title="Refresh"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+        
+            <div class="listGamesSold">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 5%;">ID</th>
+                  <th style="width: 30%;">Name</th>
+                  <th style="width: 30%;">Email</th>
+                  <th style="width: 15%;">Buy quantity</th>
+                  <th style="width: 20%;">Spend</th>
+                </tr>
+              </thead>
+              <tbody id="showListGamesSold">
+                <!-- Show list games -->
+                
+              </tbody>
+            </table>
+          </div>  
+          </div>';
+        echo $html_code;  
+          break;  
     }
 ?>

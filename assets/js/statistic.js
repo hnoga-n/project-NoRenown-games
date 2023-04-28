@@ -32,6 +32,11 @@ lis.forEach((li)=> {
           const script = document.createElement('script');
           script.src = '../../controller/showListGamesImport.js';
           document.querySelector("#container").appendChild(script);
+        }  else if (li.innerHTML == "Customer") {
+          
+          const script = document.createElement('script');
+          script.src = '../../controller/showListCustomer.js';
+          document.querySelector("#container").appendChild(script);
         }
       }
     }
