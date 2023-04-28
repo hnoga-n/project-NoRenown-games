@@ -10,8 +10,6 @@ include 'head1.php'
     <div class="modal-form">
         <form action="../../model/auth_handle.php?query=submited" method="POST">
             <div class="form-general">
-
-
                 <!-- <div class="form-general-div">
                     <div>
                         <span>Group ID:</span>
