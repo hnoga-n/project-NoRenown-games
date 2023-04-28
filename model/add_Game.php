@@ -18,8 +18,8 @@ $scr4 = $_POST['scr4'];
 $trailer = $_POST['trailer'];
 
 $sql1 = "
-            INSERT INTO games (gname,gcategory,gprice,gdiscount,gimg,gquantity) VALUES
-            ('$gname','$gcategory','$gprice',$gdiscount,'$gimg',0);  
+            INSERT INTO games (gname,genreID,gprice,gdiscount,gimg,gquantity,trending,visible) VALUES
+            ('$gname',$gcategory,'$gprice',$gdiscount,'$gimg',0,0,1);  
               
     ";
 $result1 = $conn->query($sql1);
