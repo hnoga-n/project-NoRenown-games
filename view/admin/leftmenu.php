@@ -78,7 +78,13 @@
                     <i class="fa-solid fa-trash-can"></i>
                     <span>Trash Game</span>
                 </li>
-            </a> -->
+            </a> 
+            <a href="employee.php?page=listsupply">
+                <li class="nav-item <?= ($_GET['page'] == 'listsupply') ? 'active' : '' ?>">
+                    <i class="fa-solid fa-truck-field"></i>
+                    <span>Supplier</span>
+                </li>
+            </a>-->
         </ul>
         <hr>
         <div class="nav-title">

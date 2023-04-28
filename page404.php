@@ -4,12 +4,12 @@
         $error = $_SERVER["REDIRECT_STATUS"];
     }
     session_start();
-        header('location: /project-NoRenowned-games/view/admin/employee.php?page=employee-profile');
+        
     $refresh_interval = 2;
 
     $meta_tag = '<meta http-equiv="refresh" content="' . $refresh_interval . '">';
 
-    echo $meta_tag;1
+    echo $meta_tag;
 ?>
 
 <!DOCTYPE html>
