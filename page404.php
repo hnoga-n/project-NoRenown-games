@@ -1,10 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-if (isset($_SERVER["REDIRECT_STATUS"])) {
-    $error = $_SERVER["REDIRECT_STATUS"];
-}
-=======
     if(isset($_SERVER["REDIRECT_STATUS"])){
         $error = $_SERVER["REDIRECT_STATUS"];
     }
@@ -16,7 +10,6 @@ if (isset($_SERVER["REDIRECT_STATUS"])) {
 
     echo $meta_tag;
 
->>>>>>> main
 ?>
 
 <!DOCTYPE html>

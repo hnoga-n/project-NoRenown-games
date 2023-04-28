@@ -13,22 +13,22 @@
     $dateEnd = date('Y-m-d', strtotime($dateEnd));
     if((int)$topSell > 0) {
         if($category == "all") {
-            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,import_detail.gname,games.gcategory,games.gid,price,games.gimg FROM
-            import JOIN import_detail ON import.impID = import_detail.impID JOIN games on import_detail.gid = games.gid WHERE date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid ORDER BY SUM(quantity) DESC LIMIT $topSell";
+            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,genName,import_detail.gname,games.genreID,games.gid,price,games.gimg FROM
+            import JOIN import_detail ON import.impID = import_detail.impID JOIN games on import_detail.gid = games.gid JOIN genres ON games.genreID = genres.genID WHERE date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid ORDER BY SUM(quantity) DESC LIMIT $topSell";
             $getInvoiceData = $conn->query($selecInvoiceData);       
         } else {
-            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,import_detail.gname,games.gcategory,games.gid,price,games.gimg FROM
-            import JOIN import_detail ON import.impID = import_detail.impID JOIN games on import_detail.gid = games.gid WHERE games.gcategory = '{$category}' AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid ORDER BY SUM(quantity) DESC LIMIT $topSell";
+            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,genName,import_detail.gname,games.genreID,games.gid,price,games.gimg FROM
+            import JOIN import_detail ON import.impID = import_detail.impID JOIN games on import_detail.gid = games.gid JOIN genres ON games.genreID = genres.genID WHERE games.genreID = '{$category}' AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid ORDER BY SUM(quantity) DESC LIMIT $topSell";
             $getInvoiceData = $conn->query($selecInvoiceData);       
         }
     } else {
         if($category == "all") {
-            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,import_detail.gname,games.gcategory,games.gid,price,games.gimg FROM
-            import JOIN import_detail ON import.impID = import_detail.impID JOIN games on import_detail.gid = games.gid WHERE date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid";
+            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,genName,import_detail.gname,games.genreID,games.gid,price,games.gimg FROM
+            import JOIN import_detail ON import.impID = import_detail.impID JOIN games on import_detail.gid = games.gid JOIN genres ON games.genreID = genres.genID WHERE date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid";
             $getInvoiceData = $conn->query($selecInvoiceData);       
         } else {
-            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,import_detail.gname,games.gcategory,games.gid,price,games.gimg FROM
-            import JOIN import_detail ON import.impID = import_detail.impID JOIN games on import_detail.gid = games.gid WHERE games.gcategory = '{$category}' AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid";
+            $selecInvoiceData = "SELECT SUM(quantity),date_create,quantity,genName,import_detail.gname,games.genreID,games.gid,price,games.gimg FROM
+            import JOIN import_detail ON import.impID = import_detail.impID JOIN games on import_detail.gid = games.gid JOIN genres ON games.genreID = genres.genID WHERE games.genreID = '{$category}' AND date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY games.gid";
             $getInvoiceData = $conn->query($selecInvoiceData);       
         }
     }
@@ -45,7 +45,7 @@
                 $data .= "<tr>
                     <td>" . $row['gid'] ."</td>
                     <td>" . $row['gname'] ."</td>
-                    <td>" . $row['gcategory'] ."</td>
+                    <td>" . $row['genName'] ."</td>
                     <td class='price'>" . $row['price'] ."$</td>
                     <td>
                         <img src='../../assets/img/" . $row['gimg'] ."'>

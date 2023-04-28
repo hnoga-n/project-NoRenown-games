@@ -4,7 +4,7 @@
     $accID = $_COOKIE['accountId'];
     $startIndex = $_GET['startIndex'];
     $limit = 1;
-
+    
     $checkInvoiceData = "SELECT * FROM invoice WHERE accID = {$accID} ";
     $invoiceDataExist = $conn->query($checkInvoiceData);
     
@@ -46,6 +46,8 @@
                                 <div class="order-price"><s>'. $row1['price'] .'$</s> '. $row1['discount'] .'$</div>
                             </div>';
             }
+            setlocale(LC_MONETARY,"en_US");
+            $total = number_format((float)$row['total_price'],2,'.',',');
 
             $data .= '<div class="order">
                         <div class="order-top">
@@ -69,7 +71,7 @@
                                         Delivery address
                                     </div>
                                 </div>
-                            <div class="order-total">Total: '. $row['total_price'] .'$</div>
+                            <div class="order-total">Total: '. $total  .'$</div>
                         </div>
                     </div>';
             }
