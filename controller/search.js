@@ -28,7 +28,7 @@ function search(str, page, genre, priceFrom, priceTo, sortby) {
   if (page == undefined) {
     page = "1";
   }
-  if (genre == undefined || genre == '0') {
+  if (genre.match(/all/i)) {
     genre = '';
   }
   if (priceFrom == undefined) {
@@ -40,7 +40,6 @@ function search(str, page, genre, priceFrom, priceTo, sortby) {
   if (sortby == undefined) {
     sortby = sortBy.value;
   }
-  genre = genre.split("-")[0]
   let xmlhttp = new XMLHttpRequest();
   xmlhttp.onload = function () {
     // dataRes[0] = pagenumber || dataRes[1] = game_div
@@ -93,7 +92,8 @@ function searchGenres(str) {
     else {
       let str = '';
       let genre = this.responseText.split("/");
-      genre[genre.length - 1] = "0-All"
+      genre.pop();
+      genre.unshift("All");
       for (let index of genre) {
         str += `<li onclick="setGenre('${index}',this)">${index}</li>`;
       }
@@ -105,12 +105,6 @@ function searchGenres(str) {
           item.classList.add('active');
         })
       })
-    }
-  }
-  if (str.match("-")) {
-    str = str.split("-")[1]
-    if (str.match(/all/i)) {
-      str = ''
     }
   }
   xml.open("GET", "../../model/searchGenres.php?queryGenres=" + str);
