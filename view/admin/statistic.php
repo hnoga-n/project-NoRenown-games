@@ -24,7 +24,7 @@
       <div class="header_menu_bar">
         <div class="menu">
           <ul>
-          <li>Overview</li><li>Sold out</li><li>Import</li>
+          <li>Overview</li><li>Sold out</li><li>Import</li><li>Customer</li>
           </ul>
         </div>
       </div>
