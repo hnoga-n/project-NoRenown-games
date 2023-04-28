@@ -42,7 +42,7 @@
                         justify-content: space-around;
                         flex-direction: row;'>";
                         if($accountFeatures["EDIT SUPPLIER"]==1) {
-                            $html.= "<a href='./editsupplier.php?suppID=".$row['suppID']."'><button>Edit</button></a>";
+                            $html.= "<a href='./editsupplier.php?page=listsupply&suppID=".$row['suppID']."'><button>Edit</button></a>";
                         }
                         if($accountFeatures["DELETE SUPPLIER"]==1) {
                             $html.= "<a href=''><button onclick='deletesupplier(".$row['suppID'].")'>Delete</button></a>";
