@@ -6,7 +6,6 @@ document.querySelector("#btn-return").addEventListener("click",()=> {
     document.querySelector('#number-best-seller').value = "0";
     document.querySelector('#date-start').value = "";
     document.querySelector('#date-end').value = "";
-    document.querySelector('#category').value = "all";
     showListCustomer("0","","");
 })
 
@@ -18,6 +17,7 @@ function showListCustomer(topSell,dateStart,dateEnd) {
     topSell = document.querySelector('#number-best-seller').value;
     dateStart = document.querySelector('#date-start').value;
     dateEnd = document.querySelector('#date-end').value;
+    console.log(topSell);
     if(dateStart == "") {
         dateStart = `2000-01-01`;
         document.querySelector('#date-start').value = dateStart;
