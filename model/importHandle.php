@@ -319,7 +319,7 @@ function importGame()
       $gameTmp = games::__construct2(games::getGame($gameID[1]));
       $supp = $val;
       $gname = $gameTmp->getGameName();
-      $gprice = floatval($gameTmp->getGamePrice()) * $quantity;
+      $gprice = floatval($gameTmp->getGamePrice()) * floatval($quantity);
 
       $sql_imp_detail->bind_param("iisiii", $lastID, $gameID[1], $gname, $quantity, $gprice, $supp);
 

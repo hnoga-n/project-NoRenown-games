@@ -1,10 +1,10 @@
 <?php
 include "../model/connect.php";
 include "../model/function_employee.php";
-$accountFeatures = json_decode($features_arr[4],true);
+$accountFeatures = json_decode($features_arr[4], true);
 switch ($_GET['query']) {
   case 'listgroup':
-    getListGroup($accountFeatures["EDIT AUTHORITY"],$accountFeatures["DELETE AUTHORITY"]);
+    getListGroup($accountFeatures["EDIT AUTHORITY"], $accountFeatures["DELETE AUTHORITY"]);
     break;
   case 'addgroup':
     getGeneralGroupInformation();
@@ -26,7 +26,7 @@ switch ($_GET['query']) {
 }
 
 
-function getListGroup($edit,$delete)
+function getListGroup($edit, $delete)
 {
   include "../model/connect.php";
   $sql = "SELECT * FROM auth_group";
@@ -54,16 +54,16 @@ function getListGroup($edit,$delete)
             <td style="width: 25%;">' . $row['date_create'] . '</td>
             <td style="width: 25%;">' . $row['last_modify'] . '</td>
             <td style="width: 25%;">';
-            if($edit==1) {
-              $data.= '<a href="./authorize.php?page=authorization&grid=' . $row['groupID'] . '">
+      if ($edit == 1) {
+        $data .= '<a href="./authorize.php?page=authorization&grid=' . $row['groupID'] . '">
                         <button>Edit</button>
                       </a>';
-            }
-            if($delete==1) {
-              $data.= '<button onclick="deleteGroup(' . $row['groupID'] . ')">Delete</button>';
-            }
-    $data.="</td>
-          </tr>"; 
+      }
+      if ($delete == 1) {
+        $data .= '<button onclick="deleteGroup(' . $row['groupID'] . ')">Delete</button>';
+      }
+      $data .= "</td>
+          </tr>";
     }
   }
   echo $data;
@@ -339,8 +339,14 @@ function deleteGroup($groupID)
     if ($conn->query("DELETE FROM auth_group_detail WHERE groupID=$groupID")) {
       if ($conn->query("DELETE FROM auth_group WHERE groupID=$groupID")) {
         echo "delete successed";
+      } else {
+        echo "failed delete from group";
       }
+    } else {
+      echo "faild delete from auth group detail";
     }
+  } else {
+    echo "failed delete account groupid";
   }
 
   $conn->close();
