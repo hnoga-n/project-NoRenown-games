@@ -44,7 +44,7 @@
                     <span>Supplier Name:</span>
                 </div>
                 <div>
-                    <input type="text" value="<?= !empty($supp)? $supp['suppName'] : ''?>" name="suppName">
+                    <input type="text" value="<?= !empty($supp)? $supp['suppName'] : ''?>" name="suppName" required>
                 </div>
             </div>
             <div class="form-div">
@@ -52,7 +52,7 @@
                     <span>Supplier Mail:</span>
                 </div>
                 <div>
-                    <input type="text" value="<?= !empty($supp)? $supp['suppMail'] : ''?>" name="suppMail">
+                    <input type="text" value="<?= !empty($supp)? $supp['suppMail'] : ''?>" name="suppMail" required>
                 </div>
             </div>
             <div class="form-div">
@@ -60,7 +60,7 @@
                     <span>Supplier Telephone:</span>
                 </div>
                 <div>
-                    <input type="text" value="<?= !empty($supp)? $supp['suppTel'] : ''?>" name="suppTel">
+                    <input type="text" value="<?= !empty($supp)? $supp['suppTel'] : ''?>" name="suppTel" required>
                 </div>
             </div>  
             <div class="form-button">
