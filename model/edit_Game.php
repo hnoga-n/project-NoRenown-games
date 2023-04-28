@@ -41,7 +41,7 @@
     
     $sql1 = "
                 UPDATE games 
-                SET gname='$gname',gcategory='$gcategory',gprice=$gprice,gdiscount=$gdiscount,gimg='$gimg',gquantity=$gquantity
+                SET gname='$gname',genreID=$gcategory,gprice=$gprice,gdiscount=$gdiscount,gimg='$gimg',gquantity=$gquantity
                 WHERE gid=$gid     
             ";
     $sql2 = "

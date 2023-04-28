@@ -25,6 +25,7 @@
             $jsonFeature.='}';
             array_push($features_arr,$jsonFeature);
         } 
+        //print_r($features_arr);
     } else {
         echo"<script>alert('ban chua dang nhap')</script>";
     }

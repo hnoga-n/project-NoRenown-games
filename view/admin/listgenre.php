@@ -9,7 +9,7 @@
     <?php
         include '../../model/connect.php';
         include '../../model/function_employee.php';
-        $accountFeatures = json_decode($features_arr[7],true);
+        $accountFeatures = json_decode($features_arr[8],true);
         if($accountFeatures["ADD GENRE"]==1) {
           echo "
           <div class='button'>
@@ -27,8 +27,7 @@
       <thead>
         <tr>
           <th style="width: 10%;">Genre ID</th>
-          <th style="width: 50%;">Genre name</th>
-          <th style="width: 20%;">Status</th>
+          <th style="width: 70%;">Genre name</th>
           <th style="width: 20%;">Action</th>
         </tr>
       </thead>

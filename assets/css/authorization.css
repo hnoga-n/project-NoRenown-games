@@ -218,7 +218,7 @@
 
 .authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card {
     width: 300px;
-    height: 300px;
+    height: 320px;
     display: flex;
     flex-direction: column;
     font-size: 20px;
