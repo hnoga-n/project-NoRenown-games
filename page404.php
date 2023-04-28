@@ -2,6 +2,14 @@
     if(isset($_SERVER["REDIRECT_STATUS"])){
         $error = $_SERVER["REDIRECT_STATUS"];
     }
+    session_start();
+        
+    $refresh_interval = 2;
+
+    $meta_tag = '<meta http-equiv="refresh" content="' . $refresh_interval . '">';
+
+    echo $meta_tag;
+
 ?>
 
 <!DOCTYPE html>

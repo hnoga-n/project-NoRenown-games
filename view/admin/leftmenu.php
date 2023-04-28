@@ -74,10 +74,16 @@
                     <span>Trash Game</span>
                 </li>
             </a> 
+            <a href="employee.php?page=listsupply">
+                <li class="nav-item <?= ($_GET['page'] == 'listsupply') ? 'active' : '' ?>">
+                    <i class="fa-solid fa-truck-field"></i>
+                    <span>Supplier</span>
+
             <a href="employee.php?page=listgenre">
                 <li class="nav-item <?= ($_GET['page'] == 'listbills') ? 'active' : '' ?>">
                     <i class="fa-solid fa-dice-d6"></i>
                     <span>Genres</span>
+
                 </li>
             </a>-->
         </ul>
