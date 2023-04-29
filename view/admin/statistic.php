@@ -33,11 +33,11 @@
     <div id="container">
       <div class="statistic-container-header">
 
-          <div class="sales">
+          <div class="import_money">
             <div class="content">
               <div class="text">Accounts</div>
               <div>
-                <div class="number" id="sum_sold_quantity"><?php echo $result_accounts->num_rows ?></div>
+                <div class="number" id="import-money"><?php echo $result_accounts->num_rows ?></div>
                 <i class="fa-solid fa-users-gear"></i>
               </div>
             </div>
