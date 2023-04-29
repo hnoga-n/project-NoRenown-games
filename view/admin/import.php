@@ -114,7 +114,7 @@
           <?php
           include '../../model/connect.php';
           $sql = "SELECT *
-          FROM genres";
+          FROM genres WHERE genStatus=1";
           $result = $conn->query($sql);
           echo "<option value='all' selected>All</option><br>";
           if ($result->num_rows > 0) {

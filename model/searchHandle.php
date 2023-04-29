@@ -10,8 +10,8 @@ $param6 = strtoupper($_GET['sort']);
 $param2 = intval($_GET['page']);
 $startPos = 12 *  $param2 - 12;
 
-$product_matched_search_sql = "SELECT * FROM  games WHERE visible=1 AND gname REGEXP '$param1' AND genreID REGEXP '$param3' AND CAST(gprice as FLOAT)  BETWEEN $param4 AND $param5";
-$product_of_specified_page_sql = "SELECT * FROM  games WHERE visible=1 AND gname REGEXP '$param1' AND genreID REGEXP '$param3' AND gprice BETWEEN $param4 AND $param5 ORDER BY CAST(gprice as FLOAT) $param6 LIMIT 12 OFFSET $startPos";
+$product_matched_search_sql = "SELECT * FROM games JOIN genres ON games.genreID=genres.genID WHERE visible=1 AND gname REGEXP '$param1' AND genName REGEXP '$param3' AND CAST(gprice as FLOAT)  BETWEEN $param4 AND $param5";
+$product_of_specified_page_sql = "SELECT * FROM  games JOIN genres ON games.genreID=genres.genID WHERE visible=1 AND gname REGEXP '$param1' AND genName REGEXP '$param3' AND gprice BETWEEN $param4 AND $param5 ORDER BY CAST(gprice as FLOAT) $param6 LIMIT 12 OFFSET $startPos";
 $pageNumber = floor(($conn->query($product_matched_search_sql)->num_rows) / 12);
 echo $pageNumber . "page_number";
 
