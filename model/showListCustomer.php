@@ -9,12 +9,14 @@
     $dateEnd = date('Y-m-d', strtotime($dateEnd)); 
 
     if((int)$topSell > 0) {
-        $selecInvoiceData = "SELECT SUM(quantity),account.accid,fullname,mail,SUM(invoice.total_price),SUM(invoice_detail.quantity) FROM
+        $selecInvoiceData = "SELECT SUM(quantity),account.accid,fullname,mail,SUM(discount * quantity) as total,SUM(invoice_detail.quantity) FROM
                     invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid JOIN account ON account.accid = invoice.accID JOIN users ON account.userID = users.userID WHERE order_status = 1 AND invoice.date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY account.accid ORDER BY SUM(quantity) DESC LIMIT $topSell";
-        $getInvoiceData = $conn->query($selecInvoiceData);       
+        $getInvoiceData = $conn->query($selecInvoiceData);    
+        $selectTotalPrice = "SELECT SUM(total_price) FROM `invoice` where order_status = 1 GROUP BY accID ORDER BY SUM(total_price) DESC LIMIT $topSell";
+        $getTotalPrice = $conn->query($selectTotalPrice);   
         
     } else {
-        $selecInvoiceData = "SELECT SUM(quantity),account.accid,fullname,mail,SUM(invoice.total_price),SUM(invoice_detail.quantity) FROM
+        $selecInvoiceData = "SELECT SUM(quantity),account.accid,fullname,mail,SUM(discount * quantity) as total,SUM(invoice_detail.quantity) FROM
                 invoice JOIN invoice_detail ON invoice.orderID = invoice_detail.orderID JOIN games on invoice_detail.gid = games.gid JOIN account ON account.accid = invoice.accID JOIN users ON account.userID = users.userID WHERE order_status = 1 AND invoice.date_create BETWEEN '$dateStart' AND '$dateEnd' GROUP BY account.accid";
         $getInvoiceData = $conn->query($selecInvoiceData);       
         
@@ -32,7 +34,7 @@
                     <td>" . $row['fullname'] ."</td>
                     <td>" . $row['mail'] ."</td>
                     <td>" . $row['SUM(invoice_detail.quantity)'] ."</td>
-                    <td>" . number_format($row['SUM(invoice.total_price)'], 2, '.', ',') ."$</td>
+                    <td>" . number_format($row['total'], 2, '.', ',') ."$</td>
                 </tr>";
         }
     } 
