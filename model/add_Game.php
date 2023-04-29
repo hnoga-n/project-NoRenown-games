@@ -52,4 +52,3 @@ if ($result1 === TRUE) {
 } else {
     echo "Error: " . $sql1 . "<br>" . $conn->error . "<br>" . "Error: " . $sql1 . "<br>" . $conn->error;
 }
-?>
