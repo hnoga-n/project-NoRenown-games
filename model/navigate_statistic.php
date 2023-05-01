@@ -73,7 +73,7 @@
         </div>
           ';
             break;
-        case "Sold out":
+        case "Sold":
             $html_code .= '
             <div class="statistic-container-header">
               <div class="sales">
