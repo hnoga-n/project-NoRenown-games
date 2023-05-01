@@ -35,21 +35,21 @@ document.querySelector("#bar-menu").addEventListener("click", () => {
   sidebar.style.display = "block"
   sidebar.style.opacity = "1"
   sidebar.classList.add("open");
-  
 });
 
 document.querySelector("#close-menu").addEventListener("click", () => {
   sidebar.style.width = "0%";
-  sidebar.style.left = "-80px";
-  sidebar.classList.remove("open");
+  sidebar.style.left = "-100px";
   
 });
 
 function handleMediaChange(event) {
   if (event.matches) {
-    sidebar.style.width = "0%";
-    sidebar.style.left = "-80p";
     sidebar.style.opacity = "0";
+    sidebar.style.width = "0%";
+    sidebar.style.left = "-100p";
+    sidebar.classList.add("open");
+
   } else {
     console.log("width > 1200px");
     sidebar.style.width = "120px";

@@ -172,7 +172,7 @@ body {
 }
 
 
-@media screen and (max-width: 700px) {
+@media (max-width: 700px) {
     .emain {
         margin-bottom: 160px;
     }
@@ -193,6 +193,10 @@ body {
         height: 75%;
         display: block;
         margin-top: 0;
+    }
+
+    .bottom .bottom-div .b-input div input {
+        width: 100%;
     }
 
     .bottom .bottom-div .b-button {

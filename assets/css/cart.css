@@ -494,8 +494,20 @@ body{
     padding-top: 20px;
     flex-direction: column;
 }
+.cartpage-container .cartpage-left {
+    flex: 1 1;
+    width: 100%;
+}
 .cartpage-container .cartpage-right {
+    padding-top: 30px;
     margin: auto;
+    width: 100%;
+}
+.cartpage-container .cartpage-right .cart-summary {
+    border-radius: 0;
+}
+.cartpage-container .cart-listing {
+    border-radius: 0;
 }
 }
 
