@@ -172,3 +172,31 @@ input:-webkit-autofill:focus {
 .form-submit div button:hover{
   background-color: #e1981a;
 }
+
+@media only screen and (max-width:1000px) {
+  .editgame-modalbox {
+    margin: unset;
+  }
+  .modal-body {
+    padding: 20px;
+  }
+  .modal-body form {
+    width: 100%;
+  }
+  .modal-body form input,.modal-body form select {
+    width: 90%;
+  }
+  .modal-input div:first-child{
+    width: 25%;
+    margin: 5px;
+  }
+  .modal-input div:last-child{
+    width: 75%;
+    margin: 5px;
+  }
+  .game-image img {
+    left: 25%;
+    height: 100%;
+    width: 70%;
+  }
+}
