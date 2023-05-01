@@ -348,8 +348,9 @@ input:checked + .slider:before {
     height: 50px;
     width: 100px;
   }
-  .listGamesSold table tbody {
-    font-size: 16px;
+  .listGamesSold table,
+  .listGamesSold table thead {
+    font-size: 12px;
   }
 }
 
