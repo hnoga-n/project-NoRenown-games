@@ -1,5 +1,8 @@
 
 <div class="sidebar" onmouseenter="openSidebar()" onmouseleave="closeSidebar()">
+    <div id="close-menu">
+        <i class="fa-solid fa-xmark"></i>
+    </div>
     <div class="logo">
         <img src="../../assets/img/logo.png" alt=". . .">
         <div class="logo-text">
@@ -106,5 +109,4 @@
             </a>
         </ul>
     </nav>
-
 </div>
