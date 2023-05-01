@@ -342,3 +342,20 @@ input:checked + .slider:before {
   text-decoration: none;
   cursor: pointer;
 }
+
+@media screen and (max-width: 700px) {
+  .listGamesSold table tbody tr td img {
+    height: 50px;
+    width: 100px;
+  }
+  .listGamesSold table tbody {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .listGamesSold table tbody tr td img {
+    height: 30px;
+    width: 60px;
+  }
+}

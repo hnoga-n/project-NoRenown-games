@@ -22,7 +22,7 @@ lis.forEach((li)=> {
         // console.log(document.querySelector("#showListGamesSold"));
         // console.log(document.querySelector("#category"));
         
-        if (li.innerHTML == "Sold out") {
+        if (li.innerHTML == "Sold") {
           
           const script = document.createElement('script');
           script.src = '../../controller/showListGamesSold.js';
