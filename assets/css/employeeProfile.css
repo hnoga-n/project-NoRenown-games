@@ -183,6 +183,9 @@
     .bottom .bottom-div {
         width: 100%;
     }
+    .b-input i {
+        font-size: 17px;
+    }
 }
 
 
@@ -252,5 +255,12 @@
         font-size: 16px;
         padding: 10px;
         width: 100%;
+    }
+
+    .b-input i {
+        position: absolute;
+        font-size: 17px;
+        right: 20px;
+        bottom: 60%;
     }
 }

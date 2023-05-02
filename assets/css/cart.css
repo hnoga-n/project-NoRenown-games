@@ -509,6 +509,9 @@ body{
 .cartpage-container .cart-listing {
     border-radius: 0;
 }
+:is(.cartpage-section,.cartpage-right) > h2 {
+    margin-left: 5px;
+}
 }
 
 

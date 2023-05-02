@@ -103,7 +103,7 @@
               </div>
           
               <div class="products-filter-category">
-                <label>|  Category</label>
+                <label>Category</label>
                 <select name="categoryValue" id="category" onfocus="this.size=5;" onblur="this.size=1;" onchange="this.size=1; this.blur();">';
                 
                 include './connect.php';
@@ -124,7 +124,7 @@
               </div>
           
               <div class="products-filter-date">
-                <label>|  Date</label>
+                <label>Date</label>
                 <input id="date-start" type="date" value="" required/>
                 <label>to</label>
                 <input id="date-end" type="date" value="" required/>
@@ -184,7 +184,7 @@
             </div>
         
             <div class="products-filter-category">
-              <label>|  Category</label>
+              <label>Category</label>
               <select name="categoryValue" id="category" onfocus="this.size=5;" onblur="this.size=1;" onchange="this.size=1; this.blur();">';
               
               include './connect.php';
@@ -205,7 +205,7 @@
             </div>
         
             <div class="products-filter-date">
-              <label>|  Date</label>
+              <label>Date</label>
               <input id="date-start" type="date" value="" required/>
               <label>to</label>
               <input id="date-end" type="date" value="" required/>
@@ -245,7 +245,7 @@
             </div>
         
             <div class="products-filter-date">
-              <label>|  Date</label>
+              <label>Date</label>
               <input id="date-start" type="date" value="" required/>
               <label>to</label>
               <input id="date-end" type="date" value="" required/>
