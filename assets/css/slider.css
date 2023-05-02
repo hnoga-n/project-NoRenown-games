@@ -1,12 +1,13 @@
-.slider-container{
+.slider-container {
   margin: 0;
   padding: 0;
   height: 100vh;
   overflow: hidden;
   background-color: rgb(96, 95, 95);
 }
-.slider-container .sliders{
-  
+
+.slider-container .sliders {
+
   padding: 0;
   margin: 0;
   width: 500%;
@@ -14,21 +15,21 @@
   flex-direction: row;
 }
 
-.slider-container .sliders .slide{
+.slider-container .sliders .slide {
   flex-basis: 100vw;
   transition: 1s;
 }
 
-.slider-container .sliders  .slide .slider-img{
+.slider-container .sliders .slide .slider-img {
   width: 100%;
 }
 
-.slider-container .sliders  .slide .slider-img img{
+.slider-container .sliders .slide .slider-img img {
   width: 100%;
   height: 100vh;
 }
 
-.slider-container .nav-btn{
+.slider-container .nav-btn {
   position: absolute;
   bottom: 20px;
   right: 41%;
@@ -43,47 +44,64 @@
   z-index: 100;
 }
 
-input[type="radio"]{
+input[type="radio"] {
   transform: scale(1.5);
   accent-color: salmon;
 }
 
-@media only screen and (max-width: 412px){
-  .slider-container{
+@media only screen and (max-width: 412px) {
+  .slider-container {
     height: 300px;
   }
-  .slider-container .sliders{
+
+  .slider-container .sliders {
     height: 100%;
   }
-  
-  .slider-container .sliders  .slide .slider-img img{
-    object-fit:fill;
+
+  .slider-container .sliders .slide .slider-img img {
+    object-fit: fill;
     width: 100%;
     height: 100%;
   }
 
-  .slider-container .nav-btn{
+  .slider-container .nav-btn {
     position: absolute;
     bottom: 68%;
     right: 19.5%;
   }
 }
-/* @keyframes slide_tranform{
-  0%{
-    transform: translateX(0%);
-    
+
+@media only screen and (max-width: 1100px) {
+  .slider-container .nav-btn {
+    bottom: -50px;
+    right: 39%;
   }
-  20%{
-    transform: translateX(-100%);
-    animation-delay: 5s;
+}
+
+@media only screen and (max-width: 900px) {
+  .slider-container .nav-btn {
+    bottom: -50px;
+    right: 35%;
   }
-  40%{
-    transform: translateX(-200%);
+}
+
+@media only screen and (max-width: 700px) {
+  .slider-container .nav-btn {
+    bottom: -50px;
+    right: 31%;
   }
-  60%{
-    transform: translateX(-300%);
+}
+
+@media only screen and (max-width: 500px) {
+  .slider-container .nav-btn {
+    bottom: -50px;
+    right: 24%;
   }
-  100%{
-    transform: translateX(-400%);
+}
+
+@media only screen and (max-width: 450px) {
+  .slider-container .nav-btn {
+    bottom: -55px;
+    right: 20%;
   }
-} */
+}
