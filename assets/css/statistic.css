@@ -226,6 +226,10 @@
     }
     .statistic-container-content > div {
         font-weight: 500;
+        display: grid;
+    }
+    .statistic-container-content {
+        margin-top: 20px;
     }
 }
 
@@ -238,7 +242,7 @@
     }
     .header_menu_bar ul {
         margin-left: 0;
-        font-size: 18px;
+        font-size: 14px;
     }
     .header_menu_bar ul li {
         flex: 0 0 5%;

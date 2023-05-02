@@ -471,3 +471,9 @@
     margin-left: 0;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .box-image-zoom-in .image-zoom-in {
+    height: 35%;
+  }
+}
