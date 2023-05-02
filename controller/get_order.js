@@ -23,29 +23,29 @@ function scrollToEndPage() {
     window.scrollTo(0, listOrders.scrollHeight - 500)
 }
 
-document.querySelector("#more").addEventListener('click',()=> {
-    if(checkOrderExist == 0) {
+document.querySelector("#more").addEventListener('click', () => {
+    if (checkOrderExist == 0) {
         // console.log(startIndex);
         get_order();
-        setTimeout(get_order,300);
-        setTimeout(get_order,500);
-        setTimeout(get_order,700);
-        setTimeout(scrollToEndPage,800);
+        setTimeout(get_order, 300);
+        setTimeout(get_order, 500);
+        setTimeout(get_order, 700);
+        setTimeout(scrollToEndPage, 800);
     } else {
         console.log("no");
     }
 })
 
-function changeStatus(element) { 
-    if(confirm("Are you want to cancel it") == false) {
+function changeStatus(element) {
+    if (confirm("Are you want to cancel it") == false) {
         return;
     }
     const status = 2;
     const orderID = element.parentElement.parentElement.querySelector('input').value;
     const xhr = new XMLHttpRequest();
-    xhr.open("GET","../../model/change_order_status.php?status=" + status + "&orderID=" + orderID,true); 
-    xhr.onload = function() {
-        if(xhr.status == 200 && xhr.readyState == 4) {
+    xhr.open("GET", "../../model/change_order_status.php?status=" + status + "&orderID=" + orderID, true);
+    xhr.onload = function () {
+        if (xhr.status == 200 && xhr.readyState == 4) {
             let data = xhr.responseText;
             alert(data);
             window.location.href = "../user/order.php";
@@ -58,9 +58,9 @@ function changeStatus(element) {
 function get_order() {
     let xhr = new XMLHttpRequest();
     // console.log(startIndex);
-    xhr.open("GET","../../model/get_order.php?startIndex=" + startIndex,true);
+    xhr.open("GET", "../../model/get_order.php?startIndex=" + startIndex, true);
     xhr.onload = function () {
-        if(xhr.status == 200 & xhr.readyState == 4) {
+        if (xhr.status == 200 & xhr.readyState == 4) {
             let data = this.responseText.split('#?+#?+')[0];
             hideMore = this.responseText.split('#?+#?+')[1];
             console.log(data);
@@ -68,17 +68,17 @@ function get_order() {
                 document.querySelector("#more").style.display = "none";
                 listOrders.innerHTML = `<div class="notification">
                     <header>You have not paid for any products yet</header>
-                    <a href="search.php" title="Move to search page">Go around and buy some stuff (Touch this)</a>
+                    <a href="search.php" title="Move to search page">How about going around and buy some stuff ?</a>
                     </div>`;
                 checkOrderExist = 1;
                 return;
             }
-            if(data == "Stop") {
+            if (data == "Stop") {
                 document.querySelector("#more").style.display = "none";
                 checkOrderExist = 1;
                 return;
             }
-            tmpData += '<div style="opacity: 0">?</div>' + data ;
+            tmpData += '<div style="opacity: 0">?</div>' + data;
             listOrders.innerHTML = tmpData;
             startIndex += 1;
             document.querySelector("#more").style.display = "block";
@@ -92,11 +92,11 @@ function get_order() {
 get_order();
 
 setInterval(function () {
-    if(hideMore == 'Stop') {
+    if (hideMore == 'Stop') {
         document.querySelector("#more").style.display = "none";
         clearInterval(this);
     }
-},500)
+}, 500)
 
 
 function showAddressDetail(element) {
