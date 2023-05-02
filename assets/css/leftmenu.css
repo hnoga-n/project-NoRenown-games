@@ -223,8 +223,10 @@ body {
     }
 
     .sidebar{
-        width: 0%;
+        /* width: 0%;
         left: -80px;
-        opacity: 0;
+        opacity: 0; */
+        width: 100%;
+        display: none;
     }
 }
