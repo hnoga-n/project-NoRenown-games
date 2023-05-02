@@ -184,3 +184,73 @@
         width: 100%;
     }
 }
+
+
+@media (max-width: 700px) {
+    .top .t-img {
+        margin-top: 90px;
+    }
+    .emain {
+        margin-bottom: 160px;
+        padding: 0;
+    }
+
+    .bottom .bottom-div {
+        position: relative;
+        width: 100%;
+        margin: 0;
+    }
+
+    .bottom .bottom-div .b-title {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .bottom .bottom-div .update_message {
+        position: absolute;
+        top: -30px;
+        margin: 0;
+    }
+
+    .bottom .bottom-div .b-input {
+        width: 100%;
+        height: 75%;
+        display: block;
+        margin-top: 0;
+    }
+
+    .bottom .bottom-div .b-input div input {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .bottom .bottom-div .b-button div button {
+        width: calc(100% - 20px);
+        margin: 0 10px;
+
+    }
+
+    .bottom .bottom-div .b-button {
+        position: absolute;
+        bottom: -160px;
+        left: 0;
+        width: 100%;
+    }
+
+    .bottom .bottom-div .b-button > div {
+        width: 100%;
+    }
+
+    .top .t-info-div div:first-child {
+        font-family: 'Righteous', cursive;
+        font-size: 35px;
+        padding: 5px 0;
+        width: 100%;
+    }
+    .top .t-info-div div:last-child {
+        font-family: 'Righteous', cursive;
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+    }
+}
