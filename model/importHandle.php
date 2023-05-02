@@ -138,7 +138,7 @@ function addGameToCart($gid)
     //insert to cart db
     $quantity = 1;
     $sql_insert_cart = $conn->prepare("INSERT INTO import_cart(gid,gname,gquantity,gprice) VALUES (?,?,?,?)");
-    $sql_insert_cart->bind_param("isis", $game['gid'], $game['gname'], $quantity, $game['gprice'],);
+    $sql_insert_cart->bind_param("isid", $game['gid'], $game['gname'], $quantity, $game['gprice'],);
     $sql_insert_cart->execute();
     echo "succes";
   } else {
@@ -321,7 +321,7 @@ function importGame()
       $gname = $gameTmp->getGameName();
       $gprice = floatval($gameTmp->getGamePrice());
 
-      $sql_imp_detail->bind_param("iisiii", $lastID, $gameID[1], $gname, $quantity, $gprice, $supp);
+      $sql_imp_detail->bind_param("iisidi", $lastID, $gameID[1], $gname, $quantity, $gprice, $supp);
 
       if ((updateGameQuantity($gameID[1], $quantity) == 1)) { // update quantity in game
         if ($sql_imp_detail->execute()) {

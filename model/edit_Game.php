@@ -49,9 +49,13 @@
                 SET cfg_os='$cfg_os',cfg_processor='$cfg_processor',cfg_graphics='$cfg_graphics',cfg_storage='$cfg_storage',about='$about',screenshot1='$scr1',screenshot2='$scr2',screenshot3='$scr3',screenshot4='$scr4',trailer='$trailer'
                 WHERE gdt_id=$gid
     ";
+    $sql3="
+            UPDATE cart SET cItem_image='$gimg' WHERE cItem_id=$gid
+            ";
     $result1 = $conn->query($sql1);
     $result2 = $conn->query($sql2);
-    if($result1 === TRUE && $result2 === TRUE) {
+    $result3 = $conn->query($sql3);
+    if($result1 === TRUE && $result2 === TRUE && $result3===TRUE) {
         echo "  <script>
                     alert('Update successfully !')
                     window.location.replace('../view/admin/employee.php?page=listgame')
@@ -59,6 +63,7 @@
     }
     else {
         echo    "Error: " . $sql1 . "<br>" . $conn->error . "<br>" . "Error: " . $sql1 . "<br>" . $conn->error."<br>".
-                "Error: " . $sql2 . "<br>" . $conn->error . "<br>" . "Error: " . $sql2 . "<br>" . $conn->error  ;
+                "Error: " . $sql2 . "<br>" . $conn->error . "<br>" . "Error: " . $sql2 . "<br>" . $conn->error."<br>".
+                "Error: " . $sql3 . "<br>" . $conn->error . "<br>" . "Error: " . $sql3 . "<br>" . $conn->error  ;
     }
 ?>

@@ -23,11 +23,11 @@
            
             <div class="statistic-container-header">
 
-            <div class="sales">
+            <div class="import_money">
               <div class="content">
                 <div class="text">Accounts</div>
                 <div>
-                  <div class="number" id="sum_sold_quantity">'.  $result_accounts->num_rows .'</div>
+                  <div class="number" id="import-money">'.  $result_accounts->num_rows .'</div>
                   <i class="fa-solid fa-users-gear"></i>
                 </div>
               </div>
@@ -73,7 +73,7 @@
         </div>
           ';
             break;
-        case "Sold out":
+        case "Sold":
             $html_code .= '
             <div class="statistic-container-header">
               <div class="sales">
@@ -103,7 +103,7 @@
               </div>
           
               <div class="products-filter-category">
-                <label>|  Category</label>
+                <label>Category</label>
                 <select name="categoryValue" id="category" onfocus="this.size=5;" onblur="this.size=1;" onchange="this.size=1; this.blur();">';
                 
                 include './connect.php';
@@ -124,7 +124,7 @@
               </div>
           
               <div class="products-filter-date">
-                <label>|  Date</label>
+                <label>Date</label>
                 <input id="date-start" type="date" value="" required/>
                 <label>to</label>
                 <input id="date-end" type="date" value="" required/>
@@ -184,7 +184,7 @@
             </div>
         
             <div class="products-filter-category">
-              <label>|  Category</label>
+              <label>Category</label>
               <select name="categoryValue" id="category" onfocus="this.size=5;" onblur="this.size=1;" onchange="this.size=1; this.blur();">';
               
               include './connect.php';
@@ -205,7 +205,7 @@
             </div>
         
             <div class="products-filter-date">
-              <label>|  Date</label>
+              <label>Date</label>
               <input id="date-start" type="date" value="" required/>
               <label>to</label>
               <input id="date-end" type="date" value="" required/>
@@ -245,7 +245,7 @@
             </div>
         
             <div class="products-filter-date">
-              <label>|  Date</label>
+              <label>Date</label>
               <input id="date-start" type="date" value="" required/>
               <label>to</label>
               <input id="date-end" type="date" value="" required/>

@@ -13,6 +13,47 @@ body {
     box-sizing: border-box;
     background-color: #272727;
 }
+
+#bar-menu {
+    text-align: right;
+    position: absolute;
+    width: 50px;
+    top: 20px;
+    right: 3%;
+    font-size: 30px;
+    color: white;
+    display: none;
+}
+
+#bar-menu i {
+    cursor: pointer;
+    padding: 10px 14px;
+}
+
+#bar-menu i:hover {
+    color: #FF1E1E;
+}
+
+#close-menu {
+    text-align: right;
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    right: 3%;
+    font-size: 30px;
+    color: white;
+    display: none;
+}
+
+#close-menu i {
+    cursor: pointer;
+    padding: 10px 14px;
+}
+
+#close-menu i:hover {
+    color: #FF1E1E;
+}
+
 .sidebar{
     font-family: 'Righteous', cursive;
     width: 120px;
@@ -169,7 +210,24 @@ body {
 
 
 @media screen and (max-width: 991px) {
+    
+}
+
+@media screen and (max-width: 1200px) {
+    #bar-menu {
+        display: block;
+    }
+
+    #close-menu {
+        display: block;
+    }
+
     .sidebar{
+        /* width: 0%;
+        left: -80px;
+        opacity: 0; */
+        width: 100%;
+        height: 100%;
         display: none;
     }
 }

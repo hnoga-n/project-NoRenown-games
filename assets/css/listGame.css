@@ -99,7 +99,8 @@
 }
 .main .listgames{
     height: auto; 
-    margin-top: 20px;   
+    margin-top: 20px; 
+    width: 100%;  
 }
 .main .listgames table {
     border-collapse: collapse;
@@ -362,4 +363,70 @@ input:checked + .slider:before {
   color: #3d3d3d;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width:1000px) {
+  .main{
+    margin-left: unset;
+    padding: 10px;
+    width: 100vh;
+  }
+  .main .title {
+    font-size: 25px;
+    margin: unset;
+  }
+  .main .nav-bar {
+    flex-direction: column;
+    position: unset;
+  }
+
+  .main .nav-bar .search {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .main .nav-bar .search input,.main .nav-bar .selection select {
+    height: 50px;
+    width: 100%;
+  }
+
+  .main .nav-bar .search input {
+    width: 100%;
+  }
+
+  .main .nav-bar .selection {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .main .nav-bar .price-filter {
+    width: 100%;
+    /* padding: 0 25%; */
+    margin: 10px 0;
+  }
+
+  .main .nav-bar .price-filter input {
+    height: 50px;
+    width: 150px;
+  }
+  .main .nav-bar .button {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .main .nav-bar .button a,.main .nav-bar .button button{
+    width: 100%;
+  }
+
+  .main .listgames table {
+    font-size: 20px;
+  }
+  
+  .main .listgames table tbody tr td img {
+    height: 100%;
+    width: 50%;
+  }
+
+  .main .listgames table thead {
+    position: unset;
+  }
 }
