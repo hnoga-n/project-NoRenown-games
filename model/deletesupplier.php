@@ -2,7 +2,7 @@
     include 'connect.php';
     if(isset($_GET['suppID'])) {
         $suppid = $_GET['suppID'];
-        $sql = "DELETE FROM supplier WHERE suppID = $suppid;
+        $sql = "UPDATE supplier SET Status=0 WHERE suppID = $suppid;
         ";
         $result = $conn->multi_query($sql);
         if($result === TRUE) {

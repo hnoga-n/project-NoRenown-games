@@ -15,12 +15,12 @@
             
             $sql = "SELECT suppID,suppName,suppMail,suppTel
                     FROM supplier
-                    WHERE suppName REGEXP '$search'
+                    WHERE suppName REGEXP '$search' AND Status=1
                     ORDER BY suppID ASC
                     LIMIT $pos,10";
             $sql1 = "SELECT suppID,suppName,suppMail,suppTel
                     FROM supplier
-                    WHERE suppName REGEXP '$search'
+                    WHERE suppName REGEXP '$search' AND Status=1
                     ORDER BY suppID ASC";
         
         
