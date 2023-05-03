@@ -166,8 +166,10 @@ function loadCart()
     $result2 = $conn->query($sql_supp);
     $supp_opt = '';
     if ($result2->num_rows > 0) {
-      while ($row2 = $result2->fetch_assoc()) {
-        $supp_opt .= "<option value='" . $row2['suppID'] . "'>" . $row2['suppName'] . "</option>";
+      if ($result2['Status'] == 1) {
+        while ($row2 = $result2->fetch_assoc()) {
+          $supp_opt .= "<option value='" . $row2['suppID'] . "'>" . $row2['suppName'] . "</option>";
+        }
       }
     } else {
       $supp_opt = "<option value='none'>none</option>";
