@@ -448,9 +448,9 @@ function listImportWithPagination($date_start, $date_end, $accID, $priceFr, $pri
       //get general info
       $import_bill .= "
         <tr>
-          <td style='width: 20%;' id='impid'>" . $row['impID'] . "</td>
-          <td style='width: 20%;' id='accid'>" . $row['accID'] . "</td>
-          <td style='width: 20%;' id='date'>" . $row['date_create'] . "</td>
+          <td style='width: 15%;' id='impid'>" . $row['impID'] . "</td>
+          <td style='width: 15%;' id='accid'>" . $row['accID'] . "</td>
+          <td style='width: 30%;' id='date'>" . $row['date_create'] . "</td>
           <td style='width:20%;' id='impid'>" . $row['total_price'] . "</td>
           <td>
             <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . ",document.getElementById(`date`).innerHTML," . $row['total_price'] . ")' >Select</div>
@@ -480,9 +480,9 @@ function listImportWithoutPagination($page, $date_start, $date_end, $accID, $pri
       //get general info
       $import_bill .= "
         <tr>
-          <td style='width:20%;'>" . $row['impID'] . "</td>
-          <td style='width: 20%;'>" . $row['accID'] . "</td>
-          <td style='width: 20%;'>" . $row['date_create'] . "</td>
+          <td style='width:15%;'>" . $row['impID'] . "</td>
+          <td style='width: 15%;'>" . $row['accID'] . "</td>
+          <td style='width: 30%;'>" . $row['date_create'] . "</td>
           <td style='width:20%;'>" . $row['total_price'] . "</td>
           <td>
             <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . "," . $row['date_create'] . "," . $row['total_price'] . ")' >Select</div>
