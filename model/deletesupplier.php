@@ -16,4 +16,3 @@
         echo "Supplier ID not found !";
     }
     $conn->close();
-?>

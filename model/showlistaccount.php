@@ -11,24 +11,24 @@ if (isset($_GET['search']) && isset($_GET['groupID']) && isset($_GET['pagenum'])
     $search = $_GET['search'];
     $groupid = intval($_GET['groupID']);
     if ($groupid == 0) {
-        $sql = "SELECT accid,account.userID,fullname,mail,phone,groupName,acc_status
-                    FROM account LEFT JOIN auth_group ON account.groupID = auth_group.groupID  JOIN users on account.userID = users.userID 
-                    WHERE fullname REGEXP '$search' or mail REGEXP '$search' or phone REGEXP '$search'
+        $sql = "SELECT accid,account.userID,fullname,mail,phone,groupName,auth_group.groupID,acc_status,acc_visible
+                    FROM account LEFT JOIN auth_group ON account.groupID = auth_group.groupID  JOIN users on account.userID = users.userID
+                    WHERE (fullname REGEXP '$search' or mail REGEXP '$search' or phone REGEXP '$search' ) AND acc_visible=1 
                     ORDER BY accid ASC
                     LIMIT $pos,10";
-        $sql1 = "SELECT accid,account.userID,fullname,mail,phone,groupName,acc_status
-                    FROM account LEFT JOIN auth_group ON account.groupID = auth_group.groupID  JOIN users on account.userID = users.userID 
-                    WHERE fullname REGEXP '$search' or mail REGEXP '$search' or phone REGEXP '$search'
+        $sql1 = "SELECT accid,account.userID,fullname,mail,phone,groupName,auth_group.groupID,acc_status,acc_visible
+                    FROM account LEFT JOIN auth_group ON account.groupID = auth_group.groupID  JOIN users on account.userID = users.userID
+                    WHERE (fullname REGEXP '$search' or mail REGEXP '$search' or phone REGEXP '$search' ) AND acc_visible=1 
                     ORDER BY accid ASC";
     } else {
-        $sql = "SELECT accid,account.userID,fullname,mail,phone,account.groupID,groupName,acc_status
+        $sql = "SELECT accid,account.userID,fullname,mail,phone,account.groupID,auth_group.groupID,groupName,acc_status,acc_visible
                     FROM account LEFT JOIN auth_group ON account.groupID = auth_group.groupID  JOIN users on account.userID = users.userID 
-                    WHERE account.groupID = $groupid AND (fullname REGEXP '$search' or mail REGEXP '$search' or phone REGEXP '$search') 
+                    WHERE account.groupID = $groupid AND (fullname REGEXP '$search' or mail REGEXP '$search' or phone REGEXP '$search') AND acc_visible=1
                     ORDER BY accid ASC
                     LIMIT $pos,10";
-        $sql1 = "SELECT accid,account.userID,fullname,mail,phone,account.groupID,groupName,acc_status
+        $sql1 = "SELECT accid,account.userID,fullname,mail,phone,account.groupID,auth_group.groupID,groupName,acc_status,acc_visible
                     FROM account LEFT JOIN auth_group ON account.groupID = auth_group.groupID  JOIN users on account.userID = users.userID 
-                    WHERE account.groupID = $groupid AND (fullname REGEXP '$search' or mail REGEXP '$search' or phone REGEXP '$search') 
+                    WHERE account.groupID = $groupid AND (fullname REGEXP '$search' or mail REGEXP '$search' or phone REGEXP '$search') AND acc_visible=1
                     ORDER BY accid ASC";
     }
     $result = $conn->query($sql);
@@ -50,10 +50,10 @@ if (isset($_GET['search']) && isset($_GET['groupID']) && isset($_GET['pagenum'])
                         <td>" . $row['groupName'] . "</td>
                         <td>" . $status . "</td>
                         <td>";
-            if ($accountFeatures["EDIT ACCOUNT"] == 1) {
+            if ($accountFeatures["EDIT ACCOUNT"] == 1 && $row['groupID'] != 1) {
                 $html .= "<a href='./editaccount.php?page=listaccount&accid=" . $row['accid'] . "'><button>Edit</button></a>";
             }
-            if ($accountFeatures["DELETE ACCOUNT"] == 1) {
+            if ($accountFeatures["DELETE ACCOUNT"] == 1  && $row['groupID'] != 1) {
                 $html .= "<a href=''><button onclick='deleteaccount(" . $row['userID'] . ")'>Delete</button></a>";
             }
             $html .= "</td>

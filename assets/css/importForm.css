@@ -292,6 +292,7 @@
   }
 
   .main .listProduct .nav-bar {
+    position: unset;
     align-items: center;
   }
 
@@ -302,4 +303,21 @@
   .main .listProduct .nav-bar .button {
     height: 10%;
   }
+}
+
+@media only screen and (max-width:700px) {
+
+  #bar-menu {
+    top: 2%;
+    right: -90%;
+  }
+
+  .main {
+    width: 200%;
+  }
+
+  .main .general-and-import-card .list-import-card table tbody {
+    font-size: 20px;
+  }
+
 }
