@@ -1,5 +1,8 @@
 
 <div class="sidebar" onmouseenter="openSidebar()" onmouseleave="closeSidebar()">
+    <div id="close-menu">
+        <i class="fa-solid fa-xmark"></i>
+    </div>
     <div class="logo">
         <img src="../../assets/img/logo.png" alt=". . .">
         <div class="logo-text">
@@ -37,12 +40,7 @@
                     }
                 }
             ?>
-            <!-- <a href="employee.php?page=listbills">
-                <li class="nav-item <?= ($_GET['page'] == 'listbills') ? 'active' : '' ?>">
-                    <i class="fa-solid fa-barcode"></i>
-                    <span>Bills</span>
-                </li>
-            </a>
+            <!--
             <a href="employee.php?page=import">
                 <li class="nav-item <?= ($_GET['page'] == 'import') ? 'active' : '' ?>">
                     <i class="fa-sharp fa-solid fa-dolly"></i>
@@ -83,6 +81,12 @@
                 <li class="nav-item <?= ($_GET['page'] == 'listsupply') ? 'active' : '' ?>">
                     <i class="fa-solid fa-truck-field"></i>
                     <span>Supplier</span>
+
+            <a href="employee.php?page=listgenre">
+                <li class="nav-item <?= ($_GET['page'] == 'listbills') ? 'active' : '' ?>">
+                    <i class="fa-solid fa-dice-d6"></i>
+                    <span>Genres</span>
+
                 </li>
             </a>-->
         </ul>
@@ -105,5 +109,4 @@
             </a>
         </ul>
     </nav>
-
 </div>

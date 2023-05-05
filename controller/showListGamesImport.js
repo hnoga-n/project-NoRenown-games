@@ -74,7 +74,7 @@ function calSoldQuanity(sumQuantity) {
         numberAnimated(document.querySelector("#sum_sold_quantity"),sum);
 
         setTimeout(() => {
-            document.querySelector("#sum_sold_quantity").innerHTML = sumQuantity;
+            document.querySelector("#sum_sold_quantity").innerHTML = new Intl.NumberFormat().format(sumQuantity);
             
         }, duration + 1000);
     }
@@ -96,7 +96,7 @@ function calRevenue(sumRevenue) {
         numberAnimated(document.querySelector("#revenue"),sum);
         setTimeout(() => {
             console.log("hello");
-            document.querySelector("#revenue").innerHTML = "$" + Math.round(sumRevenue * 100)/100;
+            document.querySelector("#revenue").innerHTML = "$" + new Intl.NumberFormat().format(Math.round(sumRevenue * 100)/100);
         }, duration + 1000);
     }
 }

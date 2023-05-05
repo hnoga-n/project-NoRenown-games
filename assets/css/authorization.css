@@ -1,4 +1,4 @@
-.au_main{
+.au_main {
     height: 100%;
     width: 90%;
     padding: 20px;
@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .au_main .title {
     position: relative;
     height: 10%;
@@ -14,6 +15,7 @@
     font-size: 30px;
     padding: 5px;
 }
+
 .au_main .title button {
     position: absolute;
     right: 0;
@@ -29,48 +31,60 @@
     transition: .4s;
     cursor: pointer;
 }
+
 .au_main .title button:hover {
     background-color: #e1981a;
 }
+
 .au_main .author_group {
     height: 90%;
     width: 100%;
     margin-top: 20px;
 }
-.au_main .author_group  table {
+
+.au_main .author_group table {
     border-collapse: collapse;
     width: 100%;
 }
-.au_main .author_group  table thead {
+
+.au_main .author_group table thead {
     background-color: #FF1E1E;
     width: 100%;
     height: 40px;
     color: white;
     font-size: 16px;
 }
+
 .au_main .author_group table thead tr {
     border-radius: 10px;
 }
+
 .au_main .author_group table thead th {
     height: 100%;
     padding: 10px;
 }
+
 .au_main .author_group table tbody {
     width: 100%;
 }
+
 .au_main .author_group table tbody tr {
     text-align: center;
     width: 100%;
 }
+
 .au_main .author_group table tbody tr:nth-child(odd) {
     background-color: white;
 }
+
 .au_main .author_group table tbody tr:nth-child(even) {
     background-color: #f3f3f3;
 }
+
 .au_main .author_group table tbody tr td {
-    padding:5px;
+    padding: 5px;
 }
+
 .au_main .author_group table tbody tr td button {
     height: 30px;
     width: 70px;
@@ -82,17 +96,21 @@
     cursor: pointer;
     transition: background .2s;
 }
+
 .au_main .author_group table tbody tr td a button {
     background-color: #2e89ff;
 }
+
 .au_main .author_group table tbody tr td a button:hover {
-    background-color: white ;
+    background-color: white;
     color: #2e89ff;
     border: 2px solid #2e89ff;
 }
-.au_main .author_group table tbody tr td button{
+
+.au_main .author_group table tbody tr td button {
     background-color: #000000;
 }
+
 .au_main .author_group table tbody tr td button:hover {
     background-color: white;
     color: black;
@@ -108,22 +126,26 @@
     display: flex;
     flex-direction: column;
 }
+
 .authorize-modalbox .modal-header {
     height: 7%;
 }
+
 .authorize-modalbox .modal-form {
     height: 93%;
     margin-top: 50px;
     padding: 20px;
 }
-.authorize-modalbox .modal-form form{
+
+.authorize-modalbox .modal-form form {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     color: white;
 }
-.authorize-modalbox .modal-form form .update_message{
+
+.authorize-modalbox .modal-form form .update_message {
     text-align: center;
     width: 100%;
     height: 30px;
@@ -131,38 +153,44 @@
     margin-bottom: 30px;
     color: white;
 }
+
 .authorize-modalbox .modal-form form .form-general {
     height: 40%;
     display: flex;
     flex-direction: column;
 }
+
 .authorize-modalbox .modal-form form .form-general .form-general-div {
     height: 25%;
     display: flex;
     flex-direction: row;
     font-size: 18px;
 }
+
 .authorize-modalbox .modal-form form .form-general .form-general-div div:first-child {
     width: 10%;
     padding: 20px 0;
 }
+
 .authorize-modalbox .modal-form form .form-general .form-general-div div:last-child {
     width: 90%;
     padding: 10px 0;
 }
+
 .authorize-modalbox .modal-form form .form-general div input {
     height: 45px;
     width: 40%;
     border: 3px solid #3d3d3d;
-    padding:7px;
+    padding: 7px;
     border-radius: 10px;
-    background-color: rgba(16,16,16,.4);
+    background-color: rgba(16, 16, 16, .4);
     color: white;
     font-size: 15px;
     font-family: 'Righteous', cursive;
     transition: .2s;
     outline: unset;
 }
+
 .authorize-modalbox .modal-form form .form-general div input:hover,
 .authorize-modalbox .modal-form form .form-general div input:focus {
     border: 3px solid #FF1E1E;
@@ -175,16 +203,19 @@
     flex-direction: column;
     margin-top: 20px;
 }
+
 .authorize-modalbox .modal-form form .form-authorize .authorize-header {
     height: 5%;
     font-size: 18px;
 }
+
 .authorize-modalbox .modal-form form .form-authorize .authorize-content {
     height: 95%;
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
 }
+
 .authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card {
     width: 300px;
     height: 300px;
@@ -195,27 +226,32 @@
     margin: 15px;
     border: 3px solid #3d3d3d;
     border-radius: 15px;
-    background-color: rgba(16,16,16,.4);
-    box-shadow: 0 14px 28px rgba(20, 20, 20, 0.25), 
-			0 10px 10px rgba(18, 18, 18, 0.22);
+    background-color: rgba(16, 16, 16, .4);
+    box-shadow: 0 14px 28px rgba(20, 20, 20, 0.25),
+        0 10px 10px rgba(18, 18, 18, 0.22);
     transition: .2s;
 }
+
 .authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card:hover {
     border-color: #FF1E1E;
 }
+
 .authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card header {
     font-size: 30px;
 }
+
 .authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card .authorize-card-div {
     display: flex;
     flex-direction: row;
     height: 50px;
     margin-top: 10px;
 }
+
 .authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card .authorize-card-div div:first-child {
     width: 70%;
     padding: 10px 0;
 }
+
 .authorize-modalbox .modal-form form .form-authorize .authorize-content .authorize-card .authorize-card-div div:last-child {
     width: 30%;
     padding: 10px 0;
@@ -227,6 +263,7 @@
     justify-content: center;
     margin-top: 20px;
 }
+
 .authorize-modalbox .modal-form form .form-button button {
     height: 50px;
     width: 150px;
@@ -239,6 +276,158 @@
     cursor: pointer;
     transition: background .2s;
 }
+
 .authorize-modalbox .modal-form form .form-button button:hover {
     background-color: #e1981a;
+}
+
+.authorize-modalbox .back-to-import {
+    position: fixed;
+    left: -50px;
+    width: 200px;
+    height: 60px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.authorize-modalbox .back-to-import span {
+    font-family: 'Righteous', cursive;
+    height: 35px;
+    line-height: 40px;
+    width: 60px;
+    border-radius: 7px;
+    font-size: 15px;
+    background-color: #FF1E1E;
+    color: white;
+    transition: .4s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.authorize-modalbox .back-to-import span:hover {
+    background-color: #e1981a;
+}
+
+.authorize-modalbox .back-to-import {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .au_main {
+        margin-left: 0;
+        padding-left: 2%;
+        width: 100%;
+        width: calc(100%);
+    }
+
+    .au_main .author_group table {
+        font-size: 16px;
+    }
+
+    .au_main .title button {
+        right: 60px;
+    }
+
+    .authorize-modalbox {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .authorize-modalbox .modal-header {
+        height: 10%;
+    }
+
+    .authorize-modalbox .modal-form form .form-general {
+        height: 40%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .authorize-modalbox .modal-form form .form-general .form-general-div {
+        width: 100%;
+        height: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .authorize-modalbox .modal-form form .form-general .form-general-div div:first-child {
+        width: 28%;
+    }
+
+    .authorize-modalbox .modal-form form .form-general div input {
+        width: 85%;
+        text-align: center;
+    }
+
+    .authorize-modalbox .modal-form form .form-authorize .authorize-content {
+        justify-content: center;
+    }
+
+    .authorize-modalbox .back-to-import {
+        display: flex;
+    }
+
+}
+
+
+@media screen and (max-width: 850px) {
+    .au_main {
+        margin-left: 0;
+        padding: 0;
+        width: 100%;
+        width: calc(100% - 10px);
+    }
+
+    .au_main .author_group table {
+        font-size: 16px;
+    }
+
+    .au_main .title button {
+        top: 25px;
+        right: 70px;
+    }
+
+    .authorize-modalbox .modal-form form .form-general {
+        height: 80%;
+        flex-direction: column;
+    }
+
+    .authorize-modalbox .modal-form form .form-general div input {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .au_main {
+        margin-left: 0;
+        padding: 0;
+        width: 100%;
+        width: calc(100%);
+    }
+
+    .au_main .title {
+        width: 415px;
+    }
+
+    .au_main .title .au_main .author_group table tbody tr {
+        height: 50px;
+    }
+
+    .au_main .author_group table tbody tr td button {
+        height: 20px;
+        padding-bottom: 5px;
+        border-radius: 0px;
+    }
+
+    .au_main .title button {
+        right: 60px;
+    }
+
+    .authorize-modalbox .modal-form form .form-authorize .authorize-header {
+        height: 1%;
+    }
 }

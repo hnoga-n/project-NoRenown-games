@@ -22,7 +22,7 @@ lis.forEach((li)=> {
         // console.log(document.querySelector("#showListGamesSold"));
         // console.log(document.querySelector("#category"));
         
-        if (li.innerHTML == "Sold out") {
+        if (li.innerHTML == "Sold") {
           
           const script = document.createElement('script');
           script.src = '../../controller/showListGamesSold.js';
@@ -31,6 +31,11 @@ lis.forEach((li)=> {
           
           const script = document.createElement('script');
           script.src = '../../controller/showListGamesImport.js';
+          document.querySelector("#container").appendChild(script);
+        }  else if (li.innerHTML == "Customer") {
+          
+          const script = document.createElement('script');
+          script.src = '../../controller/showListCustomer.js';
           document.querySelector("#container").appendChild(script);
         }
       }

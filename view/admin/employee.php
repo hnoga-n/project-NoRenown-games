@@ -40,10 +40,16 @@ if (isset($_GET['page'])) {
         case 'listsupply':
             require_once('./listsupply.php');
             break;
+        case 'listgenre':
+            require_once('./listgenre.php');
+            break;
     }
 } else {
     require_once('listgame.php');
 }
 ?>
+<div id="bar-menu">
+    <i class="fa-solid fa-bars"></i>
+</div>
 <script src="../../assets/js/leftmenu.js"></script>
 <script src="../../assets/js/listGame.js"></script> 

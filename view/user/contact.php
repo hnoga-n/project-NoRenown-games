@@ -30,21 +30,21 @@
     </div>
 
     <div class="form-container">
-      <form class="form" action="" method="">
+      <form class="form" name="contact_form" onsubmit="return sanitizeContactForm()" action="" method="">
         <div class="title">
           <i id="console-icon" class="fa-solid fa-gamepad"></i>
           <span>C&nbsp;&nbsp;&nbsp;&nbsp;NTACT US</span>
           <i id="headphone-icon" class="fa-solid fa-headset"></i>
         </div>
         <label for="name">Name </label>
-        <input type="text" name="name" id="name" placeholder="Nguyen Hoang">
+        <input type="text" name="contact_name" id="name" placeholder="Nguyen Hoang">
         <label for="mail">Email </label>
-        <input type="email" name="mail" id="mail" placeholder="hackiemsi@gmail.com">
+        <input type="email" name="contact_mail" id="mail" placeholder="hackiemsi@gmail.com">
         <label for="phone">Phone </label>
-        <input type="tel" name="phone" id="phone" placeholder="0961243102">
+        <input type="tel" name="contact_phone" id="phone" placeholder="0961243102">
         <label for="message">Your feedback </label>
-        <!-- <input type="text" name="name" id="message" placeholder="I love this website !!!!"> -->
-        <textarea name="name" id="message" cols="30" rows="10" placeholder="I love this website !!!!"></textarea>
+        <textarea name="contact_" id="message" cols="30" rows="10" placeholder="I love this website !!!!"></textarea>
+
         <button type="submit" name="submit" id="submit">
           <span>Submit</span>
           <i class="fa-solid fa-scroll"></i>
@@ -62,5 +62,6 @@
 </body>
 <script src="https://kit.fontawesome.com/f26ba754df.js" crossorigin="anonymous"></script>
 <script src="../../assets/js/header.js"></script>
+<script src="../../assets/js/login.js"></script>
 
 </html>

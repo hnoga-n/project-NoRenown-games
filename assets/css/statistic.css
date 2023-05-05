@@ -94,7 +94,7 @@
 }
 
 .statistic-container-header > div {
-    width: calc(50% - 10px);
+    width: calc(50% - 5px);
     height: 180px;
     border: 3px solid #3d3d3d;
     background: rgba(16,16,16,.4);
@@ -211,4 +211,47 @@
 .products-filter-date #btn-return {
     background: none;
     color: rgba(10, 42, 205,.8);
+}
+
+@media screen and (max-width: 1200px) {
+    .statistic-container {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .statistic-container-header {
+        padding: 10px;
+    }
+    .statistic-container-content > div {
+        font-weight: 500;
+        display: grid;
+    }
+    .statistic-container-content {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .header_menu_bar {
+        height: 90px;
+    }
+    .statistic-container-content {
+        padding: 0;
+    }
+    .header_menu_bar ul {
+        margin-left: 0;
+        font-size: 14px;
+    }
+    .header_menu_bar ul li {
+        flex: 0 0 5%;
+        padding: 0 10px;
+        margin: 0;
+        height: 100%;
+        border-radius: 0;
+    }
+    .statistic-container-header > div {
+        width: 100%;
+    }
 }

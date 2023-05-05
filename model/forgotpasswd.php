@@ -63,6 +63,7 @@ if (isset($_POST['mail'])) {
 <html lang="en">
 
 <head>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link rel="stylesheet" href="../assets/css/forgotpass.css">
   <link rel="stylesheet" href="../assets/css/reset.css">
   <title>Forgot pass</title>
@@ -74,11 +75,12 @@ if (isset($_POST['mail'])) {
       <div class="title">Type in your email:</div>
       <input name="mail" type="email" class="email" id="forgot-mail" placeholder="instantgames@gmail.com">
       <div class="message" id="mail-message">
+        heloo
         <?php
-        if (isset($_SESSION['message'])) {
+        /* if (isset($_SESSION['message'])) {
           echo $_SESSION['message'];
           unset($_SESSION['message']);
-        }
+        } */
         ?>
       </div>
       <button type="submit">GET CODE</button>

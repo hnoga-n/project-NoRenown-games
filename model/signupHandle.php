@@ -34,17 +34,17 @@ if (!empty($_POST["signup_name"]) && !empty($_POST["signup_phone"]) && !empty($_
 <html>
 
 <head>
-  <link rel="stylesheet" href="../assets/css/login.css">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link rel="stylesheet" href="../assets/css/signupsuccess.css">
 </head>
-
-<body>
+<div class="body">
   <div class="loggin-message">
     <div class="message-container">
       <div class="message">Sign up successfully !</div>
       <input id="confirm-button" type="button" value="Confirm">
     </div>
   </div>
-</body>
+</div>
 <script>
   const logginMess = document.querySelector('.loggin-message ');
   const confirmBtn = document.getElementById('confirm-button');

@@ -1,18 +1,19 @@
 <div class="au_main">
+
     <div class="title">
         <span>Authorization</span>
         <?php
         include '../../model/connect.php';
         include '../../model/function_employee.php';
-        $accountFeatures = json_decode($features_arr[4],true);
-        if($accountFeatures["ADD AUTHORITY"]==1) {
-          echo '
+        $accountFeatures = json_decode($features_arr[4], true);
+        if ($accountFeatures["ADD AUTHORITY"] == 1) {
+            echo '
             <a href="./authorize.php?page=authorization">
                 <button>Add group</button>
             </a>
           ';
         }
-      ?>
+        ?>
     </div>
     <div class="author_group">
         <table>

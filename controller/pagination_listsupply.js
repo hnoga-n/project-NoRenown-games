@@ -17,8 +17,6 @@ function showlistsupplier(search,pagenum) {
                 }
             }) 
         }
-        checkstatus();
-
     }
     xmlhttp.open("GET","../../model/showlistsupplier.php?search=" + search + "&pagenum=" + pagenum)
     xmlhttp.send()

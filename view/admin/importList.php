@@ -22,9 +22,9 @@ include '../../model/connect.php';
     <table>
       <thead>
         <tr>
-          <th style="width: 20%;">ID</th>
-          <th style="width: 20%;">Account ID</th>
-          <th style="width: 20%;">Date create</th>
+          <th style="width: 15%;">ID</th>
+          <th style="width: 15%;">Account ID</th>
+          <th style="width: 30%;">Date create</th>
           <th style="width: 20%;">Total price</th>
           <th style="width: 20%;">View</th>
         </tr>

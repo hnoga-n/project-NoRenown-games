@@ -240,6 +240,7 @@
 
   .order-bot {
     flex-direction: column-reverse;
+    gap: 10px;
   }
 
   .order-products {
@@ -272,5 +273,19 @@
   
   .notification a {
     font-size: 14px;
+  }
+  .consigneeDetail {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .order-receiver-address,.order-cancel {
+    margin: 0;
+    width: 100%;
+  }
+  .order-bot > div {
+    flex-direction: column-reverse;
+    gap: 10px;
   }
 }

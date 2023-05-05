@@ -1,4 +1,5 @@
 <form class="main" action="../../model/importHandle.php?query=import" method="POST">
+
   <?php
   if (isset($_SESSION['message'])) {
     $data = "
@@ -113,15 +114,14 @@
         <select name="category" id="gcategory" onchange="showlistgameImp(1,this.value,document.getElementById('searchgames').value,document.getElementById('pfrom').value,document.getElementById('pto').value)">
           <?php
           include '../../model/connect.php';
-          $sql = "SELECT DISTINCT (gcategory) 
-          FROM games
-          ORDER BY gcategory ASC";
+          $sql = "SELECT *
+          FROM genres WHERE genStatus=1";
           $result = $conn->query($sql);
           echo "<option value='all' selected>All</option><br>";
           if ($result->num_rows > 0) {
             // output data of each row
             while ($row = $result->fetch_assoc()) {
-              echo "<option value='" . $row['gcategory'] . "'>" . $row['gcategory'] . "</option><br>";
+              echo "<option value='" . $row['genID'] . "'>" . $row['genName'] . "</option><br>";
             }
           }
           $conn->close();
@@ -137,23 +137,21 @@
         <span>$</span>
       </div>
       <?php
-        include "../../model/connect.php";
-        include "../../model/function_employee.php";
-        $accountFeatures = json_decode($features_arr[5],true);
-        if($accountFeatures["VIEW IMPORT DETAIL"]==1) {
-          echo '
+      include "../../model/connect.php";
+      include "../../model/function_employee.php";
+      $accountFeatures = json_decode($features_arr[5], true);
+      if ($accountFeatures["VIEW IMPORT DETAIL"] == 1) {
+        echo '
               <a href="./importList.php?page=import" class="button">
-                <div class="button">
                   <div>
                     <span>Invoices</span>
                   </div>
-                </div>
               </a>
-              &nbsp;&nbsp;&nbsp; 
+              
           ';
-        }
-        if($accountFeatures["IMPORT GAMES"]==1) {
-          echo '
+      }
+      if ($accountFeatures["IMPORT GAMES"] == 1) {
+        echo '
               <div class="button">
                 <a href="">
                   <button>
@@ -162,8 +160,8 @@
                 </a>
               </div>
           ';
-        }
-      ?> 
+      }
+      ?>
     </div>
 
     <div class="listgames">
