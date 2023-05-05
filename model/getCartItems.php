@@ -2,7 +2,7 @@
   include 'connect.php';
   session_start();
   $accountId = $_COOKIE['accountId'];
-    $sql = mysqli_query($conn, "SELECT * FROM cart WHERE cUser_id = {$accountId}");
+    $sql = mysqli_query($conn, "SELECT * FROM cart JOIN games ON cart.cItem_id=games.gid WHERE cUser_id = {$accountId}");
     if (mysqli_num_rows($sql) > 0) {
         while($row = $sql->fetch_assoc()){
             echo '<div class="cart-item" id="' . $row["cItem_id"] . '">
@@ -22,7 +22,7 @@
                   </a>
                 </div>
               </div>
-              <input type="number" value=' . $row["cItem_quantity"] . ' min="1" oninput="validity.valid||(value=``);" onChange="changed_quantity();" class="count_input">';
+              <input type="number" value=' . $row["cItem_quantity"] . ' min="1" max='. $row["gquantity"] .' oninput="validity.valid||(value=``);" onChange="changed_quantity();" class="count_input">';
             
 
             if((float)$row["cItem_price_before_discount"] == (float)$row["cItem_price_after_discount"]) 

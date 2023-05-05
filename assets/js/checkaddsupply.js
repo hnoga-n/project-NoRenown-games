@@ -53,6 +53,14 @@ function checkaddsupp(bool) {
         alert("phone number must be digit !!! Exp: 0968644022")
         tel.focus();
         flagtel = false
+    } else if(tel.value.match(/(09)+(\d{8})\b/) == null) {
+        alert("TelePhone is not valid !!! Exp: 0968644022")
+        tel.focus();
+        flagtel = false
+    } else if(isNaN(tel.value)) {
+        alert("TelePhone must be digit !!! Exp: 0968644022")
+        tel.focus();
+        flagtel = false
     }
     else flagphone = true
 
