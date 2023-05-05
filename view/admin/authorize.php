@@ -4,6 +4,9 @@ include 'leftmenu.php';
 include 'head1.php'
 ?>
 <div class="authorize-modalbox">
+    <div class="back-to-import">
+        <span>⬅Back</span>
+    </div>
     <div class='modal-header'>
         <h2><?= !empty($_GET['grid']) ? 'Edit group' : 'Add group' ?></h2>
     </div>

@@ -7,18 +7,19 @@
   flex-direction: column;
   font-family: 'Righteous', cursive;
 }
-.main-import .back-to-import{
+
+.main-import .back-to-import {
   position: fixed;
   top: 15px;
   left: 137px;
   width: 200px;
   height: 60px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
 
-.main-import .back-to-import span{
+.main-import .back-to-import span {
   font-family: 'Righteous', cursive;
   height: 40px;
   line-height: 40px;
@@ -31,26 +32,29 @@
   cursor: pointer;
   text-align: center;
 }
-.main-import .back-to-import span:hover{
+
+.main-import .back-to-import span:hover {
   background-color: #e1981a;
 }
-.main-import .title{
+
+.main-import .title {
   width: 100%;
   text-align: center;
 }
-.main-import  .message-container{
+
+.main-import .message-container {
   width: 100%;
   height: 30px;
   line-height: 30px;
   font-size: 20px;
   text-align: center;
   margin-bottom: 20px;
-  text-decoration:overline;
+  text-decoration: overline;
   text-decoration-color: red;
 }
 
 
-.main-import .nav{
+.main-import .nav {
   height: 50px;
   margin: 20px 0;
   display: flex;
@@ -58,23 +62,27 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.main-import .nav input{
+
+.main-import .nav input {
   height: 45px;
   width: 15%;
   border: 3px solid #3d3d3d;
-  padding:7px;
+  padding: 7px;
   border-radius: 10px;
-  background-color: rgba(16,16,16,.4);
+  background-color: rgba(16, 16, 16, .4);
   color: white;
   font-size: 15px;
   font-family: 'Righteous', cursive;
   transition: .2s;
   outline: unset;
 }
-.main-import .nav input:hover,.main-import .nav input:focus{
+
+.main-import .nav input:hover,
+.main-import .nav input:focus {
   border: 3px solid #FF1E1E;
 }
-.main-import .import-container-outside{
+
+.main-import .import-container-outside {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -83,17 +91,17 @@
   color: white;
 }
 
-.import-containers{
+.import-containers {
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
-  width:100vw;
+  width: 100vw;
   height: 100vh;
   z-index: 10;
   background: rgba(0, 0, 0, 0.452);
 }
 
-.import-containers .import-container{
+.import-containers .import-container {
   position: absolute;
   top: 10%;
   left: 10%;
@@ -107,11 +115,11 @@
   margin-bottom: 80px;
 }
 
-.import-containers .import-container .infor{
+.import-containers .import-container .infor {
   width: 100%;
   height: 10%;
   display: flex;
-  justify-content: space-between ;
+  justify-content: space-between;
   align-items: center;
   font-weight: bold;
   background-color: #f84747;
@@ -119,7 +127,7 @@
 
 .import-containers .import-container .infor .id span,
 .import-containers .import-container .infor .Account span,
-.import-containers .import-container .infor .Date span{
+.import-containers .import-container .infor .Date span {
   margin: 20px;
 
 }
@@ -133,21 +141,25 @@
   flex-direction: column;
   align-items: baseline;
   border-bottom: 2px solid white;
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
-  overflow-y: scroll; 
-}
-.import-containers .import-container .list-game-imported::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  overflow-y: scroll;
 }
 
-.import-containers .import-container .list-game-imported .game-imported-header{
+.import-containers .import-container .list-game-imported::-webkit-scrollbar {
+  display: none;
+  /* for Chrome, Safari, and Opera */
+}
+
+.import-containers .import-container .list-game-imported .game-imported-header {
   width: 100%;
   height: 30px;
   position: sticky;
-  top:0;
+  top: 0;
   background-color: #3d3d3d;
-  display: grid ;
+  display: grid;
   grid-template-columns: 10% 40% 15% 15% 20%;
   text-align: center;
   align-content: center;
@@ -156,20 +168,22 @@
   color: white;
 }
 
-.import-containers .import-container .list-game-imported .game-imported{
+.import-containers .import-container .list-game-imported .game-imported {
   height: 50px;
   width: 100%;
-  display: grid ;
+  display: grid;
   grid-template-columns: 10% 40% 15% 15% 20%;
-    text-align: center;
+  text-align: center;
   align-content: center;
   border-bottom: 1px solid black;
   border-radius: 25px;
 }
-.import-containers .import-container .list-game-imported .game-imported:last-child{
+
+.import-containers .import-container .list-game-imported .game-imported:last-child {
   border: none;
 }
-.import-containers .import-container .price-view{
+
+.import-containers .import-container .price-view {
   background-color: #FF1E1E;
   height: 15%;
   width: 100%;
@@ -178,15 +192,18 @@
   align-items: center;
   font-size: larger;
 }
-.import-containers .import-container .price-view .total-price:first-child{
+
+.import-containers .import-container .price-view .total-price:first-child {
   font-weight: bold;
 }
+
 .main-import .pagination-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .main-import .pagination {
   width: 100%;
   display: flex;
@@ -246,51 +263,53 @@
   border-collapse: collapse;
   width: 100%;
 }
-.main-import .import-container-outside  table thead {
+
+.main-import .import-container-outside table thead {
   background-color: #FF1E1E;
   width: 100%;
   height: 50px;
   color: white;
   font-size: 16px;
-  position: sticky;
-  top: 55px;
   z-index: 1;
 }
-/* th:first-child {
-  border-top-left-radius: 15px;
-}
-th:last-child {
-  border-top-right-radius: 15px;
-} */
-.main-import .import-container-outside  table thead tr {
+
+.main-import .import-container-outside table thead tr {
   border-radius: 10px;
 }
-.main-import .import-container-outside  table thead th {
+
+.main-import .import-container-outside table thead th {
   height: 100%;
   padding: 10px;
 }
-.main-import .import-container-outside  table tbody {
+
+.main-import .import-container-outside table tbody {
   width: 100%;
 }
-.main-import .import-container-outside  table tbody tr {
+
+.main-import .import-container-outside table tbody tr {
   text-align: center;
   width: 100%;
 }
-.main-import .import-container-outside  table tbody tr:nth-child(odd) {
+
+.main-import .import-container-outside table tbody tr:nth-child(odd) {
   background-color: white;
 }
-.main-import .import-container-outside  table tbody tr:nth-child(even) {
+
+.main-import .import-container-outside table tbody tr:nth-child(even) {
   background-color: #f3f3f3;
 }
-.main-import .import-container-outside  table tbody tr td {
-  padding:5px;
+
+.main-import .import-container-outside table tbody tr td {
+  padding: 5px;
   color: #000000;
 }
-.main-import .import-container-outside  table tbody tr td img {
+
+.main-import .import-container-outside table tbody tr td img {
   height: 100px;
   width: 200px;
 }
-.main-import .import-container-outside  table tbody tr td a button {
+
+.main-import .import-container-outside table tbody tr td a button {
   height: 30px;
   width: 70px;
   font-family: 'Righteous', cursive;
@@ -301,35 +320,40 @@ th:last-child {
   cursor: pointer;
   transition: background .2s;
 }
-.main-import .import-container-outside  table tbody tr td a:first-child button {
+
+.main-import .import-container-outside table tbody tr td a:first-child button {
   background-color: #2e89ff;
 }
-.main-import .import-container-outside  table tbody tr td a:first-child button:hover {
-  background-color: white ;
+
+.main-import .import-container-outside table tbody tr td a:first-child button:hover {
+  background-color: white;
   color: #2e89ff;
   border: 2px solid #2e89ff;
 }
-.main-import .import-container-outside  table tbody tr td a:last-child button {
+
+.main-import .import-container-outside table tbody tr td a:last-child button {
   background-color: #000000;
 }
-.main-import .import-container-outside  table tbody tr td a:last-child button:hover {
+
+.main-import .import-container-outside table tbody tr td a:last-child button:hover {
   background-color: white;
   color: black;
   border: 2px solid black;
 }
-.main-import .import-container-outside  table tbody tr td a{
-all:unset;
+
+.main-import .import-container-outside table tbody tr td a {
+  all: unset;
 }
 
-.main-import .import-container-outside  table tbody tr td:last-child{
-  
+.main-import .import-container-outside table tbody tr td:last-child {
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 
-.main-import .import-container-outside table tbody tr td div{
+.main-import .import-container-outside table tbody tr td div {
   width: 50%;
   height: 50px;
   background-color: red;
@@ -340,11 +364,52 @@ all:unset;
   transition: .3s;
 }
 
-.main-import .import-container-outside table tbody tr td div:hover{
+.main-import .import-container-outside table tbody tr td div:hover {
   background-color: white;
   border: 1px solid red;
   color: red;
 }
+
+
+
+@media only screen and (max-width:1200px) {
+  .main-import {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .main-import .back-to-import {
+    display: flex;
+    top: -1%;
+    left: -3%;
+  }
+
+  .main-import .nav {
+    justify-content: space-evenly;
+
+  }
+}
+
+@media only screen and (max-width:900px) {
+  .main-import .nav {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+  .main-import .nav input {
+
+    width: 90%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .main-import .import-container-outside {
+    font-size: 20px;
+  }
+}
+
 
 @media screen and (max-width: 750px) {
   .main-import .pagination {
@@ -356,9 +421,20 @@ all:unset;
   .main-import .pagination a {
     margin: 0 5px;
   }
+
   /* width */
   .main-import .pagination::-webkit-scrollbar {
     width: 10px;
     height: 5px;
+  }
+
+  .main-import .back-to-import {
+    width: 50px;
+    top: -1%;
+    left: 6%;
+  }
+
+  .main-import .import-container-outside table tbody tr td div {
+    width: 90%;
   }
 }

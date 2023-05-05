@@ -28,7 +28,7 @@ function search(str, page, genre, priceFrom, priceTo, sortby) {
   if (page == undefined) {
     page = "1";
   }
-  if (genre.match(/all/i)) {
+  if (genre.match(/all/i) != null) {
     genre = '';
   }
   if (priceFrom == undefined) {
@@ -87,7 +87,7 @@ function searchGenres(str) {
   let xml = new XMLHttpRequest()
   xml.onreadystatechange = function () {
     if (this.responseText.match("empty") == "empty") {
-      genreDropdown.innerHTML = "<div>No genre match !</div>"
+      genreDropdown.innerHTML = `<li onclick="setGenre('All',this)">All</li>`
     }
     else {
       let str = '';

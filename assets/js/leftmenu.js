@@ -33,28 +33,30 @@ document.querySelector("#bar-menu").addEventListener("click", () => {
   sidebar.style.width = "100%";
   sidebar.style.left = "0";
   sidebar.style.display = "block"
-  sidebar.style.opacity = "1"
+  // sidebar.style.opacity = "1"
   sidebar.classList.add("open");
-  
 });
 
 document.querySelector("#close-menu").addEventListener("click", () => {
-  sidebar.style.width = "0%";
-  sidebar.style.left = "-80px";
-  sidebar.classList.remove("open");
-  
+  // sidebar.style.width = "0%";
+  // sidebar.style.left = "-100px";
+  sidebar.style.display = "none"
 });
 
 function handleMediaChange(event) {
   if (event.matches) {
+    /* sidebar.style.opacity = "0";
     sidebar.style.width = "0%";
-    sidebar.style.left = "-80p";
-    sidebar.style.opacity = "0";
+    sidebar.style.left = "-100p"; */
+    sidebar.style.display = "none"
+    sidebar.classList.add("open");
+
   } else {
     console.log("width > 1200px");
     sidebar.style.width = "120px";
     sidebar.style.left = "0";
-    sidebar.style.opacity = "1";
+    // sidebar.style.opacity = "1";
+    sidebar.style.display = "block"
   }
 }
 
