@@ -21,8 +21,8 @@
             }
         }
         $date_create = date("Y-m-d");
-        $sql1 = "INSERT INTO account(passwd,mail,groupID,userID,date_create,acc_status) VALUES 
-                ('$passwd','$mail',$groupid,$userid,'$date_create',1)";
+        $sql1 = "INSERT INTO account(passwd,mail,groupID,userID,date_create,acc_status,acc_visible) VALUES 
+                ('$passwd','$mail',$groupid,$userid,'$date_create',1,1)";
         $result1 = $conn->query($sql1);
         if($result1) {
             echo
@@ -35,4 +35,3 @@
     }
     else echo "Error: " . $sql . "<br>" . $conn->error . "<br>" . "Error: " . $sql . "<br>" . $conn->error;
     $conn->close();
-?>
