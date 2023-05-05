@@ -160,7 +160,6 @@ function scrollToPosition(element, length) {
   }
 }
 function showImportDetail(impID, accID, date_create, total_price) {
-  console.log(date_create);
   const xml = new XMLHttpRequest;
   xml.onload = function () {
     console.log(this.responseText);

@@ -115,7 +115,6 @@ function loadCart() {
 }
 
 function updateCurrPrice(gid, quantity_val) {
-
     let total_p = document.querySelector("#import-total-price");
     const mess = document.getElementById("message");
     if (quantity_val == '' || quantity_val == undefined || quantity_val == null || quantity_val == "0") {
@@ -132,8 +131,6 @@ function updateCurrPrice(gid, quantity_val) {
         } else {
             total_p.value = this.responseText;
         }
-
-
     }
     xml.open("GET", "../../model/importHandle.php?query=cartquantity&gid=" + gid + "&quantity=" + quantity_val);
     xml.send();

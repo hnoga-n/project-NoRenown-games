@@ -161,7 +161,7 @@ function loadCart()
             <td>" . $row['gname'] . "</td>
             <td class='price'>" . $row['gprice'] . "</td>
             <td>" . $row['gquantity'] . "</td>
-            <td><input type='number' name='quanof_" . $row['gid'] . "' class='quantity_inp' onkeyup='updateCurrPrice(" . $row['gid'] . ",this.value)' value='" . $row['gquantity'] . "'></td>";
+            <td><input type='number' name='quanof_" . $row['gid'] . "' class='quantity_inp' onchange='updateCurrPrice(" . $row['gid'] . ",this.value)' value='" . $row['gquantity'] . "'></td>";
     $sql_supp = "SELECT suppID,suppName,Status FROM supplier WHERE Status=1";
     $result2 = $conn->query($sql_supp);
     $supp_opt = '';
@@ -283,8 +283,7 @@ function importGame()
   include "../model/connect.php";
   include "../model/object/game.php";
   $impID = intval($_POST['importID']);
-  /* $impAccID = intval($_POST['import_account_ID']); */
-  $impAccID = 3;
+  $impAccID = intval($_POST['import_account_ID']);
   $impDataCreate = $_POST['import_date_create'];
   $impTotalPrice = floatval($_POST['import_total_price']);
   if ($impTotalPrice == 0) { //check if no product is choose
@@ -453,7 +452,7 @@ function listImportWithPagination($date_start, $date_end, $accID, $priceFr, $pri
           <td style='width: 30%;' id='date'>" . $row['date_create'] . "</td>
           <td style='width:20%;' id='impid'>" . $row['total_price'] . "</td>
           <td>
-            <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . ",document.getElementById(`date`).innerHTML," . $row['total_price'] . ")' >Select</div>
+            <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . ",`" . $row['date_create'] . "`," . $row['total_price'] . ")' >Select</div>
           </td> 
         </tr>
       ";
@@ -509,11 +508,11 @@ function showImportDetail($importID, $accountId, $date_create, $total_price)
         </div>
         <div class='Account'>
           <span>Account ID:</span>
-          <span>" . $date_create . "</span>
+          <span>" . $accountId . "</span>
         </div>
         <div class='Date'>
           <span>Data create: </span>
-          <span>" . $accountId . "</span>
+          <span>" . $date_create . "</span>
         </div>
       </div>
       <div class='list-game-imported'>
