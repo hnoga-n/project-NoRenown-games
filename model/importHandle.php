@@ -162,7 +162,7 @@ function loadCart()
             <td class='price'>" . $row['gprice'] . "</td>
             <td>" . $row['gquantity'] . "</td>
             <td><input type='number' name='quanof_" . $row['gid'] . "' class='quantity_inp' onkeyup='updateCurrPrice(" . $row['gid'] . ",this.value)' value='" . $row['gquantity'] . "'></td>";
-    $sql_supp = "SELECT suppID,suppName FROM supplier";
+    $sql_supp = "SELECT suppID,suppName,Status FROM supplier WHERE Status=1";
     $result2 = $conn->query($sql_supp);
     $supp_opt = '';
     if ($result2->num_rows > 0) {
