@@ -16,26 +16,37 @@ if (isset($_GET['search'])  && isset($_GET['pagenum'])) {
                     LIMIT $pos,10";
     $sql1 = "SELECT *
                     FROM supplier
-                    WHERE suppName REGEXP '$search'AND Status=1
+                    WHERE suppName REGEXP '$search' AND Status=1
                     ORDER BY suppID ASC";
-    $result = $conn->query($sql);
-    $result1 = $conn->query($sql1);
-    $accountFeatures = json_decode($features_arr[7], true);
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-
-            $html .=
-                "<tr>
-                        <td>" . $row['suppID'] . "</td>
-                        <td>" . $row['suppName'] . "</td>
-                        <td>" . $row['suppMail'] . "</td>
-                        <td>" . $row['suppTel'] . "</td>
-                        <td style='
-                        display: flex;
-                        justify-content: space-around;
-                        flex-direction: row;'>";
-            if ($accountFeatures["EDIT SUPPLIER"] == 1) {
-                $html .= "<a href='./editsupplier.php?page=listsupply&suppID=" . $row['suppID'] . "'><button>Edit</button></a>";
+        
+        
+        
+        $result = $conn->query($sql);
+        $result1 = $conn->query($sql1);
+        $accountFeatures = json_decode($features_arr[7],true);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                
+               $html.=
+                    "<tr>
+                        <td>".$row['suppID']."</td>
+                        <td>".$row['suppName']."</td>
+                        <td>".$row['suppMail']."</td>
+                        <td>".$row['suppTel']."</td>
+                        <td class='css_status' >";
+                        if($accountFeatures["EDIT SUPPLIER"]==1) {
+                            $html.= "<a href='./editsupplier.php?page=listsupply&suppID=".$row['suppID']."'><button>Edit</button></a>";
+                        }
+                        if($accountFeatures["DELETE SUPPLIER"]==1) {
+                            $html.= "<a href=''><button onclick='deletesupplier(".$row['suppID'].")'>Delete</button></a>";
+                        } else {
+                            $html.= "<a style=''><button disabled>Delete</button></a>";
+                        }                  
+                                         
+                $html.="</td>
+                    </tr>";
+                ;
+ 
             }
             if ($accountFeatures["DELETE SUPPLIER"] == 1) {
                 $html .= "<a href=''><button onclick='deletesupplier(" . $row['suppID'] . ")'>Delete</button></a>";
