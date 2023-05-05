@@ -2,8 +2,13 @@
    include 'connect.php';
    session_start();
 
+   $sql2 = "SELECT gquantity FROM games WHERE gid = {$_GET['userId']}";
+   $result2 = $conn->query($sql2);
+   $row = $result2->fetch_assoc();
    if(empty($_COOKIE['accountId'])) {
       echo "NotSignIn";
+   } else if( (int) $row['gquantity'] == 0) {
+      echo "NotEnoughQuantity";
    } else {
 
       $cUser_id = $_COOKIE['accountId'];
@@ -14,7 +19,7 @@
       $cItem_image = $_GET['imgSrc']; 
       $cItem_quantity = 1;
 
-      $sql = "SELECT cItem_quantity FROM cart WHERE cUser_id = '{$cUser_id}' AND cItem_id = '{$cItem_id}'";
+      $sql = "SELECT cItem_quantity FROM cart WHERE cUser_id = '{$cUser_id}' AND cItem_id = '{$cItem_id}'";      
       $result = $conn->query($sql);
 
       if($result->num_rows > 0) {

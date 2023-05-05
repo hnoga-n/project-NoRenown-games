@@ -8,7 +8,8 @@ function antiPropagation(event) {
 //check if img source is undefined , display none it
 array.forEach((item)=>{
     if(item.src.split("/")[item.src.split("/").length-1] == 'undefined') {
-        item.parentElement.style.display = 'none';
+        item.parentElement.remove();
+        array = document.querySelectorAll('.visuals-gameplay img');
     }
 })
 
@@ -35,7 +36,7 @@ $(document).keydown(function(evt) {
     if (evt.keyCode == 37) {
       getImgPos -= 1;
       if(getImgPos < 0)
-          getImgPos = 4;
+          getImgPos = array.length - 1;
       document.querySelector('.box-image-zoom-in img').src = array[getImgPos].src;
     } else if(evt.keyCode == 39) {
       getImgPos += 1;
@@ -57,7 +58,7 @@ for (let index = 0; index < array.length; index++) {
     document.querySelector('.box-image-zoom-in .fa-chevron-left').onclick = ()=> {
         getImgPos -= 1;
         if(getImgPos < 0)
-            getImgPos = 4;
+            getImgPos = array.length - 1;
         document.querySelector('.box-image-zoom-in img').src = array[getImgPos].src;
     }
 }
