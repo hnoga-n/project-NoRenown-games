@@ -37,7 +37,7 @@ document.querySelector("#more").addEventListener('click', () => {
 })
 
 function changeStatus(element) {
-    if (confirm("Are you want to cancel it") == false) {
+    if (confirm("Do you want to cancel it") == false) {
         return;
     }
     const status = 2;

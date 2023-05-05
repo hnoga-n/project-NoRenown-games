@@ -44,7 +44,7 @@ if (isset($_GET['suppID'])) {
                     <span>Supplier Name:</span>
                 </div>
                 <div>
-                    <input type="text" value="<?= !empty($supp) ? $supp['suppName'] : '' ?>" name="suppName" required>
+                    <input type="text" required value="<?= !empty($supp) ? $supp['suppName'] : '' ?>" name="suppName">
                 </div>
             </div>
             <div class="form-div">
