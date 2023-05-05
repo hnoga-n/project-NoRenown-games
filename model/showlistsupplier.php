@@ -37,10 +37,7 @@
                         <td>".$row['suppName']."</td>
                         <td>".$row['suppMail']."</td>
                         <td>".$row['suppTel']."</td>
-                        <td style='
-                        display: flex;
-                        justify-content: space-around;
-                        flex-direction: row;'>";
+                        <td class='css_status' >";
                         if($accountFeatures["EDIT SUPPLIER"]==1) {
                             $html.= "<a href='./editsupplier.php?page=listsupply&suppID=".$row['suppID']."'><button>Edit</button></a>";
                         }
