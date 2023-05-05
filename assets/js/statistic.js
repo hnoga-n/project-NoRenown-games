@@ -37,6 +37,11 @@ lis.forEach((li)=> {
           const script = document.createElement('script');
           script.src = '../../controller/showListCustomer.js';
           document.querySelector("#container").appendChild(script);
+        } else if (li.innerHTML == "Category") {
+          
+          const script = document.createElement('script');
+          script.src = '../../controller/showListCategory.js';
+          document.querySelector("#container").appendChild(script);
         }
       }
     }

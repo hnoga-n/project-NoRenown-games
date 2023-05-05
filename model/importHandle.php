@@ -509,11 +509,11 @@ function showImportDetail($importID, $accountId, $date_create, $total_price)
         </div>
         <div class='Account'>
           <span>Account ID:</span>
-          <span>" . $date_create . "</span>
+          <span>" . $accountId . "</span>
         </div>
         <div class='Date'>
           <span>Data create: </span>
-          <span>" . $accountId . "</span>
+          <span>" . $date_create . "</span>
         </div>
       </div>
       <div class='list-game-imported'>

@@ -272,4 +272,84 @@
           </div>';
         echo $html_code;  
           break;  
+          case "Category":
+            $html_code .= '
+            <div class="statistic-container-header">
+              <div class="import_quantity">
+                <div class="content">
+                  <div class="text">Quantity</div>
+                  <div>
+                    <div class="number" id="sum_sold_quantity">0</div>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="import_money">
+                <div class="content">
+                  <div class="text">Category money</div>
+                  <div>
+                    <div class="number" id="revenue">$0</div>
+                    <i class="fa-solid fa-sack-dollar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="statistic-container-content">
+              <div class="products-filter-besst-seller">
+                <label>Top most import</label>
+                <input id="number-best-seller" value="0" type="number" min="0" max="20">
+              </div>
+          
+              <div class="products-filter-category">
+                <label>Category</label>
+                <select name="categoryValue" id="category" onfocus="this.size=5;" onblur="this.size=1;" onchange="this.size=1; this.blur();">';
+                
+                include './connect.php';
+                $sql = "SELECT DISTINCT (genreID),genName 
+                  FROM games JOIN genres ON games.genreID = genres.genID 
+                  ORDER BY genreID ASC";
+                $result = $conn->query($sql);
+                $html_code .= "<option value='all' selected>All</option><br>";
+                if ($result->num_rows > 0) {
+                  // output data of each row
+                  while ($row = $result->fetch_assoc()) {
+                    $html_code .= "<option value='" . $row['genreID'] . "'>" . $row['genName'] . "</option><br>";
+                  }
+                }
+                $conn->close();
+                
+                $html_code .= '</select>   
+              </div>
+          
+              <div class="products-filter-date">
+                <label>Date</label>
+                <input id="date-start" type="date" value="" required/>
+                <label>to</label>
+                <input id="date-end" type="date" value="" required/>
+                <button id="btn-return" title="Refresh"><i class="fa-solid fa-rotate-right"></i></button>
+              </div>
+          
+              <div class="listGamesSold">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">ID</th>
+                    <th style="width: 40%;">Category name</th>
+                    <th style="width: 20%;">Price</th>
+                    <th style="width: 20%;">Sold quantity</th>
+                  </tr>
+                </thead>
+                <tbody id="showListGamesSold">
+                  <!-- Show list games -->
+                  
+                </tbody>
+              </table>
+            </div>  
+            </div>
+            
+            
+          ';
+          echo $html_code;
+            break;
     }
