@@ -1,6 +1,9 @@
 <?php 
     include "connect.php";
     session_start();
+    if(!isset($_SESSION['total'])){
+        header('location: ../index.php');
+    }
     date_default_timezone_set('Asia/Ho_Chi_Minh');
     $dateOrder =  date("Y-m-d");
     $status = 0;//invoice unprocecss
@@ -36,7 +39,7 @@
     //delete cart data
     $delCartData = "DELETE FROM cart WHERE cUser_id = {$_COOKIE['accountId']}";
     $conn->query($delCartData);
-
+    unset($_SESSION['total']);
     $stmt->close();
     header("location: ../view/user/order.php");
 ?>  

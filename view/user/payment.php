@@ -13,6 +13,9 @@ if (!isset($_COOKIE['accountId'])) {
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
 }
+if(!isset($_SESSION['total'])){
+  header('location: ../../index.php');
+}
 
 ?>
 
