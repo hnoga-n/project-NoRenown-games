@@ -350,7 +350,7 @@ input:checked + .slider:before {
   }
   .listGamesSold table,
   .listGamesSold table thead {
-    font-size: 12px;
+    font-size: 8px;
   }
 }
 
