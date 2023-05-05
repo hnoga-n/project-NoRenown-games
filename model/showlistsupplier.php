@@ -1,20 +1,24 @@
 <?php
-include './connect.php';
-include './function_employee.php';
-if (isset($_GET['search'])  && isset($_GET['pagenum'])) {
-    $html = "";
-    $sql = "";
-    $count = 0;
-    $pagenum = intval($_GET['pagenum']);
-    $pos = intval(($pagenum - 1) * 10);
-    $search = $_GET['search'];
+    include './connect.php';
+    include './function_employee.php';
+    if(isset($_GET['search'])  && isset($_GET['pagenum'])) {
+        $html="";
+        $sql="";
+        $count = 0;
+        $pagenum = intval($_GET['pagenum']);
+        $pos = intval(($pagenum - 1) * 10);
+        $search = $_GET['search'];
+        
+        
+        
 
-    $sql = "SELECT *
+            
+            $sql = "SELECT suppID,suppName,suppMail,suppTel
                     FROM supplier
                     WHERE suppName REGEXP '$search' AND Status=1
                     ORDER BY suppID ASC
                     LIMIT $pos,10";
-    $sql1 = "SELECT *
+            $sql1 = "SELECT suppID,suppName,suppMail,suppTel
                     FROM supplier
                     WHERE suppName REGEXP '$search' AND Status=1
                     ORDER BY suppID ASC";
@@ -46,29 +50,20 @@ if (isset($_GET['search'])  && isset($_GET['pagenum'])) {
                 $html.="</td>
                     </tr>";
                 ;
- 
             }
-            if ($accountFeatures["DELETE SUPPLIER"] == 1) {
-                $html .= "<a href=''><button onclick='deletesupplier(" . $row['suppID'] . ")'>Delete</button></a>";
-            } else {
-                $html .= "<a style=''><button disabled>Delete</button></a>";
+        }
+    
+        if ($result1->num_rows > 0) {
+            while ($row = $result1->fetch_assoc()) {
+                $count++;
             }
-
-            $html .= "</td>
-                    </tr>";;
         }
+        $count /= 10;
+        $myobj = new stdClass();
+        $myobj->pagenum = ceil($count);
+        $myobj->html = $html;
+        $myJSON = json_encode($myobj);
+        echo $myJSON;
     }
-
-    if ($result1->num_rows > 0) {
-        while ($row = $result1->fetch_assoc()) {
-            $count++;
-        }
-    }
-    $count /= 10;
-    $myobj = new stdClass();
-    $myobj->pagenum = ceil($count);
-    $myobj->html = $html;
-    $myJSON = json_encode($myobj);
-    echo $myJSON;
-}
-$conn->close();
+    $conn->close();
+?>
