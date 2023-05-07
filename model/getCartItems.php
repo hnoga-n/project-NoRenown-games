@@ -25,10 +25,10 @@
               </div>';
               
               if((int) $row["gquantity"] < (int) $row["cItem_quantity"]) {
-                echo '<input type="number" value=' . $row["gquantity"] . ' min="1" oninput="validity.valid||(value=``);" onChange="changed_quantity();" class="count_input">';
+                echo '<input type="number" value=' . $row["gquantity"] . ' min="1" max='. $row["gquantity"] .'  oninput="validity.valid||(value=``);" onChange="changed_quantity();" class="count_input">';
 
               } else {
-                echo '<input type="number" value=' . $row["cItem_quantity"] . ' min="1" oninput="validity.valid||(value=``);" onChange="changed_quantity();" class="count_input">';
+                echo '<input type="number" value=' . $row["cItem_quantity"] . ' min="1" max='. $row["gquantity"] .'  oninput="validity.valid||(value=``);" onChange="changed_quantity();" class="count_input">';
 
               }
             
