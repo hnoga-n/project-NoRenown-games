@@ -56,8 +56,10 @@ function changed_quantity(){
         for(var i=0;i<arr.length;i++){
             if(arr[i].value == ''){
                 arr[i].value = 1;
+                loadDoc("../../model/update_cart.php?item_id=" + arr[i].parentNode.parentNode.id + "&item_quantity=" + arr[i].value,updatedItem)
             }
         }
+        calmoney();
     }
     
     send_link();
