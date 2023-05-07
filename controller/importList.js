@@ -3,15 +3,29 @@ searchImportList("01/01/1970", "01/01/2030", "", '', '')
 function searchImportList(dateStart, dateEnd, ID, priceFrom, priceTo) {
   const outside_container = document.querySelector("#show-list-import");
   const page_container = document.getElementById('showPagination');
-  const date_start = new Date(dateStart);
-  const date_end = new Date(dateEnd);
+  let date_start = ''
+  let date_end = ''
+  if (dateStart == '') {
+    date_start = new Date('01/01/1970')
+  } else {
+    date_start = new Date(dateStart);
+  }
+  if (dateEnd == '') {
+    let currentDate = new Date();
+    date_end = new Date((currentDate.getMonth() + 1) + '/' + (currentDate.getDate() + 1) + '/' + (currentDate.getFullYear() + 100));
+    //dateEnd = new Date('01/01/2100')
+  } else {
+    date_end = new Date(dateEnd);
+  }
+
   const message = document.getElementById("message");
   let id_account = document.getElementById("search-with-account");
   let price_from = document.getElementById("price-from")
   let price_to = document.getElementById("price-to")
   message.innerHTML = '';
-  if (dateStart > dateEnd) {
-    message.innerHTML = "date start must smaller than date end";
+
+  if (date_start > date_end) {
+    message.innerHTML = "Date is not valid !";
     return;
   }
   if (priceFrom == '') {
@@ -19,6 +33,9 @@ function searchImportList(dateStart, dateEnd, ID, priceFrom, priceTo) {
   }
   if (priceTo == '') {
     priceTo = 10000000
+  }
+  if (ID == undefined) {
+    ID = '';
   }
   if (ID == "" || ID == undefined) {
     ID = '';
@@ -34,7 +51,7 @@ function searchImportList(dateStart, dateEnd, ID, priceFrom, priceTo) {
   const xml = new XMLHttpRequest;
   xml.onreadystatechange = function () {
     if (this.responseText == "empty") {
-      message.innerHTML = "Can not find import you needed !";
+      message.innerHTML = "No result !";
       outside_container.innerHTML = '';
       page_container.innerHTML = '';
     } else {
@@ -53,11 +70,23 @@ function searchImportList(dateStart, dateEnd, ID, priceFrom, priceTo) {
 function searchImportListWithPage(page, dateStart, dateEnd, ID, priceFrom, priceTo) {
   const outside_container = document.querySelector("#show-list-import");
   const message = document.getElementById("message");
-  const date_start = new Date(dateStart);
-  const date_end = new Date(dateEnd);
+  let date_start = ''
+  let date_end = ''
+  if (dateStart == '') {
+    date_start = new Date('01/01/1970')
+  } else {
+    date_start = new Date(dateStart);
+  }
+  if (dateEnd == '') {
+    let currentDate = new Date();
+    date_end = new Date((currentDate.getMonth() + 1) + '/' + (currentDate.getDate() + 1) + '/' + (currentDate.getFullYear() + 100));
+  } else {
+    date_end = new Date(dateEnd);
+  }
+
   message.innerHTML = '';
-  if (dateStart > dateEnd) {
-    message.innerHTML = "date start must smaller than date end";
+  if (date_start > date_end) {
+    message.innerHTML = "Date is not valid !";
     return;
   }
   if (priceFrom == '') {
@@ -66,7 +95,7 @@ function searchImportListWithPage(page, dateStart, dateEnd, ID, priceFrom, price
   if (priceTo == '') {
     priceTo = 10000000
   }
-  if (ID == "" || ID == undefined) {
+  if (ID == undefined) {
     ID = '';
   }
   if (parseFloat(priceFrom) >= parseFloat(priceTo)) {

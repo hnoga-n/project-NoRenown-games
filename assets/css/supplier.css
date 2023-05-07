@@ -120,6 +120,33 @@
     font-size: 16px;
     
 }
+@media screen and (max-width: 700px) {
+  .main-supplier .listsuppliers table thead {
+    font-size: 12px;
+    
+}
+.main-supplier {
+  margin-left: 0px;
+  width: 100%;
+}
+.main-supplier .listsuppliers table {
+  font-size: 14px;
+}
+.main-supplier .nav-bar-supplier .button {
+  margin-left: 100px;
+}
+.main-supplier .nav-bar-supplier .search {
+  width: 60%;
+}
+.main-supplier .listsuppliers .css_status {
+  flex-direction: column !important;
+}
+}
+.main-supplier .listsuppliers .css_status {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
 .main-supplier .listsuppliers table thead tr {
     border-radius: 10px;
 }

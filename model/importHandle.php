@@ -161,8 +161,8 @@ function loadCart()
             <td>" . $row['gname'] . "</td>
             <td class='price'>" . $row['gprice'] . "</td>
             <td>" . $row['gquantity'] . "</td>
-            <td><input type='number' name='quanof_" . $row['gid'] . "' class='quantity_inp' onkeyup='updateCurrPrice(" . $row['gid'] . ",this.value)' value='" . $row['gquantity'] . "'></td>";
-    $sql_supp = "SELECT suppID,suppName FROM supplier";
+            <td><input type='number' name='quanof_" . $row['gid'] . "' class='quantity_inp' onchange='updateCurrPrice(" . $row['gid'] . ",this.value)' value='" . $row['gquantity'] . "'></td>";
+    $sql_supp = "SELECT suppID,suppName,Status FROM supplier WHERE Status=1";
     $result2 = $conn->query($sql_supp);
     $supp_opt = '';
     if ($result2->num_rows > 0) {
@@ -283,8 +283,7 @@ function importGame()
   include "../model/connect.php";
   include "../model/object/game.php";
   $impID = intval($_POST['importID']);
-  /* $impAccID = intval($_POST['import_account_ID']); */
-  $impAccID = 3;
+  $impAccID = intval($_POST['import_account_ID']); 
   $impDataCreate = $_POST['import_date_create'];
   $impTotalPrice = floatval($_POST['import_total_price']);
   if ($impTotalPrice == 0) { //check if no product is choose
@@ -448,13 +447,12 @@ function listImportWithPagination($date_start, $date_end, $accID, $priceFr, $pri
       //get general info
       $import_bill .= "
         <tr>
-          <td style='width: 20%;' id='impid'>" . $row['impID'] . "</td>
-          <td style='width: 20%;' id='accid'>" . $row['accID'] . "</td>
-          <td style='width: 20%;' id='date'>" . $row['date_create'] . "</td>
+          <td style='width: 15%;' id='impid'>" . $row['impID'] . "</td>
+          <td style='width: 15%;' id='accid'>" . $row['accID'] . "</td>
+          <td style='width: 30%;' id='date'>" . $row['date_create'] . "</td>
           <td style='width:20%;' id='impid'>" . $row['total_price'] . "</td>
           <td>
-            <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . ",document.getElementById(`date`).innerHTML," . $row['total_price'] . ")' >Select</div>
-          </td> 
+          <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . ",`" . $row['date_create'] . "`," . $row['total_price'] . ")' >Select</div>          </td> 
         </tr>
       ";
     }
@@ -473,19 +471,19 @@ function listImportWithoutPagination($page, $date_start, $date_end, $accID, $pri
     $sql_page = "SELECT * FROM import WHERE date_create BETWEEN '" . $date_start . "' AND '" . $date_end . "' AND total_price BETWEEN $priceFr AND $priceTo ORDER BY impID LIMIT 5 OFFSET $startPos";
   } else {
     $sql_page = "SELECT * FROM import WHERE accID=$accID AND date_create BETWEEN '" . $date_start . "' AND '" . $date_end . "' AND total_price BETWEEN $priceFr AND $priceTo ORDER BY impID LIMIT 5 OFFSET $startPos";
-  }
+  } 
   $page = $conn->query($sql_page);
   if ($page->num_rows > 0) {
     while ($row = $page->fetch_assoc()) {
       //get general info
       $import_bill .= "
         <tr>
-          <td style='width:20%;'>" . $row['impID'] . "</td>
-          <td style='width: 20%;'>" . $row['accID'] . "</td>
-          <td style='width: 20%;'>" . $row['date_create'] . "</td>
+          <td style='width:15%;'>" . $row['impID'] . "</td>
+          <td style='width: 15%;'>" . $row['accID'] . "</td>
+          <td style='width: 30%;'>" . $row['date_create'] . "</td>
           <td style='width:20%;'>" . $row['total_price'] . "</td>
           <td>
-            <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . "," . $row['date_create'] . "," . $row['total_price'] . ")' >Select</div>
+          <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . ",`" . $row['date_create'] . "`," . $row['total_price'] . ")' >Select</div>          </td> 
           </td>
         </tr>
       ";

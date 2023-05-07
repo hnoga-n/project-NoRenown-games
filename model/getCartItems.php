@@ -3,6 +3,7 @@
   session_start();
   $accountId = $_COOKIE['accountId'];
     $sql = mysqli_query($conn, "SELECT * FROM cart JOIN games ON games.gid = cart.cItem_id WHERE cUser_id = {$accountId} AND games.gquantity > 0");
+
     if (mysqli_num_rows($sql) > 0) {
         while($row = $sql->fetch_assoc()){
             echo '<div class="cart-item" id="' . $row["cItem_id"] . '">

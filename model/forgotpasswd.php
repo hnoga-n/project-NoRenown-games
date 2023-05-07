@@ -22,7 +22,6 @@ if (isset($_POST['mail'])) {
   $sql->bind_param("s", $_POST['mail']);
   $sql->execute();
   $result = $sql->get_result();
-
   if ($result->num_rows <= 0) {
     $_SESSION['message'] = "* Email not recognized !";
   } else {
@@ -33,13 +32,13 @@ if (isset($_POST['mail'])) {
     //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'norenowngaming@gmail.com';
-    $mail->Password = 'uvjxuqfocqcpwbmf';
+    $mail->Username = 'hackiemsi0711@gmail.com';
+    $mail->Password = 'eniryucxqhzvwcja';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
 
-    $mail->setFrom('norenowngaming@gmail.com', 'Norenown Game');
-    $mail->addReplyTo('norenowngaming@gmail.com', 'Norenown Game');
+    $mail->setFrom('hackiemsi0711@gmail.com', 'Norenown Game');
+    $mail->addReplyTo('hackiemsi0711@gmail.com', 'Norenown Game');
     $mail->addAddress($_POST['mail']);
     $mail->Subject = "YOUR NEW PASSWORD";
     $newpass = strval(rand(10000000, 99999999));
@@ -75,12 +74,11 @@ if (isset($_POST['mail'])) {
       <div class="title">Type in your email:</div>
       <input name="mail" type="email" class="email" id="forgot-mail" placeholder="instantgames@gmail.com">
       <div class="message" id="mail-message">
-        heloo
         <?php
-        /* if (isset($_SESSION['message'])) {
+        if (isset($_SESSION['message'])) {
           echo $_SESSION['message'];
           unset($_SESSION['message']);
-        } */
+        }
         ?>
       </div>
       <button type="submit">GET CODE</button>

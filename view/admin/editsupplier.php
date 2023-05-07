@@ -44,7 +44,7 @@ if (isset($_GET['suppID'])) {
                     <span>Supplier Name:</span>
                 </div>
                 <div>
-                    <input type="text" value="<?= !empty($supp) ? $supp['suppName'] : '' ?>" name="suppName" required>
+                    <input type="text" required value="<?= !empty($supp) ? $supp['suppName'] : '' ?>" name="suppName">
                 </div>
             </div>
             <div class="form-div">
@@ -52,7 +52,7 @@ if (isset($_GET['suppID'])) {
                     <span>Supplier Mail:</span>
                 </div>
                 <div>
-                    <input type="text" value="<?= !empty($supp) ? $supp['suppMail'] : '' ?>" name="suppMail" required>
+                    <input type="email" value="<?= !empty($supp) ? $supp['suppMail'] : '' ?>" name="suppMail" required>
                 </div>
             </div>
             <div class="form-div">
@@ -72,4 +72,4 @@ if (isset($_GET['suppID'])) {
     </div>
 </div>
 <script src="../../assets/js/leftmenu.js"></script>
-<script src="../../assets/js/checkaddsupplyt.js"></script>
+<script src="../../assets/js/checkaddsupply.js"></script>

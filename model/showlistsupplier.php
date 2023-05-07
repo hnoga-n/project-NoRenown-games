@@ -15,12 +15,12 @@
             
             $sql = "SELECT suppID,suppName,suppMail,suppTel
                     FROM supplier
-                    WHERE suppName REGEXP '$search'
+                    WHERE suppName REGEXP '$search' AND Status=1
                     ORDER BY suppID ASC
                     LIMIT $pos,10";
             $sql1 = "SELECT suppID,suppName,suppMail,suppTel
                     FROM supplier
-                    WHERE suppName REGEXP '$search'
+                    WHERE suppName REGEXP '$search' AND Status=1
                     ORDER BY suppID ASC";
         
         
@@ -37,10 +37,7 @@
                         <td>".$row['suppName']."</td>
                         <td>".$row['suppMail']."</td>
                         <td>".$row['suppTel']."</td>
-                        <td style='
-                        display: flex;
-                        justify-content: space-around;
-                        flex-direction: row;'>";
+                        <td class='css_status' >";
                         if($accountFeatures["EDIT SUPPLIER"]==1) {
                             $html.= "<a href='./editsupplier.php?page=listsupply&suppID=".$row['suppID']."'><button>Edit</button></a>";
                         }
