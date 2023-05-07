@@ -2,7 +2,8 @@
   include 'connect.php';
   session_start();
   $accountId = $_COOKIE['accountId'];
-    $sql = mysqli_query($conn, "SELECT * FROM cart JOIN games ON cart.cItem_id=games.gid WHERE cUser_id = {$accountId}");
+    $sql = mysqli_query($conn, "SELECT * FROM cart JOIN games ON games.gid = cart.cItem_id WHERE cUser_id = {$accountId} AND games.gquantity > 0");
+
     if (mysqli_num_rows($sql) > 0) {
         while($row = $sql->fetch_assoc()){
             echo '<div class="cart-item" id="' . $row["cItem_id"] . '">
@@ -21,8 +22,15 @@
                     <div class="icon-delete icon-xs"></div>
                   </a>
                 </div>
-              </div>
-              <input type="number" value=' . $row["cItem_quantity"] . ' min="1" max='. $row["gquantity"] .' oninput="validity.valid||(value=``);" onChange="changed_quantity();" class="count_input">';
+              </div>';
+              
+              if((int) $row["gquantity"] < (int) $row["cItem_quantity"]) {
+                echo '<input type="number" value=' . $row["gquantity"] . ' min="1" oninput="validity.valid||(value=``);" onChange="changed_quantity();" class="count_input">';
+
+              } else {
+                echo '<input type="number" value=' . $row["cItem_quantity"] . ' min="1" oninput="validity.valid||(value=``);" onChange="changed_quantity();" class="count_input">';
+
+              }
             
 
             if((float)$row["cItem_price_before_discount"] == (float)$row["cItem_price_after_discount"]) 
