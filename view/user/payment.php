@@ -73,7 +73,7 @@ if(!isset($_SESSION['total'])){
                   <input placeholder="Phone number" type="text" name="phone" required="required" value="<?php echo $row['phone'] ?>" autocomplete="payment-form" class="phone">
                 </label>
                 <label style="width: 100%;">
-                  <input placeholder="Address" type="text" name="address" required="required" value="" autocomplete="payment-form" class="street">
+                  <input placeholder="Address" type="text" name="address" required="required" value="<?php echo $row['address'] ?>" autocomplete="payment-form" class="street">
                 </label>
                 <label class="country_container">
                   <label for="country"><h2>Country</h2></label>
