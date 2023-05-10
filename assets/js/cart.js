@@ -55,6 +55,7 @@ function changed_quantity(){
     else {
         for(var i=0;i<arr.length;i++){
             if(arr[i].value == ''){
+                alert("Only "+ arr[i].max +" products left in stock")
                 arr[i].value = 1;
                 loadDoc("../../model/update_cart.php?item_id=" + arr[i].parentNode.parentNode.id + "&item_quantity=" + arr[i].value,updatedItem)
             }
