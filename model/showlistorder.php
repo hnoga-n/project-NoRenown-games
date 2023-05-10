@@ -70,14 +70,14 @@
                             $html.= "<a href='./orderdetail.php?page=listbills&orderID=".$row['orderID']."'><button>Detail</button></a>";
                         }
                         if($accountFeatures["ACCEPT INVOICE"]==1 && $row['order_status'] == 0) {
-                            $html.= "<a href=''><button onclick='changestatus(".$row['orderID'].",1)'>Accept</button></a>";
+                            $html.= "<a><button onclick='changestatus(".$row['orderID'].",1)'>Accept</button></a>";
                         } else {
-                            $html.= "<a style=''><button disabled>Accept</button></a>";
+                            $html.= "<a><button disabled>Accept</button></a>";
                         }                  
                         if($accountFeatures["DECLINE INVOICE"]==1  && $row['order_status'] == 0) {
-                            $html.= "<a href=''><button onclick='changestatus(".$row['orderID'].",2)'>Decline</button></a>";
+                            $html.= "<a><button onclick='changestatus(".$row['orderID'].",2)'>Decline</button></a>";
                         } else {
-                            $html.= "<a style=''><button disabled>Decline</button></a>";
+                            $html.= "<a><button disabled>Decline</button></a>";
 
                         }                  
                 $html.="</td>

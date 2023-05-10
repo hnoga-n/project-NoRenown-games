@@ -17,8 +17,11 @@ addToCartBtn.addEventListener('click',()=> {
             if(xhr.status == 200) {
                 let data = xhr.responseText;
                 if(data == "NotSignIn") {
-                    alert("You have not sign in yet");
+                    alert("You have not signed in yet");
                     window.location.href = "../../view/user/login.php";
+                }  
+                else if (data == "NotEnoughQuantity")  {
+                    alert("This game is out of stock");
                 } else {
                     alert(data);
                 }

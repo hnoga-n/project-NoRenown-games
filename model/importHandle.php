@@ -286,7 +286,7 @@ function importGame()
   $impAccID = intval($_POST['import_account_ID']);
   $impDataCreate = $_POST['import_date_create'];
   $impTotalPrice = floatval($_POST['import_total_price']);
-  if ($impTotalPrice == 0) { //check if no product is choose
+  if ($impTotalPrice ==  0) { //check if no product is choose
     $_SESSION['message'] = "PLEASE CHOOSE PRODUCT!";
     header('location: ../view/admin/employee.php?page=import');
     return;
@@ -452,8 +452,7 @@ function listImportWithPagination($date_start, $date_end, $accID, $priceFr, $pri
           <td style='width: 30%;' id='date'>" . $row['date_create'] . "</td>
           <td style='width:20%;' id='impid'>" . $row['total_price'] . "</td>
           <td>
-            <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . ",`" . $row['date_create'] . "`," . $row['total_price'] . ")' >Select</div>
-          </td> 
+          <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . ",`" . $row['date_create'] . "`," . $row['total_price'] . ")' >Select</div>          </td> 
         </tr>
       ";
     }
@@ -484,7 +483,7 @@ function listImportWithoutPagination($page, $date_start, $date_end, $accID, $pri
           <td style='width: 30%;'>" . $row['date_create'] . "</td>
           <td style='width:20%;'>" . $row['total_price'] . "</td>
           <td>
-            <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . "," . $row['date_create'] . "," . $row['total_price'] . ")' >Select</div>
+          <div class='view-button' onclick='showImportDetail(" . $row['impID'] . "," . $row['accID'] . ",`" . $row['date_create'] . "`," . $row['total_price'] . ")' >Select</div>          </td> 
           </td>
         </tr>
       ";

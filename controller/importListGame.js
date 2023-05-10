@@ -1,3 +1,25 @@
+function updateCurrPrice(gid, quantity_val) {
+    let total_p = document.querySelector("#import-total-price");
+    const mess = document.getElementById("message");
+    if (quantity_val == '' || quantity_val == undefined || quantity_val == null || quantity_val == "0") {
+        mess.innerHTML = "quantity must > 0";
+        return;
+    } else {
+        mess.innerHTML = "";
+    }
+
+    const xml = new XMLHttpRequest;
+    xml.onreadystatechange = function () {
+        if (this.responseText == '') {
+            total_p.value = 0;
+        } else {
+            total_p.value = this.responseText;
+        }
+    }
+    xml.open("GET", "../../model/importHandle.php?query=cartquantity&gid=" + gid + "&quantity=" + quantity_val);
+    xml.send();
+
+}
 let i = 1;
 loadGeneralInfo();
 setTimeout(() => {

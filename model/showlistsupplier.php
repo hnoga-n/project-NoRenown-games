@@ -66,3 +66,4 @@
         echo $myJSON;
     }
     $conn->close();
+?>
