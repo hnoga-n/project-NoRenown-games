@@ -34,6 +34,15 @@
         $stmt = $conn->prepare($insertInvoiceData); 
         $stmt->bind_param("iiissss",$rowOrderID['orderID'],$row['cItem_id'],$row['cItem_quantity'],$row['cItem_price_before_discount'],$row['cItem_price_after_discount'],$row['cItem_name'],$row['cItem_image']);
         $stmt->execute();
+
+        $sql2 = "SELECT gquantity FROM games WHERE gid = {$row['cItem_id']}";
+        $result2 = $conn->query($sql2);
+        $row2 = $result2->fetch_assoc();
+
+        $quantity = (int) $row2['gquantity'] - (int) $row['cItem_quantity'];
+        $updateGameQuantity = "UPDATE games SET gquantity = $quantity WHERE games.gid = {$row['cItem_id']}";
+        $conn->query($updateGameQuantity);
+
     }
 
     //delete cart data
