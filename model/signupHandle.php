@@ -1,10 +1,11 @@
 <?php
 include 'connect.php';
+
 if (!empty($_POST["signup_name"]) && !empty($_POST["signup_phone"]) && !empty($_POST["signup_mail"]) && !empty($_POST["signup_passwd"])) {
   // insert value into users 
   $fullname = $_POST['signup_name'];
   $phone = $_POST['signup_phone'];
-  $address = "Address hasn't been set ";
+  $address = $_POST['signup_address'];
   $usertype = 1;
   $sql_user = $conn->prepare("INSERT INTO users (phone,fullname,address,usertypeID)	 VALUES (?,?,?,?) ");
   $sql_user->bind_param("sssi", $phone, $fullname, $address, $usertype);
