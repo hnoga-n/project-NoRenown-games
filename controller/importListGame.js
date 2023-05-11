@@ -97,7 +97,7 @@ function addToImportCard(gameid) {
 function deleteFromCart(gid) {
     const xml = new XMLHttpRequest;
     const mess = document.getElementById("message");
-xml.onreadystatechange = function () {
+    xml.onreadystatechange = function () {
         if (this.responseText == "success") {
             loadCart();
 

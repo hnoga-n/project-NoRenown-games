@@ -8,10 +8,9 @@ if (isset($_GET['mail'])) {
   $sql_mail->bind_param("s", $mail);
   $sql_mail->execute();
   $result1 = $sql_mail->get_result();
-  $sql_mail->close();
   if ($result1->num_rows > 0) {
     echo "mailExist";
   }
 }
-
+$sql_mail->close();
 $conn->close();
