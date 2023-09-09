@@ -27,7 +27,6 @@
             <div class="content">
                 <h2>About Us</h2>
                 <span><!-- line here --></span>
-                <p>Tam hoang cong nghe SGU</p>
                 <ul class="links">
                     <li><a href="https://github.com/hnoga-n/project-NoRenown-games" target="_blank">github</a></li>
                     <div class="vertical-line"></div>
