@@ -22,6 +22,7 @@ class games
     $this->gquantity = $quantity;
   }
 
+  // nạp chồng hàm khởi tạo
   public static function __construct2(games $othergame)
   {
     return new self($othergame->gid, $othergame->gname, $othergame->gcategory, $othergame->gprice, $othergame->gdiscount, $othergame->gimg, $othergame->gquantity);

@@ -283,10 +283,10 @@ function importGame()
   include "../model/connect.php";
   include "../model/object/game.php";
   $impID = intval($_POST['importID']);
-  $impAccID = intval($_POST['import_account_ID']); 
+  $impAccID = intval($_POST['import_account_ID']);
   $impDataCreate = $_POST['import_date_create'];
   $impTotalPrice = floatval($_POST['import_total_price']);
-  if ($impTotalPrice == 0) { //check if no product is choose
+  if ($impTotalPrice ==  0) { //check if no product is choose
     $_SESSION['message'] = "PLEASE CHOOSE PRODUCT!";
     header('location: ../view/admin/employee.php?page=import');
     return;
@@ -471,7 +471,7 @@ function listImportWithoutPagination($page, $date_start, $date_end, $accID, $pri
     $sql_page = "SELECT * FROM import WHERE date_create BETWEEN '" . $date_start . "' AND '" . $date_end . "' AND total_price BETWEEN $priceFr AND $priceTo ORDER BY impID LIMIT 5 OFFSET $startPos";
   } else {
     $sql_page = "SELECT * FROM import WHERE accID=$accID AND date_create BETWEEN '" . $date_start . "' AND '" . $date_end . "' AND total_price BETWEEN $priceFr AND $priceTo ORDER BY impID LIMIT 5 OFFSET $startPos";
-  } 
+  }
   $page = $conn->query($sql_page);
   if ($page->num_rows > 0) {
     while ($row = $page->fetch_assoc()) {

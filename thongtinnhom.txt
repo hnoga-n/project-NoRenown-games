@@ -1,0 +1,41 @@
+Nhóm 4: Web quản lý cửa hàng bán game
+
+Mạch Hạo Tuấn 		3121410555
+Nguyễn Huy Hoàng	3121410212
+Trần Vĩ Hào			3121410182
+Lê Long Hoàng		3121410210
+
+account trên hệ thống:
+pass:12345678,tk: 'adminADMIN123@gmail.com'
+pass:61706976,tk: 'Brittany3049@gmail.com'
+pass:67937746,tk: 'Cinderella7152@gmail.com'
+pass:89433771,tk: 'Diana7433@gmail.com'
+pass:12345678,tk: 'Eva9364@gmail.com'
+pass:12345678,tk: 'Fiona1546@gmail.com'
+pass:74818837,tk: 'Gunda3133@gmail.com'
+pass:12195064,tk: 'Hege7466@gmail.com'
+pass:35110066,tk: 'Inga9847@gmail.com'
+pass:66844736,tk: 'Johanna9344@gmail.com'
+pass:97160294,tk: 'Kitty3677@gmail.com'
+pass:97346284,tk: 'Linda7702@gmail.com'
+pass:78623062,tk: 'Nina5620@gmail.com'
+pass:66131750,tk: 'Ophelia8655@gmail.com'
+pass:10252307,tk: 'Petunia9738@gmail.com'
+pass:40190289,tk: 'Amanda8224@gmail.com'
+pass:44369947,tk: 'Raquel1996@gmail.com'
+pass:78711728,tk: 'Cindy1526@gmail.com'
+pass:81164632,tk: 'Doris4470@gmail.com'
+pass:71751000,tk: 'Eve4128@gmail.com'
+pass:98933369,tk: 'Evita5299@gmail.com'
+pass:15850783,tk: 'Sunniva4495@gmail.com'
+pass:60908104,tk: 'Tove2323@gmail.com'
+pass:64150840,tk: 'Unni7201@gmail.com'
+pass:96930326,tk: 'Violet9618@gmail.com'
+pass:28417987,tk: 'Liza1192@gmail.com'
+pass:96716474,tk: 'Elizabeth5457@gmail.com'
+pass:49071585,tk: 'Ellen3991@gmail.com'
+pass:69539739,tk: 'Wenche4717@gmail.com'
+pass:37978107,tk: 'Vicky4960@gmail.com'
+pass:04082003,tk: 'huchuynh0707@gmail.com'
+pass:07072003,tk: 'tuanhaomach@gmail.com'
+pass:12345678,tk: 'thanhsang@gmail.com'

@@ -8,7 +8,6 @@
     $sql = "INSERT INTO supplier(suppName,suppMail,suppTel) VALUES ('$suppName','$suppMail','$suppTel')";
     $result = $conn->query($sql);
     if($result) {
-        
             echo
                 "<script>
                     alert('Add successfully !')
@@ -18,4 +17,3 @@
     }
     else echo "Error: " . $sql . "<br>" . $conn->error . "<br>" . "Error: " . $sql . "<br>" . $conn->error;
     $conn->close();
-?>

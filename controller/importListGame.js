@@ -82,7 +82,7 @@ function addToImportCard(gameid) {
     //console.log(gameid);
     const mess = document.getElementById("message");
     const xml = new XMLHttpRequest;
-    xml.onreadystatechange = function () {
+    xml.onload = function () {
         if (this.responseText == "exist") {
             mess.innerHTML = "You have already added this game"
         } else {
@@ -97,7 +97,7 @@ function addToImportCard(gameid) {
 function deleteFromCart(gid) {
     const xml = new XMLHttpRequest;
     const mess = document.getElementById("message");
-xml.onreadystatechange = function () {
+    xml.onreadystatechange = function () {
         if (this.responseText == "success") {
             loadCart();
 

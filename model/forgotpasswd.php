@@ -32,13 +32,14 @@ if (isset($_POST['mail'])) {
     //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'hackiemsi0711@gmail.com';
-    $mail->Password = 'eniryucxqhzvwcja';
+
+    $mail->Username = 'yourmail';
+    $mail->Password = 'yourapppassword';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
 
-    $mail->setFrom('hackiemsi0711@gmail.com', 'Norenown Game');
-    $mail->addReplyTo('hackiemsi0711@gmail.com', 'Norenown Game');
+    $mail->setFrom('youremail@gmail.com', 'Norenown Game');
+    $mail->addReplyTo('youremail@gmail.com', 'Norenown Game');
     $mail->addAddress($_POST['mail']);
     $mail->Subject = "YOUR NEW PASSWORD";
     $newpass = strval(rand(10000000, 99999999));

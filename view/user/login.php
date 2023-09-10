@@ -34,9 +34,12 @@ if (isset($_COOKIE['accountId']) && $_COOKIE['usertype'] == 2) {
           <div style="display:none;" class="input_message" id="name_validate_message"></div>
           <input name="signup_phone" type="tel" placeholder="Phone" name="phone" />
           <div style="display:none;" class="input_message" id="phone_validate_message"></div>
-          <input name="signup_mail" type="email" placeholder="Email" name="email" />
+          <input name="signup_mail" type="email" placeholder="Email" name="email" oninput="checkMailExist(this.value)" />
           <div style="display:none;" class="input_message" id="mail_validate_message"></div>
+          <input name="signup_address" type="text" placeholder="Address" name="Address" />
+          <div style="display:none;" class="input_message" id="address_validate_message"></div>
           <input name="signup_passwd" type="password" placeholder="Password" name="password" />
+          <div style="display:none;" class="input_message" id="passwd_validate_message"></div>
           <input name="signup_passwd_cfm" type="password" placeholder="Confirm password" />
           <div style="display:none;" class="input_message" id="passwd_cfm_message"></div>
           <button type="submit">Sign Up</button>
