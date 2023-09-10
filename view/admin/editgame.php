@@ -42,7 +42,7 @@
         <h2><?= !empty($_GET['id']) ? "Edit Game" : "Add Game" ?></h2>
     </div>
     <div class='modal-body'>
-        <form action='<?= !empty($game) ? "../../model/edit_Game.php?gid=$id" : "../../model/add_Game.php" ?>' method="post">
+        <form action='<?= !empty($game) ? "../../model/edit_Game.php?gid=$id" : "../../model/add_Game.php" ?>' onsubmit="return checkFile()" method="post">
             <div class='general'>
                 <span>General</span>
                 <div class='modal-input' style="display:<?= !empty($game) ? 'flex' : 'none' ?>;">
@@ -172,7 +172,7 @@
                             <label>Avartar :</label>
                         </div>
                         <div>
-                            <input type='file' name="gimg">
+                            <input type='file' name="gimg" id="avatar" accept="image/jpeg, image/png, image/gif">
                         </div>
                     </div>
                 </div>
@@ -262,3 +262,4 @@
 </div>
 
 <script src="../../assets/js/leftmenu.js"></script>
+<script src="../../assets/js/editgame.js"></script>
