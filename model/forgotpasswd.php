@@ -32,6 +32,7 @@ if (isset($_POST['mail'])) {
     //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
+
     $mail->Username = 'yourmail';
     $mail->Password = 'yourapppassword';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;

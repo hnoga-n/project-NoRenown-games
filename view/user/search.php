@@ -40,8 +40,8 @@
               <i class="fa-sharp fa-solid fa-caret-down"></i>
               <div class="dropdown-category" onclick="antiPropagation(event)">
                 <ul class="category-list category-list-sort">
-                  <li onclick="setSort('ASC',this)" class="active" id="asc" value="asc">Price: Ascend</li>
-                  <li onclick="setSort('DESC',this)" id="desc" value="desc">Price: Descend</li>
+                  <li onclick="setSort('ASC',this),hideCategoryList(this)" class="active" id="asc" value="asc">Price: Ascend</li>
+                  <li onclick="setSort('DESC',this),hideCategoryList(this)" id="desc" value="desc">Price: Descend</li>
                 </ul>
               </div>
             </div>
