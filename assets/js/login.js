@@ -63,7 +63,7 @@ function sanitizeForm() {
 		mailMess.innerHTML = "* Mail is required !"
 		mailMess.style.display = 'block'
 		flagMail = false;
-	} else if (mail.match(/((\w|\W){5,})+@+(\w{1,})+.+(\w{1,})/i) == null) {
+	} else if (mail.match(/((\w|\W){1,})+@+(\w{1,})+.+(\w{1,})/i) == null) {
 		mailMess.innerHTML = "* Mail is not valid ! Exp: norenown@gmail.com"
 		mailMess.style.display = 'block'
 		flagMail = false;
@@ -120,7 +120,7 @@ function sanitizeSigninForm() {
 		mailMess.innerHTML = "* Mail is required !"
 		mailMess.style.display = 'block'
 		flagMail = false;
-	} else if (mail.match(/((\w|\W){5,})+@+(\w{1,})+.+(\w{1,})/i) == null) {
+	} else if (mail.match(/((\w|\W){1,})+@+(\w{1,})+.+(\w{1,})/i) == null) {
 		mailMess.innerHTML = "* Mail is not valid ! Exp: norenown@gmail.com"
 		mailMess.style.display = 'block'
 		flagMail = false;
@@ -315,7 +315,7 @@ function sanitizeContactForm() {
 		mailMess.innerHTML = "* Mail is required !"
 		mailMess.style.display = 'block'
 		flagMail = false;
-	} else if (mail.match(/((\w|\W){5,})+@+(\w{1,})+.+(\w{1,})/i) == null) {
+	} else if (mail.match(/((\w|\W){1,})+@+(\w{1,})+.+(\w{1,})/i) == null) {
 		mailMess.innerHTML = "* Mail is not valid ! Exp: norenown@gmail.com"
 		mailMess.style.display = 'block'
 		flagMail = false;
