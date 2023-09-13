@@ -42,7 +42,6 @@ function getListGroup($edit, $delete)
           <td style="width: 25%;">' . $row['date_create'] . '</td>
           <td style="width: 25%;">' . $row['last_modify'] . '</td>
           <td style="width: 25%;">
-            Nothing
           </td>
       </tr>
   ';
