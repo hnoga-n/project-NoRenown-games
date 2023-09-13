@@ -26,7 +26,7 @@ $user_info = $result2->fetch_assoc();
         </div>
     </div>
     <div class="bottom">
-        <form class="bottom-div" name="update_profile_employee" onsubmit="return sanitizeUpdateEmployeeProfileForm()" action="../../model/updateProfile.php?query=updateemployee" method="POST">
+        <form class="bottom-div" name="update_profile_employee" onsubmit="return sanitizeUpdateEmployeeProfileForm(this)" action="../../model/updateProfile.php?query=updateemployee" method="POST">
             <div class="b-title">
                 <span>Profile</span>
             </div>
@@ -81,12 +81,13 @@ $user_info = $result2->fetch_assoc();
     const togglePassword = document.querySelector("#togglePassword");
     const password = document.querySelector("#password");
 
-    togglePassword.addEventListener("click", function () {
+    togglePassword.addEventListener("click", function() {
         // toggle the type attribute
         const type = password.getAttribute("type") === "password" ? "text" : "password";
         password.setAttribute("type", type);
-        
+
         // toggle the icon
         this.classList.toggle("fa-eye");
     });
 </script>
+<script src="../../assets/js/login.js"></script>

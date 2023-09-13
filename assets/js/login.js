@@ -49,7 +49,6 @@ function sanitizeForm() {
 		phoneMess.style.display = 'block'
 		flagPhone = false;
 	} else if (phone.match(/(0)+(\d{8,12})\b/) == null) {
-		console.log("hello");
 		phoneMess.innerHTML = "* Phone is not valid ! Exp: 0968644022"
 		phoneMess.style.display = 'block'
 		flagPhone = false;
@@ -187,7 +186,7 @@ function sanitizeUpdateProfileForm() {
 		phoneMess.innerHTML = "* Phone must be digit!"
 		phoneMess.style.display = 'block'
 		flagPhone = false;
-	} else if (phone.match(/(09)+(\d{8})\b/) == null) {
+	} else if (phone.match(/(0)+(\d{8,12})\b/)==null) {
 		phoneMess.innerHTML = "* Phone is not valid ! Exp: 0968644022"
 		phoneMess.style.display = 'block'
 		flagPhone = false;
@@ -195,8 +194,6 @@ function sanitizeUpdateProfileForm() {
 		phoneMess.style.display = "none"
 		flagPhone = true;
 	}
-
-
 	if (flagPhone == false || flagName == false || flagpasswd == false) {
 		return false;
 	} else {
@@ -213,7 +210,7 @@ function sanitizeUpdateEmployeeProfileForm() {
 	const nameMess = document.getElementById('name_update_message');
 	const phoneMess = document.getElementById('phone_update_message');
 	const pwMess = document.getElementById('pw_update_message');
-
+console.log(phone);
 	let flagName = true;
 	let flagPhone = true;
 	let flagpasswd = true;
@@ -242,7 +239,6 @@ function sanitizeUpdateEmployeeProfileForm() {
 		flagpasswd = true;
 	}
 
-
 	if (phone == '') {
 		flagPhone = false;
 		phoneMess.innerHTML = "* Phone is required"
@@ -251,7 +247,7 @@ function sanitizeUpdateEmployeeProfileForm() {
 		phoneMess.innerHTML = "* Phone must be digit!"
 		phoneMess.style.display = 'block'
 		flagPhone = false;
-	} else if (phone.match(/(09)+(\d{8})\b/) == null) {
+	}else if (phone.match(/(0)+(\d{8,12})\b/) == null) {
 		phoneMess.innerHTML = "* Phone is not valid ! Exp: 0968644022"
 		phoneMess.style.display = 'block'
 		flagPhone = false;

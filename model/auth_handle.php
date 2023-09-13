@@ -285,7 +285,7 @@ function createGroup()
       }
     }
 
-    $_SESSION['message'] = "add group authority successed";
+    $_SESSION['message'] = "Add group authority success";
     header('location: ../view/admin/authorize.php?page=authorization');
   } else {
     $groupID = $_POST['groupID'];
@@ -325,7 +325,7 @@ function createGroup()
         $update_feature->execute();
       }
     }
-    $_SESSION['message'] = "edit group authority successed";
+    $_SESSION['message'] = "Edit group authority success";
     header('location: ../view/admin/authorize.php?page=authorization&grid=' . $groupID . '');
   }
 
@@ -335,6 +335,13 @@ function createGroup()
 function deleteGroup($groupID)
 {
   include "../model/connect.php";
+  $accid = $_COOKIE['accountId'];
+  $groupIDUser = $conn->query("SELECT groupID FROM account WHERE accid=$accid")->fetch_assoc();
+  if ($groupID == $groupIDUser['groupID']) {
+    echo "cannot delete";
+    return;
+  }
+
   if ($conn->query("UPDATE account SET groupID=NULL WHERE groupID=$groupID")) {
     if ($conn->query("DELETE FROM auth_group_detail WHERE groupID=$groupID")) {
       if ($conn->query("DELETE FROM auth_group WHERE groupID=$groupID")) {
@@ -349,6 +356,6 @@ function deleteGroup($groupID)
     echo "failed delete account groupid";
   }
 
+  // header('location: ../view/admin/employee.php?page=authorization');
   $conn->close();
-  header('location: ../view/admin/employee.php?page=authorization');
 }
