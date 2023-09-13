@@ -327,7 +327,7 @@ function importGame()
           // empty import_cart
           $sql_delete_cart = "DELETE FROM import_cart";
           $result = $conn->query($sql_delete_cart);
-          $_SESSION['message'] = "ADD PRODUCT SUCESSED !";
+          $_SESSION['message'] = "ADD PRODUCT SUCCESS !";
         } else {
           // if import detail failed->restore quantity
           $_SESSION['message'] = "ADD PRODUCT FAILED !";
