@@ -147,6 +147,7 @@ function sanitizeSigninForm() {
   } else {
     return true;
   }
+
 }
 function sanitizeUpdateProfileForm() {
   let name = document.forms["update_profile_form"]["profile_fullname"].value;
