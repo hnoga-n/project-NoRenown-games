@@ -56,10 +56,19 @@ $(document).ready(function () {
 function deleteGroup(groupID) {
   if (confirm("Delete this authority group ?") == true) {
     const xml = new XMLHttpRequest;
-    xml.onreadystatechange = function () {
-      if (this.responseText.match("delete successed")) {
-        //alert("Delete succesed! "); 
-
+    xml.onload = function () {
+      if (this.responseText.match("cannot delete")) {
+        alert("Delete fail! Can not delete group authority of your account.");
+        // window.location.reload(); 
+        return;
+      }else if (this.responseText.match("delete successed")) {
+        alert("Delete success!"); 
+        // window.location.reload();
+        return;
+      }else{
+        alert("Delete fail!");
+        // window.location.reload(); 
+        return;
       }
       console.log(this.responseText);
     }

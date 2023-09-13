@@ -39,23 +39,23 @@ function sanitizeForm() {
     addrMess.style.display = "none";
   }
 
-  if (phone == "") {
-    phoneMess.innerHTML = "* Phone is required";
-    phoneMess.style.display = "block";
-    flagPhone = false;
-  } else if (phone.match(/\D/g) != null) {
-    phoneMess.innerHTML = "* Phone must be digit!";
-    phoneMess.style.display = "block";
-    flagPhone = false;
-  } else if (phone.match(/(0)+(\d{8,12})\b/) == null) {
-    console.log("hello");
-    phoneMess.innerHTML = "* Phone is not valid ! Exp: 0968644022";
-    phoneMess.style.display = "block";
-    flagPhone = false;
-  } else {
-    phoneMess.style.display = "none";
-    flagPhone = true;
-  }
+	if (phone == '') {
+		phoneMess.innerHTML = "* Phone is required"
+		phoneMess.style.display = "block"
+		flagPhone = false;
+	} else if (phone.match(/\D/g) != null) {
+		phoneMess.innerHTML = "* Phone must be digit!"
+		phoneMess.style.display = 'block'
+		flagPhone = false;
+	} else if (phone.match(/(0)+(\d{8,12})\b/) == null) {
+		phoneMess.innerHTML = "* Phone is not valid ! Exp: 0968644022"
+		phoneMess.style.display = 'block'
+		flagPhone = false;
+	} else {
+		phoneMess.style.display = "none"
+		flagPhone = true;
+	}
+
 
   if (mail == "") {
     mailMess.innerHTML = "* Mail is required !";
