@@ -100,6 +100,7 @@ if (!isset($_COOKIE['accountId'])) {
             </button>
           </div>
         </div>
+      </form>
     </div>
   </div>
   <?php

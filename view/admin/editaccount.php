@@ -122,22 +122,36 @@ if (isset($_GET['accid'])) {
                         $sql1 = "SELECT groupID,groupName
                                     FROM auth_group";
                         $result1 = $conn->query($sql1);
-                        if ($result1->num_rows > 0) {
-                            while ($row = $result1->fetch_assoc()) {
-                                if ($account['usertypeID'] == 1 && $row['groupID'] == 2) {
-                                    $select = "<option value='" . $row['groupID'] . "' selected>" . $row['groupName'] . "</option>&nbsp;&nbsp;";
-                                    break;
-                                } else if ($account['usertypeID'] == 2 && $row['groupID'] == 2) {
-                                    continue;
-                                } else {
-                                    if ($row['groupID'] == $account['groupid']) {
-                                        $select .= "<option value='" . $row['groupID'] . "' selected>" . $row['groupName'] . "</option>&nbsp;&nbsp;";
-                                    } else
+                        if ($account) {
+                            if ($result1->num_rows > 0) {
+                                while ($row = $result1->fetch_assoc()) {
+                                    if ($account['usertypeID'] == 1 && $row['groupID'] == 2) {
+                                        $select = "<option value='" . $row['groupID'] . "' selected>" . $row['groupName'] . "</option>&nbsp;&nbsp;";
+                                        break;
+                                    } else if ($account['usertypeID'] == 2 && $row['groupID'] == 2) {
+                                        continue;
+                                    } else {
+                                        if ($row['groupID'] == $account['groupid']) {
+                                            $select .= "<option value='" . $row['groupID'] . "' selected>" . $row['groupName'] . "</option>&nbsp;&nbsp;";
+                                        } else
+                                            $select .= "<option value='" . $row['groupID'] . "'>" . $row['groupName'] . "</option>&nbsp;&nbsp;";
+                                    }
+                                }
+                            }
+                            echo $select;
+                        } else {
+                            $select = "";
+                            if ($result1->num_rows > 0) {
+                                while ($row = $result1->fetch_assoc()) {
+                                    if ($row['groupID'] == 2)
+                                        continue;
+                                    else
                                         $select .= "<option value='" . $row['groupID'] . "'>" . $row['groupName'] . "</option>&nbsp;&nbsp;";
                                 }
                             }
+                            echo $select;
                         }
-                        echo $select;
+
                         $conn->close();
                         ?>
                     </select>
