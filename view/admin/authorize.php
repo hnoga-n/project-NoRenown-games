@@ -11,7 +11,7 @@ include 'head1.php'
         <h2><?= !empty($_GET['grid']) ? 'Edit group' : 'Add group' ?></h2>
     </div>
     <div class="modal-form">
-        <form action="../../model/auth_handle.php?query=submited" method="POST">
+        <form id="myForm" onsubmit="return checkCheckBox()" action="../../model/auth_handle.php?query=submited" method="POST">
             <div class="form-general">
                 <!-- <div class="form-general-div">
                     <div>
@@ -105,3 +105,4 @@ include 'head1.php'
 </div>
 <script src="../../assets/js/leftmenu.js"></script>
 <script src="../../controller/authority.js"></script>
+<script src="../../assets/js/checkFormAuth.js"></script>

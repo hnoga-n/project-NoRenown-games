@@ -22,18 +22,23 @@ if ($list_product_card->num_rows > 0) {
     $trailer_sql = "SELECT trailer FROM game_detail WHERE gdt_id = {$row['gid']}";
     $trailer = $conn->query($trailer_sql);
     $row1 = $trailer->fetch_assoc();
+
+    if ((int)$row['gdiscount'] > 0) {
+      $str_discount = "<div class='discount'>
+        <span>-<label>" . $row['gdiscount'] . "</label>%</span>
+      </div>";
+    } else {
+      $str_discount = "";
+    }
     echo "
             <div class='item'>
             <a href='./productDetails.php?id=" . $row['gid'] . "' onmouseover='showVid(event,this)' onmouseout='closeVid(event,this)'>
             <video muted autoplay loop>
-                <source src='" . $row1['trailer'] . "' type=''>
                 <source src='../../assets/video/I Am Atomic 4k.mp4' type='video/mp4'>
                 Your browser does not support the video tag.
             </video>
             <img src='../../assets/img/" . $row['gimg'] . "' alt='' />
-            <div class='discount'>
-                <span>-<label>" . $row['gdiscount'] . "</label>%</span>
-            </div>
+            " . $str_discount . "
             </a>
             <div class='product-information'>
             <div class='text-name'>" . $row['gname'] . "</div>

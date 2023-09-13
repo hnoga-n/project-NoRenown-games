@@ -56,9 +56,18 @@ include_once "../../model/getProductDetails.php";
             <h2><?php echo $row2['gname'] ?></h2>
           </div>
           <div class="price">
-            <small><s><?php echo $row2['gprice'] ?>$</s></small>
-            <div class="price-number"><?php echo $result ?></div>
-            <div class="price-dollar">$</div>
+            <?php
+            if ((int)$row2['gdiscount'] > 0) {
+              echo "
+                <small><s>" . $row2['gprice'] . "$</s></small>
+                  <div class='price-number'>" . $result . "</div>
+                  <div class='price-dollar'>$</div>
+              ";
+            } else {
+              echo "<div class='price-number'>" . $result . "</div>
+                <div class='price-dollar'>$</div>";
+            }
+            ?>
           </div>
           <div>
             <div id="addToCartBtn">
