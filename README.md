@@ -6,10 +6,7 @@
 - Giúp các gamer có thể mua những tựa game mà mình yêu thích với mức giá phải chăng một cách đơn giản và nhanh chóng nhất.
 
 ## Công nghệ sử dụng:
-![HTML Logo](https://via.placeholder.com/50x50.png?text=HTML)
-![CSS Logo](https://via.placeholder.com/50x50.png?text=CSS)
-![JavaScript Logo](https://via.placeholder.com/50x50.png?text=JS)
-![PHP Logo](https://via.placeholder.com/50x50.png?text=PHP)
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,php,github)](https://skillicons.dev)
 
 ## THÀNH VIÊN NHÓM:
 
