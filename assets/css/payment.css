@@ -125,7 +125,6 @@ body {
   background-color: var(--color-medium-dark);
   position: sticky;
   bottom: 15px;
-  margin-top: 30px;
   /* box-shadow: 0 30px 0 0 var(--color-dark),0 0 30px 15px var(--color-dark); */
 }
 
@@ -152,8 +151,8 @@ body {
   color: #fff;
   margin-bottom: 30px;
 }
+
 .payment-container .payment-app .payment-form .panel .pay-button .button {
-  margin-bottom: 30px;
   width: 100%;
 }
 .payment-container .payment-app .payment-form .panel .pay-button .button:hover {
@@ -292,11 +291,11 @@ body {
     margin: 0 5px;
   }
   .payment-container .payment-app .payment-form .panel {
-    margin: 0 5px!important;
+    margin: 0 5px !important;
     top: 115px;
   }
   .payment-container .payment-app .payment-form .panel .pay-button {
-    margin: 0;
+    margin-top: 30px;
   }
 }
 
