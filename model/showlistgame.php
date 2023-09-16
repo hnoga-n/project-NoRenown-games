@@ -7,7 +7,7 @@ $count = 0;
 $loc = intval(($q - 1) * 12);
 $sql = "";
 $sql1 = "";
-if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {  
+if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {
     $search = strtolower($_GET['search']);
     $pfrom = floatval($_GET['pfrom']);
     $pto = floatval($_GET['pto']);
@@ -15,29 +15,35 @@ if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {
         $sql = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending,genStatus 
             FROM games JOIN genres ON games.genreID=genres.genID  
             WHERE visible=1 AND genStatus=1 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gid ASC
             LIMIT $loc,12
             ";
         $sql1 = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending,genStatus 
             FROM games JOIN genres ON games.genreID=genres.genID
-            WHERE visible=1 AND genStatus=1 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto";
+            WHERE visible=1 AND genStatus=1 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gid ASC
+            ";
     } else {
         $sql = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending,genStatus
             FROM games JOIN genres ON games.genreID=genres.genID
             WHERE visible=1 AND genStatus=1 AND genreID=$v AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gid ASC
             LIMIT $loc,12";
         $sql1 = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending,genStatus 
             FROM games JOIN genres ON games.genreID=genres.genID
-            WHERE visible=1 AND genStatus=1 AND genreID=$v AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto";
+            WHERE visible=1 AND genStatus=1 AND genreID=$v AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gid ASC
+            ";
     }
 }
 $result = $conn->query($sql);
 $result1 = $conn->query($sql1);
 $str = "";
-$accountFeatures = json_decode($features_arr[0],true);
+$accountFeatures = json_decode($features_arr[0], true);
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
-        if($row['trending'] == 1) 
+        if ($row['trending'] == 1)
             $status = "checked";
         else $status = "";
         $str .= "    <tr>
@@ -52,24 +58,24 @@ if ($result->num_rows > 0) {
                         </td>
                         <td>
                             <label class='switch'>
-                                <input type='checkbox' onchange='setTrending(".$row['gid'].",this.checked)' $status>
+                                <input type='checkbox' onchange='setTrending(" . $row['gid'] . ",this.checked)' $status>
                                 <span class='slider round'></span>
                             </label>
                         </td>
                         <td>";
-                if($accountFeatures["EDIT GAME"]==1) {
-                    $str.= "<a href='editgame.php?page=listgame&id=" . $row['gid'] . "'>
+        if ($accountFeatures["EDIT GAME"] == 1) {
+            $str .= "<a href='editgame.php?page=listgame&id=" . $row['gid'] . "'>
                                 <button>Edit</button>
                             </a>
                             <br><br>";
-                }
-                if($accountFeatures["DELETE GAME"]==1) {
-                    $str.= "<a href=''>
+        }
+        if ($accountFeatures["DELETE GAME"] == 1) {
+            $str .= "<a href=''>
                                 <button onclick='deletegame(" . $row['gid'] . ")'>Delete</button>
                             </a>";
-                }            
-                    $str.="</td>
-                    </tr>";        
+        }
+        $str .= "</td>
+                    </tr>";
     }
 }
 if ($result1->num_rows > 0) {
