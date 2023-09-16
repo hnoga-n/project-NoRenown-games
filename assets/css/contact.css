@@ -323,3 +323,11 @@ body {
 
 
 }
+.update_message{
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 30px;
+  color: white;
+}

@@ -9,9 +9,9 @@ $sql_contact = $conn->prepare("INSERT INTO contact (phone,name,mail,feedback)VAL
 $sql_contact->bind_param("ssss", $phone, $fullname, $email, $message);
 
 if ($sql_contact->execute()) {
+  header('location: ../view/user/contact.php');
   $_SESSION["message"] = "Thank for your concern!";
-  header('../view/user/contact.php');
 } else {
   $_SESSION["message"] = "Failed!";
-  header('../view/user/contact.php');
+  header('location: ../view/user/contact.php');
 }
