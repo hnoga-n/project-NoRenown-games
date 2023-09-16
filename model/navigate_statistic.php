@@ -1,25 +1,29 @@
-<?php 
-    // echo $_GET['case'];
-    include_once "connect.php";
-    $accounts = "SELECT accid FROM account";
-    $result_accounts = $conn->query($accounts);
+<?php
+// echo $_GET['case'];
+include_once "connect.php";
+$accounts = "SELECT accid FROM account";
+$result_accounts = $conn->query($accounts);
 
-    $games = "SELECT gid FROM games";
-    $result_games = $conn->query($games);
+$games_quantity = "SELECT SUM(gquantity) AS total FROM `games` WHERE visible = 1";
+$result_games_quantity = $conn->query($games_quantity);
+$row = $result_games_quantity->fetch_assoc();
 
-    $trash_games = "SELECT gid FROM games WHERE visible = 0";
-    $result_trash_games = $conn->query($trash_games);
+$games = "SELECT gid FROM games";
+$result_games = $conn->query($games);
 
-    $invoices = "SELECT orderID FROM invoice";
-    $result_invoices = $conn->query($invoices);
+$trash_games = "SELECT gid FROM games WHERE visible = 0";
+$result_trash_games = $conn->query($trash_games);
 
-    $authorizations = "SELECT groupID FROM auth_group";
-    $result_authorizations = $conn->query($authorizations);
+$invoices = "SELECT orderID FROM invoice";
+$result_invoices = $conn->query($invoices);
 
-    $html_code = '';
-    switch ($_GET['case']) {
-        case "Overview":
-            echo '
+$authorizations = "SELECT groupID FROM auth_group";
+$result_authorizations = $conn->query($authorizations);
+
+$html_code = '';
+switch ($_GET['case']) {
+  case "Overview":
+    echo '
            
             <div class="statistic-container-header">
 
@@ -27,7 +31,7 @@
               <div class="content">
                 <div class="text">Accounts</div>
                 <div>
-                  <div class="number" id="import-money">'.  $result_accounts->num_rows .'</div>
+                  <div class="number" id="import-money">' .  $result_accounts->num_rows . '</div>
                   <i class="fa-solid fa-users-gear"></i>
                 </div>
               </div>
@@ -36,7 +40,7 @@
               <div class="content">
                 <div class="text">Invoices</div>
                 <div>
-                  <div class="number" id="import-money">'.  $result_invoices->num_rows .'</div>
+                  <div class="number" id="import-money">' .  $result_invoices->num_rows . '</div>
                   <i class="fa-solid fa-barcode"></i>
                 </div>
               </div>
@@ -45,16 +49,25 @@
               <div class="content">
                 <div class="text">Games</div>
                 <div>
-                  <div class="number" id="import-money">'.  $result_games->num_rows .'</div>
+                  <div class="number" id="import-money">' .  $result_games->num_rows . '</div>
                   <i class="fa-solid fa-gamepad"></i>
                 </div>
               </div>
             </div>
+            <div class="import_money">
+            <div class="content">
+              <div class="text">Games Quantity</div>
+              <div>
+                <div class="number" id="import-money">' . $row['total'] . '</div>
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+            </div>
+          </div>
             <div class="import_quantity">
               <div class="content">
                 <div class="text">Trash game</div>
                 <div>
-                  <div class="number" id="import-quantity">'.  $result_trash_games->num_rows .'</div>
+                  <div class="number" id="import-quantity">' .  $result_trash_games->num_rows . '</div>
                   <i class="fa-solid fa-trash-can"></i>
                 </div>
               </div>
@@ -63,7 +76,7 @@
               <div class="content">
                 <div class="text">Authorizations</div>
                 <div>
-                  <div class="number" id="import-quantity">'.  $result_authorizations->num_rows .'</div>
+                  <div class="number" id="import-quantity">' .  $result_authorizations->num_rows . '</div>
                   <i class="fa-solid fa-screwdriver-wrench"></i>
                 </div>
               </div>
@@ -72,9 +85,9 @@
         
         </div>
           ';
-            break;
-        case "Sold":
-            $html_code .= '
+    break;
+  case "Sold":
+    $html_code .= '
             <div class="statistic-container-header">
               <div class="sales">
                 <div class="content">
@@ -105,22 +118,22 @@
               <div class="products-filter-category">
                 <label>Category</label>
                 <select name="categoryValue" id="category" onfocus="this.size=5;" onblur="this.size=1;" onchange="this.size=1; this.blur();">';
-                
-                include './connect.php';
-                $sql = "SELECT DISTINCT (genreID),genName 
+
+    include './connect.php';
+    $sql = "SELECT DISTINCT (genreID),genName 
                   FROM games JOIN genres ON games.genreID = genres.genID 
                   ORDER BY genreID ASC";
-                $result = $conn->query($sql);
-                $html_code .= "<option value='all' selected>All</option><br>";
-                if ($result->num_rows > 0) {
-                  // output data of each row
-                  while ($row = $result->fetch_assoc()) {
-                    $html_code .= "<option value='" . $row['genreID'] . "'>" . $row['genName'] . "</option><br>";
-                  }
-                }
-                $conn->close();
-                
-                $html_code .= '</select>   
+    $result = $conn->query($sql);
+    $html_code .= "<option value='all' selected>All</option><br>";
+    if ($result->num_rows > 0) {
+      // output data of each row
+      while ($row = $result->fetch_assoc()) {
+        $html_code .= "<option value='" . $row['genreID'] . "'>" . $row['genName'] . "</option><br>";
+      }
+    }
+    $conn->close();
+
+    $html_code .= '</select>   
               </div>
           
               <div class="products-filter-date">
@@ -152,10 +165,10 @@
             
             
           ';
-          echo $html_code;
-          break;
-        case "Import":
-          $html_code .= '
+    echo $html_code;
+    break;
+  case "Import":
+    $html_code .= '
           <div class="statistic-container-header">
             <div class="import_quantity">
               <div class="content">
@@ -186,22 +199,22 @@
             <div class="products-filter-category">
               <label>Category</label>
               <select name="categoryValue" id="category" onfocus="this.size=5;" onblur="this.size=1;" onchange="this.size=1; this.blur();">';
-              
-              include './connect.php';
-              $sql = "SELECT DISTINCT (genreID),genName 
+
+    include './connect.php';
+    $sql = "SELECT DISTINCT (genreID),genName 
                 FROM games JOIN genres ON games.genreID = genres.genID 
                 ORDER BY genreID ASC";
-              $result = $conn->query($sql);
-              $html_code .= "<option value='all' selected>All</option><br>";
-              if ($result->num_rows > 0) {
-                // output data of each row
-                while ($row = $result->fetch_assoc()) {
-                  $html_code .= "<option value='" . $row['genreID'] . "'>" . $row['genName'] . "</option><br>";
-                }
-              }
-              $conn->close();
-              
-              $html_code .= '</select>   
+    $result = $conn->query($sql);
+    $html_code .= "<option value='all' selected>All</option><br>";
+    if ($result->num_rows > 0) {
+      // output data of each row
+      while ($row = $result->fetch_assoc()) {
+        $html_code .= "<option value='" . $row['genreID'] . "'>" . $row['genName'] . "</option><br>";
+      }
+    }
+    $conn->close();
+
+    $html_code .= '</select>   
             </div>
         
             <div class="products-filter-date">
@@ -234,10 +247,10 @@
           
           
         ';
-        echo $html_code;
-          break;
-        case "Customer":
-          $html_code .= '
+    echo $html_code;
+    break;
+  case "Customer":
+    $html_code .= '
           <div class="statistic-container-content">
             <div class="products-filter-besst-seller">
               <label>Top most customer buying</label>
@@ -270,10 +283,10 @@
             </table>
           </div>  
           </div>';
-        echo $html_code;  
-          break;  
-          case "Category":
-            $html_code .= '
+    echo $html_code;
+    break;
+  case "Category":
+    $html_code .= '
             <div class="statistic-container-header">
               <div class="import_quantity">
                 <div class="content">
@@ -304,22 +317,22 @@
               <div class="products-filter-category">
                 <label>Category</label>
                 <select name="categoryValue" id="category" onfocus="this.size=5;" onblur="this.size=1;" onchange="this.size=1; this.blur();">';
-                
-                include './connect.php';
-                $sql = "SELECT DISTINCT (genreID),genName 
+
+    include './connect.php';
+    $sql = "SELECT DISTINCT (genreID),genName 
                   FROM games JOIN genres ON games.genreID = genres.genID 
                   ORDER BY genreID ASC";
-                $result = $conn->query($sql);
-                $html_code .= "<option value='all' selected>All</option><br>";
-                if ($result->num_rows > 0) {
-                  // output data of each row
-                  while ($row = $result->fetch_assoc()) {
-                    $html_code .= "<option value='" . $row['genreID'] . "'>" . $row['genName'] . "</option><br>";
-                  }
-                }
-                $conn->close();
-                
-                $html_code .= '</select>   
+    $result = $conn->query($sql);
+    $html_code .= "<option value='all' selected>All</option><br>";
+    if ($result->num_rows > 0) {
+      // output data of each row
+      while ($row = $result->fetch_assoc()) {
+        $html_code .= "<option value='" . $row['genreID'] . "'>" . $row['genName'] . "</option><br>";
+      }
+    }
+    $conn->close();
+
+    $html_code .= '</select>   
               </div>
           
               <div class="products-filter-date">
@@ -350,6 +363,6 @@
             
             
           ';
-          echo $html_code;
-            break;
-    }
+    echo $html_code;
+    break;
+}
