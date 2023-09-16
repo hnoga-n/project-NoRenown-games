@@ -10,7 +10,7 @@
           </div>
         </a>
       </div>
-      <ul class="footer-lists">
+      <!-- <ul class="footer-lists">
         <li>
           <a href="#">Terms of Use</a>
         </li>
@@ -23,9 +23,9 @@
         <li>
           <a href="#">FAQ</a>
         </li>
-      </ul>
+      </ul> -->
       <div class="footer-social">
-        <div class="footer-social-icons">
+        <!-- <div class="footer-social-icons">
           <a href="">
             <i class="fa-brands fa-twitter"></i>
           </a>
@@ -38,7 +38,7 @@
           <a href="">
             <i class="fa-brands fa-facebook"></i>
           </a>
-        </div>
+        </div> -->
         <div class="footer-social-apps">
           <a href="https://www.apple.com/vn/app-store/" target="_blank">
             <img src="https://s3.gaming-cdn.com/themes/igv2/modules/footer/images/apple.svg" alt="" />

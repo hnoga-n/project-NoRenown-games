@@ -4,6 +4,10 @@ include_once "../../model/searchGenres.php";
 $accounts = "SELECT accid FROM account";
 $result_accounts = $conn->query($accounts);
 
+$games_quantity = "SELECT SUM(gquantity) AS total FROM `games` WHERE visible = 1";
+$result_games_quantity = $conn->query($games_quantity);
+$row = $result_games_quantity->fetch_assoc();
+
 $games = "SELECT gid FROM games WHERE visible = 1";
 $result_games = $conn->query($games);
 
@@ -58,9 +62,18 @@ $result_authorizations = $conn->query($authorizations);
         </div>
         <div class="import_money">
           <div class="content">
-            <div class="text">Games</div>
+            <div class="text">Games Header</div>
             <div>
               <div class="number" id="import-money"><?php echo $result_games->num_rows ?></div>
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+          </div>
+        </div>
+        <div class="import_money">
+          <div class="content">
+            <div class="text">Games Quantity</div>
+            <div>
+              <div class="number" id="import-money"><?php echo $row['total'] ?></div>
               <i class="fa-solid fa-gamepad"></i>
             </div>
           </div>
