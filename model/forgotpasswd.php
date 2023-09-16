@@ -25,6 +25,7 @@ if (isset($_POST['mail'])) {
   if ($result->num_rows <= 0) {
     $_SESSION['message'] = "* Email not recognized !";
   } else {
+    include 'dotenv.php';
     $account = $result->fetch_assoc();
 
     $mail = new PHPMailer(true);
@@ -33,13 +34,13 @@ if (isset($_POST['mail'])) {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
 
-    $mail->Username = 'yourmail';
-    $mail->Password = 'yourapppassword';
+    $mail->Username = $_ENV['HOST_EMAIL'];
+    $mail->Password = $_ENV['APP_PASSWORD'];
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
 
-    $mail->setFrom('youremail@gmail.com', 'Norenown Game');
-    $mail->addReplyTo('youremail@gmail.com', 'Norenown Game');
+    $mail->setFrom($_ENV['HOST_EMAIL'], 'Norenown Game');
+    $mail->addReplyTo($_ENV['HOST_EMAIL'], 'Norenown Game');
     $mail->addAddress($_POST['mail']);
     $mail->Subject = "YOUR NEW PASSWORD";
     $newpass = strval(rand(10000000, 99999999));

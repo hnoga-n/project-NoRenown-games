@@ -39,23 +39,23 @@ function sanitizeForm() {
     addrMess.style.display = "none";
   }
 
-  if (phone == "") {
-    phoneMess.innerHTML = "* Phone is required";
-    phoneMess.style.display = "block";
-    flagPhone = false;
-  } else if (phone.match(/\D/g) != null) {
-    phoneMess.innerHTML = "* Phone must be digit!";
-    phoneMess.style.display = "block";
-    flagPhone = false;
-  } else if (phone.match(/(0)+(\d{8,12})\b/) == null) {
-    console.log("hello");
-    phoneMess.innerHTML = "* Phone is not valid ! Exp: 0968644022";
-    phoneMess.style.display = "block";
-    flagPhone = false;
-  } else {
-    phoneMess.style.display = "none";
-    flagPhone = true;
-  }
+	if (phone == '') {
+		phoneMess.innerHTML = "* Phone is required"
+		phoneMess.style.display = "block"
+		flagPhone = false;
+	} else if (phone.match(/\D/g) != null) {
+		phoneMess.innerHTML = "* Phone must be digit!"
+		phoneMess.style.display = 'block'
+		flagPhone = false;
+	} else if (phone.match(/(0)+(\d{8,12})\b/) == null) {
+		phoneMess.innerHTML = "* Phone is not valid ! Exp: 0968644022"
+		phoneMess.style.display = 'block'
+		flagPhone = false;
+	} else {
+		phoneMess.style.display = "none"
+		flagPhone = true;
+	}
+
 
   if (mail == "") {
     mailMess.innerHTML = "* Mail is required !";
@@ -147,6 +147,7 @@ function sanitizeSigninForm() {
   } else {
     return true;
   }
+
 }
 function sanitizeUpdateProfileForm() {
   let name = document.forms["update_profile_form"]["profile_fullname"].value;
@@ -275,13 +276,13 @@ function sanitizeContactForm() {
   let name = document.forms["contact_form"]["contact_name"].value;
   let phone = document.forms["contact_form"]["contact_phone"].value;
   let mail = document.forms["contact_form"]["contact_mail"].value;
-  let feedback = document.forms["contact_form"]["contact_mail"].value;
+  let feedback = document.forms["contact_form"]["contact_message"].value;
 
   const nameMess = document.getElementById("name_contact_message");
-  const phoneMess = document.getElementById("mail_contact_message");
-  const mailMess = document.getElementById("phone_contact_message");
+  const mailMess = document.getElementById("mail_contact_message");
+  const phoneMess = document.getElementById("phone_contact_message");
   const feedbackMess = document.getElementById("feedback_contact_message");
-
+  
   let flagName = true;
   let flagPhone = true;
   let flagMail = true;
@@ -326,8 +327,8 @@ function sanitizeContactForm() {
     flagMail = true;
   }
 
-  if ((feedback = "")) {
-    feedbackMess.innerHTML = "* Let us know what you think ^^";
+  if (feedback=='') {
+    feedbackMess.innerHTML = "* This field must not empty!";
     feedbackMess.style.display = "block";
     flagFeedback = false;
   } else {
@@ -339,8 +340,7 @@ function sanitizeContactForm() {
     flagPhone == false ||
     flagName == false ||
     flagFeedback == false ||
-    flagMail == false ||
-    flagMailExist == false
+    flagMail == false 
   ) {
     return false;
   } else {
