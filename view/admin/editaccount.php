@@ -40,30 +40,29 @@ if (isset($_GET['accid'])) {
     <div class="modal-form">
 
         <form action="<?= !empty($account) ? "../../model/edit_account.php?userid=" . $account['userid'] : "../../model/add_account.php" ?>" onsubmit="return checkaddaccount(<?= !empty($account) ? 1 : 0 ?>)" method="post">
-            <div class="form-div" <?= !empty($account) ? '' : 'style="display:none;"' ?>>
-                <div>
-                    <span>Account ID:</span>
+            <?php
+            if (!empty($account)) {
+                echo '
+                <div class="form-div">
+                    <div>
+                        <span>Account ID:</span>
+                    </div>
+                    <div>
+                        <input type="text" readonly value="' . $account['accid'] . '">
+                    </div>
                 </div>
-                <div>
-                    <input type="text" readonly value="<?= !empty($account) ? $account['accid'] : '' ?>">
+                <div class="form-div">
+                    <div>
+                        <span>User type:</span>
+                    </div>
+                    <div>
+                        <input type="text" readonly value="' . $account['typename'] . '">
+                    </div>
                 </div>
-            </div>
-            <div class="form-div" <?= !empty($account) ? '' : 'style="display:none;"' ?>>
-                <div>
-                    <span>User ID:</span>
-                </div>
-                <div>
-                    <input type="text" readonly value="<?= !empty($account) ? $account['userid'] : '' ?>">
-                </div>
-            </div>
-            <div class="form-div" <?= !empty($account) ? '' : 'style="display:none;"' ?>>
-                <div>
-                    <span>User type:</span>
-                </div>
-                <div>
-                    <input type="text" readonly value="<?= !empty($account) ? $account['typename'] : '' ?>">
-                </div>
-            </div>
+                ';
+            }
+            ?>
+
             <div class="form-div">
                 <div>
                     <span>Full name:</span>
@@ -104,14 +103,21 @@ if (isset($_GET['accid'])) {
                     <input type="text" value="<?= !empty($account) ? $account['passwd'] : '' ?>" name="passwd">
                 </div>
             </div>
-            <div class="form-div" <?= !empty($account) ? '' : 'style="display:none;"' ?>>
-                <div>
-                    <span>Date create:</span>
+            <?php
+            if (!empty($account)) {
+                echo '
+                <div class="form-div">
+                    <div>
+                        <span>Date create:</span>
+                    </div>
+                    <div>
+                        <input type="text" readonly value="' . $account['date_create'] . '">
+                    </div>
                 </div>
-                <div>
-                    <input type="text" readonly value="<?= !empty($account) ? $account['date_create'] : '' ?>">
-                </div>
-            </div>
+                ';
+            }
+            ?>
+
             <div class="form-div">
                 <div>
                     <span>Group:</span>
@@ -157,18 +163,28 @@ if (isset($_GET['accid'])) {
                     </select>
                 </div>
             </div>
-            <div class="form-div" <?= !empty($account) ? '' : 'style="display:none;"' ?>>
-                <div>
-                    <span>Status:</span>
-                </div>
-                <div>
-                    <label class='switch'>
-                        <input type='checkbox' <?= ($account['acc_status'] == 1) ? 'checked' : '' ?> name="acc_status">
-                        <span class='slider round'></span>
-                    </label>
-                </div>
+            <?php
+            if (!empty($account)) {
+                if ($account['acc_status'] == 1)
+                    $check = "checked";
+                else
+                    $check = "";
+                echo "
+                    <div class='form-div'>
+                        <div>
+                            <span>Status:</span>
+                        </div>
+                        <div>
+                            <label class='switch'>
+                                <input type='checkbox' " . $check . " name='acc_status'>
+                                <span class='slider round'></span>
+                            </label>
+                        </div>
+                    </div>
+                    ";
+            }
+            ?>
 
-            </div>
             <div class="form-button">
                 <div>
                     <button type="submit"><?= !empty($_GET['accid']) ? 'Update' : 'Add' ?></button>

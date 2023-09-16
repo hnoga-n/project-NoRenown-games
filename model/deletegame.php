@@ -8,6 +8,7 @@ if (isset($_GET['gid'])) {
     if ($conn->query($sql_search_import_cart)) {
         $sql_delete_import_cart = "DELETE FROM import_cart WHERE gid=$gid";
         $conn->query($sql_delete_import_cart);
+
     }
     if ($result === TRUE) {
         echo "Delete successfully !";
@@ -18,3 +19,4 @@ if (isset($_GET['gid'])) {
     echo "Game id not found !";
 }
 $conn->close();
+

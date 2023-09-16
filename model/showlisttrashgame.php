@@ -6,7 +6,7 @@ $count = 0;
 $loc = intval(($q - 1) * 12);
 $sql = "";
 $sql1 = "";
-if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {  
+if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {
     $search = strtolower($_GET['search']);
     $pfrom = floatval($_GET['pfrom']);
     $pto = floatval($_GET['pto']);
@@ -14,19 +14,24 @@ if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {
         $sql = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending 
             FROM games JOIN genres ON games.genreID=genres.genID  
             WHERE visible=0 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gid ASC
             LIMIT $loc,12
             ";
         $sql1 = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending 
             FROM games JOIN genres ON games.genreID=genres.genID
-            WHERE visible=0 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto";
+            WHERE visible=0 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gid ASC
+            ";
     } else {
         $sql = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending
             FROM games JOIN genres ON games.genreID=genres.genID
             WHERE visible=0 AND genreID=$v AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gid ASC
             LIMIT $loc,12";
         $sql1 = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending 
             FROM games JOIN genres ON games.genreID=genres.genID
-            WHERE visible=0 AND genreID=$v AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto";
+            WHERE visible=0 AND genreID=$v AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gid ASC";
     }
 }
 $result = $conn->query($sql);
@@ -35,7 +40,7 @@ $str = "";
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
-        if($row['trending'] == 1) 
+        if ($row['trending'] == 1)
             $status = "checked";
         else $status = "";
         $str .= "    <tr>
