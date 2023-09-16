@@ -71,20 +71,20 @@ function showListGameImport($import)
     if ($v == "all") {
       $sql = "SELECT * 
             FROM games JOIN genres ON games.genreID = genres.genID
-            WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto AND visible=1
             LIMIT $loc,12
             ";
       $sql1 = "SELECT * 
             FROM games JOIN genres ON games.genreID = genres.genID
-            WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto and visible = 1";
     } else {
       $sql = "SELECT * 
             FROM games  JOIN genres ON games.genreID = genres.genID
-            WHERE genreID = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            WHERE genreID = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto AND visible=1
             LIMIT $loc,12";
       $sql1 = "SELECT * 
             FROM games  JOIN genres ON games.genreID = genres.genID
-            WHERE genreID = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            WHERE genreID = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto and visible = 1";
     }
   }
   $result = $conn->query($sql);
@@ -151,6 +151,7 @@ function loadCart()
 {
   include "../model/connect.php";
   //load game into cart
+
   $sql = "SELECT gid,gname,gquantity,gprice FROM import_cart ";
   $result = $conn->query($sql);
   $data = '';
