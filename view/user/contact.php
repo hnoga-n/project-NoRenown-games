@@ -30,7 +30,7 @@
     </div>
 
     <div class="form-container">
-      <form class="form" name="contact_form" onsubmit="return sanitizeContactForm()" action="" method="">
+      <form class="form" name="contact_form" onsubmit="return sanitizeContactForm()" action="../../model/contactHandle.php" method="POST">
         <div class="title">
           <i id="console-icon" class="fa-solid fa-gamepad"></i>
           <span>C&nbsp;&nbsp;&nbsp;&nbsp;NTACT US</span>
@@ -38,17 +38,19 @@
         </div>
         <label for="name">Name </label>
         <input type="text" name="contact_name" id="name" placeholder="Nguyen Hoang">
+        <div style="display:none;" class="input_message" id="name_contact_message"></div>
         <label for="mail">Email </label>
         <input type="email" name="contact_mail" id="mail" placeholder="hackiemsi@gmail.com">
+        <div style="display:none;" class="input_message" id="mail_contact_message"></div>
         <label for="phone">Phone </label>
         <input type="tel" name="contact_phone" id="phone" placeholder="0961243102">
+        <div style="display:none;" class="input_message" id="phone_contact_message"></div>
         <label for="message">Your feedback </label>
-        <textarea name="contact_" id="message" cols="30" rows="10" placeholder="I love this website !!!!"></textarea>
-
+        <textarea name="contact_message" id="message" cols="30" rows="10" placeholder="I love this website !!!!"></textarea>
+        <div style="display:none;" class="input_message" id="feedback_contact_message"></div>
         <button type="submit" name="submit" id="submit">
           <span>Submit</span>
           <i class="fa-solid fa-scroll"></i>
-
         </button>
       </form>
       <img class="deco-img" src="../../assets/img/pacman-ghost-logo-4E0E79293D-seeklogo.com.png" alt="">

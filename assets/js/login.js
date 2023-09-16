@@ -276,13 +276,13 @@ function sanitizeContactForm() {
   let name = document.forms["contact_form"]["contact_name"].value;
   let phone = document.forms["contact_form"]["contact_phone"].value;
   let mail = document.forms["contact_form"]["contact_mail"].value;
-  let feedback = document.forms["contact_form"]["contact_mail"].value;
+  let feedback = document.forms["contact_form"]["contact_message"].value;
 
   const nameMess = document.getElementById("name_contact_message");
-  const phoneMess = document.getElementById("mail_contact_message");
-  const mailMess = document.getElementById("phone_contact_message");
+  const mailMess = document.getElementById("mail_contact_message");
+  const phoneMess = document.getElementById("phone_contact_message");
   const feedbackMess = document.getElementById("feedback_contact_message");
-
+  
   let flagName = true;
   let flagPhone = true;
   let flagMail = true;
@@ -327,8 +327,8 @@ function sanitizeContactForm() {
     flagMail = true;
   }
 
-  if ((feedback = "")) {
-    feedbackMess.innerHTML = "* Let us know what you think ^^";
+  if (feedback=='') {
+    feedbackMess.innerHTML = "* This field must not empty!";
     feedbackMess.style.display = "block";
     flagFeedback = false;
   } else {
@@ -340,8 +340,7 @@ function sanitizeContactForm() {
     flagPhone == false ||
     flagName == false ||
     flagFeedback == false ||
-    flagMail == false ||
-    flagMailExist == false
+    flagMail == false 
   ) {
     return false;
   } else {
