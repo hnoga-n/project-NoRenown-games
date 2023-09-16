@@ -74,7 +74,7 @@ body {
   height: 500px;
   background-color: rgba(35, 30, 102, 0.785);
   display: grid;
-  grid-template-rows: 20% 10% 10% 10% 40% 10% ;
+  grid-template-rows: 20% 6% 4% 6% 4% 6% 4% 35% 5% 10% ;
   grid-template-columns: 40% 60%;
   border-radius: 25px;
   border: 3px solid rgba(132, 120, 200, 0.703);
@@ -119,6 +119,20 @@ body {
   align-self: center;
   font-weight: 900;
 }
+.form-outside-container  .form-container .form label[for="name"]{
+  grid-row: 2/3;
+}
+.form-outside-container  .form-container .form label[for="mail"]{
+  grid-row: 4/5;
+}
+.form-outside-container  .form-container .form label[for="phone"]{
+  grid-row: 6/7;
+}
+.form-outside-container  .form-container .form label[for="message"]{
+  grid-row: 8/9;
+}
+
+
 .form-outside-container  .form-container .form input{
   color: white;
   font-size: 18px;
@@ -130,7 +144,31 @@ body {
   border: 2px solid white;
   border-collapse: separate;
 }
+
+.form-outside-container  .form-container .form #name{
+  grid-row: 2/3;
+}
+.form-outside-container  .form-container .form #mail{
+  grid-row: 4/5;
+}
+.form-outside-container  .form-container .form #phone{
+  grid-row: 6/7;
+}
+
+.form-outside-container  .form-container .form #name_contact_message{
+  grid-row: 3/4;
+}
+.form-outside-container  .form-container .form #mail_contact_message{
+  grid-row: 5/6;
+}
+.form-outside-container  .form-container .form #phone_contact_message{
+  grid-row: 7/8;
+}
+.form-outside-container  .form-container .form #feedback_contact_message{
+  grid-row: 9/10;
+}
 .form-outside-container  .form-container .form #message{
+  grid-row: 8/9;
   text-align: left;
   resize: none;
   padding: 10px;
@@ -142,12 +180,22 @@ body {
   border: 2px solid white;
   border-collapse: separate;
 }
-
+.form-outside-container  .form-container .form  .input_message{
+  grid-column: 2/3;
+  flex: 0 0 20px;
+  width: 100%;
+  color: salmon;
+  padding-top: 5px;
+  font-size: 14px;
+  text-align: left;
+  margin: 0 10px;
+}
 .form-outside-container  .form-container .form input::placeholder , .form-outside-container  .form-container .form #message::placeholder{
   color: rgba(255, 255, 255, 0.329)
   
 }
 .form-outside-container  .form-container .form button{
+  grid-row: 10/11;
   grid-column: 2/3;
   font-size: 20px;
   width: 100%;
@@ -232,7 +280,6 @@ body {
   .form-outside-container .form-container .form label,
   .form-outside-container .form-container .form button {
     grid-column: 1;
-
   }
 
   .form-outside-container .form-container .form label {
@@ -244,6 +291,7 @@ body {
     width: 100%;
     
   }
+
   .form-outside-container .form-container .form .title #console-icon {
     left: 60px;
   }
@@ -272,4 +320,6 @@ body {
   .form-outside-container .form-container .form .title #console-icon {
     left: 60px;
   }
+
+
 }
