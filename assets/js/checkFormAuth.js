@@ -11,6 +11,8 @@ function checkCheckBox(){
       break; // Exit the loop if at least one checkbox is checked
     }
   }
-  alert("Group must have at least 1 authority")
+  if(!anyCheckboxChecked){
+    alert("Group must have at least 1 authority")
+  }
   return anyCheckboxChecked;
 }
