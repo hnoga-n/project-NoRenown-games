@@ -21,6 +21,7 @@
   include 'header.php';
   ?>
   <!-- contact form -->
+
   <div class="form-outside-container">
     <div class="deco-icon">
       <i id="moon" class="fa-regular fa-moon"></i>
@@ -28,7 +29,6 @@
       <i id="star-2" class="fa-regular fa-star"></i>
       <i id="star-3" class="fa-regular fa-star"></i>
     </div>
-
     <div class="form-container">
       <form class="form" name="contact_form" onsubmit="return sanitizeContactForm()" action="../../model/contactHandle.php" method="POST">
         <div class="title">
