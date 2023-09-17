@@ -101,7 +101,7 @@ if (!isset($_SESSION['total'])) {
   include 'footer.php';
   ?>
 </body>
-<script src="../../assets/js/payment.js"></script>
+<!-- <script src="../../assets/js/payment.js"></script> -->
 <!-- <script src="../../assets/js/header.js"></script> -->
 <script src="../../controller/confirmPayment.js"></script>
 

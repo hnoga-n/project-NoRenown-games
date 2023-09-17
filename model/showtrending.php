@@ -17,9 +17,6 @@
                             Your browser does not support the video tag.
                         </video>
                         <img src='./assets/img/".$row['gimg']."' alt='' />
-                        <div class='discount'>
-                            <span>-<label>".$row['gdiscount']."</label>%</span>
-                        </div>
                     </a>
                     <div class='product-information'>
                     <div class='text-name'>".$row['gname']."</div>
@@ -32,4 +29,3 @@
         }
     }
     $conn->close();
-?>
