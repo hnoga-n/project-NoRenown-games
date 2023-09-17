@@ -71,20 +71,23 @@ function showListGameImport($import)
     if ($v == "all") {
       $sql = "SELECT * 
             FROM games JOIN genres ON games.genreID = genres.genID
-            WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
-            LIMIT $loc,12
-            ";
+            WHERE (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gid ASC
+            LIMIT $loc,12";
       $sql1 = "SELECT * 
             FROM games JOIN genres ON games.genreID = genres.genID
-            WHERE LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            WHERE (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gid ASC";
     } else {
       $sql = "SELECT * 
             FROM games  JOIN genres ON games.genreID = genres.genID
-            WHERE genreID = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto
+            WHERE genreID = '$v' AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gid ASC
             LIMIT $loc,12";
       $sql1 = "SELECT * 
             FROM games  JOIN genres ON games.genreID = genres.genID
-            WHERE genreID = '$v' AND LOWER(gname) REGEXP '$search' AND gprice BETWEEN $pfrom AND $pto";
+            WHERE genreID = '$v' AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            ORDER BY gid ASC";
     }
   }
   $result = $conn->query($sql);
@@ -99,7 +102,6 @@ function showListGameImport($import)
                         <td>" . $row['genName'] . "</td>
                         <td>" . $row['gprice'] . "$</td>
                         <td>" . $row['gquantity'] . "</td>
-                        <td>-" . $row['gdiscount'] . "%</td>
                         <td>
                             <img src='../../assets/img/" . $row['gimg'] . "'>
                         </td>

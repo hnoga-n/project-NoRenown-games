@@ -4,7 +4,6 @@
     $gname = $_POST['gname'];
     $gcategory = $_POST['gcategory'];
     $gquantity = $_POST['gquantity'];
-    $gdiscount = $_POST['gdiscount'];
     $gprice = $_POST['gprice'];
     $cfg_os = $_POST['cfg_os'];
     $cfg_processor = $_POST['cfg_processor'];
@@ -41,7 +40,7 @@
     
     $sql1 = "
                 UPDATE games 
-                SET gname='$gname',genreID=$gcategory,gprice=$gprice,gdiscount=$gdiscount,gimg='$gimg',gquantity=$gquantity
+                SET gname='$gname',genreID=$gcategory,gprice=$gprice,gimg='$gimg',gquantity=$gquantity
                 WHERE gid=$gid     
             ";
     $sql2 = "
@@ -66,4 +65,3 @@
                 "Error: " . $sql2 . "<br>" . $conn->error . "<br>" . "Error: " . $sql2 . "<br>" . $conn->error."<br>".
                 "Error: " . $sql3 . "<br>" . $conn->error . "<br>" . "Error: " . $sql3 . "<br>" . $conn->error  ;
     }
-?>

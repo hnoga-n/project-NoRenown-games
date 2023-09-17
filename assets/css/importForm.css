@@ -143,6 +143,7 @@
   align-items: center;
   color: white;
   transition: .3s;
+  cursor: pointer;
 }
 
 .main .general-and-import-card .list-import-card table tbody tr td div:hover {
@@ -213,6 +214,7 @@
   align-items: center;
   color: white;
   transition: .3s;
+  cursor: pointer;
 }
 
 .main .listProduct .listgames table tbody tr td div:hover {

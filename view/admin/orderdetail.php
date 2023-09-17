@@ -1,21 +1,21 @@
 <?php
 
-    include '../admin/head1.php';
-    include '../admin/leftmenu.php';
-    include '../../model/connect.php';
-    $orderid = $_GET['orderID'];
-    $sql = "SELECT orderID,accID,total_price,date_create,order_status,consignee_name,address,phone_number	
+include '../admin/head1.php';
+include '../admin/leftmenu.php';
+include '../../model/connect.php';
+$orderid = $_GET['orderID'];
+$sql = "SELECT orderID,accID,total_price,date_create,order_status,consignee_name,address,phone_number	
             FROM invoice 
             WHERE orderID = $orderid";
 
-    $sql2 = "SELECT gid,quantity,price,discount,img,gname 
+$sql2 = "SELECT gid,quantity,price,img,gname 
             FROM invoice_detail 
             WHERE orderID = $orderid";
 
-    $result = $conn->query($sql);
-    $result2 = $conn->query($sql2);
-    
-    $row = $result->fetch_assoc();
+$result = $conn->query($sql);
+$result2 = $conn->query($sql2);
+
+$row = $result->fetch_assoc();
 ?>
 
 <div class="editaccount-modalbox" style="width: calc(100% - 120px)">
@@ -78,62 +78,60 @@
                     <span>Status:</span>
                 </div>
                 <div>
-                    <input type="text" readonly value="<?php 
-                        switch ($row['order_status']) {
-                            case '0': 
-                                echo 'Waiting';
-                                break;   
-                            case '1':
-                                echo 'Processed';
-                                break;
-                            case '2':
-                                echo 'Canceled';
-                                break;    
-                        }
-                    ?>">
-                </div>    
-            </div>  
+                    <input type="text" readonly value="<?php
+                                                        switch ($row['order_status']) {
+                                                            case '0':
+                                                                echo 'Waiting';
+                                                                break;
+                                                            case '1':
+                                                                echo 'Processed';
+                                                                break;
+                                                            case '2':
+                                                                echo 'Canceled';
+                                                                break;
+                                                        }
+                                                        ?>">
+                </div>
+            </div>
             <div class="form-div">
                 <div>
                     <span>Total price:</span>
                 </div>
                 <div>
                     <input type="text" readonly value="<?php echo $row['total_price'] ?> $">
-                </div>    
-            </div>  
+                </div>
+            </div>
         </form>
     </div>
-<div class="main" style="margin-left: 0;width: 100%">
-    <div class="listgames">
-        <table>
-            <thead>
-                <tr>
-                <th style="width: 10%;">ID</th>
-                <th style="width: 30%;">Name</th>
-                <th style="width: 10%;">Price</th>
-                <th style="width: 10%;">Quantity</th>
-                <th style="width: 10%;">Discount</th>
-                <th style="width: 30%;">Image</th>
-                </tr>
-            </thead>
-            <tbody id="showlistaccount">
-                <!-- Show list order details -->
-                <?php while($row2 = $result2->fetch_assoc()) {
-                    echo "<tr>
-                        <td>" . $row2['gid'] ."</td>
-                        <td>" . $row2['gname'] ."</td>
-                        <td>" . $row2['price'] ."$</td>
-                        <td>" . $row2['quantity'] ."</td>
-                        <td>" . $row2['discount'] ."$</td>
+    <div class="main" style="margin-left: 0;width: 100%">
+        <div class="listgames">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">ID</th>
+                        <th style="width: 35%;">Name</th>
+                        <th style="width: 10%;">Price</th>
+                        <th style="width: 10%;">Quantity</th>
+                        <th style="width: 35%;">Image</th>
+                    </tr>
+                </thead>
+                <tbody id="showlistaccount">
+                    <!-- Show list order details -->
+                    <?php while ($row2 = $result2->fetch_assoc()) {
+                        echo "<tr>
+                        <td>" . $row2['gid'] . "</td>
+                        <td>" . $row2['gname'] . "</td>
+                        <td>" . $row2['price'] . "$</td>
+                        <td>" . $row2['quantity'] . "</td>
                         <td>
-                            <img src='../../assets/img/" . $row2['img'] ."'>
+                            <img src='../../assets/img/" . $row2['img'] . "'>
                         </td>
                     </tr>";
-                } ?>    
-            </tbody>
-        </table>
-    </div>  
-</div>
+                    } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 

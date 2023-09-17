@@ -15,7 +15,6 @@ if (isset($_GET['id'])) {
                 'gid' => $row['gid'],
                 'gname' => $row['gname'],
                 'genreID' => $row['genreID'],
-                'gdiscount' => $row['gdiscount'],
                 'gprice' => $row['gprice'],
                 'gimg' => $row['gimg'],
                 'gquantity' => $row['gquantity'],
@@ -114,16 +113,6 @@ if (isset($_GET['id'])) {
                         ";
                 }
                 ?>
-
-                <div class='modal-input'>
-                    <div>
-                        <label>Discount :</label>
-                    </div>
-                    <div>
-                        <input type='number' name='gdiscount' min='0' max="100" value='<?= !empty($game) ? $game['gdiscount'] : ''; ?>' required>&nbsp;&nbsp;<span>%</span>
-                    </div>
-                </div>
-                <hr>
                 <div class='modal-input'>
                     <div>
                         <label>Price :</label>
