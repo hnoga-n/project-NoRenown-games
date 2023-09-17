@@ -43,7 +43,7 @@ if ($invoiceDataExist->num_rows > 0) {
                                 </div>
                                 <div class="order-name">' . $row1['gname'] . '</div>
                                 <div class="order-quantity">x ' . $row1['quantity'] . '</div>
-                                <div class="order-price"><s>' . $row1['price'] . '$</s> ' . $row1['discount'] . '$</div>
+                                <div class="order-price">' . $row1['price'] . '$</div>
                             </div>';
             }
             setlocale(LC_MONETARY, "en_US");

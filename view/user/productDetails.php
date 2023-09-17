@@ -57,16 +57,11 @@ include_once "../../model/getProductDetails.php";
           </div>
           <div class="price">
             <?php
-            if ((int)$row2['gdiscount'] > 0) {
-              echo "
-                <small><s>" . $row2['gprice'] . "$</s></small>
-                  <div class='price-number'>" . $result . "</div>
+            echo "
+                  <div class='price-number'>" . $row2['gprice'] . "</div>
                   <div class='price-dollar'>$</div>
               ";
-            } else {
-              echo "<div class='price-number'>" . $result . "</div>
-                <div class='price-dollar'>$</div>";
-            }
+
             ?>
           </div>
           <div>

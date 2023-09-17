@@ -211,14 +211,14 @@ if (!isset($_COOKIE['accountId'])) {
             <span>Official price</span>
             <span id="offcprice">0</span>
           </div>
-          <div class="summary-row">
+          <!-- <div class="summary-row">
             <span>Discount</span>
             <span id="discount">0</span>
-          </div>
-          <div class="summary-row">
+          </div> -->
+          <!-- <div class="summary-row">
             <span>Subtotal</span>
             <span id="subtotal">0</span>
-          </div>
+          </div> -->
           <a href="#" class="button gotopayment" id="goto_payment">
             Go to payment
             <div class="icon-arrow icon-xxs"></div>
