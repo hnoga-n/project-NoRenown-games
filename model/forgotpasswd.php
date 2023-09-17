@@ -8,8 +8,8 @@ if (isset($_COOKIE['accountId']) && $_COOKIE['usertype'] == 2) {
 }
 // Import PHPMailer classes into the global namespace 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+// use PHPMailer\PHPMailer\SMTP;
+// use PHPMailer\PHPMailer\Exception;
 // Include library files 
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
