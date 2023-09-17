@@ -71,22 +71,22 @@ function showListGameImport($import)
     if ($v == "all") {
       $sql = "SELECT * 
             FROM games JOIN genres ON games.genreID = genres.genID
-            WHERE (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            WHERE visible=1 AND genStatus=1 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
             ORDER BY gid ASC
             LIMIT $loc,12";
       $sql1 = "SELECT * 
             FROM games JOIN genres ON games.genreID = genres.genID
-            WHERE (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            WHERE visible=1 AND genStatus=1 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
             ORDER BY gid ASC";
     } else {
       $sql = "SELECT * 
             FROM games  JOIN genres ON games.genreID = genres.genID
-            WHERE genreID = '$v' AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            WHERE visible=1 AND genStatus=1 AND genreID = '$v' AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
             ORDER BY gid ASC
             LIMIT $loc,12";
       $sql1 = "SELECT * 
             FROM games  JOIN genres ON games.genreID = genres.genID
-            WHERE genreID = '$v' AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
+            WHERE visible=1 AND genStatus=1 AND genreID = '$v' AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
             ORDER BY gid ASC";
     }
   }
