@@ -1,40 +1,39 @@
 <?php
-    include '../admin/head1.php';
-    include '../admin/leftmenu.php';
-    include '../../model/connect.php';
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-        $game = array();
-        $sql = "SELECT *
+include '../admin/head1.php';
+include '../admin/leftmenu.php';
+include '../../model/connect.php';
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $game = array();
+    $sql = "SELECT *
             FROM games join game_detail on games.gid = game_detail.gdt_id
             WHERE gid = '$id'";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $game = array(
-                    'gid' => $row['gid'],
-                    'gname' => $row['gname'],
-                    'genreID' => $row['genreID'],
-                    'gdiscount' => $row['gdiscount'],
-                    'gprice' => $row['gprice'],
-                    'gimg' => $row['gimg'],
-                    'gquantity' => $row['gquantity'],
-                    'cfg_os' => $row['cfg_os'],
-                    'cfg_processor' => $row['cfg_processor'],
-                    'cfg_graphics' => $row['cfg_graphics'],
-                    'cfg_storage' => $row['cfg_storage'],
-                    'about' => $row['about'],
-                    'scr1' => $row['screenshot1'],
-                    'scr2' => $row['screenshot2'],
-                    'scr3' => $row['screenshot3'],
-                    'scr4' => $row['screenshot4'],
-                    'trailer' => $row['trailer']
-                );
-            }
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $game = array(
+                'gid' => $row['gid'],
+                'gname' => $row['gname'],
+                'genreID' => $row['genreID'],
+                'gprice' => $row['gprice'],
+                'gimg' => $row['gimg'],
+                'gquantity' => $row['gquantity'],
+                'cfg_os' => $row['cfg_os'],
+                'cfg_processor' => $row['cfg_processor'],
+                'cfg_graphics' => $row['cfg_graphics'],
+                'cfg_storage' => $row['cfg_storage'],
+                'about' => $row['about'],
+                'scr1' => $row['screenshot1'],
+                'scr2' => $row['screenshot2'],
+                'scr3' => $row['screenshot3'],
+                'scr4' => $row['screenshot4'],
+                'trailer' => $row['trailer']
+            );
         }
-    } else {
-        $game = array();
     }
+} else {
+    $game = array();
+}
 ?>
 
 <div class='editgame-modalbox'>
@@ -45,15 +44,22 @@
         <form action='<?= !empty($game) ? "../../model/edit_Game.php?gid=$id" : "../../model/add_Game.php" ?>' onsubmit="return checkFile()" method="post">
             <div class='general'>
                 <span>General</span>
-                <div class='modal-input' style="display:<?= !empty($game) ? 'flex' : 'none' ?>;">
-                    <div>
-                        <label>ID :</label>
-                    </div>
-                    <div>
-                        <input type='text' name='gid' disabled value='<?= !empty($game) ? $game['gid'] : ''; ?>'>
-                    </div>
-                </div>
-                <hr style="display:<?= !empty($game) ? 'block' : 'none' ?>;">
+                <?php
+                if (!empty($game)) {
+                    echo "
+                        <div class='modal-input'>
+                            <div>
+                                <label>ID :</label>
+                            </div>
+                            <div>
+                                <input type='text' name='gid' disabled value='" . $game['gid'] . "'>
+                            </div>
+                        </div>
+                        <hr>
+                        ";
+                }
+                ?>
+
                 <div class='modal-input'>
                     <div>
                         <label>Name :</label>
@@ -78,7 +84,7 @@
                             $result1 = $conn->query($sql1);
                             if ($result1->num_rows > 0) {
                                 while ($row = $result1->fetch_assoc()) {
-                                    if ($row['genID']==$game['genreID']) {
+                                    if ($row['genID'] == $game['genreID']) {
                                         $select .= "<option value='" . $row['genID'] . "' selected>" . $row['genName'] . "</option>&nbsp;&nbsp;";
                                         continue;
                                     }
@@ -92,24 +98,21 @@
                     </div>
                 </div>
                 <hr>
-                <div class='modal-input' <?= !empty($game) ? "style='display:flex'" : "style='display:none'" ?>>
-                    <div>
-                        <label>Quantity :</label>
-                    </div>
-                    <div>
-                        <input type='number' name='gquantity' min='0' <?= !empty($game) ? 'readonly' : '' ?> value='<?= !empty($game) ? $game['gquantity'] : '0'; ?>' required>
-                    </div>
-                </div>
-                <hr <?= !empty($game) ? "style='display:block'" : "style='display:none'" ?>>
-                <div class='modal-input'>
-                    <div>
-                        <label>Discount :</label>
-                    </div>
-                    <div>
-                        <input type='number' name='gdiscount' min='0' max="100" value='<?= !empty($game) ? $game['gdiscount'] : ''; ?>' required>&nbsp;&nbsp;<span>%</span>
-                    </div>
-                </div>
-                <hr>
+                <?php
+                if (!empty($game)) {
+                    echo "
+                        <div class='modal-input'>
+                            <div>
+                                <label>Quantity :</label>
+                            </div>
+                            <div>
+                                <input type='number' name='gquantity' min='0' readonly value='" . $game['gquantity'] . "' required>
+                            </div>
+                        </div>
+                        <hr>
+                        ";
+                }
+                ?>
                 <div class='modal-input'>
                     <div>
                         <label>Price :</label>
@@ -162,7 +165,7 @@
                 </div>
             </div>
             <div class="image">
-                <span>Image / Trailer</span>  
+                <span>Image / Trailer</span>
                 <div class="image-div">
                     <div class='game-image' style="display:<?= !empty($game) ? 'block' : 'none' ?>;">
                         <img src='../../assets/img/<?= !empty($game) ? $game['gimg'] : ''; ?>'>
@@ -235,12 +238,12 @@
                 <hr>
                 <div class="image-div">
                     <div class='game-image' style="display:<?= !empty($game) ? 'block' : 'none' ?>;">
-                    <center>
-                        <video width="450" height="250" controls>
-                            <source src='<?= !empty($game) ? $game['trailer'] : ''; ?>' type="video/mp4">
-                            <source src="../../assets/video/I Am Atomic 4k.mp4" type="video/mp4">
-                        </video>
-                    </center>
+                        <center>
+                            <video width="450" height="250" controls>
+                                <source src='<?= !empty($game) ? $game['trailer'] : ''; ?>' type="video/mp4">
+                                <source src="../../assets/video/I Am Atomic 4k.mp4" type="video/mp4">
+                            </video>
+                        </center>
                     </div>
                     <div class='modal-input'>
                         <div>
@@ -262,4 +265,3 @@
 </div>
 
 <script src="../../assets/js/leftmenu.js"></script>
-<script src="../../assets/js/editgame.js"></script>

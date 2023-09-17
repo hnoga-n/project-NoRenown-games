@@ -43,7 +43,6 @@ if (isset($_GET['search']) && isset($_GET['groupID']) && isset($_GET['pagenum'])
             $html .=
                 "<tr>
                         <td>" . $row['accid'] . "</td>
-                        <td>" . $row['userID'] . "</td>
                         <td>" . $row['fullname'] . "</td>
                         <td>" . $row['mail'] . "</td>
                         <td>" . $row['phone'] . "</td>

@@ -2,8 +2,6 @@
 include './connect.php';
 $gname = $_POST['gname'];
 $gcategory = $_POST['gcategory'];
-$gquantity = $_POST['gquantity'];
-$gdiscount = $_POST['gdiscount'];
 $gimg = $_POST['gimg'];
 $gprice = $_POST['gprice'];
 $cfg_os = $_POST['cfg_os'];
@@ -18,8 +16,8 @@ $scr4 = $_POST['gscr4'];
 $trailer = $_POST['gtrailer'];
 
 $sql1 = "
-            INSERT INTO games (gname,genreID,gprice,gdiscount,gimg,gquantity,trending,visible) VALUES
-            ('$gname',$gcategory,'$gprice',$gdiscount,'$gimg',0,0,1);  
+            INSERT INTO games (gname,genreID,gprice,gimg,gquantity,trending,visible) VALUES
+            ('$gname',$gcategory,'$gprice','$gimg',0,0,1);  
               
     ";
 $result1 = $conn->query($sql1);
@@ -44,7 +42,7 @@ if ($result1 === TRUE) {
     if ($result3 === TRUE) {
         echo "<script>
                 alert('Add successfully !')
-                window.location.replace('../view/admin/employee.php?page=listgame')
+                
             </script>";
     } else {
         echo "Error: " . $sql3 . "<br>" . $conn->error . "<br>" . "Error: " . $sql3 . "<br>" . $conn->error;
