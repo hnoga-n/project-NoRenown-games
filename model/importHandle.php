@@ -153,6 +153,7 @@ function loadCart()
 {
   include "../model/connect.php";
   //load game into cart
+
   $sql = "SELECT gid,gname,gquantity,gprice FROM import_cart ";
   $result = $conn->query($sql);
   $data = '';

@@ -90,7 +90,7 @@ if (!isset($_SESSION['total'])) {
                 </div> <!----> <!----> <!---->
               </div>
             </div>
-            <label class="cgu-container">By clicking "Pay" I acknowledge having read and accepted the <a href="/en/terms-of-use/" target="_blank">terms and conditions</a>, and the <a href="/en/privacy-policy/" target="_blank">privacy policy</a>.</label>
+            <label class="cgu-container">By clicking "Pay", You'll move to <strong>order page</strong> and wait for the order to be processed.</label>
           </div>
 
         </form>

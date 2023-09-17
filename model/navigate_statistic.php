@@ -1,7 +1,7 @@
 <?php
 // echo $_GET['case'];
 include_once "connect.php";
-$accounts = "SELECT accid FROM account";
+$accounts = "SELECT accid FROM account WHERE acc_visible = 1";
 $result_accounts = $conn->query($accounts);
 
 $games_quantity = "SELECT SUM(gquantity) AS total FROM `games` WHERE visible = 1";
@@ -19,6 +19,10 @@ $result_invoices = $conn->query($invoices);
 
 $authorizations = "SELECT groupID FROM auth_group";
 $result_authorizations = $conn->query($authorizations);
+
+$supplier = "SELECT suppID FROM `supplier` WHERE Status = 1";
+$result_supplier = $conn->query($supplier);
+
 
 $html_code = '';
 switch ($_GET['case']) {
@@ -78,6 +82,15 @@ switch ($_GET['case']) {
                 <div>
                   <div class="number" id="import-quantity">' .  $result_authorizations->num_rows . '</div>
                   <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+              </div>
+            </div>
+            <div class="import_quantity">
+              <div class="content">
+                <div class="text">Suppliers</div>
+                <div>
+                  <div class="number" id="import-quantity">' .  $result_supplier->num_rows . '</div>
+                  <i class="fa-solid fa-truck-field"></i>
                 </div>
               </div>
             </div>

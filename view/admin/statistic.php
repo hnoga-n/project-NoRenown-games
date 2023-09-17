@@ -20,6 +20,9 @@ $result_invoices = $conn->query($invoices);
 $authorizations = "SELECT groupID FROM auth_group";
 $result_authorizations = $conn->query($authorizations);
 
+$supplier = "SELECT suppID FROM `supplier` WHERE Status = 1";
+$result_supplier = $conn->query($supplier);
+
 ?>
 <html lang="en">
 
@@ -93,6 +96,15 @@ $result_authorizations = $conn->query($authorizations);
             <div>
               <div class="number" id="import-quantity"><?php echo $result_authorizations->num_rows ?></div>
               <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+          </div>
+        </div>
+        <div class="import_quantity">
+          <div class="content">
+            <div class="text">Suppliers</div>
+            <div>
+              <div class="number" id="import-quantity"><?php echo $result_supplier->num_rows ?></div>
+              <i class="fa-solid fa-truck-field"></i>
             </div>
           </div>
         </div>
