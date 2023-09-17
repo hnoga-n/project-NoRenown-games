@@ -11,24 +11,24 @@ if (isset($_GET['search']) && isset($_GET['pfrom']) && isset($_GET['pto'])) {
     $pfrom = floatval($_GET['pfrom']);
     $pto = floatval($_GET['pto']);
     if ($v == 0) {
-        $sql = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending 
+        $sql = "SELECT gid,gname,gprice,genName,gimg,visible,gquantity,trending 
             FROM games JOIN genres ON games.genreID=genres.genID  
             WHERE visible=0 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
             ORDER BY gid ASC
             LIMIT $loc,12
             ";
-        $sql1 = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending 
+        $sql1 = "SELECT gid,gname,gprice,genName,gimg,visible,gquantity,trending 
             FROM games JOIN genres ON games.genreID=genres.genID
             WHERE visible=0 AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
             ORDER BY gid ASC
             ";
     } else {
-        $sql = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending
+        $sql = "SELECT gid,gname,gprice,genName,gimg,visible,gquantity,trending
             FROM games JOIN genres ON games.genreID=genres.genID
             WHERE visible=0 AND genreID=$v AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
             ORDER BY gid ASC
             LIMIT $loc,12";
-        $sql1 = "SELECT gid,gname,gprice,genName,gdiscount,gimg,visible,gquantity,trending 
+        $sql1 = "SELECT gid,gname,gprice,genName,gimg,visible,gquantity,trending 
             FROM games JOIN genres ON games.genreID=genres.genID
             WHERE visible=0 AND genreID=$v AND (gid='$search' OR LOWER(gname) REGEXP '$search') AND gprice BETWEEN $pfrom AND $pto
             ORDER BY gid ASC";
@@ -49,7 +49,6 @@ if ($result->num_rows > 0) {
                         <td>" . $row['genName'] . "</td>
                         <td>" . $row['gprice'] . "$</td>
                         <td>" . $row['gquantity'] . "</td>
-                        <td>-" . $row['gdiscount'] . "%</td>
                         <td>
                             <img src='../../assets/img/" . $row['gimg'] . "'>
                         </td>

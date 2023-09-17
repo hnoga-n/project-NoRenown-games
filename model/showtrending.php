@@ -1,7 +1,7 @@
 <?php
     include './connect.php';
 
-    $sql = "SELECT gid,gimg,gdiscount,gname,gprice,trending,trailer
+    $sql = "SELECT gid,gimg,gname,gprice,trending,trailer
             FROM games JOIN game_detail ON games.gid = game_detail.gdt_id
             WHERE trending=1 AND visible=1
             ORDER BY RAND()
@@ -17,9 +17,6 @@
                             Your browser does not support the video tag.
                         </video>
                         <img src='./assets/img/".$row['gimg']."' alt='' />
-                        <div class='discount'>
-                            <span>-<label>".$row['gdiscount']."</label>%</span>
-                        </div>
                     </a>
                     <div class='product-information'>
                     <div class='text-name'>".$row['gname']."</div>
@@ -32,4 +29,3 @@
         }
     }
     $conn->close();
-?>

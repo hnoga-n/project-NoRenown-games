@@ -1,9 +1,5 @@
 function deletegame(gid) {
-  if (
-    confirm(
-      "Confirm delete this game ? This will reset the quantity of this game!"
-    )
-  ) {
+  if (confirm("Confirm delete this game ?")) {
     if (gid.length == 0) {
       return;
     } else {

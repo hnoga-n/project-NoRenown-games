@@ -170,10 +170,9 @@
           <tr>
             <th style="width: 5%;">ID</th>
             <th style="width: 30%;">Name</th>
-            <th style="width: 10%;">Genres</th>
+            <th style="width: 15%;">Genres</th>
             <th style="width: 5%;">Price</th>
             <th style="width: 5%;">Quantity</th>
-            <th style="width: 5%;">Discount</th>
             <th style="width: 30%;">Image</th>
             <th style="width: 25%;">Choose</th>
 

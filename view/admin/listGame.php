@@ -34,12 +34,12 @@
       <input type="number" step="0.01" id="pto" onkeyup="showlistgame(1,document.getElementById('gcategory').value,document.getElementById(`searchgames`).value,document.getElementById('pfrom').value,this.value)">&nbsp;
       <span>$</span>
     </div>
-      <?php
-        include '../../model/connect.php';
-        include '../../model/function_employee.php';
-        $accountFeatures = json_decode($features_arr[0],true);
-        if($accountFeatures["ADD GAME"]==1) {
-          echo '
+    <?php
+    include '../../model/connect.php';
+    include '../../model/function_employee.php';
+    $accountFeatures = json_decode($features_arr[0], true);
+    if ($accountFeatures["ADD GAME"] == 1) {
+      echo '
               <div class="button">
                 <a href="./editgame.php?page=listgame">
                   <button>
@@ -48,9 +48,9 @@
                 </a>
               </div>
           ';
-        }
-      ?>
-    
+    }
+    ?>
+
   </div>
   <div class="listgames">
     <table>
@@ -58,10 +58,9 @@
         <tr>
           <th style="width: 5%;">ID</th>
           <th style="width: 30%;">Name</th>
-          <th style="width: 10%;">Genres</th>
+          <th style="width: 15%;">Genres</th>
           <th style="width: 5%;">Price</th>
           <th style="width: 5%;">Quantity</th>
-          <th style="width: 5%;">Discount</th>
           <th style="width: 25%;">Image</th>
           <th style="width: 5%;">Trending</th>
           <th style="width: 10%;">Action</th>
