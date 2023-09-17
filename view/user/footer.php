@@ -24,8 +24,8 @@
           <a href="#">FAQ</a>
         </li>
       </ul> -->
-      <div class="footer-social">
-        <!-- <div class="footer-social-icons">
+      <!-- <div class="footer-social">
+        <div class="footer-social-icons">
           <a href="">
             <i class="fa-brands fa-twitter"></i>
           </a>
@@ -38,7 +38,7 @@
           <a href="">
             <i class="fa-brands fa-facebook"></i>
           </a>
-        </div> -->
+        </div>
         <div class="footer-social-apps">
           <a href="https://www.apple.com/vn/app-store/" target="_blank">
             <img src="https://s3.gaming-cdn.com/themes/igv2/modules/footer/images/apple.svg" alt="" />
@@ -47,7 +47,7 @@
             <img src="https://s2.gaming-cdn.com/themes/igv2/modules/footer/images/android.svg" alt="" />
           </a>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="footer-information">
       Copyright © 2023 NoRenown Gaming - All rights reserved
