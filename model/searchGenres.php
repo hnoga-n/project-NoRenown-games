@@ -4,7 +4,7 @@ include "connect.php";
 if (isset($_GET['queryGenres'])) {
   $param1 = strtolower($_GET['queryGenres']);
 
-  $sql = "SELECT * FROM genres WHERE genName REGEXP '$param1' ";
+  $sql = "SELECT * FROM genres WHERE genName REGEXP '$param1' AND genStatus = 1 ";
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
