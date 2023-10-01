@@ -5,7 +5,7 @@ if (!empty($_POST['signin_mail']) && !empty($_POST['signin_pw'])) {
   $user = $_POST['signin_mail'];
   $passwd = $_POST['signin_pw'];
 
-  $sql = $conn->prepare("SELECT acc_status,userID,accid,groupID FROM account WHERE mail=(?) AND passwd=(?)");
+  $sql = $conn->prepare("SELECT acc_status,userID,accid,groupID FROM account WHERE BINARY mail=(?) AND BINARY passwd=(?)");
   $sql->bind_param("ss", $user, $passwd);
   $sql->execute();
   $result = $sql->get_result();

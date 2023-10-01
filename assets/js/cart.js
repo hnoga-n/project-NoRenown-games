@@ -15,9 +15,15 @@ function loaded(xhttp) {
   send_link();
 }
 
-/* function delete_item(Item_id){
-    console.log(Item_id);
-} */
+function checkEmptyCart() {
+  const parentElement = document.getElementById("itemsList");
+  const firstChild = parentElement.firstElementChild;
+  if (firstChild.className == "cart-empty") {
+    document.getElementById("goto_payment").classList.add("button-disabled");
+  } else {
+    document.getElementById("goto_payment").classList.remove("button-disabled");
+  }
+}
 
 function calmoney() {
   if (document.getElementsByClassName("cartpage-empty") != null) {
@@ -38,6 +44,7 @@ function calmoney() {
         parseFloat(itemDiscounts[i].getAttribute("value")) *
         parseFloat(counts[i].value);
     }
+    checkEmptyCart();
     // document.getElementById("discount").innerText = (-(s - sDiscounted)).toLocaleString('en-US') + "$";
     /* document.getElementById("subtotal").innerText =
       sDiscounted.toLocaleString("en-US") + "$"; */

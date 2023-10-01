@@ -124,102 +124,19 @@ if (!isset($_COOKIE['accountId'])) {
             // include '../../model/getProductsInCart.php';
 
             ?>
-            <!--  <div class="cart-item">
-              <div class="item-container">
-                <a href="/en/12153-buy-wo-long-fallen-dynasty-pc-game-steam/" class="cover">
-                  <picture><img data-src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" alt="Wo Long: Fallen Dynasty" src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" loading="lazy">
-                  </picture>
-                </a>
-                <div class="information">
-                  <div class="name">
-                    <span title="Wo Long: Fallen Dynasty" class="title">Wo Long: Fallen Dynasty</span>
-                  </div>
-                  <div class="type">Steam</div> 
-                  <div class="actions">
-                    <a href="" class="deleteItem">
-                      <div class="icon-delete icon-xs"></div>
-                    </a>
-                  </div>
-                </div>
-                <input type="number" value="1" class="count_input">
-                <div class="price">44.39€</div>
-              </div> 
-            </div>
-            <div class="cart-item">
-              <div class="item-container">
-                <a href="/en/12153-buy-wo-long-fallen-dynasty-pc-game-steam/" class="cover">
-                  <picture><img data-src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" alt="Wo Long: Fallen Dynasty" src="https://s1.gaming-cdn.com/images/products/12153/250x143/12153-cover.jpg?v=1677841491" loading="lazy">
-                  </picture>
-                </a>
-                <div class="information">
-                  <div class="name">
-                    <span title="Wo Long: Fallen Dynasty" class="title">Wo Long: Fallen Dynasty</span>
-                  </div>
-                  <div class="type">Steam</div> 
-                  <div class="actions">
-                    <a href="" class="deleteItem">
-                      <div class="icon-delete icon-xs"></div>
-                    </a>
 
-                  </div>
-                </div>
-                <input type="number" value="1" class="count_input">
-                </span>
-                <div class="price">44.39€</div>
-              </div> 
-            </div> -->
-            <!-- <div class="cart-empty">
-                  <div class="icon-cart icon-xxl"></div> 
-                  <h2 class="title">Your cart is empty</h2> 
-                  <span class="content">You didn't add any item in your cart yet. Browse the website to find amazing deals!</span> 
-                  <a href="/en/search/" class="button button-secondary">Discover games</a>
-                </div>  -->
           </div>
         </div>
       </div>
-      <!-- <div class="cartpage-right cartpage-empty">
-            <h2>Summary</h2> 
-            <div class="cart-summary">
-              <div class="summary-row">
-                <span>Official price</span> 
-                <span>0 Vnd</span>
-              </div> <div class="summary-row">
-                <span>Discount</span>
-                 <span>0 Vnd</span>
-                </div> 
-                <div class="summary-row">
-                  <span>Subtotal</span>
-                   <span>0 Vnd</span>
-                  </div> 
-                  <a href="#" class="button gotopayment button-disabled">
-                      Go to payment
-                  <div class="icon-arrow icon-xxs"></div>
-                </a> 
-                <span class="choice">or</span> 
-                <a href="/" class="back">
-                  <div class="icon-arrow icon-xxs"></div>
-                    Continue shopping
-                </a>
-              </div>
-            </div>
-          </div> -->
 
-      <div class="cartpage-right">
+      <div class="cartpage-right cartpage-empty">
         <h2>Summary</h2>
         <div class="cart-summary">
           <div class="summary-row">
             <span>Official price</span>
             <span id="offcprice">0</span>
           </div>
-          <!-- <div class="summary-row">
-            <span>Discount</span>
-            <span id="discount">0</span>
-          </div> -->
-          <!-- <div class="summary-row">
-            <span>Subtotal</span>
-            <span id="subtotal">0</span>
-          </div> -->
-          <a href="#" class="button gotopayment" id="goto_payment">
+          <a href="#" class="button gotopayment button-disabled" id="goto_payment">
             Go to payment
             <div class="icon-arrow icon-xxs"></div>
           </a> <span class="choice">or</span>
