@@ -1,6 +1,11 @@
 # ĐỒ ÁN WEB NÂNG CAO - SHOP BÁN GAME
 
-<h1 align="center">Tên shop: NoRenown Gaming</h1>
+
+<p align="center" text-align="center">
+<img src="/assets/img/logo.png" width="150" height="150" >
+</p>
+
+<p align="center" text-align="center" style="font-size: 16px;">NoRenown Gaming</p>
 
 ## Mô tả website:
 - Giúp các gamer có thể mua những tựa game mà mình yêu thích với mức giá phải chăng một cách đơn giản và nhanh chóng nhất.
@@ -17,10 +22,22 @@
 |  3  | 3121410212 | Nguyễn Huy Hoàng |
 |  4  | 3121410210 |  Lê Long Hoàng   |
 
-## Logo:
+## CÀI ĐẶT VÀ SỬ DỤNG
+Các bước:
+1. Cài đặt XAMPP [Install](https://www.apachefriends.org/) .
+   
+2. Clone project về thư mục xampp/htdocs/ trên máy.
+```
+git clone https://github.com/hnoga-n/project-NoRenown-games
+```
 
-<img src="/assets/img/logo.png" width="150" height="150">
 
+3. Đặt file database/norenown_db.sql vào trong PHPmyadmin của XXAMPP.
+
+4. Run Apeche và MySQL trên XAMPP Control Panel.
+
+5. Nhấn vào button admin của Apache và chọn đúng folder đã clone về và enjoy. 
+   
 ## SCREENSHOTS:
 
 ## - Vài hình ảnh demo giao diện người dùng
