@@ -28,9 +28,8 @@ Các bước:
    
 2. Clone project về thư mục xampp/htdocs/ trên máy.
 ```
-git clone https://github.com/hnoga-n/project-NoRenown-games
+git clone https://github.com/hnoga-n/project-NoRenown-games.git
 ```
-
 
 3. Đặt file database/norenown_db.sql vào trong PHPmyadmin của XXAMPP.
 
